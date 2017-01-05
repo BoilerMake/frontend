@@ -1,4 +1,6 @@
 #BoilerMake Website [live frontend]
+[![Build Status](https://travis-ci.org/BoilerMake/live.svg?branch=master)](https://travis-ci.org/BoilerMake/live)
+[![codecov](https://codecov.io/gh/BoilerMake/live/branch/master/graph/badge.svg)](https://codecov.io/gh/BoilerMake/live)
 
 ##Info
 This will be the day-of site, live.boilermake.org
