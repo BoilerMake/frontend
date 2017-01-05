@@ -17,7 +17,7 @@ export default class Login extends Component {
         if (json.token !== undefined) {
           console.log('yay');
           this.props.login(json.token);
-          setTimeout(() => {this.props.loadData();},400);
+          setTimeout(() => { this.props.loadData(); }, 400);
         } else {
           console.log('sad');
           throw new SubmissionError({ _error: 'Login failed! :(' });
@@ -30,6 +30,8 @@ export default class Login extends Component {
   render () {
     return (
       <div className='container'>
+        {/* TODO: redirect here if logged in already */}
+        {this.props.user.me === null ? '' : 'you are already signed in!! (redirect to somewhere..)'}
         <LoginForm onSubmit={this.handleSubmit} />
       </div>);
   }
