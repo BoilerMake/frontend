@@ -1,0 +1,16 @@
+sudo: false
+language: node_js
+node_js:
+  - "6"
+
+install:
+  - npm install -g yarn
+  - yarn install
+before_script:
+  - cp src/config.example.js src/config.js
+script:
+#  - npm run deploy:dev
+  - npm run deploy:prod
+
+after_success:
+  - npm run codecov
