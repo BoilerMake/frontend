@@ -1,4 +1,17 @@
 body {
   //padding-top: 30px;
   font-family: 'Roboto', sans-serif;
+  background-color: #BC362E;
+}
+.homepage-well {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  padding: 5px;
+  height: 80vh;
+  overflow: scroll;
+}
+.homepage-well__title {
+  font-size: 16pt;
+  text-align: center;
 }
