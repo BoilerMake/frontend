@@ -24,9 +24,9 @@ export default class Homepage extends Component {
         day: moment(event.begin).day()
       }));
 
-    let fri = eventList.filter(event => event.day === 5);
-    let sat = eventList.filter(event => event.day === 6);
-    let sun = eventList.filter(event => event.day === 0);
+    let fri = eventList ? eventList.filter(event => event.day === 5) : [];
+    let sat = eventList ? eventList.filter(event => event.day === 6) : [];
+    let sun = eventList ? eventList.filter(event => event.day === 0) : [];
 
     return (
       <div>
