@@ -19,8 +19,8 @@ export default function configureStore (initialState) {
       // Middleware we want to use in development
       middleware_dev,
       window.devToolsExtension
-        ? window.devToolsExtension()
-        : require('../containers/DevTools').default.instrument(),
+        ? window.devToolsExtension({ maxAge: 10 })
+        : require('../containers/DevTools').default.instrument({ maxAge: 10 }),
       persistState()
     );
   } else {

@@ -9,8 +9,10 @@ export default class HackerList extends Component {
   render () {
     const { Table, Th, Thead, Tr, Td } = Reactable;
     let tableBody;
-    tableBody = this.props.exec.hackers.map(hacker =>
-      <Tr>
+    tableBody = this.props.exec.hackers === null
+      ? null
+      : this.props.exec.hackers.map(hacker =>
+      <Tr key={hacker.id}>
         <Td column='id'>{hacker.id}</Td>
         <Td column='first_name'>{hacker.first_name}</Td>
         <Td column='last_name'>{hacker.last_name}</Td>
