@@ -4,10 +4,12 @@ import { logoutUser } from '../actions/users';
 import AppComponent from '../components/App.js';
 
 function mapStateToProps (state) {
+  let loggedIn = state.user.status === 'authenticated';
   return {
-    authenticatedUser: state.user.status === 'authenticated' ? state.user.user : null,
-    isAuthenticated: state.user.status === 'authenticated',
-    user: state.user
+    isAuthenticated: loggedIn,
+    user: state.user,
+    isExec: loggedIn ? state.user.token_data.roles.includes('exec') : false,
+    isHacker: loggedIn ? state.user.token_data.roles.includes('hacker') : false
   };
 }
 

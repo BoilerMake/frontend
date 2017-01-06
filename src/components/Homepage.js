@@ -38,7 +38,7 @@ export default class Homepage extends Component {
                 <EventListItem title='Friday, Jan 20' events={fri} />
                 <EventListItem title='Saturday, Jan 21' events={sat} />
                 <EventListItem title='Sunday, Jan 22' events={sun} />
-                {/*<PrettyJSON data={eventList} />*/}
+                {/* <PrettyJSON data={eventList} /> */}
               </div>
             </Col>
             <Col sm={6} md={6} lg={6}>

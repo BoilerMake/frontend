@@ -10,7 +10,7 @@ export default class EventListItem extends Component {
       <p>
         {event.title}
       </p>
-      <br/>
+      <br />
     </div>
     );
     return (

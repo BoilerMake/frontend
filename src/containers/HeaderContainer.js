@@ -4,11 +4,12 @@ import { logoutUser, signInUser } from '../actions/users';
 import MainNavBar from '../components/Nav.js';
 
 function mapStateToProps (state) {
-  let isAuthenticated = state.user.status === 'authenticated';
+  let isLoggedIn = state.user.status === 'authenticated';
   return {
-    isAuthenticated: isAuthenticated,
+    isLoggedIn: isLoggedIn,
     user: state.user,
-    isAdmin: isAuthenticated && state.user.token_data.roles.includes('admin')
+    isExec: isLoggedIn && state.user.token_data.roles.includes('exec'),
+    isHacker: isLoggedIn && state.user.token_data.roles.includes('hacker')
   };
 }
 
@@ -16,9 +17,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   logout: () => {
     dispatch(logoutUser());
   },
-  signin: () => {
-    dispatch(signInUser());
-  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainNavBar);
