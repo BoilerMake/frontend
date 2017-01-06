@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import UserListContainer from 'containers/Exec/UserListContainer';
+import UserListContainer from './UserListContainer';
 import HeaderContainer from 'containers/HeaderContainer';
-class UserList extends Component {
+class UserListPage extends Component {
   render () {
     return (
       <div>
@@ -12,4 +12,4 @@ class UserList extends Component {
   }
 }
 
-export default UserList;
+export default UserListPage;

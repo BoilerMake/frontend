@@ -1,7 +1,7 @@
 
 import {
   REQUEST_EXEC_USER_LIST,
-  RECEIVE_EXEC_USER_LIST,
+  RECEIVE_EXEC_USER_LIST
 } from '../actions/exec';
 const INITIAL_STATE = { users: null, error: null, users_loading: false, users_lastUpdated: null };
 export default function (state = INITIAL_STATE, action) {

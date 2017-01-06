@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchUserList } from 'actions/exec';
-import UserList from 'components/Exec/UserList';
+import UserList from './UserList';
 
 function mapStateToProps (state) {
   return {

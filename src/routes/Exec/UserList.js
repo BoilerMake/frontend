@@ -4,7 +4,7 @@ import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Reactable from 'reactable';
 
 export default class UserSettings extends Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.loadData();
   }
   render () {
@@ -28,21 +28,20 @@ export default class UserSettings extends Component {
       // hideSizePerPage: true > You can hide the dropdown for sizePerPage
     };
 
-    const {Table, Th, Thead} = Reactable;
+    const { Table, Th, Thead } = Reactable;
     let table = this.props.exec.users !== null
-      ?
-      <Table className="table"
-             data={this.props.exec.users}
-             itemsPerPage={20}
-             pageButtonLimit={10}
-             filterable={['first_name', 'id','last_name','roles']}
-             sortable={['first_name', 'id','last_name','roles']}
-             defaultSort={{column: 'id', direction: 'asc'}} >
+      ? <Table className='table'
+        data={this.props.exec.users}
+        itemsPerPage={20}
+        pageButtonLimit={10}
+        filterable={['first_name', 'id', 'last_name', 'roles']}
+        sortable={['first_name', 'id', 'last_name', 'roles']}
+        defaultSort={{ column: 'id', direction: 'asc' }} >
         <Thead>
-        <Th column="id"><strong>ID</strong></Th>
-        <Th column="first_name"><strong>First Name</strong></Th>
-        <Th column="last_name"><strong>Last Name</strong></Th>
-        <Th column="roles"><strong>Roles</strong></Th>
+          <Th column='id'><strong>ID</strong></Th>
+          <Th column='first_name'><strong>First Name</strong></Th>
+          <Th column='last_name'><strong>Last Name</strong></Th>
+          <Th column='roles'><strong>Roles</strong></Th>
         </Thead>
       </Table>
       // <BootstrapTable data={this.props.exec.users} striped={false} hover={false} pagination={ true} options = {options}>
@@ -52,10 +51,10 @@ export default class UserSettings extends Component {
       //   <TableHeaderColumn dataField="roles" dataSort={true} filter={ { type: 'TextFilter', delay: 300 } }>Roles</TableHeaderColumn>
       // </BootstrapTable>
       : null;
-    return (<div style={{backgroundColor: 'grey', padding: '10px'}}>
-        {table}
-        <button className='button-primary-wide' onClick={this.props.loadData}>Reload Data</button>
-      </div>
-      );
+    return (<div style={{ backgroundColor: 'grey', padding: '10px' }}>
+      {table}
+      <button className='button-primary-wide' onClick={this.props.loadData}>Reload Data</button>
+    </div>
+    );
   }
 }

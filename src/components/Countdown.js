@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import countdown from 'countdown';
 
 export default class Countdown extends Component {
-  componentDidMount() {
+  componentDidMount () {
     this.interval = setInterval(() => this.setState({ time: Date.now() }), 500);
   }
-  componentWillUnmount() {
+  componentWillUnmount () {
     clearInterval(this.interval);
   }
 
