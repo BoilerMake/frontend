@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 export default class EventListItem extends Component {
   render () {
-    let list = this.props.events.map(event => <div>
+    let list = this.props.events.map(event => <div key={'evt' + event.id}>
       <p>
         {event.begin.format('h:mmA') === event.end.format('h:mmA')
           ? event.begin.format('h:mmA')

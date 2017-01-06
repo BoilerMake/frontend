@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Navbar, NavItem, NavDropdown, Nav, MenuItem } from 'react-bootstrap';
 import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap';
+import { Router, Route, Link, browserHistory } from 'react-router';
 import './navbar.scss';
 export default class Header extends Component {
   render () {
@@ -11,26 +12,34 @@ export default class Header extends Component {
         <div className='navbar-header'>
 
           <div className='nav navbar-nav'>
-            <a>
+            <Link to='/'>
               <img className='logo' src='/images/hammers-white.svg' />
-            </a>
+            </Link>
           </div>
           <div className='collapse navbar-collapse' id='collapsable-navbar'>
             <ul className='nav navbar-nav navbar-left'>
 
-              { this.props.isLoggedIn ? <li> <a className='nav-element'>Profile</a> </li> : null }
+              { this.props.isLoggedIn ? <li> <Link className='nav-element' to='/settings'>Profile</Link> </li> : null }
               { this.props.isExec ? <NavDropdown eventKey={3} title='Exec' id='basic-nav-dropdown'>
-                <MenuItem eventKey={3.1}>Action</MenuItem>
-                <MenuItem eventKey={3.2}>Another action</MenuItem>
+                <LinkContainer to='/exec/hackers'><MenuItem eventKey={3.1}>Hackers</MenuItem></LinkContainer>
+                <LinkContainer to='/exec/users'><MenuItem eventKey={3.2}>Users</MenuItem></LinkContainer>
                 <MenuItem eventKey={3.3}>Something else here</MenuItem>
                 <MenuItem divider />
                 <MenuItem eventKey={3.3}>Separated link</MenuItem>
               </NavDropdown> : null }
             </ul>
 
-            <ul className='nav navbar-nav navbar-right'>
-              { this.props.isLoggedIn ? <li><button onClick={this.props.logout}>Sign Out</button></li> : null }
-            </ul>
+            <Nav pullRight>
+              {
+                this.props.isLoggedIn
+                  ? <NavDropdown eventKey={3} title={'hi'} id='basic-nav-dropdown'>
+                    {/* <LinkContainer to='/settings'><MenuItem eventKey={3.1}>Settings</MenuItem></LinkContainer> */}
+                    <MenuItem divider />
+                    <MenuItem eventKey={3.3} onClick={() => { this.props.logout(); }}>Log out</MenuItem>
+                  </NavDropdown>
+                  : ''
+              }
+            </Nav>
           </div>
         </div>
 

@@ -13,6 +13,7 @@ export default (
     <Route path='404' component={NotFoundView} />
     <Route path='settings' component={UserSettings} />
     <Route path='login' component={Login} />
+    <Route path='signin' component={Login} />
     <Route path='exec/users' component={UserListPage} />
     <Route path='exec/hackers' component={HackerListPage} />
     <Redirect from='*' to='404' />

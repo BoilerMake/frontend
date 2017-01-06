@@ -12,16 +12,16 @@ export default class HackerList extends Component {
     tableBody = this.props.exec.hackers === null
       ? null
       : this.props.exec.hackers.map(hacker =>
-      <Tr key={hacker.id}>
-        <Td column='id'>{hacker.id}</Td>
-        <Td column='first_name'>{hacker.first_name}</Td>
-        <Td column='last_name'>{hacker.last_name}</Td>
-        <Td column='email'>{hacker.email}</Td>
-        <Td column='school_name'>{hacker.application.school ? hacker.application.school.name : ''}</Td>
-        <Td column='application_status'>{hacker.application.completed}</Td>
-        <Td column='decision'>{hacker.application.decision}</Td>
-        <Td column='rsvp'>{hacker.application.rsvp}</Td>
-      </Tr>);
+        <Tr key={hacker.id}>
+          <Td column='id'>{hacker.id}</Td>
+          <Td column='first_name'>{hacker.first_name}</Td>
+          <Td column='last_name'>{hacker.last_name}</Td>
+          <Td column='email'>{hacker.email}</Td>
+          <Td column='school_name'>{hacker.application.school ? hacker.application.school.name : ''}</Td>
+          <Td column='application_status'>{hacker.application.completed}</Td>
+          <Td column='decision'>{hacker.application.decision}</Td>
+          <Td column='rsvp'>{hacker.application.rsvp}</Td>
+        </Tr>);
     const cols = ['first_name', 'id', 'last_name', 'roles', 'school_name', 'application_status', 'decision', 'rsvp', 'email'];
     let table = this.props.exec.hackers !== null
       ? <Table className='table'
