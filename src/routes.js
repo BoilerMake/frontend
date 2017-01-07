@@ -7,6 +7,7 @@ import UserSettings from './pages/UserSettings';
 import UserListPage from 'routes/Exec/UserListPage';
 import HackerListPage from 'routes/Exec/HackerList/HackerListPage';
 import CheckInPage from 'routes/Exec/CheckIn/CheckInPage';
+import EmailTodoPage from 'routes/Exec/EmailTodo/EmailTodoPage';
 import Login from './pages/Login';
 export default (
   <Route path='/' component={App}>
@@ -18,6 +19,7 @@ export default (
     <Route path='exec/users' component={UserListPage} />
     <Route path='exec/hackers' component={HackerListPage} />
     <Route path='exec/checkin' component={CheckInPage} />
+    <Route path='exec/emailstosend' component={EmailTodoPage} />
     <Redirect from='*' to='404' />
   </Route>
 );
