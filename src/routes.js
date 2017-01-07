@@ -6,7 +6,7 @@ import NotFoundView from './pages/NotFoundView';
 import UserSettings from './pages/UserSettings';
 import UserListPage from 'routes/Exec/UserListPage';
 import HackerListPage from 'routes/Exec/HackerList/HackerListPage';
-import CheckInPage from 'routes/Exec/Checkin/CheckInPage';
+import CheckInPage from 'routes/Exec/CheckIn/CheckInPage';
 import Login from './pages/Login';
 export default (
   <Route path='/' component={App}>
