@@ -23,9 +23,7 @@ export default class Header extends Component {
               { this.props.isExec ? <NavDropdown eventKey={3} title='Exec' id='basic-nav-dropdown'>
                 <LinkContainer to='/exec/hackers'><MenuItem eventKey={3.1}>Hackers</MenuItem></LinkContainer>
                 <LinkContainer to='/exec/users'><MenuItem eventKey={3.2}>Users</MenuItem></LinkContainer>
-                <MenuItem eventKey={3.3}>Something else here</MenuItem>
-                <MenuItem divider />
-                <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                <LinkContainer to='/exec/checkin'><MenuItem eventKey={3.3}>Check In</MenuItem></LinkContainer>
               </NavDropdown> : null }
             </ul>
 

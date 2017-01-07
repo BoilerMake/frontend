@@ -4,7 +4,7 @@ html, body {
   font-size: 16px;
   font-family: 'Exo 2', sans-serif;
   background-color: #BC362E;
-  padding-top: 50px;
+  padding-top: 40px;
 
 }
 .homepage-well {
@@ -19,4 +19,18 @@ html, body {
 .homepage-well__title {
   font-size: 16pt;
   text-align: center;
+}
+.CheckInList {
+  //margin-left:auto;
+  //margin-right:auto;
+  width:800px;
+}
+.CheckInListItem {
+  width: 800px;
+  border-color: #6171f7;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
 }

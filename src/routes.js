@@ -6,6 +6,7 @@ import NotFoundView from './pages/NotFoundView';
 import UserSettings from './pages/UserSettings';
 import UserListPage from 'routes/Exec/UserListPage';
 import HackerListPage from 'routes/Exec/HackerList/HackerListPage';
+import CheckInPage from 'routes/Exec/Checkin/CheckInPage';
 import Login from './pages/Login';
 export default (
   <Route path='/' component={App}>
@@ -16,6 +17,7 @@ export default (
     <Route path='signin' component={Login} />
     <Route path='exec/users' component={UserListPage} />
     <Route path='exec/hackers' component={HackerListPage} />
+    <Route path='exec/checkin' component={CheckInPage} />
     <Redirect from='*' to='404' />
   </Route>
 );

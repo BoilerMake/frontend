@@ -61,3 +61,14 @@ function receiveHackerList (json) {
     receivedAt: Date.now()
   };
 }
+
+export function doUserAction (action, userId) {
+  return (dispatch, getState) => {
+    const token = getState().user.token;
+    return fetch(`${API_BASE_URL}/execs/users/${userId}/action?token=${token}&action=${action}`, {
+      method: 'POST'
+    })
+      .then((response) => response.json())
+      .then((json) => dispatch(fetchHackerList()));
+  };
+}

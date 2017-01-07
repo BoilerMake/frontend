@@ -28,8 +28,7 @@
     "no-useless-constructor": 0,
     "no-unused-vars": 0,
 
-
-
+    "operator-linebreak": ["error", "after", { "overrides": { "?": "before", ":": "before", "||": "before" } }],
     "key-spacing"          : 0,
     "jsx-quotes"           : [2, "prefer-single"],
 //    "max-len"              : [2, 120, 2],
