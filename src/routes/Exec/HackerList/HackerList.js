@@ -14,6 +14,7 @@ export default class HackerList extends Component {
       : this.props.exec.hackers.map(hacker =>
         <Tr key={hacker.id}>
           <Td column='id'>{hacker.id}</Td>
+          <Td column='app_id'>{hacker.application.id}</Td>
           <Td column='first_name'>{hacker.first_name}</Td>
           <Td column='last_name'>{hacker.last_name}</Td>
           <Td column='email'>{hacker.email}</Td>
@@ -31,7 +32,8 @@ export default class HackerList extends Component {
         sortable={cols}
         defaultSort={{ column: 'id', direction: 'asc' }} >
         <Thead>
-          <Th column='id'><strong>ID</strong></Th>
+          <Th column='id'><strong>user ID</strong></Th>
+          <Th column='app_id'><strong>app ID</strong></Th>
           <Th column='first_name'><strong>First Name</strong></Th>
           <Th column='last_name'><strong>Last Name</strong></Th>
           <Th column='email'><strong>email</strong></Th>
