@@ -65,7 +65,7 @@ export default class Homepage extends Component {
                 <p className='homepage-well__title'>Announcements</p>
                 <hr />
                 <ul>
-                  <li className="important">This is an announcement. Lorem ipsum boilermake bake me a cake. This one has div class of important</li>
+                  <li className="important">This is an announcement. Lorem ipsum boilermake bake me a cake. This one has div class of important<br/><span className="timedate">5 mins ago</span></li>
                   <li>This is an announcement.</li>
                   <li>This is an announcement.</li>
                 </ul>

@@ -67,6 +67,15 @@ h1 {
 h4 {
   text-align: center;
 }
+h3 {
+ // color: #594269;
+  text-decoration: underline;
+  font-size: 1.3em;
+  font-family: 'Exo 2', sans-serif;
+}
+h3.active {
+  color: #B32F23;
+}
 a {
   color: #833DB6;
   text-decoration: underline;
@@ -84,6 +93,25 @@ li {
 }
 li.important {
   color: #B32F23;
+}
+.timedate {
+  color: #B2B2B2;
+  font-style: italic;
+  font-size: 0.8em;
+}
+.events .event {
+  padding: 8px 0;
+}
+.events .event .time {
+  font-weight: 600;
+  color: #B2B2B2;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+.events .event .title {
+  padding-left: 15px;
+  color: #333333;
+  margin-bottom: 5px;
 }
 hr {
   margin: 15px 0 !important;
