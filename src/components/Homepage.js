@@ -55,18 +55,26 @@ export default class Homepage extends Component {
                 <hr />
                 <h4><Countdown date={new Date('2017/01/20 17:00:00')} label='until hacking begins' /></h4>
                 <hr />
-                <p className='homepage-well__title'>BoilerMake III photos</p>
-                <iframe src='https://www.nicky.photos/frame/slideshow?key=NTLPBm&autoStart=1&captions=0&navigation=1&playButton=0&randomize=1&speed=3&transition=fade&transitionSpeed=2' width='100%' height='400' frameBorder='no' scrolling='no' />
+                <p className='homepage-well__title'>Event Map</p>
+                <hr />
+                
               </div>
             </Col>
             <Col sm={3} md={3} lg={3}>
               <div className='homepage-well'>
+                <p className='homepage-well__title'>Announcements</p>
+                <hr />
+                <ul>
+                  <li className="important">This is an announcement. Lorem ipsum boilermake bake me a cake. This one has div class of important</li>
+                  <li>This is an announcement.</li>
+                  <li>This is an announcement.</li>
+                </ul>
                 <p className='homepage-well__title'>Help</p>
                 <hr />
                 <p>Wifi: BoilerMake | TBD</p>
                 <p>Slack: <a href='https://boilermake2017.slack.com' target='_blank'>boilermake2017.slack.com</a> </p>
-                <p><a href='https://www.messenger.com/t/boilermake' target='_blank'>Message us on facebook!</a> </p>
-                <p>team@boilermake.org</p>
+                <p>Messenger: <a href='https://www.messenger.com/t/boilermake' target='_blank'>boilermake</a> </p>
+                <p>Email: <a href="mailto:team@boilermake.org">team@boilermake.org</a></p>
               </div>
             </Col>
           </Row>
