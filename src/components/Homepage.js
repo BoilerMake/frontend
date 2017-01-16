@@ -32,7 +32,7 @@ export default class Homepage extends Component {
       <div>
         <Grid fluid='fluid'>
           <Row className='show-grid'>
-            <div className="overlay"></div>
+            <div className='overlay' />
             <Col sm={12} md={12} lg={12}>
               <div>
                 <h1>BoilerMake IV</h1>
@@ -57,7 +57,7 @@ export default class Homepage extends Component {
                 <hr />
                 <p className='homepage-well__title'>Event Map</p>
                 <hr />
-                
+
               </div>
             </Col>
             <Col sm={3} md={3} lg={3}>
@@ -65,7 +65,7 @@ export default class Homepage extends Component {
                 <p className='homepage-well__title'>Announcements</p>
                 <hr />
                 <ul>
-                  <li className="important">This is an announcement. Lorem ipsum boilermake bake me a cake. This one has div class of important<br/><span className="timedate">5 mins ago</span></li>
+                  <li className='important'>This is an announcement. Lorem ipsum boilermake bake me a cake. This one has div class of important<br /><span className='timedate'>5 mins ago</span></li>
                   <li>This is an announcement.</li>
                   <li>This is an announcement.</li>
                 </ul>
@@ -74,7 +74,7 @@ export default class Homepage extends Component {
                 <p>Wifi: BoilerMake | TBD</p>
                 <p>Slack: <a href='https://boilermake2017.slack.com' target='_blank'>boilermake2017.slack.com</a> </p>
                 <p>Messenger: <a href='https://www.messenger.com/t/boilermake' target='_blank'>boilermake</a> </p>
-                <p>Email: <a href="mailto:team@boilermake.org">team@boilermake.org</a></p>
+                <p>Email: <a href='mailto:team@boilermake.org'>team@boilermake.org</a></p>
               </div>
             </Col>
           </Row>
