@@ -5,6 +5,7 @@ import App from './containers/App';
 import NotFoundView from './pages/NotFoundView';
 import UserSettings from './pages/UserSettings';
 import UserListPage from 'routes/Exec/UserListPage';
+import UserDetailPage from 'routes/Exec/UserDetail/UserDetailPage';
 import HackerListPage from 'routes/Exec/HackerList/HackerListPage';
 import CheckInPage from 'routes/Exec/CheckIn/CheckInPage';
 import EmailTodoPage from 'routes/Exec/EmailTodo/EmailTodoPage';
@@ -17,6 +18,7 @@ export default (
     <Route path='login' component={Login} />
     <Route path='signin' component={Login} />
     <Route path='exec/users' component={UserListPage} />
+    <Route path='exec/users/:user_id' component={UserDetailPage} />
     <Route path='exec/hackers' component={HackerListPage} />
     <Route path='exec/checkin' component={CheckInPage} />
     <Route path='exec/emailstosend' component={EmailTodoPage} />

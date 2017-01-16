@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import PrettyJSON from 'components/PrettyJSON';
 import Reactable from 'reactable';
+import { Link } from 'react-router';
 
 export default class HackerList extends Component {
   componentDidMount () {
@@ -13,7 +13,7 @@ export default class HackerList extends Component {
       ? null
       : this.props.exec.hackers.map(hacker =>
         <Tr key={hacker.id}>
-          <Td column='id'>{hacker.id}</Td>
+          <Td column='id'><Link to={`/exec/users/${hacker.id}`}>{hacker.id}</Link></Td>
           <Td column='app_id'>{hacker.application.id}</Td>
           <Td column='first_name'>{hacker.first_name}</Td>
           <Td column='last_name'>{hacker.last_name}</Td>
