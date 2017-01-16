@@ -3,10 +3,28 @@ html, body {
   margin: 0;
   font-size: 16px;
   font-family: 'Exo 2', sans-serif;
-  padding-top: 40px;
+  background-color: #e54b40;
+
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(#e54b40, #695477);
+
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #e54b40;
+  background: linear-gradient(#e54b40, #695477);
+  height: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0.15;
+  width: 100%;
+  background-color: #594269;
+  background-image: url("https://www.transparenttextures.com/patterns/rice-paper-2.png");
 }
 .homepage-well {
-  background-color: white;
+  background-color: #f9f9f9;
   color: black;
   border-radius: 15px;
   padding: 5px;
@@ -31,4 +49,10 @@ html, body {
   border-radius: 5px;
   padding: 5px;
   margin: 5px;
+}
+h1 {
+  color: #f9f9f9;
+  text-align: center;
+  font-size: 3em;
+  padding: 15px 0;
 }

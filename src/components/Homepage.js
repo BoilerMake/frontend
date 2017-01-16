@@ -32,6 +32,12 @@ export default class Homepage extends Component {
       <div>
         <Grid fluid='fluid'>
           <Row className='show-grid'>
+            <div className="overlay"></div>
+            <Col sm={12} md={12} lg={12}>
+              <div>
+                <h1>BoilerMake IV</h1>
+              </div>
+            </Col>
             <Col sm={3} md={3} lg={3}>
               <div className='homepage-well'>
                 <p className='homepage-well__title'>Schedule</p>
