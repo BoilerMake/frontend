@@ -3,22 +3,45 @@ html, body {
   margin: 0;
   font-size: 16px;
   font-family: 'Exo 2', sans-serif;
-  background-color: #BC362E;
-  padding-top: 40px;
+  background-color: #e54b40;
 
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(#e54b40, #695477);
+
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #e54b40;
+  background: linear-gradient(#e54b40, #695477);
+  height: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0.15;
+  width: 100%;
+  background-color: #594269;
+  background-image: url("https://www.transparenttextures.com/patterns/rice-paper-2.png");
 }
 .homepage-well {
-  background-color: white;
-  color: black;
+  background-color: #f9f9f9;
+  opacity: 0.9;
+  color: #333333;
   border-radius: 15px;
-  padding: 5px;
+  padding: 25px;
   height: 80vh;
   overflow: scroll;
   margin: 5px;
+  font-family: 'Open Sans', sans-serif;
 }
 .homepage-well__title {
-  font-size: 16pt;
+  font-size: 1.5em;
   text-align: center;
+  margin: 0;
+  padding: 15px 0 0 0;
+  color: #594269;
+  font-family: 'Exo 2', sans-serif;
+
 }
 .CheckInList {
   //margin-left:auto;
@@ -33,4 +56,63 @@ html, body {
   border-radius: 5px;
   padding: 5px;
   margin: 5px;
+}
+h1 {
+  color: #f9f9f9;
+  text-align: center;
+  font-size: 3em;
+  padding: 15px 0;
+  font-weight: 700;
+}
+h4 {
+  text-align: center;
+}
+h3 {
+ // color: #594269;
+  text-decoration: underline;
+  font-size: 1.3em;
+  font-family: 'Exo 2', sans-serif;
+}
+h3.active {
+  color: #B32F23;
+}
+a {
+  color: #833DB6;
+  text-decoration: underline;
+}
+a:hover {
+  color: #B2B2B2;
+}
+ul {
+  margin: 0;
+  padding: 0 25px;
+}
+li {
+  line-height: 1.6em;
+  margin-bottom: 10px;
+}
+li.important {
+  color: #B32F23;
+}
+.timedate {
+  color: #B2B2B2;
+  font-style: italic;
+  font-size: 0.8em;
+}
+.events .event {
+  padding: 8px 0;
+}
+.events .event .time {
+  font-weight: 600;
+  color: #B2B2B2;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+.events .event .title {
+  padding-left: 15px;
+  color: #333333;
+  margin-bottom: 5px;
+}
+hr {
+  margin: 15px 0 !important;
 }
