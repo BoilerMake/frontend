@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Homepage from '../components/Homepage.js';
-import { fetchEvents } from '../actions/events';
+import Homepage from './Homepage.js';
+import { fetchEvents } from 'actions/events';
 function mapStateToProps (state) {
   return {
     user: 'a',

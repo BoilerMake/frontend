@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute, Redirect } from 'react-router';
-import Index from './pages/Index';
+import Index from './routes/Homepage/Index';
 import App from './containers/App';
 import NotFoundView from './pages/NotFoundView';
 import UserSettings from './pages/UserSettings';

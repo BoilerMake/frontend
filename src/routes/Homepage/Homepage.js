@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Panel } from 'react-bootstrap';
-import PrettyJSON from './PrettyJSON';
+import PrettyJSON from '../../components/PrettyJSON';
 import EventListItem from './EventListItem';
 import moment from 'moment';
 
