@@ -4,7 +4,7 @@ import Index from './pages/Index';
 import App from './containers/App';
 import NotFoundView from './pages/NotFoundView';
 import UserSettings from './pages/UserSettings';
-import UserListPage from 'routes/Exec/UserListPage';
+import UserListPage from 'routes/Exec/UserList/UserListPage';
 import UserDetailPage from 'routes/Exec/UserDetail/UserDetailPage';
 import HackerListPage from 'routes/Exec/HackerList/HackerListPage';
 import CheckInPage from 'routes/Exec/CheckIn/CheckInPage';
