@@ -74,7 +74,7 @@ export default class Homepage extends Component {
                 <p>Slack: <a href='https://boilermake2017.slack.com' target='_blank'>boilermake2017.slack.com</a> </p>
                 <p>Messenger: <a href='https://www.messenger.com/t/boilermake' target='_blank'>boilermake</a> </p>
                 <p>Email: <a href='mailto:team@boilermake.org'>team@boilermake.org</a></p>
-                <hr/>
+                <hr />
                 <p>We will be offering complimentary showers and towels during the following timeframes:
                   Friday till midnight, Saturday from 8am-midnight, and after 10am on Sunday.</p>
               </div>
