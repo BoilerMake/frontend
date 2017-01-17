@@ -49,7 +49,8 @@ const config = {
     'react',
     'react-redux',
     'react-router',
-    'redux'
+    'redux',
+    'whatwg-fetch'
   ],
 
   // ----------------------------------
