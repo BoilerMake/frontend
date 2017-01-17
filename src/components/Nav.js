@@ -20,13 +20,15 @@ export default class Header extends Component {
             <div className='collapse navbar-collapse' id='collapsable-navbar'>
               <ul className='nav navbar-nav navbar-left'>
 
-                { this.props.isLoggedIn ? <li> <Link className='nav-element' to='/settings'>Profile</Link> </li> : null }
+                {/* { this.props.isLoggedIn ? <li> <Link className='nav-element' to='/settings'>Profile</Link> </li> : null } */}
                 { this.props.isExec ? <NavDropdown eventKey={3} title='Exec' id='basic-nav-dropdown'>
                   <LinkContainer to='/exec/hackers'><MenuItem eventKey={3.1}>Hackers</MenuItem></LinkContainer>
                   <LinkContainer to='/exec/users'><MenuItem eventKey={3.2}>Users</MenuItem></LinkContainer>
                   <LinkContainer to='/exec/checkin'><MenuItem eventKey={3.3}>Check In</MenuItem></LinkContainer>
                   <LinkContainer to='/exec/emailstosend'><MenuItem eventKey={3.4}>Emails To Send</MenuItem></LinkContainer>
                 </NavDropdown> : null }
+                { this.props.isSponsor ? <li> <Link className='nav-element' to='/sponsorportal'>Sponsor Portal</Link> </li> : null }
+
               </ul>
 
               <Nav pullRight>

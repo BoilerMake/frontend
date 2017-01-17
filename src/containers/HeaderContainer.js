@@ -9,6 +9,7 @@ function mapStateToProps (state) {
     isLoggedIn: isLoggedIn,
     user: state.user,
     isExec: isLoggedIn && state.user.token_data.roles.includes('exec'),
+    isSponsor: isLoggedIn && (state.user.token_data.roles.includes('sponsor-group-1') || state.user.token_data.roles.includes('sponsor-group-2') || state.user.token_data.roles.includes('sponsor-group-3')),
     isHacker: isLoggedIn && state.user.token_data.roles.includes('hacker')
   };
 }

@@ -5,6 +5,7 @@ import App from './containers/App';
 import NotFoundView from './pages/NotFoundView';
 import UserSettings from './pages/UserSettings';
 import MagicLinkPage from 'routes/MagicLink/MagicLinkPage';
+import SponsorPortalPage from 'routes/SponsorPortal/SponsorPortalPage';
 
 import UserListPage from 'routes/Exec/UserList/UserListPage';
 import UserDetailPage from 'routes/Exec/UserDetail/UserDetailPage';
@@ -24,6 +25,7 @@ export default (
     <Route path='exec/hackers' component={HackerListPage} />
     <Route path='exec/checkin' component={CheckInPage} />
     <Route path='exec/emailstosend' component={EmailTodoPage} />
+    <Route path='sponsorportal' component={SponsorPortalPage} />
     <Route path='l' component={MagicLinkPage} />
     <Redirect from='*' to='404' />
   </Route>
