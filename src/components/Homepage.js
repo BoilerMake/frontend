@@ -30,7 +30,7 @@ export default class Homepage extends Component {
 
     return (
       <div>
-        <Grid fluid='fluid'>
+        <Grid fluid>
           <Row className='show-grid'>
             <div className='overlay' />
             <Col sm={12} md={12} lg={12}>

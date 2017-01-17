@@ -20,6 +20,6 @@ export default class EventListItem extends Component {
   }
 }
 EventListItem.propTypes = {
-  title: React.PropTypes.isRequired,
-  events: React.PropTypes.isRequired
+  title: React.PropTypes.string.isRequired,
+  events: React.PropTypes.array.isRequired
 };
