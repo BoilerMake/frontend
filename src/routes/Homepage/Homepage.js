@@ -67,7 +67,7 @@ export default class Homepage extends Component {
               <div className='homepage-well'>
                 <p className='homepage-well__title'>Announcements</p>
                 <hr />
-                <AnnouncementsList announcements={announcementsList}/>
+                <AnnouncementsList announcements={announcementsList} />
                 <p className='homepage-well__title'>Help</p>
                 <hr />
                 <p>Wifi: BoilerMake | TBD</p>

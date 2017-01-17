@@ -7,10 +7,16 @@ export default class App extends Component {
   componentWillMount () {
     if (this.props.isAuthenticated) {
       document.getElementById('body').className = 'bodyPad';
+    } else {
+      document.getElementById('body').className = '';
     }
   }
-  componentWillUnmount () {
-    document.getElementById('body').className = '';
+  componentDidUpdate () {
+    if (this.props.isAuthenticated) {
+      document.getElementById('body').className = 'bodyPad';
+    } else {
+      document.getElementById('body').className = '';
+    }
   }
   render () {
     return (
