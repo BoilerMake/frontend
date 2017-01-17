@@ -56,7 +56,7 @@ export default class Homepage extends Component {
               <div className='homepage-well'>
                 <p className='homepage-well__title'>General Info</p>
                 <hr />
-                <h4><Countdown date={new Date('2017/01/20 17:00:00')} label='until hacking begins' /></h4>
+                <h4><Countdown date={new Date('2017/01/20 21:30:00')} label='until hacking begins' /></h4>
                 <hr />
                 <p className='homepage-well__title'>Event Map</p>
                 <hr />
@@ -74,6 +74,9 @@ export default class Homepage extends Component {
                 <p>Slack: <a href='https://boilermake2017.slack.com' target='_blank'>boilermake2017.slack.com</a> </p>
                 <p>Messenger: <a href='https://www.messenger.com/t/boilermake' target='_blank'>boilermake</a> </p>
                 <p>Email: <a href='mailto:team@boilermake.org'>team@boilermake.org</a></p>
+                <hr/>
+                <p>We will be offering complimentary showers and towels during the following timeframes:
+                  Friday till midnight, Saturday from 8am-midnight, and after 10am on Sunday.</p>
               </div>
             </Col>
           </Row>
