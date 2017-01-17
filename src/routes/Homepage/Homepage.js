@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { Grid, Row, Col, Panel } from 'react-bootstrap';
 import PrettyJSON from '../../components/PrettyJSON';
 import EventListItem from './EventListItem';
+import AnnouncementsList from './AnnouncementsList';
 import moment from 'moment';
 
 import Countdown from './Countdown';
 export default class Homepage extends Component {
   loadData = () => {
     this.props.loadEvents();
+    this.props.loadAnnouncements();
   };
   componentDidMount = () => {
     this.loadData();
@@ -15,6 +17,7 @@ export default class Homepage extends Component {
   };
 
   render () {
+    let announcementsList = this.props.announcements.announcements ? this.props.announcements.announcements : [];
     let eventList = this.props.events.events === null
       ? null
       : this.props.events.events.map(event => ({
@@ -64,11 +67,7 @@ export default class Homepage extends Component {
               <div className='homepage-well'>
                 <p className='homepage-well__title'>Announcements</p>
                 <hr />
-                <ul>
-                  <li className='important'>This is an announcement. Lorem ipsum boilermake bake me a cake. This one has div class of important<br /><span className='timedate'>5 mins ago</span></li>
-                  <li>This is an announcement.</li>
-                  <li>This is an announcement.</li>
-                </ul>
+                <AnnouncementsList announcements={announcementsList}/>
                 <p className='homepage-well__title'>Help</p>
                 <hr />
                 <p>Wifi: BoilerMake | TBD</p>
