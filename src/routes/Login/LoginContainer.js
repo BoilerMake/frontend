@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchMe, loginFromJWT } from '../actions/users';
-import Login from '../components/Login.js';
+import { fetchMe, loginFromJWT } from 'actions/users';
+import Login from './Login.js';
 
 function mapStateToProps (state) {
   return {

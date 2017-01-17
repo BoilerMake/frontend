@@ -9,7 +9,7 @@ import UserDetailPage from 'routes/Exec/UserDetail/UserDetailPage';
 import HackerListPage from 'routes/Exec/HackerList/HackerListPage';
 import CheckInPage from 'routes/Exec/CheckIn/CheckInPage';
 import EmailTodoPage from 'routes/Exec/EmailTodo/EmailTodoPage';
-import Login from './pages/Login';
+import Login from './routes/Login/LoginPage';
 export default (
   <Route path='/' component={App}>
     <IndexRoute component={Index} />

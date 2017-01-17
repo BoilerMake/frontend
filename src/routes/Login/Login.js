@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import PrettyJSON from './PrettyJSON';
+import PrettyJSON from 'components/PrettyJSON';
 import LoginForm from './LoginForm';
 import { SubmissionError } from 'redux-form';
-import { API_BASE_URL } from '../config';
+import { API_BASE_URL } from 'config';
 export default class Login extends Component {
 
   handleSubmit = (values) => {

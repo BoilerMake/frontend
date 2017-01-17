@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import LoginContainer from '../containers/LoginContainer';
-import HeaderContainer from '../containers/HeaderContainer';
+import LoginContainer from './LoginContainer';
+import HeaderContainer from 'containers/HeaderContainer';
 
 class AuthPage extends Component {
   render () {
