@@ -22,6 +22,7 @@ export default class CheckIn extends Component {
         const searchVal = this.state.searchValue.toLowerCase();
         return elem.first_name.toLowerCase().includes(searchVal)
           || elem.last_name.toLowerCase().includes(searchVal)
+          || elem.launch.toLowerCase().includes(searchVal)
           || String(elem.id).includes(searchVal)
           || (elem.application.school ? elem.application.school.name.toLowerCase().includes(searchVal) : false);
       }
