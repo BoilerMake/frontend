@@ -1,6 +1,6 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-import Index from 'pages/Index';
+import Index from 'routes/Homepage/Index';
 
 function shallowRender (component) {
   const renderer = TestUtils.createRenderer();
