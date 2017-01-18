@@ -70,8 +70,8 @@ export default class Homepage extends Component {
                 <AnnouncementsList announcements={announcementsList} />
                 <p className='homepage-well__title'>Help</p>
                 <hr />
-                <p>Wifi: BoilerMake | TBD</p>
-                <p>Slack: <a href='https://boilermake2017.slack.com' target='_blank'>boilermake2017.slack.com</a> </p>
+                <p>Wifi: <b>BoilerMake5</b> or <b>BoilerMake24</b>, password is boilermake2017</p>
+                <p>Slack: <a href='https://boilermake4.slack.com' target='_blank'>boilermake2017.slack.com</a> (<a href='https://invite.boilermake.org' target='_blank'>Get an invite to slack</a>) </p>
                 <p>Messenger: <a href='https://www.messenger.com/t/boilermake' target='_blank'>boilermake</a> </p>
                 <p>Email: <a href='mailto:team@boilermake.org'>team@boilermake.org</a></p>
                 <hr />
