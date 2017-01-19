@@ -67,8 +67,8 @@ export default class Homepage extends Component {
                 <h4>coming soon :)</h4>
                 <p className='homepage-well__title'>Activity</p>
                 <hr />
-                <ActivityList activity={this.props.activity.github ? this.props.activity.github : []} />
-                <ActivityList activity={this.props.activity.pods ? this.props.activity.pods : []} />
+                <ActivityList activity={this.props.activity && this.props.activity.github ? this.props.activity.github : []} />
+                <ActivityList activity={this.props.activity && this.props.activity.pods ? this.props.activity.pods : []} />
                 <hr />
 
               </div>
