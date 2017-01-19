@@ -15,7 +15,7 @@ export default class CheckIn extends Component {
 
   render () {
     const maxLen = 10;
-    let hackers = this.props.exec.hackers;
+    let hackers = this.props.exec.hackers ? this.props.exec.hackers : [];
     let filteredHackers = this.state.searchValue === ''
       ? hackers
       : hackers.filter((elem, index, array) => {
