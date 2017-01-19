@@ -29,7 +29,6 @@ function receiveAnnouncements (json) {
   };
 }
 
-
 export function addAnnouncement (body) {
   return (dispatch, getState) => {
     const token = getState().user.token;

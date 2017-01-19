@@ -39,7 +39,7 @@ export default class Announcements extends Component {
                 <h3 className='panel-title'>Current Announcements</h3>
               </div>
               <div className='panel-body'>
-                <AnnouncementsList announcements={announcements}/>
+                <AnnouncementsList announcements={announcements} />
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@ export default class Announcements extends Component {
                 <h3 className='panel-title'>New Announcement</h3>
               </div>
               <div className='panel-body'>
-                <AnnouncementsForm onSubmit={this.handleSubmit}/>
+                <AnnouncementsForm onSubmit={this.handleSubmit} />
               </div>
             </div>
           </div>

@@ -6,7 +6,7 @@ class AnnouncementsPage extends Component {
     return (
       <div>
         <HeaderContainer />
-        <AnnouncementsContainer/>
+        <AnnouncementsContainer />
       </div>
     );
   }
