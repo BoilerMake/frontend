@@ -28,3 +28,21 @@ function receiveAnnouncements (json) {
     receivedAt: Date.now()
   };
 }
+
+
+export function addAnnouncement (body) {
+  return (dispatch, getState) => {
+    const token = getState().user.token;
+    console.log(body);
+    return fetch(`${API_BASE_URL}/execs/announcements/add?token=${token}`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    })
+      .then((response) => response.json())
+      .then((json) => dispatch(fetchAnnouncements()));
+  };
+}

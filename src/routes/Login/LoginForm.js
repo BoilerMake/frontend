@@ -33,11 +33,7 @@ let LoginForm = (props) => {
 
 // // Decorate the form component
 LoginForm = reduxForm({
-  form: 'songrequest' // a unique name for this form
+  form: 'login' // a unique name for this form
 })(LoginForm);
 
 export default LoginForm;
-// export default reduxForm({
-//   form: 'songrequest',
-//   validate
-// })(LoginForm)

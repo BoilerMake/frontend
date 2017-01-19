@@ -26,6 +26,7 @@ export default class Header extends Component {
                   <LinkContainer to='/exec/users'><MenuItem eventKey={3.2}>Users</MenuItem></LinkContainer>
                   <LinkContainer to='/exec/checkin'><MenuItem eventKey={3.3}>Check In</MenuItem></LinkContainer>
                   <LinkContainer to='/exec/emailstosend'><MenuItem eventKey={3.4}>Emails To Send</MenuItem></LinkContainer>
+                  <LinkContainer to='/exec/announcements'><MenuItem eventKey={3.4}>Announcements</MenuItem></LinkContainer>
                 </NavDropdown> : null }
                 { this.props.isSponsor ? <li> <Link className='nav-element' to='/sponsorportal'>Sponsor Portal</Link> </li> : null }
 
