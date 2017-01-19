@@ -58,7 +58,10 @@ export default class Homepage extends Component {
                 <hr />
                 <h4><Countdown date={new Date('2017/01/20 21:30:00')} label='until hacking begins' /></h4>
                 <hr />
+                <p className='homepage-well__title'>BoilerMake III Photos</p>
+                <iframe src='https://www.nicky.photos/frame/slideshow?key=NTLPBm&autoStart=1&captions=0&navigation=1&playButton=0&randomize=1&speed=3&transition=fade&transitionSpeed=2' width='100%' height='400' frameBorder='no' scrolling='no' />
                 <p className='homepage-well__title'>Event Map</p>
+                <h4>coming soon :)</h4>
                 <hr />
 
               </div>
