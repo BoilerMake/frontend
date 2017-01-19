@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import Homepage from './Homepage.js';
 import { fetchEvents } from 'actions/events';
 import { fetchAnnouncements } from 'actions/announcements';
+import { fetchActivity } from 'actions/activity';
 function mapStateToProps (state) {
   return {
     user: 'a',
     events: state.event,
-    announcements: state.announcement
+    announcements: state.announcement,
+    activity: state.activity.activity
   };
 }
 
@@ -17,6 +19,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   loadAnnouncements: () => {
     dispatch(fetchAnnouncements());
+  },
+  loadActivity: () => {
+    dispatch(fetchActivity());
   }
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
