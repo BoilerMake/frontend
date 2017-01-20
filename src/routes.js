@@ -11,6 +11,7 @@ import UserListPage from 'routes/Exec/UserList/UserListPage';
 import UserDetailPage from 'routes/Exec/UserDetail/UserDetailPage';
 import HackerListPage from 'routes/Exec/HackerList/HackerListPage';
 import CheckInPage from 'routes/Exec/CheckIn/CheckInPage';
+import AccessCardPage from 'routes/Exec/AccessCard/AccessCardPage';
 import EmailTodoPage from 'routes/Exec/EmailTodo/EmailTodoPage';
 import AnnouncementsPage from 'routes/Exec/Announcements/AnnouncementsPage';
 import Login from './routes/Login/LoginPage';
@@ -26,6 +27,7 @@ export default (
     <Route path='exec/hackers' component={HackerListPage} />
     <Route path='exec/checkin' component={CheckInPage} />
     <Route path='exec/emailstosend' component={EmailTodoPage} />
+    <Route path='exec/cards' component={AccessCardPage} />
     <Route path='exec/announcements' component={AnnouncementsPage} />
     <Route path='sponsorportal' component={SponsorPortalPage} />
     <Route path='l' component={MagicLinkPage} />
