@@ -45,9 +45,6 @@ export default class Homepage extends Component {
     let generalColInfo =
       (
         <div className='homepage-well'>
-          <p className='homepage-well__title'>General Info</p>
-          <hr />
-          <h4><Countdown date={new Date('2017/01/20 21:30:00')} label='until hacking begins' /></h4>
           <p className='homepage-well__title'>Event Map</p>
           <hr />
           <img className='logo' src='/images/map.png' style={{width: "100%"}}/>
