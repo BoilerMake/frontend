@@ -37,8 +37,7 @@ export default class Homepage extends Component {
       <p className='homepage-well__title'>Schedule</p>
       <hr />
       {/* <button onClick={this.loadData}>Reload Data</button> */}
-      <EventListItem hide={false} title='Friday, Jan 20' events={fri} />
-      <EventListItem hide title='Saturday, Jan 21' events={sat} />
+      <EventListItem hide={false} title='Saturday, Jan 21' events={sat} />
       <EventListItem hide title='Sunday, Jan 22' events={sun} />
       {/* <PrettyJSON data={eventList} /> */}
     </div>);
@@ -62,6 +61,7 @@ export default class Homepage extends Component {
         <hr />
         <p>Wifi: <b>BoilerMake5</b> or <b>BoilerMake24</b>, password is boilermake2017</p>
         <p>Slack: <a href='https://boilermake4.slack.com' target='_blank'>boilermake2017.slack.com</a> (<a href='https://invite.boilermake.org' target='_blank'>Get an invite to slack</a>) </p>
+        <p>DevPost: <a href='https://boilermake-iv.devpost.com' target='_blank'>boilermake-iv.devpost.com</a></p>
         <p>Messenger: <a href='https://www.messenger.com/t/boilermake' target='_blank'>boilermake</a> </p>
         <p>Email: <a href='mailto:team@boilermake.org'>team@boilermake.org</a></p>
         <p>Showers and towels available:
