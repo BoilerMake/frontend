@@ -36,17 +36,16 @@ export default class Homepage extends Component {
     let scheduleColContent = (<div className='homepage-well'>
       <p className='homepage-well__title'>Schedule</p>
       <hr />
-      {/* <button onClick={this.loadData}>Reload Data</button> */}
-      <EventListItem hide={false} title='Saturday, Jan 21' events={sat} />
-      <EventListItem hide title='Sunday, Jan 22' events={sun} />
-      {/* <PrettyJSON data={eventList} /> */}
+      <EventListItem hide title='Friday, Jan 20' events={fri} />
+      <EventListItem hide title='Saturday, Jan 21' events={sat} />
+      <EventListItem hide={false} title='Sunday, Jan 22' events={sun} />
     </div>);
     let generalColInfo =
       (
         <div className='homepage-well'>
           <p className='homepage-well__title'>Event Map</p>
           <hr />
-          <img className='logo' src='/images/map.png' style={{width: "100%"}}/>
+          <img className='logo' src='/images/map.png' style={{ width: '100%' }} />
           <p className='homepage-well__title'>Activity</p>
           <hr />
           <ActivityList activity={this.props.activity && this.props.activity.github ? this.props.activity.github : []} />
