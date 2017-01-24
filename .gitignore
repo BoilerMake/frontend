@@ -7,4 +7,5 @@ build/
 npm-debug.log
 src/config.js
 dist
+serve/
 coverage
