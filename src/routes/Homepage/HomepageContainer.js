@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Homepage from './Homepage.js';
+import OffSeason from './OffSeason.js';
 import { fetchEvents } from 'actions/events';
 import { fetchAnnouncements } from 'actions/announcements';
 import { fetchActivity } from 'actions/activity';
@@ -24,4 +24,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(fetchActivity());
   }
 });
-export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
+export default connect(mapStateToProps, mapDispatchToProps)(OffSeason);

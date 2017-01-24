@@ -7,7 +7,7 @@ import ActivityList from './ActivityList';
 import moment from 'moment';
 
 import Countdown from './Countdown';
-export default class Homepage extends Component {
+export default class HomepageLive extends Component {
   loadData = () => {
     this.props.loadEvents();
     this.props.loadAnnouncements();
