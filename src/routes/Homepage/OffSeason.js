@@ -41,6 +41,7 @@ export default class OffSeason extends Component {
                 <br /><div className='OffSeason_number'>104</div> devpost submissions
 
                 <br />
+                <br />
 
                 <a style={{ color: 'white' }} href='https://www.facebook.com/media/set/?set=a.799429926862759.1073741835.235489296590161&type=1&l=e4d7a2cd2a'
                   target='_blank'>
@@ -50,6 +51,11 @@ export default class OffSeason extends Component {
                 <a style={{ color: 'white' }} href='https://www.facebook.com/BoilerMake/'
                   target='_blank'>
                   Follow us
+                </a>
+                <br/>
+                <a style={{ color: 'white' }} href='mailto:team@boilermake.org'
+                   target='_blank'>
+                  team@boilermake.org
                 </a>
               </p>
 
