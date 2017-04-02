@@ -1,11 +1,11 @@
-#BoilerMake Frontend Website
-[![Build Status](https://travis-ci.org/BoilerMake/live.svg?branch=master)](https://travis-ci.org/BoilerMake/live)
-[![codecov](https://codecov.io/gh/BoilerMake/live/branch/master/graph/badge.svg)](https://codecov.io/gh/BoilerMake/live)
+# BoilerMake Frontend Website
+[![Build Status](https://travis-ci.org/BoilerMake/live.svg?branch=master)](https://travis-ci.org/BoilerMake/frontend)
+[![codecov](https://codecov.io/gh/BoilerMake/live/branch/master/graph/badge.svg)](https://codecov.io/gh/BoilerMake/frontend)
 
-##Info
+## Info
 This was day-of site for BoilerMake IV, and will be the site for BoilerMake V
 
-###getting up and running:
+### getting up and running:
 * install npm or yarn...
 * `yarn install`
 * `cp src/config.example.js src/config.js` and update with your backend API url
