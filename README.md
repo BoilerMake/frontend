@@ -1,6 +1,6 @@
 # BoilerMake Frontend Website
-[![Build Status](https://travis-ci.org/BoilerMake/live.svg?branch=master)](https://travis-ci.org/BoilerMake/live)
-[![codecov](https://codecov.io/gh/BoilerMake/live/branch/master/graph/badge.svg)](https://codecov.io/gh/BoilerMake/live)
+[![Build Status](https://travis-ci.org/BoilerMake/frontend.svg?branch=master)](https://travis-ci.org/BoilerMake/frontend)
+[![codecov](https://codecov.io/gh/BoilerMake/frontend/branch/master/graph/badge.svg)](https://codecov.io/gh/BoilerMake/frontend)
 
 ## About
 This was day-of site for BoilerMake IV, and will be the site for BoilerMake V
