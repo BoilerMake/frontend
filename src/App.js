@@ -7,6 +7,7 @@ import {
 
 import Home from './Home';
 import About from './About';
+import Code from './Code';
 import Nav from './Nav';
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route path="/about" component={About}/>
+                    <Route path="/code" component={Code}/>
                 </Switch>
             </div>
         </div>
