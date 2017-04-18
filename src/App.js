@@ -5,10 +5,10 @@ import {
     Switch
 } from 'react-router-dom'
 
-import Home from './Home';
-import About from './About';
-import Code from './Code';
-import Nav from './Nav';
+import Home from './pages/Landing';
+import About from './pages/About';
+import Code from './pages/Code';
+import Nav from './components/Nav';
 
 const App = () => (
     <Router>

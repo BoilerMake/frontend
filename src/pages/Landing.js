@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import bm_logo from './bm_logo.png'
-export default class Home extends Component {
+import bm_logo from '../assets/images/bm_logo.png'
+export default class Landing extends Component {
 
     render () {
         return (
