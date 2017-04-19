@@ -2,6 +2,8 @@ language: node_js
 cache: yarn
 node_js:
   - 6
+before_script:
+  - cp src/config.example.js src/config.js
 script:
   - npm test -- --coverage
   - npm run build
