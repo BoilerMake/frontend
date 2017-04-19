@@ -33,6 +33,7 @@ function urlBase64Decode (str) {
     if (str === undefined) { return; }
     let output = str.replace('-', '+').replace('_', '/');
     switch (output.length % 4) {
+        default:
         case 0:
             break;
         case 2:
