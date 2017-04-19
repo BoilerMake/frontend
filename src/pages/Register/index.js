@@ -24,7 +24,6 @@ class Register extends Component {
             });
     };
 
-
     render () {
         return (
             <div>
@@ -36,7 +35,7 @@ class Register extends Component {
 }
 
 //now the redux integration layer
-import { loginFromJWT } from '../../actions/users';
+import { loginFromJWT, fetchMe } from '../../actions/users';
 import { connect } from 'react-redux'
 function mapStateToProps (state) {
     return {
@@ -45,9 +44,9 @@ function mapStateToProps (state) {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    // loadData: () => {
-    //     dispatch(fetchMe());
-    // },
+    loadData: () => {
+        dispatch(fetchMe());
+    },
     loginFromJWT: (token) => {
         dispatch(loginFromJWT(token));
     }

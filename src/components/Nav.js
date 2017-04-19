@@ -22,15 +22,11 @@ class Nav extends Component {
 
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link">auth'd: {this.props.isLoggedIn ? 'yes' : 'no'}</a>
-                        </li>
+                        <li className="nav-item"><NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink></li>
+                        <li className="nav-item"><NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink></li>
+                        <li className="nav-item"><NavLink to="/register" className="nav-link" activeClassName="active">Register</NavLink></li>
+                        <li className="nav-item"><NavLink to="/login" className="nav-link" activeClassName="active">Log In</NavLink></li>
+                        <li className="nav-item"><a className="nav-link">auth'd: {this.props.isLoggedIn ? 'yes' : 'no'}</a></li>
                     </ul>
                 </Collapse>
             </nav>

@@ -7,10 +7,12 @@ import cookie from 'react-cookie';
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
 
+import { loginFromJWT } from './actions/users';
 const store = configureStore();
 
 const token = cookie.load('token');
-if (token) store.dispatch({ type: 'LOGIN_FROM_JWT_SUCCESS' });//log us in from cookie
+// if (token) store.dispatch({ type: 'LOGIN_FROM_JWT_SUCCESS', token });//log us in from cookie
+if (token) store.dispatch(loginFromJWT(token));//log us in from cookie
 
 ReactDOM.render(
     <Provider store={store}>

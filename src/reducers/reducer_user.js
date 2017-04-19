@@ -1,6 +1,8 @@
 
 import {
-    LOGIN_FROM_JWT_SUCCESS
+    LOGIN_FROM_JWT_SUCCESS,
+    RECEIVE_ME,
+    REQUEST_ME
 } from '../actions/users';
 
 
@@ -24,11 +26,24 @@ export default function (state = INITIAL_STATE, action) {
                 token_data: decodeJWT(action.token),
                 token: action.token
             };
+        case REQUEST_ME:
+            return { ...state, loading: true };
+        case RECEIVE_ME:
+            //todo: error checking
+            return { ...state,
+                loading: false,
+                me: action.me.data
+            };
+
         default:
             return state;
     }
 }
 
+
+
+
+//MISC jwt functions
 function urlBase64Decode (str) {
     if (str === undefined) { return; }
     let output = str.replace('-', '+').replace('_', '/');
