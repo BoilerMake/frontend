@@ -26,6 +26,7 @@ class Nav extends Component {
                         <li className="nav-item"><NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink></li>
                         <li className="nav-item"><NavLink to="/register" className="nav-link" activeClassName="active">Register</NavLink></li>
                         <li className="nav-item"><NavLink to="/login" className="nav-link" activeClassName="active">Log In</NavLink></li>
+                        <li className="nav-item"><NavLink to="/dashboard" className="nav-link" activeClassName="active">Dashboard</NavLink></li>
                         <li className="nav-item"><a className="nav-link">auth'd: {this.props.isLoggedIn ? 'yes' : 'no'}</a></li>
                     </ul>
                 </Collapse>

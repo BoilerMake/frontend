@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import RegisterForm from './RegisterForm'
 import { SubmissionError } from 'redux-form'
+import { Redirect } from 'react-router-dom'
 import { API_BASE_URL } from '../../config';
 class Register extends Component {
 
+    constructor (props) {
+        super(props);
+        this.state = { redirectToReferrer: false };
+    }
 
     handleSubmit = (values) => {
         let d = new FormData();
@@ -25,6 +30,17 @@ class Register extends Component {
     };
 
     render () {
+        if(this.props.user.authenticated)
+            this.setState({ redirectToReferrer: true });
+        const { from } = this.props.location.state || { from: { pathname: '/dashboard' } };
+
+        if (this.state.redirectToReferrer) {
+            //redirect them to the route they came from (or dashboard) on successful auth.
+            return (
+                <Redirect to={from}/>
+            )
+        }
+
         return (
             <div>
                 <h1>Register</h1>
