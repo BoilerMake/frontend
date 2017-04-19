@@ -1,32 +1,15 @@
 import React from 'react'
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch
-} from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-//STATIC PAGES
-import Home from './pages/Landing';
-import About from './pages/About';
-import Code from './pages/Code';
-
-//
-import Register from './pages/Register';
-import Login from './pages/Login';
-
-//MISC
 import Nav from './components/Nav';
+import Routes from './Routes';
 
 const App = () => (
         <Router>
             <div>
                 <Nav/>
                 <div className="container">
-                    <Route exact path="/" component={Home}/>
-                    <Route path="/about" component={About}/>
-                    <Route path="/code" component={Code}/>
-                    <Route path="/register" component={Register}/>
-                    <Route path="/login" component={Login}/>
+                    <Routes/>
                 </div>
             </div>
         </Router>
