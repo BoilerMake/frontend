@@ -11,17 +11,17 @@ import Code from './pages/Code';
 import Nav from './components/Nav';
 
 const App = () => (
-    <Router>
-        <div>
-            <Nav/>
-            <div className="container">
-                <Switch>
-                    <Route exact path="/" component={Home}/>
-                    <Route path="/about" component={About}/>
-                    <Route path="/code" component={Code}/>
-                </Switch>
+        <Router>
+            <div>
+                <Nav/>
+                <div className="container">
+                    <Switch>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/about" component={About}/>
+                        <Route path="/code" component={Code}/>
+                    </Switch>
+                </div>
             </div>
-        </div>
-    </Router>
+        </Router>
 )
 export default App
