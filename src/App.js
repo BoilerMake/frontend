@@ -12,6 +12,7 @@ import Code from './pages/Code';
 
 //
 import Register from './pages/Register';
+import Login from './pages/Login';
 
 //MISC
 import Nav from './components/Nav';
@@ -21,12 +22,11 @@ const App = () => (
             <div>
                 <Nav/>
                 <div className="container">
-                    <Switch>
-                        <Route exact path="/" component={Home}/>
-                        <Route path="/about" component={About}/>
-                        <Route path="/code" component={Code}/>
-                        <Route path="/register" component={Register}/>
-                    </Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/about" component={About}/>
+                    <Route path="/code" component={Code}/>
+                    <Route path="/register" component={Register}/>
+                    <Route path="/login" component={Login}/>
                 </div>
             </div>
         </Router>

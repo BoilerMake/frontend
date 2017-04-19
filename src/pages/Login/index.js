@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import RegisterForm from './RegisterForm'
+import LoginForm from './LoginForm'
 import { SubmissionError } from 'redux-form'
 import { API_BASE_URL } from '../../config';
-class Register extends Component {
+class Login extends Component {
 
 
     handleSubmit = (values) => {
         let d = new FormData();
         d.append('email', values.email);
         d.append('password', values.password);
-        return fetch(`${API_BASE_URL}/users/register`,{
+        return fetch(`${API_BASE_URL}/users/login`,{
             method: 'POST',
             body: d
         }).then((response) => response.json())
@@ -27,8 +27,8 @@ class Register extends Component {
     render () {
         return (
             <div>
-                <h1>Register</h1>
-                <RegisterForm onSubmit={this.handleSubmit}/>
+                <h1>Login</h1>
+                <LoginForm onSubmit={this.handleSubmit}/>
             </div>
         );
     }
@@ -49,4 +49,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
