@@ -24,10 +24,13 @@ const errorMessage = (state = null, action) => {
 
     return state
 }
-
+import { reducer as formReducer } from 'redux-form'
+import UserReducer from './reducer_user';
 const rootReducer = combineReducers({
-    entities,
-    errorMessage
+    user: UserReducer,
+    // entities,
+    // errorMessage,
+    form: formReducer
     // routing
 })
 
