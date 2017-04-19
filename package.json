@@ -11,6 +11,7 @@
     "react-addons-css-transition-group": "^15.5.2",
     "react-addons-test-utils": "^15.5.1",
     "react-addons-transition-group": "^15.5.2",
+    "react-cookie": "^1.0.5",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.0",
