@@ -6,6 +6,7 @@ import {
     LOGOUT_USER
 } from '../actions/users';
 
+import jwtDecode from 'jwt-decode';
 
 const INITIAL_STATE = {
     authenticated: false,
@@ -24,7 +25,7 @@ export default function (state = INITIAL_STATE, action) {
                 authenticated: true,
                 error: null,
                 loading: false,
-                token_data: decodeJWT(action.token),
+                token_data: jwtDecode(action.token),
                 token: action.token
             };
         case LOGOUT_USER:
@@ -41,34 +42,4 @@ export default function (state = INITIAL_STATE, action) {
         default:
             return state;
     }
-}
-
-
-
-
-//MISC jwt functions
-function urlBase64Decode (str) {
-    if (str === undefined) { return; }
-    let output = str.replace('-', '+').replace('_', '/');
-    switch (output.length % 4) {
-        default:
-        case 0:
-            break;
-        case 2:
-            output += '==';
-            break;
-        case 3:
-            output += '=';
-            break;
-    }
-    return window.atob(output);
-}
-
-function decodeJWT (token) {
-    let user = {};
-    if (token !== undefined && token != null) {
-        var encoded = token.split('.')[1];
-        user = JSON.parse(urlBase64Decode(encoded));
-    }
-    return user;
 }

@@ -5,8 +5,11 @@
   "proxy": "http://localhost:4000",
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
+    "chai": "^3.5.0",
     "codecov": "^2.1.0",
+    "deep-freeze": "^0.0.1",
     "enzyme": "^2.8.1",
+    "jwt-decode": "^2.2.0",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.5.2",
     "react-addons-test-utils": "^15.5.1",
