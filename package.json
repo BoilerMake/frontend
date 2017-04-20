@@ -9,6 +9,8 @@
     "codecov": "^2.1.0",
     "deep-freeze": "^0.0.1",
     "enzyme": "^2.8.1",
+    "faker": "^4.1.0",
+    "fetch-mock": "^5.10.0",
     "jwt-decode": "^2.2.0",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.5.2",

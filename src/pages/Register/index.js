@@ -3,7 +3,7 @@ import RegisterForm from './RegisterForm'
 import { SubmissionError } from 'redux-form'
 import { Redirect } from 'react-router-dom'
 import { API_BASE_URL } from '../../config';
-class Register extends Component {
+export class Register extends Component {
 
     constructor (props) {
         super(props);
