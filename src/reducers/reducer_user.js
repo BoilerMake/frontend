@@ -2,7 +2,8 @@
 import {
     LOGIN_FROM_JWT_SUCCESS,
     RECEIVE_ME,
-    REQUEST_ME
+    REQUEST_ME,
+    LOGOUT_USER
 } from '../actions/users';
 
 
@@ -26,6 +27,8 @@ export default function (state = INITIAL_STATE, action) {
                 token_data: decodeJWT(action.token),
                 token: action.token
             };
+        case LOGOUT_USER:
+            return INITIAL_STATE;
         case REQUEST_ME:
             return { ...state, loading: true };
         case RECEIVE_ME:

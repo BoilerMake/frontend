@@ -18,6 +18,13 @@ function saveToken(token) {
         token: token
     };
 }
+export const LOGOUT_USER = 'LOGOUT_USER';
+export function logoutUser() {
+    return function (dispatch) {
+        dispatch({ type: LOGOUT_USER });
+        cookie.remove('token', { path: '/' });
+    }
+}
 
 
 export const REQUEST_ME = 'REQUEST_ME';
