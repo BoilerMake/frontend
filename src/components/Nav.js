@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import {NavbarToggler, Collapse } from 'reactstrap';
-export default class Nav extends Component {
+class Nav extends Component {
     constructor(props) {
         super(props);
 
@@ -22,15 +22,34 @@ export default class Nav extends Component {
 
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink>
-                        </li>
+                        <li className="nav-item"><NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink></li>
+                        <li className="nav-item"><NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink></li>
+
+                        <li className="nav-item"><NavLink to="/dashboard" className="nav-link" activeClassName="active">Dashboard</NavLink></li>
+                        <li className="nav-item"><a className="nav-link">auth'd: {this.props.isLoggedIn ? 'yes' : 'no'}</a></li>
+
+                        {this.props.isLoggedIn ? '' : <li className="nav-item"><NavLink to="/register" className="nav-link" activeClassName="active">Register</NavLink></li>}
+                        {this.props.isLoggedIn
+                            ? <li className="nav-item"><a className="nav-link" onClick={this.props.logout}>Log Out</a></li>
+                            : <li className="nav-item"><NavLink to="/login" className="nav-link" activeClassName="active">Log In</NavLink></li>
+                        }
                     </ul>
                 </Collapse>
             </nav>
         );
     }
 }
+
+import { connect } from 'react-redux'
+import { logoutUser } from '../actions/users';
+function mapStateToProps (state) {
+    return {
+        isLoggedIn: state.user.authenticated
+    };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    logout: () => {dispatch(logoutUser())}
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);
