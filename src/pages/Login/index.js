@@ -46,6 +46,8 @@ class Login extends Component {
                 <LoginForm onSubmit={this.handleSubmit}/>
                 <div>
                     <Link to="/register">need an account?</Link>
+                    <br/>
+                    <Link to="/reset">forgot your password?</Link>
                 </div>
             </div>
         );

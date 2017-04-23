@@ -13,6 +13,7 @@ import Code from './pages/Code';
 //
 import Register from './pages/Register';
 import Login from './pages/Login';
+import PasswordReset from './pages/PasswordReset';
 import Dashboard from './pages/Dashboard';
 
 
@@ -42,6 +43,7 @@ const Routes = () => (
         <Route path="/code" component={Code}/>
         <Route path="/register" component={Register}/>
         <Route path="/login" component={Login}/>
+        <Route path="/reset/:reset_token?" component={PasswordReset}/>
 
         <UserRoute path="/dashboard" component={Dashboard}/>
         <ExecRoute path="/exec/dashboard" component={Dashboard}/>
