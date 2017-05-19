@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import {NavbarToggler, Collapse } from 'reactstrap';
+import { connect } from 'react-redux'
+import { logoutUser } from '../actions/users';
 class Nav extends Component {
     constructor(props) {
         super(props);
@@ -39,9 +41,6 @@ class Nav extends Component {
         );
     }
 }
-
-import { connect } from 'react-redux'
-import { logoutUser } from '../actions/users';
 function mapStateToProps (state) {
     return {
         isLoggedIn: state.user.authenticated

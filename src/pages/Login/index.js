@@ -3,6 +3,8 @@ import LoginForm from './LoginForm'
 import { SubmissionError } from 'redux-form'
 import { Redirect, Link } from 'react-router-dom'
 import { API_BASE_URL } from '../../config';
+import { loginFromJWT } from '../../actions/users';
+import { connect } from 'react-redux'
 class Login extends Component {
 
     constructor (props) {
@@ -55,8 +57,6 @@ class Login extends Component {
 }
 
 //now the redux integration layer
-import { loginFromJWT } from '../../actions/users';
-import { connect } from 'react-redux'
 function mapStateToProps (state) {
     return {
         user: state.user

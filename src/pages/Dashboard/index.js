@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+
 class Dashboard extends Component {
     render () {
         return (
@@ -13,7 +15,6 @@ class Dashboard extends Component {
 }
 
 //now the redux integration layer
-import { connect } from 'react-redux'
 function mapStateToProps (state) {
     return {
         user: state.user

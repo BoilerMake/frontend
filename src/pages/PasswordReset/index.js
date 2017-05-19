@@ -4,6 +4,7 @@ import { API_BASE_URL } from '../../config';
 import { Redirect } from 'react-router-dom'
 import RequestPasswordResetForm from './RequestPasswordResetForm';
 import PerformPasswordResetForm from './PerformPasswordResetForm';
+import { connect } from 'react-redux'
 class PasswordReset extends Component {
     constructor (props) {
         super(props);
@@ -69,7 +70,6 @@ class PasswordReset extends Component {
 }
 
 //now the redux integration layer
-import { connect } from 'react-redux'
 function mapStateToProps (state) {
     return {
         user: state.user
