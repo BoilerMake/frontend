@@ -18,7 +18,7 @@ class Nav extends Component {
     render () {
         return (
             <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
-                <a className="navbar-brand" href="#">BM <NavbarToggler right onClick={this.toggle} /></a>
+                <a className="navbar-brand">BM <NavbarToggler right onClick={this.toggle} /></a>
 
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <ul className="navbar-nav mr-auto">
