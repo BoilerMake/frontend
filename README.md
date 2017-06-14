@@ -7,6 +7,7 @@ This was day-of site for BoilerMake IV, and will be the site for BoilerMake V
 
 ## Running:
 * install npm or yarn...
-* `yarn install` to get packages
+* `yarn` to get packages
+* `cp src/config.example.js src/config.js` to give yourself a config file
 * `yarn run start` to start the webpack dev server
 * `yarn run test` to start the test suite watcher
