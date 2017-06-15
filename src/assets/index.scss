@@ -6,14 +6,9 @@ body {
   font-family: $font-title;
 }
 
-.App-logo {
-  $logo: 400px;
-  animation: App-logo-spin infinite 5s linear;
-  display:inline-block;
-  width: $logo;
-  height: $logo;
+.pink {
+  color: $pink;
 }
-
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

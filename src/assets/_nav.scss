@@ -2,6 +2,7 @@
 
 .navBar {
   font-family: $font-title;
+  font-weight: bold;
   padding: 10px 0px;
   display: flex;
   justify-content: flex-end;
@@ -22,4 +23,42 @@
 .navLink:active, .navLink:focus {
   text-decoration: none;
   color: inherit;
+}
+.navLeft {
+  padding: 20px 0px;
+
+  height: 100%;
+  border-right: solid .1px $lightBlue;
+  font-family: $font-title;
+  position: absolute;
+  left: 0;
+  top: 0;
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  p {
+    margin-top: 55px;
+    margin-left: 1px;
+  }
+  .social-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    .icon {
+      max-width: 30px;
+    }
+    .icon::after {
+      content: "";
+    }
+  }
+}
+.hammers {
+  max-width: 20px;
+}
+
+.rotate-text {
+  -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
 }
