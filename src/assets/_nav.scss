@@ -1,0 +1,25 @@
+@import "vars";
+
+.navBar {
+  font-family: $font-title;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  color: $darkBlue;
+}
+.navLink {
+  text-decoration: none;
+  color: inherit;
+  padding: 7px 0px;
+  margin: 0 50px;
+}
+.navLink:hover {
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 2px -2px $lightBlue;
+}
+.navLink:active, .navLink:focus {
+  text-decoration: none;
+  color: inherit;
+}

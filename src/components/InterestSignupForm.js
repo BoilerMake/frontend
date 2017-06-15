@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { API_BASE_URL } from '../config';
+
 class InterestSignupForm extends Component {
     constructor (props) {
         super(props);

@@ -1,40 +1,15 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
-import {NavbarToggler, Collapse } from 'reactstrap';
-class Nav extends Component {
-    constructor(props) {
-        super(props);
 
-        this.toggle = this.toggle.bind(this);
-        this.state = {
-            isOpen: false
-        };
-    }
-    toggle() {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    }
+class Nav extends Component {
     render () {
         return (
-            <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
-                <a className="navbar-brand">BM <NavbarToggler right onClick={this.toggle} /></a>
-
-                <Collapse isOpen={this.state.isOpen} navbar>
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item"><NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink></li>
-                        <li className="nav-item"><NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink></li>
-
-                        <li className="nav-item"><NavLink to="/dashboard" className="nav-link" activeClassName="active">Dashboard</NavLink></li>
-                        <li className="nav-item"><a className="nav-link">auth'd: {this.props.isLoggedIn ? 'yes' : 'no'}</a></li>
-
-                        {this.props.isLoggedIn ? '' : <li className="nav-item"><NavLink to="/register" className="nav-link" activeClassName="active">Register</NavLink></li>}
-                        {this.props.isLoggedIn
-                            ? <li className="nav-item"><a className="nav-link" onClick={this.props.logout}>Log Out</a></li>
-                            : <li className="nav-item"><NavLink to="/login" className="nav-link" activeClassName="active">Log In</NavLink></li>
-                        }
-                    </ul>
-                </Collapse>
+            <nav className="navBar">
+              <NavLink exact to='/' className='navLink'>Home</NavLink>
+              <NavLink exact to='/about' className='navLink'>About</NavLink>
+              <NavLink exact to='/sponsors' className='navLink'>Sponsors</NavLink>
+              <NavLink exact to='/gallery' className='navLink'>Gallery</NavLink>
+              <NavLink exact to='/contact' className='navLink'>Contact</NavLink>
             </nav>
         );
     }
