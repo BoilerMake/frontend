@@ -28,11 +28,11 @@ const measureFileSizesBeforeBuild = FileSizeReporter.measureFileSizesBeforeBuild
 const printFileSizesAfterBuild = FileSizeReporter.printFileSizesAfterBuild;
 const useYarn = fs.existsSync(paths.yarnLockFile);
 
-if(process.env.API_BASE_URL) {
-    fs.writeFile(paths.configJs, `export const API_BASE_URL = '${process.env.API_BASE_URL}'`, function (err) {
+if (!fs.existsSync(paths.configJs)) {
+    fs.writeFile(paths.configJs, `export const API_BASE_URL = 'http://api.dev.boilermake.org/v1'`, function (err) {
         if (err)
             return console.log(err);
-        console.log('writing config file API_BASE_URL:'+process.env.API_BASE_URL);
+        console.log('writing config file with default API_BASE_URL');
     });
 }
 
