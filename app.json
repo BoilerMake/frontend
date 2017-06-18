@@ -3,6 +3,7 @@
   "scripts": {
   },
   "env": {
+    "API_BASE_URL": "http://api.dev.boilermake.org/v1"
   },
   "formation": {
   },
