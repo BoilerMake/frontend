@@ -10,6 +10,7 @@
     "enzyme": "^2.8.1",
     "faker": "^4.1.0",
     "fetch-mock": "^5.10.0",
+    "hashids": "^1.1.1",
     "jwt-decode": "^2.2.0",
     "node-sass": "^4.5.3",
     "react": "^15.5.4",

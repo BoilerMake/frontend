@@ -1,6 +1,6 @@
 import cookie from 'react-cookie';
 import { API_BASE_URL } from '../config';
-
+import Hashids from 'hashids';
 
 export const LOGIN_FROM_JWT_SUCCESS = 'LOGIN_FROM_JWT_SUCCESS';
 export function loginFromJWT (token) {
@@ -57,4 +57,40 @@ function receiveMe (json) {
         me: json,
         receivedAt: Date.now()
     };
+}
+
+function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+}
+
+export function recordEvent(event, context) {
+
+    return (dispatch, getState) => {
+        let udid = cookie.load('udid');
+        if(!udid) {
+            let hid = new Hashids();
+            udid = hid.encode(Math.floor(Date.now()))+"-"+s4();
+            console.log("saving new udid",udid);
+            cookie.save('udid',udid, {path: '/'});
+
+        }
+        const token = cookie.load('token');
+        let d = new FormData();
+        d.append('event', event);
+        d.append('context', JSON.stringify(context));
+        d.append('udid', udid);
+        return fetch(`${API_BASE_URL}/stats?token=${token}`,
+            {
+                method: 'POST',
+                body:   d,
+            })
+            .then((response) => response.json())
+            .then((json) => {console.log(json)});
+    };
+
+
+
+
 }
