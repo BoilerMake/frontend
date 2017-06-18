@@ -28,6 +28,14 @@ const measureFileSizesBeforeBuild = FileSizeReporter.measureFileSizesBeforeBuild
 const printFileSizesAfterBuild = FileSizeReporter.printFileSizesAfterBuild;
 const useYarn = fs.existsSync(paths.yarnLockFile);
 
+if(process.env.API_BASE_URL) {
+    fs.writeFile(paths.configJs, `export const API_BASE_URL = '${process.env.API_BASE_URL}'`, function (err) {
+        if (err)
+            return console.log(err);
+        console.log('writing config file API_BASE_URL:'+process.env.API_BASE_URL);
+    });
+}
+
 // Warn and crash if required files are missing
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
   process.exit(1);
