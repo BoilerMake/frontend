@@ -28,6 +28,14 @@ const measureFileSizesBeforeBuild = FileSizeReporter.measureFileSizesBeforeBuild
 const printFileSizesAfterBuild = FileSizeReporter.printFileSizesAfterBuild;
 const useYarn = fs.existsSync(paths.yarnLockFile);
 
+if (!fs.existsSync(paths.configJs)) {
+    fs.writeFile(paths.configJs, `export const API_BASE_URL = 'https://apidev.boilermake.org/v1'`, function (err) {
+        if (err)
+            return console.log(err);
+        console.log('writing config file with default API_BASE_URL');
+    });
+}
+
 // Warn and crash if required files are missing
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
   process.exit(1);
