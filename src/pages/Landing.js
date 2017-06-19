@@ -6,8 +6,7 @@ export default class Landing extends Component {
 
     render () {
         return (
-            <div>
-                <img src={bm_logo} alt="logo" className=""/>
+            <div className="page">
                 <Interest/>
             </div>
         );

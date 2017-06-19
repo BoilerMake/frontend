@@ -10,7 +10,16 @@ body {
   color: $pink;
 }
 
+.lightBlue {
+  color: $lightBlue;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.page {
+  text-align: center;
+  margin: 100px auto;
 }

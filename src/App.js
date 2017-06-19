@@ -9,7 +9,6 @@ const App = () => (
         <Router>
             <div>
                 <Nav/>
-                <NavLeft/>
                 <div className="container">
                     <Routes/>
                 </div>
