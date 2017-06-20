@@ -38,7 +38,7 @@ class InterestSignupForm extends Component {
         return (
           <div className="con flexCon">
             <div className="flexchild">
-              <h1 className="pink">BoilerMake</h1>
+              <h1 className="darkBlue">BoilerMake</h1>
               <h3 className="pink">Purdue University</h3>
               <h3 className="lightBlue">SEPT 29  - OCT 1 2017</h3>
               <br/>

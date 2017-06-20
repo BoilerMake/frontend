@@ -67,7 +67,6 @@
   align-items: center;
   padding: 7px 0px;
   margin: 0 10px;
-
   .logo {
     font-weight: bold;
     margin: 0px 15px;
@@ -77,4 +76,13 @@
 
 .rotate-text {
   transform: rotate(90deg);
+}
+
+@media screen and (max-width: 745px) {
+  .navBar {
+    margin-left: 50px;
+    .navLink {
+      margin: 10px;
+    }
+  }
 }
