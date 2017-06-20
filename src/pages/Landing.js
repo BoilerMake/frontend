@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Interest from '../components/InterestSignupForm';
-import bm_logo from '../assets/images/hammers.svg'
 
-export default class Landing extends Component {
+const Landing = () => (
+  <div className="page">
+      <Interest/>
+  </div>
+);
 
-    render () {
-        return (
-            <div className="page">
-                <Interest/>
-            </div>
-        );
-    }
-}
+export default Landing;

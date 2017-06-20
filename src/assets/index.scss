@@ -1,9 +1,11 @@
 @import 'nav';
+/*@import 'normalize.css/normalize.css';*/
 
 body {
   margin: 0;
   padding: 0;
   font-family: $font-title;
+  color: $darkBlue;
 }
 
 .pink {
@@ -14,12 +16,25 @@ body {
   color: $lightBlue;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 .page {
   text-align: center;
   margin: 100px auto;
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+p {
+  font-family: $font-body;
+  font-size: 20px;
 }

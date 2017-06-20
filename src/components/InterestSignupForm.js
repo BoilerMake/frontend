@@ -36,21 +36,18 @@ class InterestSignupForm extends Component {
     render () {
         let canSubmit = (this.state.email.length > 3);
         return (
-          <div className="con">
+          <div className="con flexCon">
             <div className="flexchild">
               <h1 className="pink">BoilerMake</h1>
               <h3 className="pink">Purdue University</h3>
               <h3 className="lightBlue">SEPT 29  - OCT 1 2017</h3>
               <br/>
-              <p>Sign up for updates on when applications open!</p>
-
+              <label htmlFor="email"><p>Sign up for updates on when applications open!</p></label>
               <div className="interestForm">
-
-                  <input name="email" type="email" value={this.state.email} onChange={this.changeEmail.bind(this)} placeholder="Email"/>
+                  <input id="email" name="email" type="email" value={this.state.email} onChange={this.changeEmail.bind(this)} placeholder="Email"/>
                   <button type="submit" onClick={this.handleSubmit.bind(this)} disabled={!canSubmit}>Submit</button>
                   <p>{this.state.message}</p>
               </div>
-
             </div>
             <div className="flexchild">
               <img src={B} alt="boilermakev-logo" />

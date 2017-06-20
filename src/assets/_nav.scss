@@ -16,11 +16,9 @@
   margin: 0 50px;
 }
 .navLink:hover {
-  text-decoration: none;
-  color: inherit;
   box-shadow: 0 4px 2px -2px $lightBlue;
 }
-.navLink:active, .navLink:focus {
+.navLink:hover, .navLink:active, .navLink:focus {
   text-decoration: none;
   color: inherit;
 }
@@ -76,8 +74,7 @@
     text-decoration: none;
   }
 }
+
 .rotate-text {
-  -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
