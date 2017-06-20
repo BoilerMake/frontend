@@ -5,7 +5,7 @@ import { shallow, mount } from "enzyme";
 import fetchMock from 'fetch-mock';
 
 it('does a successful interest signup', () =>  {
-
+    fetchMock.restore();
     fetchMock.post('*', {success: true, data: 'message123'});
     let eventName = "hi";
     const wrapper = shallow(
