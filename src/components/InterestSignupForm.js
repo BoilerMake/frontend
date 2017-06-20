@@ -20,9 +20,11 @@ class InterestSignupForm extends Component {
                 this.setState({success: json.success});
                 if(json.success === false) {
                     this.setState({message: json.message});
+                    this.props.recordEvent("interestForm:submit_error",json.message);
                 }
                 else {
                     this.setState({message: json.data});
+                    this.props.recordEvent("interestForm:submit_success")
                 }
             });
     };
@@ -40,4 +42,20 @@ class InterestSignupForm extends Component {
             </div>);
     }
 }
-export default InterestSignupForm;
+
+//now the redux integration layer
+import { recordEvent } from '../actions/users';
+import { connect } from 'react-redux'
+function mapStateToProps (state) {
+    return {
+        user: state.user
+    };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    recordEvent: (event, context) => {
+        dispatch(recordEvent(event, context));
+    }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(InterestSignupForm);

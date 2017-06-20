@@ -1,17 +1,18 @@
-import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
-
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import Nav from './components/Nav';
+import GAListener from './components/GAListener';
 import Routes from './Routes';
 
 const App = () => (
-        <Router>
-            <div>
-                <Nav/>
-                <div className="container">
-                    <Routes/>
-                </div>
+    <BrowserRouter>
+        <div>
+            <GAListener/>
+            <Nav/>
+            <div className="container">
+                <Routes/>
             </div>
-        </Router>
-)
-export default App
+        </div>
+    </BrowserRouter>
+);
+export default App;
