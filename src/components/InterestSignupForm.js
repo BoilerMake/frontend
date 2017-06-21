@@ -13,8 +13,11 @@ export class InterestSignupForm extends Component {
         };
     }
     handleSubmit = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
+        if(event) {
+            //so tests don't get funky
+            event.preventDefault();
+            event.stopPropagation();
+        }
         let d = new FormData();
         d.append('email', this.state.email);
         return fetch(`${API_BASE_URL}/interest/signup`,{
