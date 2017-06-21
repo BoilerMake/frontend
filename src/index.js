@@ -8,6 +8,10 @@ import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
 import registerServiceWorker from './registerServiceWorker';
 import { loginFromJWT } from './actions/users';
+import GoogleAnalytics from 'react-ga';
+
+GoogleAnalytics.initialize('UA-52633337-1',{debug: true});
+
 const store = configureStore();
 
 const token = cookie.load('token');
