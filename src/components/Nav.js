@@ -10,8 +10,8 @@ const Nav = () => (
     </div>
     <nav className="navBar">
       <NavLink exact to='/' className='navLink'>Home</NavLink>
-      <NavLink exact to='/sponsors' className='navLink'>Sponsors</NavLink>
-      <NavLink exact to='/contact' className='navLink'>Contact</NavLink>
+      <a href="http://bit.ly/bm-sponsorship-2017" target="blank" className='navLink'>Sponsors</a>
+      <a href="mailto:team@boilermake.org" target="blank" className='navLink'>Contact</a>
     </nav>
   </div>
 );
