@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './assets/index.scss';
-import 'bootstrap/dist/css/bootstrap.css';
 import cookie from 'react-cookie';
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'

@@ -1,0 +1,88 @@
+@import "vars";
+
+.navBar {
+  font-family: $font-title;
+  font-weight: bold;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  color: $darkBlue;
+}
+.navLink {
+  text-decoration: none;
+  color: inherit;
+  padding: 7px 0px;
+  margin: 0 50px;
+}
+.navLink:hover {
+  box-shadow: 0 4px 2px -2px $lightBlue;
+}
+.navLink:hover, .navLink:active, .navLink:focus {
+  text-decoration: none;
+  color: inherit;
+}
+.navLeft {
+  padding: 20px 0px;
+  background: $white;
+  height: 100%;
+  border-right: solid .1px $lightBlue;
+  font-family: $font-title;
+  position: absolute;
+  left: 0;
+  top: 0;
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  p {
+    margin-top: 55px;
+    margin-left: 1px;
+  }
+  .social-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    .icon {
+      max-width: 30px;
+    }
+    .icon::after {
+      content: "";
+    }
+  }
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+
+.hammers {
+  max-width: 20px;
+  height: 30px;
+}
+
+.navLogo {
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 7px 0px;
+  margin: 0 10px;
+  .logo {
+    font-weight: bold;
+    margin: 0px 15px;
+    text-decoration: none;
+  }
+}
+
+.rotate-text {
+  transform: rotate(90deg);
+}
+
+@media screen and (max-width: 745px) {
+  .navBar {
+    margin-left: 50px;
+    .navLink {
+      margin: 10px;
+    }
+  }
+}

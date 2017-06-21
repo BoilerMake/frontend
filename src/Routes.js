@@ -37,18 +37,17 @@ const UserRoute = withRouter(connect((state) => ({isAuthenticated: state.user.au
 const ExecRoute = withRouter(connect((state) => ({isAuthenticated: state.user.authenticated, isAllowed: state.user.tokenData && state.user.tokenData.roles.contains("exec")}))(PrivateRoute));
 
 const Routes = () => (
-    <div>
-        <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-        <Route path="/code" component={Code}/>
-        <Route path="/register" component={Register}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/reset/:reset_token?" component={PasswordReset}/>
+  <div>
+      <Route exact path="/" component={Home}/>
+      <Route path="/about" component={About}/>
+      <Route path="/code" component={Code}/>
+      <Route path="/register" component={Register}/>
+      <Route path="/login" component={Login}/>
+      <Route path="/reset/:reset_token?" component={PasswordReset}/>
 
-        <UserRoute path="/dashboard" component={Dashboard}/>
-        <ExecRoute path="/exec/dashboard" component={Dashboard}/>
-    </div>
+      <UserRoute path="/dashboard" component={Dashboard}/>
+      <ExecRoute path="/exec/dashboard" component={Dashboard}/>
+  </div>
 );
 
 export default Routes;
-

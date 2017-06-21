@@ -9,7 +9,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
             {touched && error && <span>{error}</span>}
         </div>
     </div>
-)
+);
 
 const LoginForm = (props) => {
     const { error, handleSubmit, pristine, reset, submitting } = props;
@@ -23,7 +23,7 @@ const LoginForm = (props) => {
                 <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
             </div>
         </form>
-    )
+    );
 }
 
 export default reduxForm({

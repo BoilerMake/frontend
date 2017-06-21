@@ -1,44 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom'
-import {NavbarToggler, Collapse } from 'reactstrap';
-class Nav extends Component {
-    constructor(props) {
-        super(props);
+import logo from '../assets/images/hammers.svg';
 
-        this.toggle = this.toggle.bind(this);
-        this.state = {
-            isOpen: false
-        };
-    }
-    toggle() {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    }
-    render () {
-        return (
-            <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
-                <a className="navbar-brand">BM <NavbarToggler right onClick={this.toggle} /></a>
-
-                <Collapse isOpen={this.state.isOpen} navbar>
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item"><NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink></li>
-                        <li className="nav-item"><NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink></li>
-
-                        <li className="nav-item"><NavLink to="/dashboard" className="nav-link" activeClassName="active">Dashboard</NavLink></li>
-                        <li className="nav-item"><a className="nav-link">auth'd: {this.props.isLoggedIn ? 'yes' : 'no'}</a></li>
-
-                        {this.props.isLoggedIn ? '' : <li className="nav-item"><NavLink to="/register" className="nav-link" activeClassName="active">Register</NavLink></li>}
-                        {this.props.isLoggedIn
-                            ? <li className="nav-item"><a className="nav-link" onClick={this.props.logout}>Log Out</a></li>
-                            : <li className="nav-item"><NavLink to="/login" className="nav-link" activeClassName="active">Log In</NavLink></li>
-                        }
-                    </ul>
-                </Collapse>
-            </nav>
-        );
-    }
-}
+const Nav = () => (
+  <div>
+    <div className="navLogo">
+      <img src={logo} alt='boilermake' className='hammers logo'/>
+      <NavLink exact to='/' className='pink logo'>BoilerMake</NavLink>
+    </div>
+    <nav className="navBar">
+      <NavLink exact to='/' className='navLink'>Home</NavLink>
+      <a href="http://bit.ly/bm-sponsorship-2017" target="blank" className='navLink'>Sponsors</a>
+      <a href="mailto:team@boilermake.org" target="blank" className='navLink'>Contact</a>
+    </nav>
+  </div>
+);
 
 import { connect } from 'react-redux'
 import { logoutUser } from '../actions/users';
