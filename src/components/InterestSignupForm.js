@@ -3,7 +3,7 @@ import { API_BASE_URL } from '../config';
 import '../assets/interest.scss';
 import B from '../assets/images/b.png';
 
-class InterestSignupForm extends Component {
+export class InterestSignupForm extends Component {
     constructor (props) {
         super(props);
         this.state = {
@@ -25,12 +25,13 @@ class InterestSignupForm extends Component {
                 this.setState({success: json.success});
                 if(json.success === false) {
                     this.setState({message: json.message});
+                    this.props.recordEvent("interestForm:submit_error",json.message);
                 }
                 else {
                     this.setState({message: json.data});
                     //upon success, clear the form.
                     this.setState({email: ""});
-
+                    this.props.recordEvent("interestForm:submit_success")
                 }
             });
     };
@@ -61,4 +62,18 @@ class InterestSignupForm extends Component {
         );
     }
 }
-export default InterestSignupForm;
+
+//now the redux integration layer
+import { recordEvent } from '../actions/users';
+import { connect } from 'react-redux'
+function mapStateToProps (state) {
+    return {};
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    recordEvent: (event, context) => {
+        dispatch(recordEvent(event, context));
+    }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(InterestSignupForm);

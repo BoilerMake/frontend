@@ -1,12 +1,17 @@
 import cookie from 'react-cookie';
+import jwt_decode from 'jwt-decode';
 import { API_BASE_URL } from '../config';
-
+import Hashids from 'hashids';
+import ReactGA from 'react-ga';
 
 export const LOGIN_FROM_JWT_SUCCESS = 'LOGIN_FROM_JWT_SUCCESS';
 export function loginFromJWT (token) {
 	cookie.save('token',token, {path: '/'});
 	console.log("aa");
     return (dispatch) => {
+        let userId = jwt_decode(token).user_id;
+        //when we've authenticated, let's associate the user_id (which lives inside the jwt) with GA
+        ReactGA.set({ userId });
         dispatch(saveToken(token));
         setTimeout(() => { dispatch(fetchMe()); }, 50);
     }
@@ -57,4 +62,52 @@ function receiveMe (json) {
         me: json,
         receivedAt: Date.now()
     };
+}
+
+function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+}
+
+export function recordEvent(event, context) {
+
+    return (dispatch, getState) => {
+        let uuid = cookie.load('uuid');
+        //if we don't have a uuid cookie set, generate a fresh one
+        //uuid has 3 parts, separated by dash:
+        //  Client identifier (i.e.) this is coming from React (r for short)
+        //  HashId(current_unix_timestamp)
+        // (random4digitstring)
+        if(!uuid) {
+            let hid = new Hashids();
+            uuid = `r-${hid.encode(Math.floor(Date.now()))}-${s4()}`;
+            console.log("saving new uuid",uuid);
+            cookie.save('uuid',uuid, {path: '/'});
+        }
+
+        //send an event off to google analytics
+        ReactGA.event({
+            category: 'BoilerMake-Web',
+            action: event
+        });
+
+        //and off to our API
+        let d = new FormData();
+        d.append('event', event);
+        d.append('context', JSON.stringify(context));
+        d.append('uuid', uuid);
+        d.append('client', 'react');
+        return fetch(`${API_BASE_URL}/stats?token=${cookie.load('token')}`,
+            {
+                method: 'POST',
+                body:   d,
+            })
+            .then((response) => response.json())
+            .then((json) => {console.log("logged Stat event",{event, context})});
+    };
+
+
+
+
 }
