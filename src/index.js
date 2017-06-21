@@ -9,8 +9,9 @@ import configureStore from './store/configureStore'
 import registerServiceWorker from './registerServiceWorker';
 import { loginFromJWT } from './actions/users';
 import GoogleAnalytics from 'react-ga';
+import { GOOGLE_ANALYTICS_ID, DEBUG_MODE } from './config';
 
-GoogleAnalytics.initialize('UA-52633337-1',{debug: true});
+GoogleAnalytics.initialize(GOOGLE_ANALYTICS_ID,{debug: DEBUG_MODE});
 
 const store = configureStore();
 
