@@ -33,11 +33,19 @@ const PrivateRoute = ({ component: Component, isAuthenticated, isAllowed, ...res
     )}/>
 );
 
+const ExternalRedirect = ({ redirectTo: redirectTo, ...rest }) => (
+    <Route {...rest} render={props => (
+        window.location = redirectTo
+    )}/>
+);
+
+const ExternalRoute = withRouter(ExternalRedirect);
 const UserRoute = withRouter(connect((state) => ({isAuthenticated: state.user.authenticated, isAllowed: true}))(PrivateRoute));
 const ExecRoute = withRouter(connect((state) => ({isAuthenticated: state.user.authenticated, isAllowed: state.user.tokenData && state.user.tokenData.roles.contains("exec")}))(PrivateRoute));
 
 const Routes = () => (
   <div>
+      {/*Public Routes*/}
       <Route exact path="/" component={Home}/>
       <Route path="/about" component={About}/>
       <Route path="/code" component={Code}/>
@@ -45,8 +53,13 @@ const Routes = () => (
       <Route path="/login" component={Login}/>
       <Route path="/reset/:reset_token?" component={PasswordReset}/>
 
+      {/*User Routes*/}
       <UserRoute path="/dashboard" component={Dashboard}/>
+      {/*Exec Routes*/}
       <ExecRoute path="/exec/dashboard" component={Dashboard}/>
+
+      {/*Offsite Redirects*/}
+      <ExternalRoute path="/why-go-to-a-hackathon" redirectTo="https://medium.com/@BoilerMake/why-you-should-go-to-a-hackathon-2d4ede475c9"/>
   </div>
 );
 
