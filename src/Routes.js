@@ -33,10 +33,11 @@ const PrivateRoute = ({ component: Component, isAuthenticated, isAllowed, ...res
     )}/>
 );
 
-const ExternalRedirect = ({ redirectTo: redirectTo, ...rest }) => (
-    <Route {...rest} render={props => (
-        window.location = redirectTo
-    )}/>
+const ExternalRedirect = ({ redirectTo, ...rest }) => (
+    <Route {...rest} render={() => {
+        window.location = redirectTo;
+        return null;
+    }}/>
 );
 
 const ExternalRoute = withRouter(ExternalRedirect);
