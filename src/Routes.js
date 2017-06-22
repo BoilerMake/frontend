@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from "react";
 import {
     Route, withRouter, Redirect
 } from 'react-router-dom'
@@ -33,14 +33,19 @@ const PrivateRoute = ({ component: Component, isAuthenticated, isAllowed, ...res
     )}/>
 );
 
-const ExternalRedirect = ({ redirectTo, ...rest }) => (
-    <Route {...rest} render={() => {
-        window.location = redirectTo;
-        return null;
-    }}/>
-);
+class ExternalRedirect extends Component {
+    constructor( props ){
+        super();
+        this.state = { ...props };
+    }
+    componentWillMount(){
+        window.location = this.state.to;
+    }
+    render(){
+        return (<h1>Redirecting...</h1>);
+    }
+}
 
-const ExternalRoute = withRouter(ExternalRedirect);
 const UserRoute = withRouter(connect((state) => ({isAuthenticated: state.user.authenticated, isAllowed: true}))(PrivateRoute));
 const ExecRoute = withRouter(connect((state) => ({isAuthenticated: state.user.authenticated, isAllowed: state.user.tokenData && state.user.tokenData.roles.contains("exec")}))(PrivateRoute));
 
@@ -60,7 +65,9 @@ const Routes = () => (
       <ExecRoute path="/exec/dashboard" component={Dashboard}/>
 
       {/*Offsite Redirects*/}
-      <ExternalRoute path="/why-go-to-a-hackathon" redirectTo="https://medium.com/@BoilerMake/why-you-should-go-to-a-hackathon-2d4ede475c9"/>
+      <Route path='/privacy-policy' component={() => window.location = 'https://example.zendesk.com/hc/en-us/articles/123456789-Privacy-Policies'}/>
+
+      <Route path="/why-go-to-a-hackathon"  render={() => <ExternalRedirect to="https://medium.com/@BoilerMake/why-you-should-go-to-a-hackathon-2d4ede475c9"/>}/>
   </div>
 );
 
