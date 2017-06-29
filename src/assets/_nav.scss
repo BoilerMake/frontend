@@ -62,6 +62,7 @@
 
 .navLogo {
   position: fixed;
+  top: 15px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -69,7 +70,7 @@
   margin: 0 10px;
   .logo {
     font-weight: bold;
-    margin: 0px 15px;
+    margin: 0px 10px;
     text-decoration: none;
   }
 }
