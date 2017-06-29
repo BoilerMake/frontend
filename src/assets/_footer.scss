@@ -1,0 +1,13 @@
+.flex-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .flex-child {
+    img {
+      max-width: 50px;
+    }
+  }
+}
+.footer {
+  padding: 50px 20px;
+}

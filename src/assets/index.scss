@@ -1,4 +1,5 @@
 @import 'nav';
+@import 'footer';
 /*@import 'normalize.css/normalize.css';*/
 
 body {
@@ -19,10 +20,16 @@ body {
 .darkBlue {
   color: $darkBlue;
 }
-
+.white {
+  color: $white;
+}
+.bgdarkBlue {
+  background-color: $darkBlue;
+}
 .page {
   text-align: center;
-  margin: 100px auto;
+  padding: 100px 0;
+  margin: 0px auto;
 }
 
 .hidden {

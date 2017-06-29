@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Nav from './components/Nav';
 import GAListener from './components/GAListener';
 import Routes from './Routes';
+import Footer from './components/Footer';
 
 const App = () => (
     <BrowserRouter>
@@ -12,6 +13,7 @@ const App = () => (
             <div className="container">
                 <Routes/>
             </div>
+            <Footer />
         </div>
     </BrowserRouter>
 );
