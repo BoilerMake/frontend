@@ -10,6 +10,7 @@ const Nav = () => (
     </div>
     <nav className="navBar">
       <NavLink exact to='/' className='navLink'>Home</NavLink>
+      <NavLink exact to='/faq' className='navLink'>FAQ</NavLink>
       <a href="http://bit.ly/bm-sponsorship-2017" target="blank" className='navLink'>Sponsors</a>
       <a href="mailto:team@boilermake.org" target="blank" className='navLink'>Contact</a>
     </nav>
