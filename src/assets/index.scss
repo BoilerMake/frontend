@@ -41,3 +41,9 @@ p {
   font-family: $font-body;
   font-size: 20px;
 }
+
+.pageContainer {
+  margin-left: 75px;//so that edge of content lines up with "boilermake" in nav
+  margin-right: 75px;
+  margin-top: 10px;
+}

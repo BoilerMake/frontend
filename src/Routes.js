@@ -7,8 +7,9 @@ import { connect } from 'react-redux'
 
 //STATIC PAGES
 import Home from './pages/Landing';
-import About from './pages/About';
-import Code from './pages/Code';
+import About from './pages/Info/About';
+import Code from './pages/Info/Code';
+import FAQ from './pages/Info/FAQ';
 
 //
 import Register from './pages/Register';
@@ -55,6 +56,7 @@ const Routes = () => (
       <Route exact path="/" component={Home}/>
       <Route path="/about" component={About}/>
       <Route path="/code" component={Code}/>
+      <Route path="/faq" component={FAQ}/>
       <Route path="/register" component={Register}/>
       <Route path="/login" component={Login}/>
       <Route path="/reset/:reset_token?" component={PasswordReset}/>
