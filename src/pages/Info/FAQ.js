@@ -53,7 +53,7 @@ const FAQ = () => {
         },
         {
             "title": "What if I have any other questions?",
-            "body": "Feel free to email us at <a href="mailto:team@boilermake.org">team@boilermake.org</a>!"
+            "body": "Feel free to email us at <a href='mailto:team@boilermake.org'>team@boilermake.org</a>!"
         }
     ];
     let questionList = questions.map((q,id)=>
