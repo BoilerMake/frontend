@@ -2,7 +2,7 @@ import React from 'react';
 import GoogleAnalytics from 'react-ga';
 import PropTypes from 'prop-types';
 
-export default class AnalyticsListener extends React.PureComponent {
+export class AnalyticsListener extends React.PureComponent {
     static contextTypes = {
         router: PropTypes.object
     };
