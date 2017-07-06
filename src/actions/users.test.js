@@ -19,7 +19,7 @@ describe('user actions', () => {
     const store = mockStore({ todos: [] })
 
     expect(cookie.load('uuid')).toEqual(undefined);
-    return store.dispatch(actions.recordEvent("testEventName")).then(() => {
+    return store.dispatch(actions.recordEvent("testEventName",null)).then(() => {
     	let res = fetchMock.lastOptions().body.get("event");
     	expect(res).toEqual("testEventName");
 
@@ -37,7 +37,7 @@ describe('user actions', () => {
   	expect(cookie.load('uuid')).not.toEqual(undefined);
 
   	const context = {a: {b: "c"}};
-    return store.dispatch(actions.recordEvent("testEventName",context)).then(() => {
+    return store.dispatch(actions.recordEvent("testEventName",null,context)).then(() => {
     	expect(fetchMock.lastOptions().body.get("event")).toEqual("testEventName");
     	//and context should be json now
     	expect(fetchMock.lastOptions().body.get("context")).toEqual(JSON.stringify(context));
