@@ -70,7 +70,7 @@ function s4() {
         .substring(1);
 }
 
-export function recordEvent(event, context) {
+export function recordEvent(event, subtitle, context) {
 
     return (dispatch, getState) => {
         let uuid = cookie.load('uuid');
@@ -95,6 +95,7 @@ export function recordEvent(event, context) {
         //and off to our API
         let d = new FormData();
         d.append('event', event);
+        d.append('subtitle', subtitle);
         d.append('context', JSON.stringify(context));
         d.append('uuid', uuid);
         d.append('client', 'react');

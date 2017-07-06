@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Nav from './components/Nav';
-import GAListener from './components/GAListener';
+import AnalyticsListener from './components/AnalyticsListener';
 import Routes from './Routes';
 import Footer from './components/Footer';
 
 const App = () => (
     <BrowserRouter>
         <div>
-            <GAListener/>
+            <AnalyticsListener/>
             <Nav/>
             <div className="container">
                 <Routes/>

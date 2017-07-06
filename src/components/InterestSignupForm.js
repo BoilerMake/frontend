@@ -18,7 +18,8 @@ export class InterestSignupForm extends Component {
             event.stopPropagation();
         }
         let d = new FormData();
-        d.append('email', this.state.email);
+        let email = this.state.email;
+        d.append('email', email);
         return fetch(`${API_BASE_URL}/interest/signup`,{
             method: 'POST',
             body: d
@@ -27,13 +28,14 @@ export class InterestSignupForm extends Component {
                 this.setState({success: json.success});
                 if(json.success === false) {
                     this.setState({message: json.message});
-                    this.props.recordEvent("interestForm:submit_error",json.message);
+                    let message = json.message;
+                    this.props.recordEvent("interestForm","submit_error", {message,email});
                 }
                 else {
                     this.setState({message: json.data});
                     //upon success, clear the form.
                     this.setState({email: ""});
-                    this.props.recordEvent("interestForm:submit_success")
+                    this.props.recordEvent("interestForm","submit_success", {email})
                 }
             });
     };
@@ -64,8 +66,8 @@ function mapStateToProps (state) {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    recordEvent: (event, context) => {
-        dispatch(recordEvent(event, context));
+    recordEvent: (event, subtitle, context) => {
+        dispatch(recordEvent(event, subtitle, context));
     }
 });
 
