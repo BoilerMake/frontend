@@ -9,12 +9,12 @@ it('does a successful interest signup', () =>  {
     fetchMock.post('*', {success: true, data: 'message123'});
     let eventName = "hi";
     const wrapper = shallow(
-        <InterestSignupForm recordEvent={(a,b)=>{eventName=a}} />);
+        <InterestSignupForm recordEvent={(a,b,c)=>{eventName=a}} />);
     expect(wrapper.state('success')).toEqual(null);
     wrapper.setState({ email: "test@test.com" });
 
     wrapper.instance().handleSubmit().then(()=>{
-        expect(eventName).toEqual('interestForm:submit_success');
+        expect(eventName).toEqual('interestForm');
         expect(wrapper.state('success')).toEqual(true);
         expect(wrapper.state('message')).toEqual("message123");
     });
@@ -25,12 +25,12 @@ it('handles a failed interest signup', () =>  {
     fetchMock.post('*', {success: false, message: 'errmsg123'});
     let eventName = "hi";
     const wrapper = shallow(
-        <InterestSignupForm recordEvent={(a,b)=>{eventName=a}} />);
+        <InterestSignupForm recordEvent={(a,b,c)=>{eventName=a}} />);
 
     wrapper.setState({ email: "test@test.com" });
 
     wrapper.instance().handleSubmit().then(()=>{
-        expect(eventName).toEqual('interestForm:submit_error');
+        expect(eventName).toEqual('interestForm');
         expect(wrapper.state('success')).toEqual(false);
         expect(wrapper.state('message')).toEqual("errmsg123");
     });
