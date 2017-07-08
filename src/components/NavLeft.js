@@ -5,7 +5,7 @@ import facebook from '../assets/images/facebook-logo.svg';
 import twitter from '../assets/images/twitter-logo.svg';
 import '../assets/_nav.scss';
 
-class NavLeft = () => (
+const NavLeft = () => (
   <div className='navLeft'>
     <img src={logo} alt='boilermake logo' className='hammers'/>
     <p className='rotate-text pink'>BoilerMake</p>

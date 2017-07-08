@@ -4,7 +4,7 @@
   },
   "env": {
     "API_BASE_URL": "http://api.dev.boilermake.org/v1",
-    "NODE_MODULES_CACHE": false
+    "NODE_MODULES_CACHE": "false"
   },
   "formation": {
   },
