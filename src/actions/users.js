@@ -89,7 +89,8 @@ export function recordEvent(event, subtitle, context) {
         //send an event off to google analytics
         ReactGA.event({
             category: 'BoilerMake-Web',
-            action: event
+            action: event,
+            label: subtitle
         });
 
         //and off to our API
