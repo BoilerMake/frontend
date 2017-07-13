@@ -2,12 +2,11 @@ import cookie from 'react-cookie';
 import jwt_decode from 'jwt-decode';
 import { API_BASE_URL } from '../config';
 import ReactGA from 'react-ga';
-import apiFetch from './index';
+import apiFetch, { recordStatEvent } from './index';
 
 export const LOGIN_FROM_JWT_SUCCESS = 'LOGIN_FROM_JWT_SUCCESS';
 export function loginFromJWT (token) {
 	cookie.save('token',token, {path: '/'});
-	console.log("aa");
     return (dispatch) => {
         let userId = jwt_decode(token).user_id;
         //when we've authenticated, let's associate the user_id (which lives inside the jwt) with GA
@@ -63,25 +62,6 @@ function receiveMe (json) {
 
 export function recordEvent(event, subtitle, context) {
     return (dispatch, getState) => {
-        //send an event off to google analytics
-        ReactGA.event({
-            category: 'BoilerMake-Web',
-            action: event,
-            label: subtitle
-        });
-
-        //and off to our API
-        let d = new FormData();
-        d.append('event', event);
-        d.append('subtitle', subtitle);
-        d.append('context', JSON.stringify(context));
-        d.append('client', 'react');
-        return apiFetch(`${API_BASE_URL}/stats`,
-            {
-                method: 'POST',
-                body:   d,
-            })
-            .then((response) => response.json())
-            .then((json) => {console.log("logged Stat event",{event, context})});
+        return recordStatEvent(event, subtitle, context)
     };
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import GoogleAnalytics from 'react-ga';
 import PropTypes from 'prop-types';
-
-export class AnalyticsListener extends React.PureComponent {
+import { recordStatEvent } from '../actions'
+export default class AnalyticsListener extends React.PureComponent {
     static contextTypes = {
         router: PropTypes.object
     };
@@ -13,7 +13,7 @@ export class AnalyticsListener extends React.PureComponent {
     }
 
     sendPageView(location) {
-        this.props.recordEvent("page_hit",location.pathname,location);
+        recordStatEvent("page_hit",location.pathname,location);
         GoogleAnalytics.set({ page: location.pathname });
         GoogleAnalytics.pageview(location.pathname);
     }
@@ -22,11 +22,3 @@ export class AnalyticsListener extends React.PureComponent {
         return null;
     }
 }
-import { connect } from 'react-redux'
-import { recordEvent } from '../actions/users';
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    recordEvent: (event, subtitle, context) => {dispatch(recordEvent(event, subtitle, context))}
-});
-
-export default connect(null, mapDispatchToProps)(AnalyticsListener);
