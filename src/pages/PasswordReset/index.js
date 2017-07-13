@@ -4,6 +4,7 @@ import { API_BASE_URL } from '../../config';
 import { Redirect } from 'react-router-dom'
 import RequestPasswordResetForm from './RequestPasswordResetForm';
 import PerformPasswordResetForm from './PerformPasswordResetForm';
+import apiFetch from '../../actions';
 class PasswordReset extends Component {
     constructor (props) {
         super(props);
@@ -12,7 +13,7 @@ class PasswordReset extends Component {
     handleRequestSubmit = (values) => {
         let d = new FormData();
         d.append('email', values.email);
-        return fetch(`${API_BASE_URL}/users/reset/send`,{
+        return apiFetch(`${API_BASE_URL}/users/reset/send`,{
             method: 'POST',
             body: d
         }).then((response) => response.json())
@@ -32,7 +33,7 @@ class PasswordReset extends Component {
         let d = new FormData();
         d.append('password', values.password);
         d.append('token', this.props.match.params.reset_token);
-        return fetch(`${API_BASE_URL}/users/reset/perform`,{
+        return apiFetch(`${API_BASE_URL}/users/reset/perform`,{
             method: 'POST',
             body: d
         }).then((response) => response.json())
