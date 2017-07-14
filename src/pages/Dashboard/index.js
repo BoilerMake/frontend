@@ -7,6 +7,7 @@ class Dashboard extends Component {
                 <pre>
                     {JSON.stringify(this.props.user,null, 2)}
                 </pre>
+                <a onClick={()=>this.props.logoutUser()}>logout</a>
             </div>
         );
     }
@@ -14,6 +15,8 @@ class Dashboard extends Component {
 
 //now the redux integration layer
 import { connect } from 'react-redux'
+import { logoutUser } from '../../actions/users';
+
 function mapStateToProps (state) {
     return {
         user: state.user
@@ -21,6 +24,9 @@ function mapStateToProps (state) {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+    logoutUser: () => {
+        dispatch(logoutUser());
+    }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
