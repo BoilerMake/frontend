@@ -1,7 +1,7 @@
 import cookie from 'react-cookie';
 import Hashids from 'hashids';
 import ReactGA from 'react-ga';
-import { API_BASE_URL, DEBUG_MODE } from '../config';
+import { API_BASE_URL, DEBUG_MODE, GITHUB_CLIENT_ID } from '../config';
 
 function s4() {
     return Math.floor((1 + Math.random()) * 0x10000)
@@ -54,4 +54,8 @@ export function recordStatEvent(event, subtitle, context) {
         if (DEBUG_MODE)
             console.log("[stat] logged event",{event, subtitle, context})
         });
+}
+
+export function githubLogin() {
+    window.location = `http://github.com/login/oauth/authorize?scope=user:email&client_id=${GITHUB_CLIENT_ID}`
 }

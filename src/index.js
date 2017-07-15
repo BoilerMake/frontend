@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './assets/index.scss';
+import 'react-redux-toastr/src/styles/index.scss'
 import cookie from 'react-cookie';
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'

@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Nav from './components/Nav';
 import AnalyticsListener from './components/AnalyticsListener';
 import Routes from './Routes';
+import ReduxToastr from 'react-redux-toastr'
 
 const App = () => (
     <BrowserRouter>
@@ -11,6 +12,14 @@ const App = () => (
             <Nav/>
             <div className="container">
                 <Routes/>
+                <ReduxToastr
+                    timeOut={4000}
+                    newestOnTop={false}
+                    preventDuplicates
+                    position="top-center"
+                    transitionIn="fadeIn"
+                    transitionOut="fadeOut"
+                    progressBar/>
             </div>
         </div>
     </BrowserRouter>
