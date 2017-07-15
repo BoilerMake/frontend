@@ -69,7 +69,8 @@ export function updateMe(me) {
             })
             .then((response) => response.json())
             .then((json) => {
-                toastr.success('Success!', 'Your information has been updated');
+                if(json.success)
+                    toastr.success('Success!', 'Your information has been updated');
                 dispatch(fetchMe())
             });
     };

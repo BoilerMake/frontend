@@ -15,8 +15,9 @@ import FAQ from './pages/Info/FAQ';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import PasswordReset from './pages/PasswordReset';
-import Dashboard from './pages/Dashboard';
 import GithubAuth from './pages/GithubAuth';
+import Dashboard from './pages/Dashboard';
+import Application from './pages/Application';
 
 
 
@@ -67,6 +68,7 @@ const Routes = () => (
 
       {/*User Routes*/}
       <UserRoute path="/dashboard" component={Dashboard}/>
+      <UserRoute path="/application" component={Application}/>
       {/*Exec Routes*/}
       <ExecRoute path="/exec/dashboard" component={Dashboard}/>
 
