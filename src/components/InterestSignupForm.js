@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { API_BASE_URL } from '../config';
 import apiFetch from '../actions/index';
 import '../assets/interest.scss';
 
@@ -21,7 +20,7 @@ export class InterestSignupForm extends Component {
         let d = new FormData();
         let email = this.state.email;
         d.append('email', email);
-        return apiFetch(`${API_BASE_URL}/interest/signup`,{
+        return apiFetch('interest/signup',{
             method: 'POST',
             body: d
         }).then((response) => response.json())

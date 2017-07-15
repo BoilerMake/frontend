@@ -35,6 +35,5 @@ AccountForm = connect(
     state => ({
         initialValues: state.user.me // pull initial values from account reducer
     }),
-    // { load: loadAccount }               // bind account loading action creator
 )(AccountForm);
 export default AccountForm;

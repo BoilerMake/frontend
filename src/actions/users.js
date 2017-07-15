@@ -1,6 +1,5 @@
 import cookie from 'react-cookie';
 import jwt_decode from 'jwt-decode';
-import { API_BASE_URL } from '../config';
 import ReactGA from 'react-ga';
 import apiFetch, { recordStatEvent } from './index';
 import {toastr} from 'react-redux-toastr'
@@ -38,7 +37,7 @@ export function fetchMe () {
     return (dispatch, getState) => {
         dispatch(requestMe());
 
-        return apiFetch(`${API_BASE_URL}/users/me`)
+        return apiFetch('users/me')
             .then((response) => response.json())
             .then((json) => dispatch(receiveMe(json)));
     };
@@ -63,7 +62,7 @@ function receiveMe (json) {
 
 export function updateMe(me) {
     return (dispatch) => {
-        return apiFetch(`${API_BASE_URL}/users/me`,
+        return apiFetch('users/me',
             {
                 method: 'PUT',
                 body: JSON.stringify(me)
@@ -85,7 +84,7 @@ export function recordEvent(event, subtitle, context) {
 
 export function authUserWithGithub(code) {
     return (dispatch) => {
-        return apiFetch(`${API_BASE_URL}/users/auth/github/${code}`,
+        return apiFetch(`users/auth/github/${code}`,
             {
                 method: 'POST'
             })

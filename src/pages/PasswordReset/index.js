@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { SubmissionError } from 'redux-form'
-import { API_BASE_URL } from '../../config';
 import { Redirect } from 'react-router-dom'
 import RequestPasswordResetForm from './RequestPasswordResetForm';
 import PerformPasswordResetForm from './PerformPasswordResetForm';
@@ -13,7 +12,7 @@ class PasswordReset extends Component {
     handleRequestSubmit = (values) => {
         let d = new FormData();
         d.append('email', values.email);
-        return apiFetch(`${API_BASE_URL}/users/reset/send`,{
+        return apiFetch('users/reset/send',{
             method: 'POST',
             body: d
         }).then((response) => response.json())
@@ -33,7 +32,7 @@ class PasswordReset extends Component {
         let d = new FormData();
         d.append('password', values.password);
         d.append('token', this.props.match.params.reset_token);
-        return apiFetch(`${API_BASE_URL}/users/reset/perform`,{
+        return apiFetch('users/reset/perform',{
             method: 'POST',
             body: d
         }).then((response) => response.json())
