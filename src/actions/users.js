@@ -61,6 +61,21 @@ function receiveMe (json) {
     };
 }
 
+export function updateMe(me) {
+    return (dispatch) => {
+        return apiFetch(`${API_BASE_URL}/users/me`,
+            {
+                method: 'PUT',
+                body: JSON.stringify(me)
+            })
+            .then((response) => response.json())
+            .then((json) => {
+                toastr.success('Success!', 'Your information has been updated');
+                dispatch(fetchMe())
+            });
+    };
+}
+
 export function recordEvent(event, subtitle, context) {
     return (dispatch, getState) => {
         return recordStatEvent(event, subtitle, context)

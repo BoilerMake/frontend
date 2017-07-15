@@ -10,19 +10,16 @@ class GitHubAuth extends Component {
     }
     render () {
         if(this.props.user.me && this.props.user.me.github_user_id)
-        //todo: show a toast or something
             return (<Redirect to="/dashboard"/>);
         const query = parse(this.props.location.search.substr(1));
         let { code } = query;
+
         if (code && !this.state.loading) {
             this.setState({loading: true});
             this.props.authUserWithGithub(code);
         } else if(!code) {
             githubLogin();
         }
-        // } else if(this.state.code === null) {
-        //     this.setState({code});
-        // }
         return(<div><h1>loading...</h1></div>);
     }
 }
