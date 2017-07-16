@@ -32,7 +32,7 @@ function receiveApplication (json) {
     };
 }
 
-export function updateApplication(data) {
+export function updateApplication(data,suppressToast) {
     return (dispatch) => {
         return apiFetch('users/me/application',
             {
@@ -41,8 +41,8 @@ export function updateApplication(data) {
             })
             .then((response) => response.json())
             .then((json) => {
-                if(json.success)
-                    toastr.success('Success!', 'Your information has been updated');
+                if(json.success && !suppressToast)
+                    toastr.success('Success!', 'Your application has been saved');
                 dispatch(fetchApplication())
             });
     };

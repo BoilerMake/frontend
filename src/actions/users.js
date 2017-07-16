@@ -70,7 +70,7 @@ export function updateMe(me) {
             .then((response) => response.json())
             .then((json) => {
                 if(json.success)
-                    toastr.success('Success!', 'Your information has been updated');
+                    toastr.success('Success!', 'Your profile has been saved');
                 dispatch(fetchMe())
             });
     };
