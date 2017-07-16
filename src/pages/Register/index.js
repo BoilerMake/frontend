@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import RegisterForm from './RegisterForm'
 import { SubmissionError } from 'redux-form'
 import { Redirect } from 'react-router-dom'
+import GithubLoginButton from '../../components/GithubLoginButton'
 import apiFetch from '../../actions';
 export class Register extends Component {
 
@@ -42,9 +43,11 @@ export class Register extends Component {
         }
 
         return (
-            <div>
+            <div className="pageContainer">
                 <h1>Register</h1>
                 <RegisterForm onSubmit={this.handleSubmit}/>
+                <br/>
+                <GithubLoginButton/>
             </div>
         );
     }
