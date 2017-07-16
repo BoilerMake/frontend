@@ -114,3 +114,21 @@ export function authUserWithGithub(code) {
             });
     };
 }
+export function confirmEmail(code) {
+    return (dispatch) => {
+        return apiFetch(`users/verify/${code}`,
+            {
+                method: 'POST'
+            })
+            .then((response) => response.json())
+            .then((json) => {
+                if(json.success) {
+                    let {token, message} = json.data;
+                    toastr.success('Success!', message);
+                    dispatch(loginFromJWT(token));
+                } else {
+                    toastr.error('Error',json.message);
+                }
+            });
+    };
+}

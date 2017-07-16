@@ -15,6 +15,7 @@ import FAQ from './pages/Info/FAQ';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import PasswordReset from './pages/PasswordReset';
+import ConfirmEmail from './pages/ConfirmEmail';
 import GithubAuth from './pages/GithubAuth';
 import Dashboard from './pages/Dashboard';
 import Application from './pages/Application';
@@ -62,6 +63,7 @@ const Routes = () => (
       <Route path="/register" component={Register}/>
       <Route path="/login" component={Login}/>
       <Route path="/reset/:reset_token?" component={PasswordReset}/>
+      <Route path="/confirm/:code" component={ConfirmEmail}/>
 
 
       <Route path="/auth/github" component={GithubAuth}/>
