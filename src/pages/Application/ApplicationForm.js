@@ -82,12 +82,11 @@ class Application extends Component {
                 style={{}}
             >
                 <div>
-                    First Name <input value={app.first_name} onChange={this.applicationTextChange.bind(this,"first_name")}/>
-                    <br/>
-                    Last Name <input value={app.last_name} onChange={this.applicationTextChange.bind(this,"last_name")}/>
-                    <br/>
+                    <div><b>First Name</b><input value={app.first_name} onChange={this.applicationTextChange.bind(this,"first_name")}/></div>
+                    <div><b>Last Name</b><input value={app.last_name} onChange={this.applicationTextChange.bind(this,"last_name")}/></div>
+                    <div><b>Major</b><input value={app.major} onChange={this.applicationTextChange.bind(this,"major")}/></div>
 
-                    <div>LinkedIn
+                    <div><b>LinkedIn</b>
                         {
                             app.has_no_linkedin
                                 ? <a>You indicated you don't have a Linedin <button onClick={this.toggleItem.bind(this,'has_no_linkedin')}>i do!</button></a>
@@ -97,10 +96,21 @@ class Application extends Component {
                                   </div>
                         }
                     </div>
-                    <br/>
-                    Github <input disabled={isGithubLinked} value={app.github || ""} onChange={this.applicationTextChange.bind(this,"github")}/>
-                    {isGithubLinked ? <i>You signed up with github, so you can't change the username</i> : null}
-                    <br/>
+                    <hr/>
+                    {/*If a user signs up with a github (isGithubLinked), they can't change their github username, nor can they opt out of providing their username*/}
+                    <div><b>Github</b>
+                        {
+                            app.has_no_github && !isGithubLinked
+                                ? <a>You indicated you don't have a Github <button onClick={this.toggleItem.bind(this,'has_no_github')}>i do!</button></a>
+                                : <div>
+                                    <input value={app.github || ""} disabled={isGithubLinked} onChange={this.applicationTextChange.bind(this,"github")}/>
+                                    {isGithubLinked
+                                        ? <i>You signed up with github, so you can't change the username</i>
+                                        : <button onClick={this.toggleItem.bind(this,'has_no_github')}>i don't have a github</button>
+                                    }
+                                </div>
+                        }
+                    </div>
 
 
                     <button disabled={isLoading} onClick={this.saveApplication.bind(this)}>save</button>
