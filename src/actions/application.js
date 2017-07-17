@@ -33,7 +33,7 @@ function receiveApplication (json) {
 
 export function saveApplication(suppressToast=false) {
     return (dispatch, getState) => {
-        let data = getState().application.application;
+        let data = getState().application.applicationForm;
         return apiFetch('users/me/application',
             {
                 method: 'PUT',
@@ -56,7 +56,7 @@ export const RESUME_UPLOAD_PROGRESS = 'RESUME_UPLOAD_PROGRESS';
 
 export function initResumeUpload(file) {
     return (dispatch, getState) => {
-        let URL = getState().application.application.resume_put_url;
+        let URL = getState().application.applicationForm.resume_put_url;
         let fileName = file.name;
         dispatch(startResumeUpload(fileName));
         /*

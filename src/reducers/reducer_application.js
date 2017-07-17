@@ -9,13 +9,13 @@ import {
     TOGGLE_APPLICATION_FIELD_VALUE
 } from '../actions/application';
 
-const INITIAL_STATE = {
-    application: {},
+export const INITIAL_STATE = {
+    applicationForm: {},
     validation: {},
     error: null,
     loading: false,
     uploadProgress: 0,
-    isUploading: false,
+    isResumeUploading: false,
     uploadingFileName: null,
 };
 
@@ -34,17 +34,17 @@ export default function (state = INITIAL_STATE, action) {
 
         case START_RESUME_UPLOAD:
             return {...state,
-                isUploading: true,
+                isResumeUploading: true,
                 uploadProgress: 0,
                 uploadingFileName: action.fileName,
             };
         case FINISH_RESUME_UPLOAD:
             return {...state,
-                isUploading: false,
+                isResumeUploading: false,
                 uploadProgress: 100,
 
-                application: {
-                    ...state.application,
+                applicationForm: {
+                    ...state.applicationForm,
                     resume_uploaded: true,
                     resume_filename: action.fileName
                 }
@@ -55,17 +55,17 @@ export default function (state = INITIAL_STATE, action) {
         case CHANGE_APPLICATION_FIELD_VALUE:
             return {
                 ...state,
-                application: {
-                    ...state.application,
+                applicationForm: {
+                    ...state.applicationForm,
                     [field]: value
                 }
             };
         case TOGGLE_APPLICATION_FIELD_VALUE:
-            let oldValue = state.application[field];
+            let oldValue = state.applicationForm[field];
             return {
                 ...state,
-                application: {
-                    ...state.application,
+                applicationForm: {
+                    ...state.applicationForm,
                     [field]: !oldValue
                 }
             };
