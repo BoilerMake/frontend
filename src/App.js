@@ -19,7 +19,7 @@ const App = () => (
                     position="top-center"
                     transitionIn="fadeIn"
                     transitionOut="fadeOut"
-                    progressBar/>
+                />
             </div>
         </div>
     </BrowserRouter>

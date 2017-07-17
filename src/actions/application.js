@@ -31,7 +31,7 @@ function receiveApplication (json) {
     };
 }
 
-export function updateApplication(suppressToast=false) {
+export function saveApplication(suppressToast=false) {
     return (dispatch, getState) => {
         let data = getState().application.application;
         return apiFetch('users/me/application',
@@ -47,11 +47,43 @@ export function updateApplication(suppressToast=false) {
             });
     };
 }
+/*
+ * Resume Redux XHR Black Magic :)
+ */
 export const START_RESUME_UPLOAD = 'START_RESUME_UPLOAD';
 export const FINISH_RESUME_UPLOAD = 'FINISH_RESUME_UPLOAD';
 export const RESUME_UPLOAD_PROGRESS = 'RESUME_UPLOAD_PROGRESS';
 
-export function startResumeUpload(fileName) {
+export function initResumeUpload(file) {
+    return (dispatch, getState) => {
+        let URL = getState().application.application.resume_put_url;
+        let fileName = file.name;
+        dispatch(startResumeUpload(fileName));
+        /*
+         * fetch doesn't let us get progress information, so we need to use vanilla XHR
+         */
+        let xhr = new XMLHttpRequest();
+
+        xhr.onload = () => {
+            let { status } = xhr;
+            dispatch(finishResumeUpload(fileName,status));
+        };
+
+        xhr.upload.addEventListener('progress',(e) => {
+            dispatch(resumeUploadProgress(e));
+        });
+
+        let fd = new FormData();
+        fd.append('Content-Type', file.type);
+        fd.append("file",file);
+        xhr.open('PUT', URL);
+        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+        xhr.send(fd);
+    }
+}
+
+
+function startResumeUpload(fileName) {
     return (dispatch) => {
         toastr.info("hang tight!",`uploading ${fileName}`);
         dispatch({
@@ -61,7 +93,7 @@ export function startResumeUpload(fileName) {
     }
 }
 
-export function finishResumeUpload(fileName,status) {
+function finishResumeUpload(fileName,status) {
     return (dispatch) => {
         let success = (status===200);
 
@@ -71,7 +103,7 @@ export function finishResumeUpload(fileName,status) {
         });
 
         if(success) {
-            dispatch(updateApplication(true));
+            dispatch(saveApplication(true));
             toastr.success('Resume Upload Success', `uploaded ${fileName}`);
         } else {
             //todo: ??
@@ -82,13 +114,17 @@ export function finishResumeUpload(fileName,status) {
 }
 
 
-export function resumeUploadProgress(event) {
+function resumeUploadProgress(event) {
     let progress = event.loaded/event.total*100;
     return {
         type: RESUME_UPLOAD_PROGRESS,
         progress
     }
 }
+
+/*
+ * Normal application field stuff
+ */
 export const CHANGE_APPLICATION_FIELD_VALUE = 'CHANGE_APPLICATION_FIELD_VALUE';
 export function changeApplicationFieldValue(field, value) {
     return {

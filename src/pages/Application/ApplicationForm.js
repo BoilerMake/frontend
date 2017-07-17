@@ -7,8 +7,10 @@ import 'rc-progress/assets/index.css';
 
 class Application extends Component {
 
+    /*
+     * Callback from Dropzone
+     */
     onResumeDrop(accepted, rejected) {
-        console.log(accepted,rejected);
         if(rejected.length > 0) {
             toastr.error("Upload error","Resume must be a PDF");
             console.log("wrong filetype");
@@ -20,35 +22,7 @@ class Application extends Component {
             console.log("err");
             return;
         }
-        console.log(accepted);
-        this.handleResumeUpload(accepted[0]);
-    }
-
-    handleResumeUpload(file) {
-        let fileName = file.name;
-        //todo: combine these two
-        this.props.startResumeUpload(fileName);
-
-        /*
-         * fetch doesn't let us get progress information, so we need to use vanilla XHR
-         */
-        let xhr = new XMLHttpRequest();
-
-        xhr.onload = () => {
-            let { status } = xhr;
-            this.props.finishResumeUpload(fileName,status);
-        };
-
-        xhr.upload.addEventListener('progress',(e) => {
-            this.props.resumeUploadProgress(e);
-        });
-
-        let fd = new FormData();
-        fd.append('Content-Type', file.type);
-        fd.append("file",file);
-        xhr.open('PUT', this.props.application.application.resume_put_url);
-        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-        xhr.send(fd);
+        this.props.initResumeUpload(accepted[0]);
     }
 
     componentDidMount() {
@@ -64,7 +38,7 @@ class Application extends Component {
     }
 
     saveApplication() {
-        this.props.updateApplication();
+        this.props.saveApplication();
     }
 
     render () {
@@ -79,7 +53,7 @@ class Application extends Component {
                 multiple={false}
                 accept="application/pdf"
                 onDrop={this.onResumeDrop.bind(this)}
-                style={{}}
+                style={{border: '1px solid red', height: '100%'}}
             >
                 <div>
                     <div><b>First Name</b><input value={app.first_name} onChange={this.applicationTextChange.bind(this,"first_name")}/></div>
@@ -120,10 +94,12 @@ class Application extends Component {
                     <button type="button" onClick={() => { dropzoneRef.open() }}>
                         Open File Dialog
                     </button>
-                    { this.props.application.isUploading ? <Line percent={this.props.application.uploadProgress} strokeWidth="2" strokeColor="#1A2A50" /> : null }
+                    { this.props.application.isUploading ? <Line percent={this.props.application.uploadProgress} strokeWidth="1" strokeColor="#1A2A50" /> : null }
                     { app.resume_uploaded ? <div>You've uploaded <a href={app.resume_get_url} target="_blank" rel="noopener noreferrer" >{app.resume_filename}</a></div> : null }
-                    <hr/>
-                    <pre>{JSON.stringify(this.props.application,null, 2)}</pre>
+
+
+                    {/*<hr/>*/}
+                    {/*<pre>{JSON.stringify(this.props.application,null, 2)}</pre>*/}
                 </div>
             </Dropzone>
 
@@ -134,12 +110,11 @@ class Application extends Component {
 //now the redux integration layer
 import {
     fetchApplication,
-    updateApplication,
-    startResumeUpload,
-    finishResumeUpload,
+    saveApplication,
     changeApplicationFieldValue,
     toggleApplicationFieldValue,
-    resumeUploadProgress } from '../../actions/application';
+    initResumeUpload,
+} from '../../actions/application';
 import { connect } from 'react-redux'
 function mapStateToProps (state) {
     return {
@@ -152,17 +127,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     fetchApplication: () => {
         dispatch(fetchApplication());
     },
-    updateApplication: () => {
-        dispatch(updateApplication());
+    saveApplication: () => {
+        dispatch(saveApplication());
     },
-    startResumeUpload: (fileName) => {
-        dispatch(startResumeUpload(fileName))
+    initResumeUpload: (file) => {
+        dispatch(initResumeUpload(file));
     },
-    finishResumeUpload: (fileName, status) => {
-        dispatch(finishResumeUpload(fileName, status))
-    },
-    resumeUploadProgress: (progress) => { dispatch(resumeUploadProgress(progress))},
-
     changeApplicationFieldValue: (field, value) => {
         dispatch(changeApplicationFieldValue(field, value));
     },
