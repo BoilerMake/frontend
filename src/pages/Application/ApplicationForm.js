@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import ApplicationTextField from './ApplicationTextField';
+import SchoolInputField from './SchoolInputField';
 import ResumeUploadProgressIndicator from './ResumeUploadProgressIndicator';
 
 class ApplicationForm extends Component {
@@ -60,7 +61,6 @@ class ApplicationForm extends Component {
                     </div>
 
 
-                    <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}}>save</button>
                     <hr/>
                     Drag your resume anywhere on the page or....
                     <button type="button" onClick={() => { dropzoneRef.open() }}>Open File Dialog</button>
@@ -68,14 +68,17 @@ class ApplicationForm extends Component {
 
                     { applicationForm.resume_uploaded ? <div>You've uploaded <a href={applicationForm.resume_get_url} target="_blank" rel="noopener noreferrer" >{applicationForm.resume_filename}</a></div> : null }
 
+                    <hr/>
+                    <b>school</b><SchoolInputField/>
                     <pre>
                         TODO:
-                        School
-                        Graduation Year
-                        Gender
-                        Race
-                        Is this your first hackathon
+                        Graduation Year (dropdown??)
+                        Gender (what format?)
+                        Race (dropdown??)
+                        Is this your first hackathon (yesno picker or checkbox??)
                     </pre>
+                    <hr/>
+                    <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}}>save</button>
                 </div>
             </Dropzone>
 

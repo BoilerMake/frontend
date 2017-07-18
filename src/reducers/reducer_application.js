@@ -2,6 +2,7 @@
 import {
     RECEIVE_APPLICATION,
     REQUEST_APPLICATION,
+    RECEIVE_SCHOOL_LIST,
     START_RESUME_UPLOAD,
     FINISH_RESUME_UPLOAD,
     RESUME_UPLOAD_PROGRESS,
@@ -17,6 +18,7 @@ export const INITIAL_STATE = {
     uploadProgress: 0,
     isResumeUploading: false,
     uploadingFileName: null,
+    schools: [],
 };
 
 export default function (state = INITIAL_STATE, action) {
@@ -31,7 +33,11 @@ export default function (state = INITIAL_STATE, action) {
                 loading: false,
                 ...action.json.data
             };
-
+        case RECEIVE_SCHOOL_LIST:
+            return {
+                ...state,
+                schools: action.json.data
+            };
         case START_RESUME_UPLOAD:
             return {...state,
                 isResumeUploading: true,

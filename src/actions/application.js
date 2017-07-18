@@ -161,3 +161,29 @@ export function toggleApplicationFieldValue(field) {
     }
 
 }
+
+
+export const REQUEST_SCHOOL_LIST = 'REQUEST_SCHOOL_LIST';
+export const RECEIVE_SCHOOL_LIST = 'RECEIVE_SCHOOL_LIST';
+
+export function fetchSchoolList () {
+    return (dispatch) => {
+        dispatch(requestApplication());
+        return apiFetch('schools')
+            .then((response) => response.json())
+            .then((json) => dispatch(receiveSchoolList(json)));
+    };
+}
+
+function requestSchoolList () {
+    return {
+        type: REQUEST_SCHOOL_LIST
+    };
+}
+
+function receiveSchoolList (json) {
+    return {
+        type: RECEIVE_SCHOOL_LIST,
+        json,
+    };
+}
