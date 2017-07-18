@@ -31,7 +31,7 @@ function receiveApplication (json) {
     };
 }
 
-export function saveApplication(suppressToast=false) {
+export function saveApplication(suppressToast = false) {
     return (dispatch, getState) => {
         let data = getState().application.applicationForm;
         return apiFetch('users/me/application',
@@ -47,14 +47,31 @@ export function saveApplication(suppressToast=false) {
             });
     };
 }
+
+/*
+ * Callback from Dropzone
+ */
+export function onResumeDrop(accepted, rejected) {
+    return (dispatch) => {
+        if(rejected.length > 0) {
+            toastr.error("Upload error","Resume must be a PDF");
+            console.log("wrong filetype");
+            recordStatEvent("resumeUploadError",null,{rejected});
+            return;
+        } else if(accepted.length !== 1) {
+            toastr.error("Upload error","please try again");
+            recordStatEvent("resumeUploadError",null,{accepted});
+            console.log("err");
+            return;
+        }
+        dispatch(initResumeUpload(accepted[0]));
+    }
+}
+
 /*
  * Resume Redux XHR Black Magic :)
  */
-export const START_RESUME_UPLOAD = 'START_RESUME_UPLOAD';
-export const FINISH_RESUME_UPLOAD = 'FINISH_RESUME_UPLOAD';
-export const RESUME_UPLOAD_PROGRESS = 'RESUME_UPLOAD_PROGRESS';
-
-export function initResumeUpload(file) {
+function initResumeUpload(file) {
     return (dispatch, getState) => {
         let URL = getState().application.applicationForm.resume_put_url;
         let fileName = file.name;
@@ -82,6 +99,9 @@ export function initResumeUpload(file) {
     }
 }
 
+export const START_RESUME_UPLOAD = 'START_RESUME_UPLOAD';
+export const FINISH_RESUME_UPLOAD = 'FINISH_RESUME_UPLOAD';
+export const RESUME_UPLOAD_PROGRESS = 'RESUME_UPLOAD_PROGRESS';
 
 function startResumeUpload(fileName) {
     return (dispatch) => {

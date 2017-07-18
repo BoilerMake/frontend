@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Line } from 'rc-progress';
+import 'rc-progress/assets/index.css';
 
 const ResumeUploadProgressIndicator = ({application}) => {
     return application.isResumeUploading

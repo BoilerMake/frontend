@@ -1,30 +1,9 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
-import {toastr} from 'react-redux-toastr'
-import { recordStatEvent } from '../../actions';
 import ApplicationTextField from './ApplicationTextField';
 import ResumeUploadProgressIndicator from './ResumeUploadProgressIndicator';
-import 'rc-progress/assets/index.css';
 
-class Application extends Component {
-
-    /*
-     * Callback from Dropzone
-     */
-    onResumeDrop(accepted, rejected) {
-        if(rejected.length > 0) {
-            toastr.error("Upload error","Resume must be a PDF");
-            console.log("wrong filetype");
-            recordStatEvent("resumeUploadError",null,{rejected});
-            return;
-        } else if(accepted.length !== 1) {
-            toastr.error("Upload error","please try again");
-            recordStatEvent("resumeUploadError",null,{accepted});
-            console.log("err");
-            return;
-        }
-        this.props.initResumeUpload(accepted[0]);
-    }
+class ApplicationForm extends Component {
 
     componentDidMount() {
         this.props.fetchApplication();
@@ -32,10 +11,6 @@ class Application extends Component {
 
     toggleItem(item) {
         this.props.toggleApplicationFieldValue(item);
-    }
-
-    saveApplication() {
-        this.props.saveApplication();
     }
 
     render () {
@@ -49,7 +24,7 @@ class Application extends Component {
                 disableClick
                 multiple={false}
                 accept="application/pdf"
-                onDrop={this.onResumeDrop.bind(this)}
+                onDrop={this.props.onResumeDrop.bind(this)}
                 style={{border: '1px solid red', height: '100%'}}
             >
                 <div>
@@ -85,9 +60,8 @@ class Application extends Component {
                     </div>
 
 
-                    <button disabled={isLoading} onClick={this.saveApplication.bind(this)}>save</button>
+                    <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}}>save</button>
                     <hr/>
-
                     Drag your resume anywhere on the page or....
                     <button type="button" onClick={() => { dropzoneRef.open() }}>Open File Dialog</button>
                     <ResumeUploadProgressIndicator/>
@@ -110,11 +84,10 @@ class Application extends Component {
 }
 
 //now the redux integration layer
-// import * as applicationActions from '../../actions/application';
 import {
-    initResumeUpload,
     fetchApplication,
     saveApplication,
+    onResumeDrop,
     toggleApplicationFieldValue
 } from '../../actions/application';
 import { bindActionCreators } from 'redux';
@@ -128,11 +101,11 @@ function mapStateToProps (state) {
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
-        initResumeUpload,
         fetchApplication,
         saveApplication,
+        onResumeDrop,
         toggleApplicationFieldValue
     }, dispatch)
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Application);
+export default connect(mapStateToProps, mapDispatchToProps)(ApplicationForm);
