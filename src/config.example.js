@@ -3,3 +3,4 @@ export const GOOGLE_ANALYTICS_ID = 'UA-00000000-1';
 export const DEBUG_MODE = true;
 export const SENTRY_URL = '';
 export const GITHUB_CLIENT_ID = '';
+export const ALLOW_SIGNUPS = false;

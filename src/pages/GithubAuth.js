@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { githubLogin } from '../actions';
 import { Redirect } from 'react-router-dom'
 import { parse } from 'qs'
+import { ALLOW_SIGNUPS } from '../config';
 
 class GitHubAuth extends Component {
     constructor (props) {
@@ -9,6 +10,8 @@ class GitHubAuth extends Component {
         this.state = { loading: false };
     }
     render () {
+        if(!ALLOW_SIGNUPS)
+            return(<h1>Signups not allowed!</h1>);
         if(this.props.user.me && this.props.user.me.github_user_id)
             return (<Redirect to="/dashboard"/>);
         const query = parse(this.props.location.search.substr(1));
