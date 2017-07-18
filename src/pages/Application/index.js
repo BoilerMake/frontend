@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
 import ApplicationForm from './ApplicationForm'
+import NeedToConfirmEmailDialog from './NeedToConfirmEmailDialog'
 class Application extends Component {
+    componentDidMount() {
+        this.props.fetchMe();
+        this.props.fetchApplication();
+    }
     render () {
+        let me = this.props.user.me;
+        let isUserConfirmed = me && me.confirmed;
+        if(!me || !this.props.application.applicationForm)
+            return null;
         return (
             <div className="pageContainer">
                 <h1>Application</h1>
-                <ApplicationForm />
+                { isUserConfirmed
+                    ? <ApplicationForm />
+                    : <NeedToConfirmEmailDialog />
+                }
             </div>
         );
     }
@@ -13,7 +25,10 @@ class Application extends Component {
 
 //now the redux integration layer
 import { fetchApplication } from '../../actions/application';
+import { fetchMe } from '../../actions/users';
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+
 function mapStateToProps (state) {
     return {
         user: state.user,
@@ -21,10 +36,11 @@ function mapStateToProps (state) {
     };
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-    fetchApplication: () => {
-        dispatch(fetchApplication());
-    }
-});
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        fetchApplication,
+        fetchMe
+    }, dispatch)
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Application);

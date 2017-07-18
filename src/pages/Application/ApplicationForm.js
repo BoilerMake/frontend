@@ -5,9 +5,9 @@ import ResumeUploadProgressIndicator from './ResumeUploadProgressIndicator';
 
 class ApplicationForm extends Component {
 
-    componentDidMount() {
-        this.props.fetchApplication();
-    }
+    // componentDidMount() {
+    //      this.props.fetchApplication();
+    // }
 
     toggleItem(item) {
         this.props.toggleApplicationFieldValue(item);
