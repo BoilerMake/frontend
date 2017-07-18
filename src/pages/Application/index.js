@@ -5,6 +5,7 @@ class Application extends Component {
     componentDidMount() {
         this.props.fetchMe();
         this.props.fetchApplication();
+        this.props.fetchSchoolList();
     }
     render () {
         let me = this.props.user.me;
@@ -24,7 +25,7 @@ class Application extends Component {
 }
 
 //now the redux integration layer
-import { fetchApplication } from '../../actions/application';
+import { fetchApplication, fetchSchoolList } from '../../actions/application';
 import { fetchMe } from '../../actions/users';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
@@ -39,6 +40,7 @@ function mapStateToProps (state) {
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
         fetchApplication,
+        fetchSchoolList,
         fetchMe
     }, dispatch)
 };

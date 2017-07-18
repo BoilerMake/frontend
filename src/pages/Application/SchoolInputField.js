@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { changeApplicationFieldValue, fetchSchoolList } from '../../actions/application';
+import { changeApplicationFieldValue } from '../../actions/application';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Select from 'react-select';
@@ -9,9 +9,6 @@ class ApplicationTextField extends Component {
     constructor (props) {
         super(props);
         this.state = { selectValue: props.school_id || null };
-    }
-    componentDidMount() {
-        this.props.fetchSchoolList();
     }
     componentWillReceiveProps(nextProps) {
         if(nextProps.school_id !== this.props.school_id) {
@@ -50,7 +47,7 @@ function mapStateToProps (state) {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({changeApplicationFieldValue, fetchSchoolList}, dispatch)
+    return bindActionCreators({changeApplicationFieldValue}, dispatch)
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ApplicationTextField);

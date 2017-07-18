@@ -168,7 +168,7 @@ export const RECEIVE_SCHOOL_LIST = 'RECEIVE_SCHOOL_LIST';
 
 export function fetchSchoolList () {
     return (dispatch) => {
-        dispatch(requestApplication());
+        dispatch(requestSchoolList());
         return apiFetch('schools')
             .then((response) => response.json())
             .then((json) => dispatch(receiveSchoolList(json)));
