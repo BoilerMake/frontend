@@ -33,6 +33,7 @@ class ApplicationForm extends Component {
                     <div><b>Last Name</b><ApplicationTextField field="last_name"/></div>
                     <div><b>Major</b><ApplicationTextField field="major"/></div>
 
+                    {/*TODO: move Linkedin to its own component? */}
                     <div><b>LinkedIn</b>
                         {
                             applicationForm.has_no_linkedin
@@ -44,6 +45,7 @@ class ApplicationForm extends Component {
                         }
                     </div>
                     <hr/>
+                    {/*TODO: move Github to its own component? */}
                     {/*If a user signs up with a github (isGithubLinked), they can't change their github username, nor can they opt out of providing their username*/}
                     <div><b>Github</b>
                         {
@@ -75,10 +77,11 @@ class ApplicationForm extends Component {
                         Graduation Year (dropdown??)
                         Gender (what format?)
                         Race (dropdown??)
-                        Is this your first hackathon (yesno picker or checkbox??)
+                        Is this your first hackathon (yesno picker or radio??)
                     </pre>
                     <hr/>
                     <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}}>save</button>
+                    Does the server say your application is completed? {applicationForm.completed? ' yes! ': 'no...'}
                 </div>
             </Dropzone>
 
