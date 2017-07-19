@@ -11,11 +11,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  img {
-    max-width: 26px;
+  svg {
+    height: 26px;
     padding: 10px;
+    fill: $pink;
+  }
+  svg:hover {
+    fill: $lightPink;
   }
 }
 .footer {
   padding: 50px 20px;
+}
+
+.icon {
+  fill: green;
 }

@@ -48,7 +48,7 @@ export class InterestSignupForm extends Component {
         let canSubmit = (this.state.email.length > 3);
         return (
           <div>
-              <label htmlFor="email"><p>Sign up for updates on when applications open!</p></label>
+              <label htmlFor="email"><p className="white">Sign up for updates on when applications open!</p></label>
               <form className="interestForm"onSubmit={this.handleSubmit.bind(this)}>
                   <input id="email" name="email" type="email" value={this.state.email} onChange={this.changeEmail.bind(this)} placeholder="Email"/>
                   <button type="submit" disabled={!canSubmit}>Submit</button>
