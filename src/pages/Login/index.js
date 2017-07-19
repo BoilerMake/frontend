@@ -3,7 +3,7 @@ import LoginForm from './LoginForm'
 import { SubmissionError } from 'redux-form'
 import { Redirect, Link } from 'react-router-dom'
 import { API_BASE_URL } from '../../config';
-
+import apiFetch from '../../actions';
 class Login extends Component {
 
     constructor (props) {
@@ -15,7 +15,7 @@ class Login extends Component {
         let d = new FormData();
         d.append('email', values.email);
         d.append('password', values.password);
-        return fetch(`${API_BASE_URL}/users/login`,{
+        return apiFetch(`${API_BASE_URL}/users/login`,{
             method: 'POST',
             body: d
         }).then((response) => response.json())

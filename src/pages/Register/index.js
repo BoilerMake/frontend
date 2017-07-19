@@ -3,6 +3,7 @@ import RegisterForm from './RegisterForm'
 import { SubmissionError } from 'redux-form'
 import { Redirect } from 'react-router-dom'
 import { API_BASE_URL } from '../../config';
+import apiFetch from '../../actions';
 export class Register extends Component {
 
     constructor (props) {
@@ -14,7 +15,7 @@ export class Register extends Component {
         let d = new FormData();
         d.append('email', values.email);
         d.append('password', values.password);
-        return fetch(`${API_BASE_URL}/users/register`,{
+        return apiFetch(`${API_BASE_URL}/users/register`,{
             method: 'POST',
             body: d
         }).then((response) => response.json())
