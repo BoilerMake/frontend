@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LoginForm from './LoginForm'
 import { SubmissionError } from 'redux-form'
 import { Redirect, Link } from 'react-router-dom'
-import { API_BASE_URL } from '../../config';
+import GithubLoginButton from '../../components/GithubLoginButton'
 import apiFetch from '../../actions';
 class Login extends Component {
 
@@ -15,7 +15,7 @@ class Login extends Component {
         let d = new FormData();
         d.append('email', values.email);
         d.append('password', values.password);
-        return apiFetch(`${API_BASE_URL}/users/login`,{
+        return apiFetch('users/login',{
             method: 'POST',
             body: d
         }).then((response) => response.json())
@@ -42,13 +42,15 @@ class Login extends Component {
             )
         }
         return (
-            <div>
+            <div className="pageContainer">
                 <h1>Login</h1>
                 <LoginForm onSubmit={this.handleSubmit}/>
                 <div>
                     <Link to="/register">need an account?</Link>
                     <br/>
                     <Link to="/reset">forgot your password?</Link>
+                    <br/>
+                    <GithubLoginButton/>
                 </div>
             </div>
         );

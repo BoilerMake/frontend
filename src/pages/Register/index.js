@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import RegisterForm from './RegisterForm'
 import { SubmissionError } from 'redux-form'
 import { Redirect } from 'react-router-dom'
-import { API_BASE_URL } from '../../config';
+import GithubLoginButton from '../../components/GithubLoginButton'
 import apiFetch from '../../actions';
 export class Register extends Component {
 
@@ -15,7 +15,7 @@ export class Register extends Component {
         let d = new FormData();
         d.append('email', values.email);
         d.append('password', values.password);
-        return apiFetch(`${API_BASE_URL}/users/register`,{
+        return apiFetch('users/register',{
             method: 'POST',
             body: d
         }).then((response) => response.json())
@@ -43,9 +43,11 @@ export class Register extends Component {
         }
 
         return (
-            <div>
+            <div className="pageContainer">
                 <h1>Register</h1>
                 <RegisterForm onSubmit={this.handleSubmit}/>
+                <br/>
+                <GithubLoginButton/>
             </div>
         );
     }

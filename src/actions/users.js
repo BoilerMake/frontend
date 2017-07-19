@@ -1,8 +1,8 @@
 import cookie from 'react-cookie';
 import jwt_decode from 'jwt-decode';
-import { API_BASE_URL } from '../config';
 import ReactGA from 'react-ga';
 import apiFetch, { recordStatEvent } from './index';
+import {toastr} from 'react-redux-toastr'
 
 export const LOGIN_FROM_JWT_SUCCESS = 'LOGIN_FROM_JWT_SUCCESS';
 export function loginFromJWT (token) {
@@ -37,7 +37,7 @@ export function fetchMe () {
     return (dispatch, getState) => {
         dispatch(requestMe());
 
-        return apiFetch(`${API_BASE_URL}/users/me`)
+        return apiFetch('users/me')
             .then((response) => response.json())
             .then((json) => dispatch(receiveMe(json)));
     };
@@ -60,8 +60,75 @@ function receiveMe (json) {
     };
 }
 
+export function updateMe(me) {
+    return (dispatch) => {
+        return apiFetch('users/me',
+            {
+                method: 'PUT',
+                body: JSON.stringify(me)
+            })
+            .then((response) => response.json())
+            .then((json) => {
+                if(json.success)
+                    toastr.success('Success!', 'Your profile has been saved');
+                dispatch(fetchMe())
+            });
+    };
+}
+
 export function recordEvent(event, subtitle, context) {
     return (dispatch, getState) => {
         return recordStatEvent(event, subtitle, context)
+    };
+}
+
+
+export function authUserWithGithub(code) {
+    return (dispatch) => {
+        return apiFetch(`users/auth/github/${code}`,
+            {
+                method: 'POST'
+            })
+            .then((response) => response.json())
+            .then((json) => {
+                if(json.success) {
+                    let {token, action, username} = json.data;
+                    console.log(json);
+                    if (token) {
+                        console.log("got jwt via gh",token);
+                        let messagePrefix;
+                        if (action === "link") {
+                            messagePrefix = `linked`;
+                        } else if (action === "login") {
+                            messagePrefix = `logged in using`;
+                        } else if (action === "create") {
+                            messagePrefix = `created an account using`;
+                        }
+                        toastr.success('Success!', `${messagePrefix} github account ${username}`);
+                        dispatch(loginFromJWT(token));
+                    }
+                } else {
+                  console.log('authUserWithGithub error:',json.message);
+                  toastr.error('Error',json.message);
+                }
+            });
+    };
+}
+export function confirmEmail(code) {
+    return (dispatch) => {
+        return apiFetch(`users/verify/${code}`,
+            {
+                method: 'POST'
+            })
+            .then((response) => response.json())
+            .then((json) => {
+                if(json.success) {
+                    let {token, message} = json.data;
+                    toastr.success('Success!', message);
+                    dispatch(loginFromJWT(token));
+                } else {
+                    toastr.error('Error',json.message);
+                }
+            });
     };
 }

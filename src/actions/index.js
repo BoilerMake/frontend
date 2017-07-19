@@ -1,7 +1,7 @@
 import cookie from 'react-cookie';
 import Hashids from 'hashids';
 import ReactGA from 'react-ga';
-import { API_BASE_URL, DEBUG_MODE } from '../config';
+import { DEBUG_MODE, GITHUB_CLIENT_ID, API_BASE_URL } from '../config';
 
 function s4() {
     return Math.floor((1 + Math.random()) * 0x10000)
@@ -9,8 +9,7 @@ function s4() {
         .substring(1);
 }
 
-export default function apiFetch(url, options = {}) {
-
+export default function apiFetch(endpoint, options = {}) {
     let uuid = cookie.load('uuid');
     //if we don't have a uuid cookie set, generate a fresh one
     //uuid has 3 parts, separated by dash:
@@ -29,7 +28,7 @@ export default function apiFetch(url, options = {}) {
         "X-debug-token": cookie.load('debug-token'),
         "X-UUID": uuid,
     };
-    return fetch(url,options);
+    return fetch(`${API_BASE_URL}/${endpoint}`,options);
 }
 
 export function recordStatEvent(event, subtitle, context) {
@@ -45,7 +44,7 @@ export function recordStatEvent(event, subtitle, context) {
     d.append('subtitle', subtitle);
     d.append('context', JSON.stringify(context));
     d.append('client', 'react');
-    return apiFetch(`${API_BASE_URL}/stats`,
+    return apiFetch('stats',
         {
             method: 'POST',
             body:   d,
@@ -54,4 +53,8 @@ export function recordStatEvent(event, subtitle, context) {
         if (DEBUG_MODE)
             console.log("[stat] logged event",{event, subtitle, context})
         });
+}
+
+export function githubLogin() {
+    window.location = `http://github.com/login/oauth/authorize?scope=user:email&client_id=${GITHUB_CLIENT_ID}`
 }
