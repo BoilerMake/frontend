@@ -1,13 +1,27 @@
 @import "vars";
 
 .navBar {
+  display: inline;
   font-family: $font-title;
   font-weight: bold;
   padding: 10px 0px;
-  display: flex;
-  justify-content: flex-end;
-  align-content: center;
   color: $darkBlue;
+  button {
+    background: none;
+    padding: 10px;
+    border:2px solid $darkBlue;
+    border-radius: 3px;
+    .bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 1px;
+      background-color: $darkBlue;
+    }
+    .bar:not(:first-child) {
+      margin-top: 4px;
+    }
+  }
 }
 .navLink {
   text-decoration: none;
@@ -21,6 +35,21 @@
 .navLink:hover, .navLink:active, .navLink:focus {
   text-decoration: none;
   color: inherit;
+}
+.menu {
+  display: none;
+  padding-top: 20px;
+  .navLink {
+    font-weight: bold;
+    display: block;
+    margin-left: 60px;
+  }
+}
+.navContainer {
+  position: fixed;
+  width: 100%;
+  display: inline-block;
+  padding: 20px;
 }
 .navLeft {
   padding: 20px 0px;
@@ -57,15 +86,10 @@
 
 .hammers {
   max-width: 20px;
-  height: 30px;
 }
 
 .navLogo {
-  position: fixed;
-  top: 15px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  display: inline;
   padding: 7px 0px;
   margin: 0 10px;
   .logo {
@@ -79,11 +103,27 @@
   transform: rotate(90deg);
 }
 
+.mobile {
+  display: none;
+  position: absolute;
+  right: 51px;
+  top: 0;
+}
+
 @media screen and (max-width: 745px) {
   .navBar {
     margin-left: 50px;
     .navLink {
       margin: 10px;
     }
+  }
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  .menu {
+    display: block;
   }
 }

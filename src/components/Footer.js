@@ -4,17 +4,12 @@ import facebook from '../assets/images/facebook-logo.svg';
 import twitter from '../assets/images/twitter-logo.svg';
 
 const Footer = () => (
-  <div className="footer bgdarkBlue flex-con">
-  lol
-    <div className="flex-child">
+  <div className="footer">
+    <div className="flex-con">
       <img src={facebook} />
-    </div>
-    <div className="flex-child">
       <img src={twitter} />
     </div>
-    <div className="flex-child">
-    </div>
-
+    <p>Copyright © 2017 BoilerMake</p>
   </div>
 );
 export default Footer;
