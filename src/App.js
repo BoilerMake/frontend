@@ -10,9 +10,7 @@ const App = () => (
         <div>
             <AnalyticsListener/>
             <Nav/>
-            <div className="container">
-                <Routes/>
-            </div>
+            <Routes/>
             <Footer />
         </div>
     </BrowserRouter>

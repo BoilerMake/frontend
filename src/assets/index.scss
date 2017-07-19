@@ -35,6 +35,7 @@ body {
   text-align: center;
   padding: 100px 0;
   margin: 0px auto;
+  width: 100%;
 }
 
 .hidden {
@@ -55,7 +56,13 @@ p {
 }
 
 .pageContainer {
-  margin-left: 75px;//so that edge of content lines up with "boilermake" in nav
+  //so that edge of content lines up with "boilermake" in nav
+  margin-left: 75px;
   margin-right: 75px;
-  margin-top: 10px;
+  //to give some padding from navbar
+  margin-top: 50px;
+}
+.container {
+  display: flex;
+  width: 100%;
 }
