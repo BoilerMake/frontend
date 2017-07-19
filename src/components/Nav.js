@@ -17,14 +17,14 @@ class Nav extends Component {
     const { menu } = this.state;
       return (
         <div className="bgwhite navContainer">
-          <div className="navLogo">
-            <img src={logo} alt='boilermake' className='hammers logo'/>
+          <NavLink exact to="/" className="navLogo">
+            <img src={logo} alt='boilermake' className='hammers'/>
             <NavLink exact to='/' className='pink logo'>BoilerMake</NavLink>
-          </div>
+          </NavLink>
           <nav className="navBar desktop">
-            <NavLink exact to='/faq' className='navLink'>FAQ</NavLink>
-            <a href="http://bit.ly/bm-sponsorship-2017" target="blank" className='navLink'>Sponsors</a>
-            <a href="mailto:team@boilermake.org" target="blank" className='navLink'>Contact</a>
+            <NavLink exact to='/faq' className='navLink hover'>FAQ</NavLink>
+            <a href="http://bit.ly/bm-sponsorship-2017" target="blank" className='navLink hover'>Sponsors</a>
+            <a href="mailto:team@boilermake.org" target="blank" className='navLink hover'>Contact</a>
           </nav>
           <nav className="navBar mobile">
             <button onClick={this.toggleMenu}>
@@ -35,9 +35,9 @@ class Nav extends Component {
           </nav>
           { menu ? (
             <div className="menu">
-              <NavLink exact to='/faq' className='navLink'>FAQ</NavLink>
-              <a href="http://bit.ly/bm-sponsorship-2017" target="blank" className='navLink'>Sponsors</a>
-              <a href="mailto:team@boilermake.org" target="blank" className='navLink'>Contact</a>
+              <NavLink exact to='/faq' className='navLink'><span className="hover">FAQ</span></NavLink>
+              <a href="http://bit.ly/bm-sponsorship-2017" target="blank" className="navLink"><span className="hover">Sponsors</span></a>
+              <a href="mailto:team@boilermake.org" target="blank" className="navLink"><span className="hover">Contact</span></a>
             </div>
           ) : null
           }

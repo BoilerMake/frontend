@@ -29,7 +29,8 @@
   padding: 7px 0px;
   margin: 0 50px;
 }
-.navLink:hover {
+.hover:hover {
+  padding-bottom: 5px;
   box-shadow: 0 4px 2px -2px $lightBlue;
 }
 .navLink:hover, .navLink:active, .navLink:focus {
@@ -42,7 +43,8 @@
   .navLink {
     font-weight: bold;
     display: block;
-    margin-left: 60px;
+    margin-left: 51px;
+    padding: 13px 0;
   }
 }
 .navContainer {
@@ -86,9 +88,11 @@
 
 .hammers {
   max-width: 20px;
+  margin: 0 10px -2px 0;
 }
 
 .navLogo {
+  text-decoration: none;
   display: inline;
   padding: 7px 0px;
   margin: 0 10px;
