@@ -1,0 +1,29 @@
+@import "vars";
+.footer {
+  font-family: $font-body;
+  color: $pink;
+  text-align: center;
+  p {
+    font-size: 15px;
+  }
+}
+.flex-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    height: 26px;
+    padding: 10px;
+    fill: $pink;
+  }
+  svg:hover {
+    fill: $lightPink;
+  }
+}
+.footer {
+  padding: 50px 20px;
+}
+
+.icon {
+  fill: green;
+}

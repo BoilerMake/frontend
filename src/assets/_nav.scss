@@ -1,13 +1,27 @@
 @import "vars";
 
 .navBar {
+  display: inline;
   font-family: $font-title;
   font-weight: bold;
   padding: 10px 0px;
-  display: flex;
-  justify-content: flex-end;
-  align-content: center;
   color: $darkBlue;
+  button {
+    background: none;
+    padding: 10px;
+    border:2px solid $darkBlue;
+    border-radius: 3px;
+    .bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 1px;
+      background-color: $darkBlue;
+    }
+    .bar:not(:first-child) {
+      margin-top: 4px;
+    }
+  }
 }
 .navLink {
   text-decoration: none;
@@ -15,12 +29,29 @@
   padding: 7px 0px;
   margin: 0 50px;
 }
-.navLink:hover {
+.hover:hover {
+  padding-bottom: 5px;
   box-shadow: 0 4px 2px -2px $lightBlue;
 }
 .navLink:hover, .navLink:active, .navLink:focus {
   text-decoration: none;
   color: inherit;
+}
+.menu {
+  display: none;
+  padding-top: 20px;
+  .navLink {
+    font-weight: bold;
+    display: block;
+    margin-left: 51px;
+    padding: 13px 0;
+  }
+}
+.navContainer {
+  position: fixed;
+  width: 100%;
+  display: inline-block;
+  padding: 20px;
 }
 .navLeft {
   padding: 20px 0px;
@@ -57,19 +88,17 @@
 
 .hammers {
   max-width: 20px;
-  height: 30px;
+  margin: 0 10px -2px 0;
 }
 
 .navLogo {
-  position: fixed;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  text-decoration: none;
+  display: inline;
   padding: 7px 0px;
   margin: 0 10px;
   .logo {
     font-weight: bold;
-    margin: 0px 15px;
+    margin: 0px 10px;
     text-decoration: none;
   }
 }
@@ -78,11 +107,27 @@
   transform: rotate(90deg);
 }
 
+.mobile {
+  display: none;
+  position: absolute;
+  right: 51px;
+  top: 0;
+}
+
 @media screen and (max-width: 745px) {
   .navBar {
     margin-left: 50px;
     .navLink {
       margin: 10px;
     }
+  }
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  .menu {
+    display: block;
   }
 }

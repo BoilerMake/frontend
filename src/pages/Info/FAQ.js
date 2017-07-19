@@ -44,7 +44,7 @@ const FAQ = () => {
         },
         {
             "title": "Can I use code that I have written before the event?",
-            "body": "We ask that you do not use any code that was written before the start of BoilerMake to keep a fair and level playing feel for all participants.  "
+            "body": "We ask that you do not use any code that was written before the start of BoilerMake to keep a fair and level playing field for all participants.  "
         },
         {
             "title": "Will there be any hardware?",
