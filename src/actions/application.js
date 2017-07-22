@@ -20,14 +20,14 @@ function requestApplication () {
     };
 }
 
-function receiveApplication (json) {
+function receiveApplication (json, onlyUpdateNonFormFields = false) {
     if ('error' in json) {
         json = null;
     }
     return {
         type: RECEIVE_APPLICATION,
         json,
-        receivedAt: Date.now()
+        onlyUpdateNonFormFields
     };
 }
 
@@ -41,9 +41,16 @@ export function saveApplication(suppressToast = false) {
             })
             .then((response) => response.json())
             .then((json) => {
-                if(json.success && !suppressToast)
-                    toastr.success('Success!', 'Your application has been saved');
-                dispatch(fetchApplication())
+                if(json.success) {
+                    if(!suppressToast) {
+                        toastr.success('Success!', 'Your application has been saved');
+                    }
+                    //this api endpoint returns the updated application
+                    dispatch(receiveApplication(json,true));
+                } else {
+                    //something broke, rehydrate the store with fresh application to be safe
+                    dispatch(fetchApplication());
+                }
             });
     };
 }
