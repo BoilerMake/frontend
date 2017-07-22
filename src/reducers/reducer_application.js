@@ -12,7 +12,7 @@ import {
 
 export const INITIAL_STATE = {
     applicationForm: {},
-    validation: {},
+    // validation: {}, TODO? remove?
     error: null,
     loading: false,
     uploadProgress: 0,
@@ -29,10 +29,36 @@ export default function (state = INITIAL_STATE, action) {
             return { ...state, loading: true };
         case RECEIVE_APPLICATION:
             //todo: error checking
-            return { ...state,
-                loading: false,
-                ...action.json.data
-            };
+            let { applicationForm } = action.json.data;
+            if(action.onlyUpdateNonFormFields) {
+                let {
+                    completed,
+                    resume_filename,
+                    resume_get_url,
+                    resume_put_url,
+                    resume_uploaded
+                } = applicationForm;
+                //we only want to update these applicationForm state keys, so we don't disrupt  user currently typing by
+                // giving the UI stale data (i think this make sense?)
+                return {
+                    ...state,
+                    loading: false,
+                    applicationForm:
+                        {
+                            ...state.applicationForm,
+                            completed,
+                            resume_filename,
+                            resume_get_url,
+                            resume_put_url,
+                            resume_uploaded
+                        }
+                };
+            } else {
+                return { ...state,
+                    loading: false,
+                    applicationForm
+                };
+            }
         case RECEIVE_SCHOOL_LIST:
             return {
                 ...state,
