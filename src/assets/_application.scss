@@ -83,6 +83,32 @@ input {
 .margint {
   margin-top: 16px;
 }
+.opt-out-button {
+  width: 100%;
+  outline: none;
+  border: 2px solid #DBE1E8;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 8px;
+  background: #fff;
+  border-top: none;
+  font-family: $font-body;
+  cursor: pointer;
+  color: #DBE1E8;
+}
+.opt-in-button {
+  width: 100%;
+  outline: none;
+  border: 2px solid $pink;
+  border-radius: 8px;
+  padding: 8px;
+  color: $pink;
+  background: #fff;
+  font-family: $font-body;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+}
 @media (max-width: 768px) {
   h1 {
     text-align: center;

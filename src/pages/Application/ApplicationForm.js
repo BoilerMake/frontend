@@ -3,6 +3,7 @@ import Dropzone from 'react-dropzone';
 import ApplicationTextField from './ApplicationTextField';
 import SchoolInputField from './SchoolInputField';
 import ResumeUploadProgressIndicator from './ResumeUploadProgressIndicator';
+// import Select from 'react-select';
 
 class ApplicationForm extends Component {
 
@@ -61,35 +62,49 @@ class ApplicationForm extends Component {
                     </div>
                     <div className="col-6">
                       <label>First Hackathon?</label>
-                      <ApplicationTextField field="grad_year"/>
+                      <ApplicationTextField field="is_first_hackathon"/>
                     </div>
                 </div>
                 <div className="app-row">
                     <div className="col-6 paddingr">
-                      <label>LinkedIn</label>
+                      <label>LinkedIn Username</label>
                       { applicationForm.has_no_linkedin ?
-                          <a>You indicated you don't have a Linedin <button onClick={this.toggleItem.bind(this,'has_no_linkedin')}>i do!</button></a>
+                          <div>You indicated you don't have a Linedin <button onClick={this.toggleItem.bind(this,'has_no_linkedin')} className="opt-in-button">I do!</button></div>
                       :
                           <div>
-                              <ApplicationTextField field="linkedin"/>
-                              <button onClick={this.toggleItem.bind(this,'has_no_linkedin')}>i don't have one</button>
+                              <ApplicationTextField field="linkedin" styles={ { 'border-bottom-left-radius': 0, 'border-bottom-right-radius': 0 } }/>
+                              <button onClick={this.toggleItem.bind(this,'has_no_linkedin')} className="opt-out-button">No thanks</button>
                           </div>
                       }
                     </div>
                     <div className="col-6">
-                      <label>GitHub</label>
+                      <label>GitHub Username</label>
                       { applicationForm.has_no_github && !isGithubLinked ?
-                          <a>You indicated you don't have a Github <button onClick={this.toggleItem.bind(this,'has_no_github')}>i do!</button></a>
+                          <div>You indicated you don't have a Github <button onClick={this.toggleItem.bind(this,'has_no_github')} className="opt-in-button">I do!</button></div>
                       :
                           <div>
-                              <ApplicationTextField field="github" disabled={isGithubLinked}/>
+                              <ApplicationTextField field="github" disabled={isGithubLinked} styles={ { 'border-bottom-left-radius': 0, 'border-bottom-right-radius': 0 } }/>
                               { isGithubLinked ?
                                   <i>You signed up with github, so you can't change the username</i>
                               :
-                                  <button onClick={this.toggleItem.bind(this,'has_no_github')}>i don't have a github</button>
+                                  <button onClick={this.toggleItem.bind(this,'has_no_github')} className="opt-out-button">No thanks</button>
                               }
                           </div>
                       }
+                    </div>
+                </div>
+                <div className="app-row">
+                    <div className="col-6">
+                        <label>Gender</label>
+                        {/* <Select ref="schoolSelect"
+                                simpleValue
+                                options={ [ { value: 'male', label: 'Male'}, {value: 'female', label: 'Female'} ] }
+                                clearable={true}
+                                name="gender"
+                                value={this.state.name}
+                                onChange={this.updateValue.bind(this)}
+                                searchable={false}
+                        /> */}
                     </div>
                 </div>
                 <div className="app-row">
