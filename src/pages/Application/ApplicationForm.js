@@ -26,65 +26,85 @@ class ApplicationForm extends Component {
                 multiple={false}
                 accept="application/pdf"
                 onDrop={this.props.onResumeDrop.bind(this)}
-                style={{border: '1px solid red', height: '100%'}}
+                style={{border: 'none', height: '100%'}}
             >
-                <div>
-                    <div><b>First Name</b><ApplicationTextField field="first_name"/></div>
-                    <div><b>Last Name</b><ApplicationTextField field="last_name"/></div>
-                    <div><b>Major</b><ApplicationTextField field="major"/></div>
-
-                    {/*TODO: move Linkedin to its own component? */}
-                    <div><b>LinkedIn</b>
-                        {
-                            applicationForm.has_no_linkedin
-                                ? <a>You indicated you don't have a Linedin <button onClick={this.toggleItem.bind(this,'has_no_linkedin')}>i do!</button></a>
-                                : <div>
-                                    <ApplicationTextField field="linkedin"/>
-                                    <button onClick={this.toggleItem.bind(this,'has_no_linkedin')}>i don't have one</button>
-                                  </div>
-                        }
+                <div className="app-row">
+                    <div className="col-6">
+                      <label>First Name</label>
+                      <ApplicationTextField field="first_name"/>
                     </div>
-                    <hr/>
-                    {/*TODO: move Github to its own component? */}
-                    {/*If a user signs up with a github (isGithubLinked), they can't change their github username, nor can they opt out of providing their username*/}
-                    <div><b>Github</b>
-                        {
-                            applicationForm.has_no_github && !isGithubLinked
-                                ? <a>You indicated you don't have a Github <button onClick={this.toggleItem.bind(this,'has_no_github')}>i do!</button></a>
-                                : <div>
-                                    <ApplicationTextField field="github" disabled={isGithubLinked}/>
-                                    {
-                                        isGithubLinked
-                                            ? <i>You signed up with github, so you can't change the username</i>
-                                            : <button onClick={this.toggleItem.bind(this,'has_no_github')}>i don't have a github</button>
-                                    }
-                                </div>
-                        }
+                    <div className="col-6">
+                      <label>Last Name</label>
+                      <ApplicationTextField field="last_name"/>
                     </div>
-
-
-                    <hr/>
-                    Drag your resume anywhere on the page or....
-                    <button type="button" onClick={() => { dropzoneRef.open() }}>Open File Dialog</button>
-                    <ResumeUploadProgressIndicator/>
-
-                    { applicationForm.resume_uploaded ? <div>You've uploaded <a href={applicationForm.resume_get_url} target="_blank" rel="noopener noreferrer" >{applicationForm.resume_filename}</a></div> : null }
-
-                    <hr/>
-                    <b>school</b><SchoolInputField/>
-                    <pre>
+                </div>
+                <div className="app-row">
+                    <label>School</label>
+                    <SchoolInputField/>
+                </div>
+                <div className="app-row">
+                    <div className="col-6 paddingr">
+                      <label>Major</label>
+                      <ApplicationTextField field="major"/>
+                    </div>
+                    <div className="col-6">
+                      <label>Expected Graduation</label>
+                      <ApplicationTextField field="grad_year"/>
+                    </div>
+                </div>
+                <div className="app-row">
+                    <div className="col-6 paddingr">
+                      <label>Upload Resume</label>
+                      <button type="button" onClick={() => { dropzoneRef.open() }} className="application-button">Drop or click to upload</button>
+                      <ResumeUploadProgressIndicator/>
+                      { applicationForm.resume_uploaded ? <div>You've uploaded <a href={applicationForm.resume_get_url} target="_blank" rel="noopener noreferrer" >{applicationForm.resume_filename}</a></div> : null }
+                    </div>
+                    <div className="col-6">
+                      <label>First Hackathon?</label>
+                      <ApplicationTextField field="grad_year"/>
+                    </div>
+                </div>
+                <div className="app-row">
+                    <div className="col-6 paddingr">
+                      <label>LinkedIn</label>
+                      { applicationForm.has_no_linkedin ?
+                          <a>You indicated you don't have a Linedin <button onClick={this.toggleItem.bind(this,'has_no_linkedin')}>i do!</button></a>
+                      :
+                          <div>
+                              <ApplicationTextField field="linkedin"/>
+                              <button onClick={this.toggleItem.bind(this,'has_no_linkedin')}>i don't have one</button>
+                          </div>
+                      }
+                    </div>
+                    <div className="col-6">
+                      <label>GitHub</label>
+                      { applicationForm.has_no_github && !isGithubLinked ?
+                          <a>You indicated you don't have a Github <button onClick={this.toggleItem.bind(this,'has_no_github')}>i do!</button></a>
+                      :
+                          <div>
+                              <ApplicationTextField field="github" disabled={isGithubLinked}/>
+                              { isGithubLinked ?
+                                  <i>You signed up with github, so you can't change the username</i>
+                              :
+                                  <button onClick={this.toggleItem.bind(this,'has_no_github')}>i don't have a github</button>
+                              }
+                          </div>
+                      }
+                    </div>
+                </div>
+                <div className="app-row">
+                    <p>
                         TODO:
                         Graduation Year (dropdown??)
                         Gender (what format?)
                         Race (dropdown??)
                         Is this your first hackathon (yesno picker or radio??)
-                    </pre>
+                    </p>
                     <hr/>
                     <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}}>save</button>
                     Does the server say your application is completed? {applicationForm.completed? ' yes! ': 'no...'}
                 </div>
             </Dropzone>
-
         );
     }
 }

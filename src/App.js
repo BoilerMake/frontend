@@ -11,9 +11,7 @@ const App = () => (
         <div>
             <AnalyticsListener/>
             <Nav/>
-            <div className="container">
-                <Routes/>
-            </div>
+            <Routes/>
             <ReduxToastr
                 timeOut={4000}
                 newestOnTop={false}

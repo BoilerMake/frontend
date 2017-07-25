@@ -1,11 +1,13 @@
 @import 'nav';
 @import 'footer';
+@import 'application';
+@import 'mobile';
 /*@import 'normalize.css/normalize.css';*/
 
 body {
   margin: 0;
   padding: 0;
-  font-family: $font-title;
+  font-family: $font-body;
   color: $darkBlue;
 }
 
@@ -52,14 +54,14 @@ h3 {
 
 p {
   font-family: $font-body;
-  font-size: 20px;
+  font-size: 14px;
 }
-
+.title {
+  font-family: $font-title
+}
 .pageContainer {
-  //so that edge of content lines up with "boilermake" in nav
   margin-left: 75px;
   margin-right: 75px;
-  //to give some padding from navbar
   margin-top: 50px;
 }
 .container {
@@ -68,4 +70,9 @@ p {
 }
 .icon {
   fill: red;
+}
+.max-width {
+  max-width: 1024px;
+  padding: 0 12px;
+  margin: auto;
 }
