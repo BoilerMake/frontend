@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import apiFetch from '../../actions';
+import ApplicationTimeSeries from './ApplicationTimeSeries';
 import {
     Grid,
     Header,
@@ -50,7 +51,8 @@ class ExecDashboard extends Component {
                             </Segment>
                         </Grid.Column>
                         <Grid.Column>
-                            asd
+                            <Header as='h3' dividing># Of Applications Created Per Day</Header>
+                            <ApplicationTimeSeries data={this.props.exec.application_list} />
                         </Grid.Column>
                     </Grid.Row>
 
