@@ -63,7 +63,7 @@ const FAQ = () => {
             <p dangerouslySetInnerHTML={{__html: q.body}}/>
         </div>);
     return(
-        <div className="max-width">
+        <div className="fullWidthContainer">
           <h1>Frequently Asked Questions</h1>
             {questionList}
         </div>

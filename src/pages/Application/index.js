@@ -13,7 +13,7 @@ class Application extends Component {
         if(!me || !this.props.application.applicationForm)
             return null;
         return (
-            <div className="max-width">
+            <div className="fullWidthContainer application">
                 <h1 className="title app-heading">Application</h1>
                 { isUserConfirmed
                     ? <ApplicationForm />

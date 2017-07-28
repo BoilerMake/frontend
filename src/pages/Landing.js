@@ -4,7 +4,7 @@ import B from '../assets/images/b.png';
 
 const Landing = () => (
     <div className="page bgdarkBlue">
-        <div className="max-width">
+        <div className="fullWidthContainer">
             <div className="row">
                 <div className="col-6">
                     <h1 className="white title">BoilerMake</h1>

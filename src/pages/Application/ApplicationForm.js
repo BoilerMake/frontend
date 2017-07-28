@@ -29,7 +29,7 @@ class ApplicationForm extends Component {
                 onDrop={this.props.onResumeDrop.bind(this)}
                 style={{border: 'none', height: '100%'}}
             >
-                <div className="app-row">
+                <div className="row">
                     <div className="col-6">
                       <label>First Name</label>
                       <ApplicationTextField field="first_name"/>
@@ -39,11 +39,11 @@ class ApplicationForm extends Component {
                       <ApplicationTextField field="last_name"/>
                     </div>
                 </div>
-                <div className="app-row">
+                <div className="row">
                     <label>School</label>
                     <SchoolInputField/>
                 </div>
-                <div className="app-row">
+                <div className="row">
                     <div className="col-6 paddingr">
                       <label>Major</label>
                       <ApplicationTextField field="major"/>
@@ -53,7 +53,7 @@ class ApplicationForm extends Component {
                       <ApplicationTextField field="grad_year"/>
                     </div>
                 </div>
-                <div className="app-row">
+                <div className="row">
                     <div className="col-6 paddingr">
                       <label>Upload Resume</label>
                       <button type="button" onClick={() => { dropzoneRef.open() }} className="application-button">Drop or click to upload</button>
@@ -65,7 +65,7 @@ class ApplicationForm extends Component {
                       <ApplicationTextField field="is_first_hackathon"/>
                     </div>
                 </div>
-                <div className="app-row">
+                <div className="row">
                     <div className="col-6 paddingr">
                       <label>LinkedIn Username</label>
                       { applicationForm.has_no_linkedin ?
@@ -93,7 +93,7 @@ class ApplicationForm extends Component {
                       }
                     </div>
                 </div>
-                <div className="app-row">
+                <div className="row">
                     <div className="col-6">
                         <label>Gender</label>
                         {/* <Select ref="schoolSelect"
@@ -107,7 +107,7 @@ class ApplicationForm extends Component {
                         /> */}
                     </div>
                 </div>
-                <div className="app-row">
+                <div className="row">
                     <p>
                         TODO:
                         Graduation Year (dropdown??)
