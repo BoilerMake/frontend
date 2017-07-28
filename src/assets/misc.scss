@@ -1,0 +1,16 @@
+.mlh-badge {
+  display: block;
+  max-width: 100px;
+  min-width: 60px;
+  position: fixed;
+  right: 30px;
+  top: 0;
+  width: 10%;
+  z-index: 10000
+}
+
+@media screen and (max-width: 745px) {
+  .mlh-badge {
+    display: none;
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Interest from '../components/InterestSignupForm';
+import MLHBadge from '../components/MLHBadge';
 import B from '../assets/images/b.png';
 
 const Landing = () => (
@@ -17,6 +18,7 @@ const Landing = () => (
                 </div>
             </div>
         </div>
+    <MLHBadge/>
     </div>
 );
 

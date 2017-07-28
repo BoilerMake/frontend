@@ -5,9 +5,32 @@
 ## About
 This was day-of site for BoilerMake IV, and will be the site for BoilerMake V
 
-## Running:
-* install npm or yarn...
+# Dev setup
+
+## Environment setup
+
+* install yarn (NOT npm)
 * `yarn` to get packages
-* `cp src/config.example.js src/config.js` to give yourself a config file
+* `cp src/config.example.js src/config.js` to give yourself a config file (see below for how to populate it)
 * `yarn run start` to start the webpack dev server
 * `yarn run test` to start the test suite watcher
+
+
+## Helpful Config Settings
+
+To get github auth working locally config.js, set `GITHUB_CLIENT_ID` to `7e590557877b9c9c9723`. Look at `config.example.js` for the sample config to use, when new values are added they are added to the example.
+
+To have your local frontend communicate with the dev server: configure your api base url like so: `export const API_BASE_URL = 'http://api.dev.boilermake.org/v1';`
+
+> Note: this github client id will only work with the api.dev server.
+
+Also, you'll need to enable signups via setting this feature flag to true: `ALLOW_SIGNUPS`
+
+> Make sure you're using `yarn` to add dependencies
+
+# Coding workflow
+
+All commits should be on feature branches, and you can submit a Pull Request into `master`
+
+
+DM nicky on slack for questions :)
