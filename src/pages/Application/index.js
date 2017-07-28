@@ -13,8 +13,8 @@ class Application extends Component {
         if(!me || !this.props.application.applicationForm)
             return null;
         return (
-            <div className="pageContainer">
-                <h1>Application</h1>
+            <div className="fullWidthContainer application">
+                <h1 className="title app-heading">Application</h1>
                 { isUserConfirmed
                     ? <ApplicationForm />
                     : <NeedToConfirmEmailDialog />

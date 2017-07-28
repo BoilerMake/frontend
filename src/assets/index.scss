@@ -1,71 +1,112 @@
 @import 'nav';
 @import 'footer';
-/*@import 'normalize.css/normalize.css';*/
+
+@import 'landing';
+@import 'application';
+
+@import 'mobile';
 
 body {
   margin: 0;
   padding: 0;
-  font-family: $font-title;
+  font-family: $font-body;
   color: $darkBlue;
 }
 
-.pink {
-  color: $pink;
+// FONT COLORS
+.white { color: $white; }
+.pink { color: $pink; }
+.lightBlue { color: $lightBlue; }
+.darkBlue { color: $darkBlue; }
+
+// FONT OVERRIDES
+h1 { font-size: 50px; }
+h3 { font-size: 25px; }
+p {
+  font-family: $font-body;
+  font-size: 14px;
 }
 
-.lightBlue {
-  color: $lightBlue;
-}
+// FONTS
+.title { font-family: $font-title }
 
-.darkBlue {
-  color: $darkBlue;
-}
-.white {
-  color: $white;
-}
-.bgdarkBlue {
-  background-color: $darkBlue;
-}
+// BACKGROUNDS
+.bgwhite { background-color: $white; }
+.bgdarkBlue { background-color: $darkBlue; }
 
-.bgwhite {
-  background-color: $white;
+// ONE-LINERS
+.hidden { display: none; }
+.icon { fill: red; }
+.align-end { align-items: flex-end; }
+.flex {
+  display: flex;
+  flex-wrap: wrap;
 }
+.v-center { align-items: center; }
+.h-center { justify-content: center; }
 
+// CONTAINERS
 .page {
   text-align: center;
   padding: 100px 0;
   margin: 0px auto;
   width: 100%;
 }
-
-.hidden {
-  display: none;
-}
-
-h1 {
-  font-size: 50px;
-}
-
-h3 {
-  font-size: 25px;
-}
-
-p {
-  font-family: $font-body;
-  font-size: 20px;
-}
-
 .pageContainer {
-  //so that edge of content lines up with "boilermake" in nav
   margin-left: 75px;
   margin-right: 75px;
-  //to give some padding from navbar
   margin-top: 50px;
 }
 .container {
   display: flex;
   width: 100%;
 }
-.icon {
-  fill: red;
+.fullWidthContainer {
+  max-width: 1024px;
+  padding: 0 12px;
+  margin: auto;
 }
+
+// GRID
+.row:after { // Only need after to clear
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.col-6 {
+  width: 50%;
+  float: left;
+  margin: 0;
+  box-sizing: border-box;
+
+  &:first-child {
+    padding-right: 8px;
+  }
+  &:last-child {
+    padding-left: 8px;
+  }
+}
+@media (max-width: 768px) {
+  .col-6 {
+    width: 100%;
+  }
+}
+
+// PADDING & MARGIN STANDARDS
+.padding { padding: 16px; }
+.paddingt { padding-top: 16px; }
+.paddingb { padding-bottom: 16px }
+.paddingl { padding-left: 16px; }
+.paddingr {padding-right: 16px; }
+.paddingx { padding: 0 16px; }
+.paddingy { padding: 16px 0; }
+
+.margin { margin: 16px; }
+.margint { margin-top: 16px; }
+.marginb { margin-bottom: 16px }
+.marginl { margin-left: 16px; }
+.marginr {margin-right: 16px; }
+.marginx { margin: 0 16px; }
+.marginy { margin: 16px 0; }

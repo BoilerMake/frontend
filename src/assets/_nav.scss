@@ -1,5 +1,13 @@
 @import "vars";
 
+.navContainer {
+  width: 100%;
+  padding: 20px;
+  // border-bottom: 1px solid #DBE1E8;
+  font-family: $font-title;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
 .navBar {
   display: inline;
   font-family: $font-title;
@@ -47,12 +55,7 @@
     padding: 13px 0;
   }
 }
-.navContainer {
-  position: fixed;
-  width: 100%;
-  display: inline-block;
-  padding: 20px;
-}
+
 .navLeft {
   padding: 20px 0px;
   background: $white;

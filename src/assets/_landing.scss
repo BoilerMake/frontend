@@ -1,0 +1,94 @@
+@import 'vars';
+
+.landing {
+  position: relative;
+}
+.landing-copy {
+  text-align: left;
+  margin-top: 50%;
+}
+
+.landing-logo {
+  max-width: 400px;
+}
+.interestForm {
+  font-size: 20px;
+  display: block;
+  margin-top: 40px;
+  button {
+    margin-left: -1px;
+    display: inline;
+    font-size: inherit;
+    color: $white;
+    font-family: $font-title;
+    font-weight: bold;
+    background: $pink;
+    border-radius: 0 50px 50px 0;
+    border: 1px solid $pink;
+    border-bottom-width: 3px;
+  }
+  button:focus {
+    outline: none;
+  }
+  input {
+    border: 1px solid $lightBlue;
+    font-size: inherit;
+    font-family: $font-body;
+    border-radius: 50px 0 0 50px;
+    background: white;
+    width: 50%;
+  }
+  input:focus, input:active, input:hover {
+    outline: none;
+    box-shadow: 0px 0px 40px -8px $lightBlue;
+  }
+  input, button {
+    padding: 20px;
+  }
+
+}
+@media screen and (max-width: 1080px) {
+  .flexCon {
+    display: block;
+    .flexchild {
+      padding: 0 20%;
+      img {
+        padding: 0;
+        max-width: 319px;
+      }
+    }
+  }
+  .con {
+
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .flexCon {
+    .flexchild {
+      padding: 0 20px;
+    }
+  }
+}
+@media screen and (max-width:410px) {
+  .flexCon {
+    .flexchild {
+      p, button, input {
+        font-size: 13px;
+      }
+      h1 {
+        font-size: 45px;
+      }
+
+    }
+  }
+}
+@media screen and (max-width:380px) {
+  .flexCon {
+    .flexchild {
+      img {
+        max-width: 280px;
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+.app-heading {
+  text-align: right;
+  color: $pink;
+  padding: 30px 0;
+}
+.application {
+  input {
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 8px;
+    border: 2px solid #DBE1E8;
+    margin-top: 8px;
+    font-size: 14px;
+
+    &:focus {
+      border: 2px solid $darkBlue;
+    }
+  }
+
+  .application-button {
+    width: 100%;
+    padding: 15px 20px;
+    background: #FFFFFF;
+    border: 2px solid #DBE1E8;
+    border-radius: 8px;
+    font-family: $font-body;
+    margin-top: 8px;
+    font-size: 14px;
+    outline: none;
+
+    &:active {
+      border: 2px solid $darkBlue;
+    }
+  }
+
+  .row {
+    margin-bottom: 32px;
+  }
+
+  .opt-out-button {
+    width: 100%;
+    outline: none;
+    border: 2px solid #DBE1E8;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 8px;
+    background: #fff;
+    border-top: none;
+    font-family: $font-body;
+    cursor: pointer;
+    color: #DBE1E8;
+  }
+  .opt-in-button {
+    width: 100%;
+    outline: none;
+    border: 2px solid $pink;
+    border-radius: 8px;
+    padding: 8px;
+    color: $pink;
+    background: #fff;
+    font-family: $font-body;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+}
+
+.Select-control {
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  border-radius: 8px;
+  border: 2px solid #DBE1E8;
+  margin-top: 8px;
+
+  input:active {
+    border: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    text-align: center;
+  }
+  .col-6 {
+    width: 100%;
+
+    &:first-child {
+      padding-right: 0px;
+
+      input {
+        margin-bottom: 16px;
+      }
+    }
+    &:last-child {
+      padding-left: 0px;
+    }
+  }
+}

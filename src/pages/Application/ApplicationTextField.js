@@ -3,8 +3,9 @@ import { changeApplicationFieldValue } from '../../actions/application';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-const ApplicationTextField = ({changeApplicationFieldValue, field, applicationForm, disabled, isLoading}) => (
+const ApplicationTextField = ({changeApplicationFieldValue, field, applicationForm, disabled, isLoading, styles}) => (
     <input
+        style={ styles }
         disabled={(disabled || false) || isLoading} //disable the input if: disabled (default false) OR isLoading
         value={applicationForm[field] || ""} //react is unhappy with value being null
         onChange={
