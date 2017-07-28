@@ -76,3 +76,10 @@ p {
   padding: 0 12px;
   margin: auto;
 }
+.row:after {
+  content: "."; 
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
