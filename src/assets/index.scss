@@ -1,8 +1,10 @@
 @import 'nav';
 @import 'footer';
+
+@import 'landing';
 @import 'application';
+
 @import 'mobile';
-/*@import 'normalize.css/normalize.css';*/
 
 body {
   margin: 0;
@@ -36,6 +38,12 @@ p {
 .hidden { display: none; }
 .icon { fill: red; }
 .align-end { align-items: flex-end; }
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.v-center { align-items: center; }
+.h-center { justify-content: center; }
 
 // CONTAINERS
 .page {
@@ -78,6 +86,11 @@ p {
   }
   &:last-child {
     padding-left: 8px;
+  }
+}
+@media (max-width: 768px) {
+  .col-6 {
+    width: 100%;
   }
 }
 

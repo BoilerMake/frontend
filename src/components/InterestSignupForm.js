@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import apiFetch from '../actions/index';
-import '../assets/interest.scss';
 
 export class InterestSignupForm extends Component {
     constructor (props) {
