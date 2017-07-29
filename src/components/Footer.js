@@ -1,7 +1,9 @@
 import React from 'react';
+import MLHBadge from '../components/MLHBadge';
 
 const Footer = () => (
   <div className="footer">
+    <MLHBadge/>
     <div className="flex-con">
       <a href="https://www.facebook.com/BoilerMake/">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="49 6800 31.117 31.117">

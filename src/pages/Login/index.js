@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import LoginForm from './LoginForm'
 import { SubmissionError } from 'redux-form'
 import { Redirect, Link } from 'react-router-dom'
-import GithubLoginButton from '../../components/GithubLoginButton'
 import apiFetch from '../../actions';
+import '../../assets/_form.scss'
+
 class Login extends Component {
 
     constructor (props) {
@@ -42,16 +43,8 @@ class Login extends Component {
             )
         }
         return (
-            <div className="pageContainer">
-                <h1>Login</h1>
+            <div className="login">
                 <LoginForm onSubmit={this.handleSubmit}/>
-                <div>
-                    <Link to="/register">need an account?</Link>
-                    <br/>
-                    <Link to="/reset">forgot your password?</Link>
-                    <br/>
-                    <GithubLoginButton/>
-                </div>
             </div>
         );
     }

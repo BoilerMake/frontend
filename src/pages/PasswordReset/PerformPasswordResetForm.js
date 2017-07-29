@@ -1,5 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import '../../assets/_form.scss'
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
     <div>
@@ -14,7 +15,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 export const PerformPasswordResetForm = (props) => {
     const { error, handleSubmit, pristine, reset, submitting } = props;
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
             <Field name="password" type="password" component={renderField} label="password"/>
             <Field name="password2" type="password" component={renderField} label="confirm"/>
             {error && <strong>{error}</strong>}

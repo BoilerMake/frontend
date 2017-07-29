@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Code = () => (
-  <div>
+  <div className="pagePadded">
       <h1>Code at Boilermake</h1>
       <a href="http://github.com/boilermake">github.com/BoilerMake</a>
       <hr/>

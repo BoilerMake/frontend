@@ -10,15 +10,16 @@ class Application extends Component {
     render () {
         let me = this.props.user.me;
         let isUserConfirmed = me && me.confirmed;
-        if(!me || !this.props.application.applicationForm)
-            return null;
+        // if(!me || !this.props.application.applicationForm)
+        //     return null;
         return (
             <div className="fullWidthContainer application">
-                <h1 className="title app-heading">Application</h1>
+                <h1 className="title app-heading left">Application</h1>
                 { isUserConfirmed
                     ? <ApplicationForm />
                     : <NeedToConfirmEmailDialog />
                 }
+                <ApplicationForm />
             </div>
         );
     }

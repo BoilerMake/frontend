@@ -1,0 +1,39 @@
+@import "vars";
+
+.login {
+  color: $white;
+  padding: 20px 0 50px 0;
+  text-align: center;
+  background-color: $darkBlue;
+  a {
+    color: $white;
+    text-decoration: none;
+    padding: 5px 0;
+  }
+  a:hover {
+    color: $lightBlue;
+  }
+}
+.form {
+  text-align: left;
+  padding: 20px;
+  max-width: 320px;
+  margin: 0 auto;
+  label {
+    color: inherit;
+    margin-top: 20px;
+  }
+  input {
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 8px;
+    border: 2px solid #DBE1E8;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .btn {
+    padding: 15px 20px;
+  }
+}

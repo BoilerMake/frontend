@@ -1,5 +1,7 @@
 import React from 'react';
 import '../assets/misc.scss';
+import mlh from '../assets/images/mlh.svg';
+
 const MLHBadge = () => (
     <a id="mlh-trust-badge"
        className="mlh-badge"
@@ -7,7 +9,7 @@ const MLHBadge = () => (
        target="_blank"
        rel="noopener noreferrer"
     >
-        <img src="https://s3.amazonaws.com/logged-assets/trust-badge/2018/white.svg"
+        <img src={mlh}
              alt="Major League Hacking 2017 Hackathon Season"
              style={{width: '100%'}}
         />

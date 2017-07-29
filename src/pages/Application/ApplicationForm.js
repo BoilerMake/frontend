@@ -116,7 +116,7 @@ class ApplicationForm extends Component {
                         Is this your first hackathon (yesno picker or radio??)
                     </p>
                     <hr/>
-                    <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}}>save</button>
+                    <button className="btn" disabled={isLoading} onClick={()=>{this.props.saveApplication()}}>Save</button>
                     Does the server say your application is completed? {applicationForm.completed? ' yes! ': 'no...'}
                 </div>
             </Dropzone>

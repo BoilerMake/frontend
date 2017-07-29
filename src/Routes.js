@@ -27,7 +27,7 @@ const PrivateRoute = ({ component: Component, isAuthenticated, isAllowed, ...res
         isAuthenticated
         ? (isAllowed
             ? <Component {...props}/>
-            : <div><h1>Permission Denied</h1>You don't have the rights to access this page.</div>)
+            : <div><h1>Permission Denied</h1>You do not have the rights to access this page.</div>)
         : (
             <Redirect to={{
                 pathname: '/login',
