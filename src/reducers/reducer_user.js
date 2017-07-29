@@ -10,10 +10,11 @@ import jwtDecode from 'jwt-decode';
 
 const INITIAL_STATE = {
     authenticated: false,
+    isHacker: false,
+    isExec: false,
     me: null,
     error: null,
     loading: false,
-    token_data: null,
     token: null
 };
 
@@ -21,11 +22,15 @@ export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
 
         case LOGIN_FROM_JWT_SUCCESS:
+            let token_data = jwtDecode(action.token);
+            let isHacker = token_data.roles.includes('hacker');
+            let isExec = token_data.roles.includes('exec');
             return { ...state,
                 authenticated: true,
                 error: null,
                 loading: false,
-                token_data: jwtDecode(action.token),
+                isHacker,
+                isExec,
                 token: action.token
             };
         case LOGOUT_USER:
