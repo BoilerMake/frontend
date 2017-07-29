@@ -23,7 +23,6 @@ class Nav extends Component {
           </NavLink>
           <nav className="navBar desktop">
             <NavLink exact to='/faq' className='navLink hover'>FAQ</NavLink>
-            <a href="http://bit.ly/bm-sponsorship-2017" target="blank" className='navLink hover'>Sponsors</a>
             <a href="mailto:team@boilermake.org" target="blank" className='navLink hover'>Contact</a>
           </nav>
           <nav className="navBar mobile">
