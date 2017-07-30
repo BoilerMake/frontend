@@ -2,6 +2,8 @@ language: node_js
 cache: yarn
 node_js:
 - 6
+install:
+- pip install awscli
 before_script:
 - cp src/config.example.js src/config.js
 script:
@@ -12,3 +14,22 @@ after_success:
 notifications:
   slack:
     secure: cXpkJX3gNAExqNvw6QCMnskGx/rY8Wj2KHkBb707zIbsF/2ePop4uAKGHyRxSuKfn/8sQhXk03dPHBpPjeG/6XYA9Kjcy/AQ/mWwEtx65mRkJ4r33teNWuL2Gb7SHURmyOMt443gbX0zfxb/byRJ2LarwHFuUHQtCQATSRnhCcWYiAj8D7quAQzAzRO7pugT36D02KsF47ViLJYMPfAs7ue/tEVihZiwEOJWT5VyNvDqwmHVX3/fBa/9g3OTBasYfsehdMsY62tC/hYCwe6gWWADa2oh/9WCJxfIV+knMom1tTu9AZIdTXAXkS+4qeuWW3+uvsUL73BcMjOlHvR7yzYATpMd7an88wIhkMg1zgwB4tFE5mv9zHEmhNw6xRTbSCuC1u4KXMLEYK2M7oHiCj0IDDI4lJwAE+3p98wr63rup5958FxQoZytI5ZtAUnFVdoxpCnFLw4edJQyEb954wMiQwpAzdNNY7uAxIW5SRakSSvtW9rr5ydlgkRBsQWKJUSgPAhYUNqH7ebZ8frreZ5wTgNIpb6bpRwpR04s9YmKvtBd1J42zDknoKZgcEbGU0zI+7A8IP8Ss3LOAykMFYQJeLKPMkmLIyS3KOJC9I8a/T0T+0Xo/QDSn/mBcM1EsQqzRb3ZdGGkrv790ifSxHpwLIRfCQpx+d+QbNf6Y/k=
+
+deploy:
+  # Deploy master to s3
+  on:
+    branch: master
+  provider: s3
+  # You can refer to environment variables from Travis repo settings!
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: boilermake5frontend
+  # Prevent Travis from deleting your built site so it can be uploaded.
+  skip_cleanup: true
+  local_dir: build
+  cache_control: "max-age=21600"
+after_deploy:
+  # Allow `awscli` to make requests to CloudFront.
+  - aws configure set preview.cloudfront true
+  # Invalidate every object in the targeted distribution.
+#  - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
