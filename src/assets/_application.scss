@@ -36,21 +36,56 @@
   }
 
   .dropdown {
-      width: 100%;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      font-size: 14px;
-      padding: 15px 20px;
-      margin-top: 8px;
-      border: 2px solid #DBE1E8;
-      background: #FFFFFF;
-      outline: none;
-      text-transform: capitalize;
+    /* styling */
+    background-color: white;
+    border: 2px solid #DBE1E8;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    width: 100%;
+    margin-top: 8px;
 
-      &:focus {
-          border: 2px solid $darkBlue;
-      }
+    /* reset */
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+    background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+    background-repeat: no-repeat;
+
+    &:focus {
+      background-image:
+      linear-gradient(45deg, $darkBlue 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, $darkBlue 50%),
+      linear-gradient(to right, #ccc, #ccc);
+      background-position:
+      calc(100% - 15px) 1em,
+      calc(100% - 20px) 1em,
+      calc(100% - 2.5em) 0.5em;
+      background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+      background-repeat: no-repeat;
+      border-color: $darkBlue;
+      outline: 0;
+    }
   }
 
   .submit {

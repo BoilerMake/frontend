@@ -104,11 +104,11 @@ class ApplicationForm extends Component {
                 <div className="row">
                     <div className="col-6">
                         <label>Gender</label>
-                        <ApplicationDropdown field="gender" options={ { male: 'Male', female: 'Female'} }/>
+                        <ApplicationDropdown field="gender" options={ { Male: 0, Female: 1, Other: 2, 'I\'d Rather Not Say': 3 } }/>
                     </div>
                     <div className="col-6">
                         <label>Race</label>
-                        <ApplicationDropdown field="race" options={ { white: 'White', black: 'Black'} }/>
+                        <ApplicationDropdown field="race" options={ {  'Asian': 1, 'White': 5, 'Black or African American': 2, 'American Indian or Alaska Native': 0, 'Native Hawaiian or Other Pacific Islander': 4, 'Other': 6, 'I\'d Rather Not Say': 3 } }/>
                     </div>
                 </div>
                 <div className="row">
