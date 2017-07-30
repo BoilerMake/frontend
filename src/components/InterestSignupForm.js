@@ -50,7 +50,7 @@ export class InterestSignupForm extends Component {
               <form className="interestForm"onSubmit={this.handleSubmit.bind(this)}>
                   <input id="email" name="email" type="email" value={this.state.email} onChange={this.changeEmail.bind(this)} placeholder="Email"/>
                   <button type="submit" disabled={!canSubmit}>Submit</button>
-                  <p>{this.state.message}</p>
+                  <p className="white">{this.state.message}</p>
               </form>
           </div>
         );
