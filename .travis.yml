@@ -3,7 +3,7 @@ cache: yarn
 node_js:
 - 6
 install:
-- pip install awscli
+- pip install --user awscli
 before_script:
 - cp src/config.example.js src/config.js
 script:
