@@ -3,7 +3,7 @@ import { changeApplicationFieldValue } from '../../actions/application';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-const ApplicationTextField = ({changeApplicationFieldValue, field, applicationForm, disabled, isLoading, styles, options}) => (
+const ApplicationDropdown = ({changeApplicationFieldValue, field, applicationForm, disabled, isLoading, styles, options}) => (
     <select
       value={applicationForm[field] || ""}
       onChange={
@@ -31,4 +31,4 @@ const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({changeApplicationFieldValue}, dispatch)
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ApplicationTextField);
+export default connect(mapStateToProps, mapDispatchToProps)(ApplicationDropdown);
