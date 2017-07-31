@@ -11,6 +11,7 @@ const ApplicationTextField = ({changeApplicationFieldValue, field, applicationFo
         onChange={
             (e) => changeApplicationFieldValue(field,e.target.value)
         }
+        className="text-input"
     />
 );
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import ApplicationTextField from './ApplicationTextField';
+import ApplicationToggle from './ApplicationToggle';
+import ApplicationDropdown from './ApplicationDropdown';
 import SchoolInputField from './SchoolInputField';
 import ResumeUploadProgressIndicator from './ResumeUploadProgressIndicator';
 // import Select from 'react-select';
@@ -49,7 +51,7 @@ class ApplicationForm extends Component {
                       <ApplicationTextField field="major"/>
                     </div>
                     <div className="col-6">
-                      <label>Expected Graduation</label>
+                      <label>Expected Graduation Year</label>
                       <ApplicationTextField field="grad_year"/>
                     </div>
                 </div>
@@ -61,18 +63,24 @@ class ApplicationForm extends Component {
                       { applicationForm.resume_uploaded ? <div>You've uploaded <a href={applicationForm.resume_get_url} target="_blank" rel="noopener noreferrer" >{applicationForm.resume_filename}</a></div> : null }
                     </div>
                     <div className="col-6">
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-6">
                       <label>First Hackathon?</label>
-                      <ApplicationTextField field="is_first_hackathon"/>
+                      <ApplicationToggle field="isFirstHackathon"/>
+                    </div>
+                    <div className="col-6">
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-6 paddingr">
                       <label>LinkedIn Username</label>
                       { applicationForm.has_no_linkedin ?
-                          <div>You indicated you don't have a Linedin <button onClick={this.toggleItem.bind(this,'has_no_linkedin')} className="opt-in-button">I do!</button></div>
+                          <div style={ { marginTop: '8px' } }>You indicated you don't have a LinkedIn <button onClick={this.toggleItem.bind(this,'has_no_linkedin')} className="opt-in-button">I do!</button></div>
                       :
                           <div>
-                              <ApplicationTextField field="linkedin" styles={ { 'border-bottom-left-radius': 0, 'border-bottom-right-radius': 0 } }/>
+                              <ApplicationTextField field="linkedin" styles={ { borderBottomLeftRadius: 0, borderBottomRightRadius: 0 } }/>
                               <button onClick={this.toggleItem.bind(this,'has_no_linkedin')} className="opt-out-button">No thanks</button>
                           </div>
                       }
@@ -80,7 +88,7 @@ class ApplicationForm extends Component {
                     <div className="col-6">
                       <label>GitHub Username</label>
                       { applicationForm.has_no_github && !isGithubLinked ?
-                          <div>You indicated you don't have a Github <button onClick={this.toggleItem.bind(this,'has_no_github')} className="opt-in-button">I do!</button></div>
+                          <div style={ { marginTop: '8px' } }>You indicated you don't have a Github <button onClick={this.toggleItem.bind(this,'has_no_github')} className="opt-in-button">I do!</button></div>
                       :
                           <div>
                               <ApplicationTextField field="github" disabled={isGithubLinked} styles={ { 'border-bottom-left-radius': 0, 'border-bottom-right-radius': 0 } }/>
@@ -96,28 +104,16 @@ class ApplicationForm extends Component {
                 <div className="row">
                     <div className="col-6">
                         <label>Gender</label>
-                        {/* <Select ref="schoolSelect"
-                                simpleValue
-                                options={ [ { value: 'male', label: 'Male'}, {value: 'female', label: 'Female'} ] }
-                                clearable={true}
-                                name="gender"
-                                value={this.state.name}
-                                onChange={this.updateValue.bind(this)}
-                                searchable={false}
-                        /> */}
+                        <ApplicationDropdown field="gender" options={ { Male: 0, Female: 1, Other: 2, 'I\'d Rather Not Say': 3 } }/>
+                    </div>
+                    <div className="col-6">
+                        <label>Race</label>
+                        <ApplicationDropdown field="race" options={ {  'Asian': 1, 'White': 5, 'Black or African American': 2, 'American Indian or Alaska Native': 0, 'Native Hawaiian or Other Pacific Islander': 4, 'Other': 6, 'I\'d Rather Not Say': 3 } }/>
                     </div>
                 </div>
                 <div className="row">
-                    <p>
-                        TODO:
-                        Graduation Year (dropdown??)
-                        Gender (what format?)
-                        Race (dropdown??)
-                        Is this your first hackathon (yesno picker or radio??)
-                    </p>
-                    <hr/>
-                    <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}}>save</button>
-                    Does the server say your application is completed? {applicationForm.completed? ' yes! ': 'no...'}
+                    <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}} className="submit">Save</button>
+                    {/* Does the server say your application is completed? {applicationForm.completed? ' yes! ': 'no...'} */}
                 </div>
             </Dropzone>
         );
