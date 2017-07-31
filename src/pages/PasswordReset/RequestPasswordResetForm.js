@@ -13,7 +13,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 )
 
 export const RequestPasswordResetForm = (props) => {
-    const { error, handleSubmit, pristine, reset, submitting } = props;
+    const { error, handleSubmit, submitting } = props;
     return (
         <form onSubmit={handleSubmit} className="form">
             <Field name="email" type="email" component={renderField} label="email"/>

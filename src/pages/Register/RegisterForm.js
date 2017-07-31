@@ -14,7 +14,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 )
 
 export const RegisterForm = (props) => {
-    const { error, handleSubmit, pristine, submitting } = props;
+    const { error, handleSubmit, submitting } = props;
     return (
         <form onSubmit={handleSubmit} className="form">
           <h1>Register</h1>

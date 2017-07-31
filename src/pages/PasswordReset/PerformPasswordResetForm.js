@@ -13,15 +13,14 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 )
 
 export const PerformPasswordResetForm = (props) => {
-    const { error, handleSubmit, pristine, reset, submitting } = props;
+    const { error, handleSubmit, submitting } = props;
     return (
         <form onSubmit={handleSubmit} className="form">
             <Field name="password" type="password" component={renderField} label="password"/>
             <Field name="password2" type="password" component={renderField} label="confirm"/>
             {error && <strong>{error}</strong>}
             <div>
-                <button type="submit" disabled={submitting}>Submit</button>
-                <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+                <button type="submit" disabled={submitting}>Submit</button>            
             </div>
         </form>
     )
