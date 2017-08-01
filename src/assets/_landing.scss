@@ -25,7 +25,8 @@
     background: $pink;
     border-radius: 0 50px 50px 0;
     border: 1px solid $pink;
-    border-bottom-width: 3px;
+    border-bottom-width: 1px;
+    border-top-width: 2px;
   }
   button:focus {
     outline: none;

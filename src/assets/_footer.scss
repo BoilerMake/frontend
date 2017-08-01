@@ -1,13 +1,16 @@
 @import "vars";
 .footer {
-  font-family: $font-body;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   color: $pink;
   text-align: center;
   p {
     font-size: 15px;
+    font-family: $font-title;
+    font-weight: bold;
   }
 }
 .flex-con {
+  padding-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +24,7 @@
   }
 }
 .footer {
-  padding: 50px 20px;
+  padding: 0 20px 50px 20px;
 }
 
 .icon {

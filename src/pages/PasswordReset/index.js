@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom'
 import RequestPasswordResetForm from './RequestPasswordResetForm';
 import PerformPasswordResetForm from './PerformPasswordResetForm';
 import apiFetch from '../../actions';
+import '../../assets/_form.scss'
+
 class PasswordReset extends Component {
     constructor (props) {
         super(props);
@@ -53,15 +55,15 @@ class PasswordReset extends Component {
 
         let isTokenShowing = this.props.match.params.reset_token !== undefined;
         let requestReset =(<div>
-            Please enter your email.
+            <p>Please enter your email.</p>
             <RequestPasswordResetForm onSubmit={this.handleRequestSubmit}/>
         </div>);
         let performReset = (<div>
             <PerformPasswordResetForm onSubmit={this.handlePerformSubmit}/>
         </div>);
         return (
-            <div>
-                <h1>Password Reset</h1>
+            <div className="login">
+                <h1 className="center">Password Reset</h1>
                 {isTokenShowing ? performReset : requestReset}
                 <p>{this.state.message}</p>
             </div>);

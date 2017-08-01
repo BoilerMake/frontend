@@ -15,6 +15,7 @@ class Nav extends Component {
   }
   render() {
     const { menu } = this.state;
+    const { isLoggedIn, logout } = this.props;
       return (
         <div className="bgwhite navContainer">
           <NavLink exact to="/" className="navLogo">
@@ -24,6 +25,15 @@ class Nav extends Component {
           <nav className="navBar desktop">
             <NavLink exact to='/faq' className='navLink hover'>FAQ</NavLink>
             <a href="mailto:team@boilermake.org" target="blank" className='navLink hover'>Contact</a>
+            { isLoggedIn ? (
+              <NavLink export to="/" className="btn" onClick={logout}>
+              Log Out
+              </NavLink>
+            ) : (
+              <NavLink export to="/login" className=" btn">
+                Login
+              </NavLink>
+            )}
           </nav>
           <nav className="navBar mobile">
             <button onClick={this.toggleMenu}>
@@ -37,6 +47,11 @@ class Nav extends Component {
               <NavLink exact to='/faq' className='navLink'><span className="hover">FAQ</span></NavLink>
               <a href="http://bit.ly/bm-sponsorship-2017" target="blank" className="navLink"><span className="hover">Sponsors</span></a>
               <a href="mailto:team@boilermake.org" target="blank" className="navLink"><span className="hover">Contact</span></a>
+              { isLoggedIn ? (
+                <NavLink exact to='/login' className='navLink'><span className="hover">Login</span></NavLink>
+              ) : (
+                <NavLink exact to='/' onClick={logout} className='navLink'><span className="hover">Log Out</span></NavLink>
+              )}
             </div>
           ) : null
           }

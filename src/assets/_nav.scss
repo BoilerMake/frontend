@@ -7,6 +7,10 @@
   font-family: $font-title;
   box-sizing: border-box;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  .btn {
+    float: right;
+    margin-top: -10px;
+  }
 }
 .navBar {
   display: inline;
@@ -36,6 +40,9 @@
   color: inherit;
   padding: 7px 0px;
   margin: 0 50px;
+}
+.navLink:last-child {
+  margin-right: 0;
 }
 .hover:hover {
   padding-bottom: 5px;
@@ -113,11 +120,34 @@
 .mobile {
   display: none;
   position: absolute;
-  right: 51px;
+  right: 10px;
   top: 0;
 }
-
-@media screen and (max-width: 745px) {
+@media screen and (max-width: 820px) {
+  .navBar {
+    .navLink {
+      margin: 0 20px;
+    }
+  }
+}
+@media screen and (max-width: 691px) {
+  .navBar {
+    .btn {
+      margin-left: none;
+    }
+    .navLink {
+      margin: 0 12px;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .navContainer {
+    .btn {
+      float: none;
+      margin-left: 50px;
+      margin-top: 40px;
+    }
+  }
   .navBar {
     margin-left: 50px;
     .navLink {

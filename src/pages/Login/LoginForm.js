@@ -1,5 +1,9 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { Link } from 'react-router-dom'
+import GithubLoginButton from '../../components/GithubLoginButton'
+
+import '../../assets/_form.scss'
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
     <div>
@@ -12,16 +16,23 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 );
 
 const LoginForm = (props) => {
-    const { error, handleSubmit, pristine, reset, submitting } = props;
+    const { error, handleSubmit, submitting } = props;
     return (
-        <form onSubmit={handleSubmit}>
-            <Field name="email" type="email" component={renderField} label="email"/>
-            <Field name="password" type="password" component={renderField} label="Password"/>
+        <form onSubmit={handleSubmit} className="form">
+            <h1>Login</h1>
+            <Field name="email" type="email" component={renderField} label="Email" className="topSpacing" />
+            <br />
+            <Field name="password" type="password" component={renderField} label="Password" className="topSpacing" />
             {error && <strong>{error}</strong>}
             <div>
-                <button type="submit" disabled={submitting}>Login</button>
-                <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+                <button type="submit" disabled={submitting}  className="topSpacing btn">Login</button>
             </div>
+            <br/>
+            <Link to="/register">Need an account?</Link>
+            <br/>
+            <Link to="/reset">Forgot your password?</Link>
+            <br/>
+            <GithubLoginButton />
         </form>
     );
 }

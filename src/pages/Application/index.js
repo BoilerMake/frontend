@@ -14,11 +14,12 @@ class Application extends Component {
             return null;
         return (
             <div className="fullWidthContainer application">
-                <h1 className="title app-heading">Application</h1>
+                <h1 className="title app-heading left">Application</h1>
                 { isUserConfirmed
                     ? <ApplicationForm />
                     : <NeedToConfirmEmailDialog />
                 }
+                <ApplicationForm />
             </div>
         );
     }

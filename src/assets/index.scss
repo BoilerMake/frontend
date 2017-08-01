@@ -26,7 +26,9 @@ p {
   font-family: $font-body;
   font-size: 14px;
 }
-
+.pagePadded {
+  padding: 20px;
+}
 // FONTS
 .title { font-family: $font-title }
 
@@ -110,3 +112,36 @@ p {
 .marginr {margin-right: 16px; }
 .marginx { margin: 0 16px; }
 .marginy { margin: 16px 0; }
+
+
+.topSpacing {
+  margin-top: 20px;
+}
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+.btn {
+  font-size: 15px;
+  font-family: $font-title;
+  font-weight: bold;
+  background-color: $pink;
+  color: $white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.btn:hover, .btn:active, .btn:focus {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  color: $white;
+}
+.btn:hover, .btn:focus {
+  background-color: $lightPink;
+  color: $white;
+  box-shadow: 0px 0px 40px -8px $lightBlue;
+}

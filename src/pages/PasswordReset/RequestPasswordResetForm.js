@@ -1,5 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import '../../assets/_form.scss'
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
     <div>
@@ -12,15 +13,13 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 )
 
 export const RequestPasswordResetForm = (props) => {
-    const { error, handleSubmit, pristine, reset, submitting } = props;
+    const { error, handleSubmit, submitting } = props;
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
             <Field name="email" type="email" component={renderField} label="email"/>
             {error && <strong>{error}</strong>}
-            <div>
-                <button type="submit" disabled={submitting}>Submit</button>
-                <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
-            </div>
+            <br />
+            <button type="submit" disabled={submitting} className="btn">Submit</button>
         </form>
     )
 }
