@@ -28,11 +28,6 @@ const measureFileSizesBeforeBuild = FileSizeReporter.measureFileSizesBeforeBuild
 const printFileSizesAfterBuild = FileSizeReporter.printFileSizesAfterBuild;
 const useYarn = fs.existsSync(paths.yarnLockFile);
 
-if (!fs.existsSync(paths.configJs)) {
-    console.log('src/config.js not found. copying one from config.example.js');
-    fs.createReadStream(paths.configJsExample).pipe(fs.createWriteStream(paths.configJs));
-}
-
 // Warn and crash if required files are missing
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
   process.exit(1);
