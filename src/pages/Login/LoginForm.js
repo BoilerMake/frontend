@@ -7,7 +7,6 @@ import '../../assets/_form.scss'
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
     <div>
-        <label>{label}</label>
         <div>
             <input {...input} placeholder={label} type={type}/>
             {touched && error && <span>{error}</span>}
@@ -19,20 +18,25 @@ const LoginForm = (props) => {
     const { error, handleSubmit, submitting } = props;
     return (
         <form onSubmit={handleSubmit} className="form">
-            <h1>Login</h1>
-            <Field name="email" type="email" component={renderField} label="Email" className="topSpacing" />
-            <br />
+            <h1 className="title text-center">Login</h1>
+            <div className="marginb">
+              <GithubLoginButton />
+            </div>
+            <div className="white margint">Login with email</div>
+            <Field name="email" type="email" component={renderField} label="Email" className="topSpacing" placeholder="Email"/>
             <Field name="password" type="password" component={renderField} label="Password" className="topSpacing" />
-            {error && <strong>{error}</strong>}
+            {error && <div className="margint">{error}</div>}
             <div>
                 <button type="submit" disabled={submitting}  className="topSpacing btn">Login</button>
             </div>
-            <br/>
-            <Link to="/register">Need an account?</Link>
-            <br/>
-            <Link to="/reset">Forgot your password?</Link>
-            <br/>
-            <GithubLoginButton />
+            <div className="flex margint h-center">
+              <div className="">
+                <Link to="/register">Register</Link>
+              </div>
+              <div className="marginl">
+                <Link to="/reset">Forgot your password?</Link>
+              </div>
+            </div>
         </form>
     );
 }

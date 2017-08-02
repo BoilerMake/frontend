@@ -3,7 +3,7 @@ import { githubLogin } from '../actions';
 import { ALLOW_SIGNUPS } from '../config';
 const GithubLoginButton = () => {
     return ALLOW_SIGNUPS
-        ? <div onClick={githubLogin}>click to login with Github</div>
+        ? <div onClick={githubLogin} className="github-button"><i className="fa fa-github"></i> Login with Github</div>
         : null
 };
 
