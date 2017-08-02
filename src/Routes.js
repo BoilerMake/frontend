@@ -25,7 +25,9 @@ import Application from './pages/Application';
 
 import ExecContainer from "./pages/Exec/ExecContainer";
 import ExecUsers from "./pages/Exec/ExecUsers";
+import ExecUserDetail from "./pages/Exec/ExecUserDetail";
 import ExecApplications from "./pages/Exec/ExecApplications";
+import ExecApplicationDetail from "./pages/Exec/ExecApplicationDetail";
 import ExecDashboard from "./pages/Exec/ExecDashboard";
 
 
@@ -86,8 +88,10 @@ const Routes = () => (
 
       {/*Exec Routes. Everything under /exec gets rendered inside <ExecContainer/>*/}
       <ExecRoute path="/exec" exact component={ExecDashboard} />
-      <ExecRoute path="/exec/users" component={ExecUsers} />
-      <ExecRoute path="/exec/applications" component={ExecApplications} />
+      <ExecRoute exact path="/exec/users" component={ExecUsers} />
+      <ExecRoute path="/exec/users/:userId" component={ExecUserDetail} />
+      <ExecRoute exact path="/exec/applications" component={ExecApplications} />
+      <ExecRoute path="/exec/applications/:applicationId" component={ExecApplicationDetail} />
 
       {/*Offsite Redirects*/}
       <Route path="/why-go-to-a-hackathon"  render={() => <ExternalRedirect to="https://medium.com/@BoilerMake/why-you-should-go-to-a-hackathon-2d4ede475c9"/>}/>

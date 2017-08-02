@@ -34,7 +34,7 @@ class ExecApplications extends Component {
 
         return (
             <div>
-                <Header as='h3' dividing>All Users</Header>
+                <Header as='h3' dividing>All Applications</Header>
                 <ReactTable
                     filterable
                     defaultFilterMethod={ (filter, row) => row[filter.id].includes(filter.value)}//fuzzy
