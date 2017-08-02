@@ -19,7 +19,6 @@ class Application extends Component {
                     ? <ApplicationForm />
                     : <NeedToConfirmEmailDialog />
                 }
-                <ApplicationForm />
             </div>
         );
     }
