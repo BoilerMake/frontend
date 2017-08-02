@@ -25,6 +25,11 @@ class Nav extends Component {
           <nav className="navBar desktop">
             <NavLink exact to='/faq' className='navLink hover'>FAQ</NavLink>
             <a href="mailto:team@boilermake.org" target="blank" className='navLink hover'>Contact</a>
+            { isLoggedIn ?
+              <NavLink exact to='/application' className='navLink hover'>application</NavLink>
+            :
+              null
+            }
             { isLoggedIn ? (
               <NavLink export to="/" className="btn" onClick={logout}>
               Log Out
