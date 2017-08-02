@@ -68,6 +68,11 @@ p {
   padding: 0 12px;
   margin: auto;
 }
+.narrowWidthContainer {
+  max-width: 700px;
+  padding: 0 12px;
+  margin: auto;
+}
 
 // GRID
 .row:after { // Only need after to clear

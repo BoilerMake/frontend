@@ -48,6 +48,16 @@
   }
 
 }
+
+.faq-answer {
+  line-height: 1.6em;
+  margin-bottom: 32px;
+}
+.faq-question {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 1080px) {
   .flexCon {
     display: block;

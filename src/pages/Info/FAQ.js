@@ -58,14 +58,14 @@ const FAQ = () => {
     ];
     let questionList = questions.map((q,id)=>
         <div key={id}>
-            <p style={{fontWeight: 700}}>{q.title}</p>
+            <p className="faq-question">{q.title}</p>
             {/*One of the FAQ items has HTML in it to easily make an offsite link, so we need to 'dangerously' set it*/}
-            <p dangerouslySetInnerHTML={{__html: q.body}}/>
+            <p className="faq-answer" dangerouslySetInnerHTML={{__html: q.body}}/>
         </div>);
     return(
-        <div className="fullWidthContainer">
-          <h1>Frequently Asked Questions</h1>
-            {questionList}
+        <div className="narrowWidthContainer">
+          <h1 className="title pink center">FAQ</h1>
+          {questionList}
         </div>
     );
 };
