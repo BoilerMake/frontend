@@ -17,6 +17,10 @@
     &:focus {
       border: 2px solid $darkBlue;
     }
+
+    &:disabled {
+      color: #DBE1E8;
+    }
   }
 
   .application-button {
@@ -43,7 +47,7 @@
     display: inline-block;
     font: inherit;
     line-height: 1.5em;
-    padding: 0.5em 3.5em 0.5em 1em;
+    padding: 12px 9px;
     width: 100%;
     margin-top: 8px;
 
@@ -93,11 +97,20 @@
       border: 2px solid $pink;
       border-radius: 8px;
       padding: 9px 12px;
-      color: $pink;
-      background: #fff;
+      background: $pink;
+      color: #fff;
       font-family: $font-body;
       cursor: pointer;
       font-size: 14px;
+      transition: .2s;
+
+      &:hover {
+        transform: translateY(-2px);
+        transition: .2s;
+        // background: $pink;
+        // color: #fff;
+        box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+      }
   }
 
   .row {
@@ -116,6 +129,10 @@
     font-family: $font-body;
     cursor: pointer;
     color: #DBE1E8;
+
+    &:hover {
+      color: $darkBlue;
+    }
   }
   .opt-in-button {
     width: 100%;
