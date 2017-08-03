@@ -9,9 +9,9 @@ const ApplicationToggle = ({changeApplicationFieldValue, field, applicationForm,
             <input
                 style={ styles }
                 disabled={(disabled || false) || isLoading} //disable the input if: disabled (default false) OR isLoading
-                value={applicationForm[field] || ""} //react is unhappy with value being null
+                value={applicationForm[field]}
                 onChange={
-                    (e) => changeApplicationFieldValue(field,e.target.value)
+                    (e) => changeApplicationFieldValue(field,!applicationForm[field])
                 }
                 type="checkbox"
             />
