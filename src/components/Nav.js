@@ -18,10 +18,10 @@ class Nav extends Component {
     const { isLoggedIn, logout } = this.props;
       return (
         <div className="bgwhite navContainer">
-          <NavLink exact to="/" className="navLogo">
+          <div className="navLogo">
             <img src={logo} alt='boilermake' className='hammers'/>
             <NavLink exact to='/' className='pink logo'>BoilerMake</NavLink>
-          </NavLink>
+          </div>
           <nav className="navBar desktop">
             <NavLink exact to='/faq' className='navLink hover'>FAQ</NavLink>
             <a href="mailto:team@boilermake.org" target="blank" className='navLink hover'>Contact</a>
@@ -31,11 +31,11 @@ class Nav extends Component {
               null
             }
             { isLoggedIn ? (
-              <NavLink export to="/" className="btn" onClick={logout}>
+              <NavLink exact to="/" className="btn" onClick={logout}>
               Log Out
               </NavLink>
             ) : (
-              <NavLink export to="/login" className=" btn">
+              <NavLink exact to="/login" className=" btn">
                 Login
               </NavLink>
             )}
