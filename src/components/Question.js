@@ -7,19 +7,21 @@ class Question extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dropdown: false
+      dropdown: this.props.expandAll
     };
     this.toggleDropDown = this.toggleDropDown.bind(this);
   }
   toggleDropDown() {
     this.setState({ dropdown: !this.state.dropdown });
   }
-
+  componentWillReceiveProps(nextProps) {
+    this.setState({ dropdown: nextProps.expandAll });
+  }
   render() {
     const { dropdown } = this.state;
     const { title, body } = this.props;
     return (
-      <div className="outline">
+      <div className="outline" onClick={this.toggleDropDown}>
           <p className="faq-question left">{title}</p>
           {dropdown ? (
             <img className="icon" onClick={this.toggleDropDown} alt="arrow-down" src={down}/>
