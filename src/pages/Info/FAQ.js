@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FAQ = () => {
-    let questions = [
+    const questions = [
         {
             "title": "What is a hackathon?",
             "body": "A hackathon is not somewhere that you come to hack the NSA, but rather a great place for people to come together to work on incredible projects. You'll be surrounded by a group of incredibly intelligent and creative people, as well as brilliant mentors from some of the largest tech companies across the country. Hackathons can serve as a great place to learn, and you may end up surprising yourself on what you can accomplish the end of the weekend."
@@ -56,15 +56,16 @@ const FAQ = () => {
             "body": "Feel free to email us at <a href='mailto:team@boilermake.org'>team@boilermake.org</a>!"
         }
     ];
-    let questionList = questions.map((q,id)=>
+    const questionList = questions.map((q,id) =>
         <div key={id}>
             <p className="faq-question">{q.title}</p>
             {/*One of the FAQ items has HTML in it to easily make an offsite link, so we need to 'dangerously' set it*/}
             <p className="faq-answer" dangerouslySetInnerHTML={{__html: q.body}}/>
         </div>);
-    return(
-        <div className="narrowWidthContainer">
-          <h1 className="title pink center">FAQ</h1>
+    return (
+        <div className="narrowWidthContainer faq">
+          <h1 className="title pink right">FAQ</h1>
+          <p>Frequently Asked Questions</p>
           {questionList}
         </div>
     );
