@@ -15,7 +15,7 @@ class Nav extends Component {
   }
   render() {
     const { menu } = this.state;
-    const { isLoggedIn, logout } = this.props;
+    const { isLoggedIn, logout, isExec } = this.props;
       return (
         <div className="bgwhite navContainer">
           <NavLink exact to="/" className="navLogo">
@@ -29,6 +29,11 @@ class Nav extends Component {
               <NavLink exact to='/application' className='navLink hover'>application</NavLink>
             :
               null
+            }
+            {
+                isExec
+                ? <NavLink exact to='/exec' className='navLink hover'>exec dash</NavLink>
+                : null
             }
             { isLoggedIn ? (
               <NavLink export to="/" className="btn" onClick={logout}>
@@ -69,7 +74,8 @@ import { connect } from 'react-redux'
 import { logoutUser } from '../actions/users';
 function mapStateToProps (state) {
     return {
-        isLoggedIn: state.user.authenticated
+        isLoggedIn: state.user.authenticated,
+        isExec: state.user.isExec
     };
 }
 
