@@ -99,6 +99,13 @@ p {
 @media (max-width: 768px) {
   .col-6 {
     width: 100%;
+
+    &:first-child {
+      padding-right: 0px;
+    }
+    &:last-child {
+      padding-left: 0px;
+    }
   }
 }
 
