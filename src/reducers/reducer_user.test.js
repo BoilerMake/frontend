@@ -4,10 +4,11 @@ import reducer_user from './reducer_user.js';
 
 const initialState = {
     authenticated: false,
+    isHacker: false,
+    isExec: false,
     me: null,
     error: null,
     loading: false,
-    token_data: null,
     token: null
 };
 
@@ -22,13 +23,14 @@ it('handles default action', () => {
 describe('handles LOGIN_FROM_JWT_SUCCESS', ()=>{
     const newState = reducer_user(initialState, {
         type: 'LOGIN_FROM_JWT_SUCCESS',
-        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6InRlc3ROYW1lIiwiYWRtaW4iOnRydWV9._V3AldnPL5mi7e4l27jAOuRsuKacI8ODRzjn7M2UQaU"
+        token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzMwMDQyMTMsInJvbGVzIjpbImhhY2tlciIsImFzZGZhcyJdLCJzbHVnIjoiTmlja3lmc2Rmc2Rmc2RmYWFhIFNlbWVuemFzc3MgKCMzOCkiLCJ1c2VyX2lkIjozOCwic3ViIjozOCwiaXNzIjoiaHR0cDovL2JtLmRldjo4MDgxL3YxL3VzZXJzL2F1dGgvZ2l0aHViLzZhZmM4YzVlMzgzOGUwYzAzODQ3IiwiaWF0IjoxNTAxNDY4MjEzLCJuYmYiOjE1MDE0NjgyMTMsImp0aSI6IkpoSEs0MjE0eDc0YUM2bVkifQ.yI4Vf8hqomZepgXRViZSYTpIkZR2NGRhSpYbpcuelOU"
     });
     it('sets authenticated to true', () => {
         assert.isTrue(newState.authenticated);
     });
     it('decodes JWT data', () => {
-        assert.equal(newState.token_data.name, "testName");
+        assert.equal(newState.isHacker, true);
+        assert.equal(newState.isExec, false);
     });
 });
 it('handles LOGOUT_USER', ()=>{
