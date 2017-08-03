@@ -4,6 +4,8 @@ import {
 } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 //STATIC PAGES
 import Home from './pages/Landing';
@@ -21,6 +23,13 @@ import Dashboard from './pages/Dashboard';
 import Application from './pages/Application';
 
 
+import ExecContainer from "./pages/Exec/ExecContainer";
+import ExecUsers from "./pages/Exec/ExecUsers";
+import ExecUserDetail from "./pages/Exec/ExecUserDetail";
+import ExecApplications from "./pages/Exec/ExecApplications";
+import ExecApplicationDetail from "./pages/Exec/ExecApplicationDetail";
+import ExecDashboard from "./pages/Exec/ExecDashboard";
+
 
 const PrivateRoute = ({ component: Component, isAuthenticated, isAllowed, ...rest }) => (
     <Route {...rest} render={props => (
@@ -37,6 +46,12 @@ const PrivateRoute = ({ component: Component, isAuthenticated, isAllowed, ...res
     )}/>
 );
 
+const ContainerSwitcherRoute = ({ children, location, ...rest }) => {
+    return location.pathname.includes("/exec")
+        ? (<ExecContainer>{children}</ExecContainer>)
+        : (<div><Nav/>{children}<Footer/></div>);
+};
+
 class ExternalRedirect extends Component {
     constructor( props ){
         super();
@@ -51,10 +66,11 @@ class ExternalRedirect extends Component {
 }
 
 const UserRoute = withRouter(connect((state) => ({isAuthenticated: state.user.authenticated, isAllowed: true}))(PrivateRoute));
-const ExecRoute = withRouter(connect((state) => ({isAuthenticated: state.user.authenticated, isAllowed: state.user.tokenData && state.user.tokenData.roles.contains("exec")}))(PrivateRoute));
+const ExecRoute = withRouter(connect((state) => ({isAuthenticated: state.user.authenticated, isAllowed: state.user.isExec}))(PrivateRoute));
+const ContainerSwitcher = withRouter(ContainerSwitcherRoute);
 
 const Routes = () => (
-    <div>
+    <ContainerSwitcher>
       {/*Public Routes*/}
       <Route exact path="/" component={Home}/>
       <Route path="/about" component={About}/>
@@ -64,21 +80,22 @@ const Routes = () => (
       <Route path="/login" component={Login}/>
       <Route path="/reset/:reset_token?" component={PasswordReset}/>
       <Route path="/confirm/:code" component={ConfirmEmail}/>
-
-
       <Route path="/auth/github" component={GithubAuth}/>
 
       {/*User Routes*/}
       <UserRoute path="/dashboard" component={Dashboard}/>
       <UserRoute path="/application" component={Application}/>
-      {/*Exec Routes*/}
-      <ExecRoute path="/exec/dashboard" component={Dashboard}/>
+
+      {/*Exec Routes. Everything under /exec gets rendered inside <ExecContainer/>*/}
+      <ExecRoute path="/exec" exact component={ExecDashboard} />
+      <ExecRoute exact path="/exec/users" component={ExecUsers} />
+      <ExecRoute path="/exec/users/:userId" component={ExecUserDetail} />
+      <ExecRoute exact path="/exec/applications" component={ExecApplications} />
+      <ExecRoute path="/exec/applications/:applicationId" component={ExecApplicationDetail} />
 
       {/*Offsite Redirects*/}
-      <Route path='/privacy-policy' component={() => window.location = 'https://example.zendesk.com/hc/en-us/articles/123456789-Privacy-Policies'}/>
-
       <Route path="/why-go-to-a-hackathon"  render={() => <ExternalRedirect to="https://medium.com/@BoilerMake/why-you-should-go-to-a-hackathon-2d4ede475c9"/>}/>
-  </div>
+  </ContainerSwitcher>
 );
 
 export default Routes;
