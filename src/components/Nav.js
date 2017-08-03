@@ -62,7 +62,6 @@ class Nav extends Component {
           </nav>
           { menu ? (
             <div className="menu" onClick={this.handleClick}>
-              <a href="http://bit.ly/bm-sponsorship-2017" target="blank" className="navLink"><span className="hover">Sponsors</span></a>
               <a href="mailto:team@boilermake.org" target="blank" className="navLink"><span className="hover">Contact</span></a>
               { isLoggedIn ? (
                 <NavLink exact to='/' onClick={this.handleLogout} className='navLink'><span className="hover">Log Out</span></NavLink>

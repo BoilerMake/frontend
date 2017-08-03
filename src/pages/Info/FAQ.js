@@ -3,32 +3,6 @@ import Question from '../../components/Question';
 import logo from '../../assets/images/faq.svg';
 import '../../assets/faq.scss';
 
-class FAQ extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      expandAll: false
-    };
-    this.expandAll = this.expandAll.bind(this);
-  }
-  expandAll() {
-    this.setState({ expandAll: !this.state.expandAll });
-  }
-    render() {
-      const { expandAll } = this.state;
-      const questionList = questions.map((q,id) => <Question key={id} title={q.title} body={q.body} expandAll={this.state.expandAll}/>);
-      return (
-          <div className="page pagePadded faq topSpacing">
-          <img src={logo} className="logo" alt="logo" />
-            <h1 className="title pink right">FAQ</h1>
-            <p className="right"><span>Frequently Asked Questions</span></p>
-            { expandAll ? <p className="right darkBlue link" onClick={this.expandAll}>Collapse All</p> : <p className="right darkBlue link" onClick={this.expandAll}>Expand All</p> }
-            <div className="topSpacing">{questionList}</div>
-          </div>
-      );
-    }
-}
-
 const questions = [
   {
     "title": "What is a hackathon?",
@@ -84,5 +58,31 @@ const questions = [
     "body": "Feel free to email us at <a href='mailto:team@boilermake.org'>team@boilermake.org</a>!"
   }
 ];
+
+class FAQ extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      expandAll: false
+    };
+    this.expandAll = this.expandAll.bind(this);
+  }
+  expandAll() {
+    this.setState({ expandAll: !this.state.expandAll });
+  }
+    render() {
+      const { expandAll } = this.state;
+      const questionList = questions.map((q,id) => <Question key={id} title={q.title} body={q.body} expandAll={this.state.expandAll}/>);
+      return (
+          <div className="page pagePadded faq topSpacing">
+          <img src={logo} className="logo" alt="logo" />
+            <h1 className="title pink right">FAQ</h1>
+            <p className="right"><span>Frequently Asked Questions</span></p>
+            { expandAll ? <p className="right darkBlue link" onClick={this.expandAll}>Collapse All</p> : <p className="right darkBlue link" onClick={this.expandAll}>Expand All</p> }
+            <div className="topSpacing">{questionList}</div>
+          </div>
+      );
+    }
+}
 
 export default FAQ;
