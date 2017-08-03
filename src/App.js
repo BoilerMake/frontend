@@ -7,7 +7,7 @@ import ReduxToastr from 'react-redux-toastr'
 import Footer from './components/Footer';
 
 const App = () => (
-    <BrowserRouter className="browser">
+    <BrowserRouter>
         <div className="body">
           <div className="content">
             <AnalyticsListener/>

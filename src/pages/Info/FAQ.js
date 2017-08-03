@@ -1,4 +1,6 @@
 import React from 'react';
+import Question from '../../components/Question';
+import logo from '../../assets/images/faq.svg';
 import '../../assets/faq.scss';
 
 const FAQ = () => {
@@ -57,17 +59,13 @@ const FAQ = () => {
             "body": "Feel free to email us at <a href='mailto:team@boilermake.org'>team@boilermake.org</a>!"
         }
     ];
-    const questionList = questions.map((q,id) =>
-        <div key={id}>
-            <p className="faq-question">{q.title}</p>
-            {/*One of the FAQ items has HTML in it to easily make an offsite link, so we need to 'dangerously' set it*/}
-            <p className="faq-answer" dangerouslySetInnerHTML={{__html: q.body}}/>
-        </div>);
+    const questionList = questions.map((q,id) => <Question key={id} title={q.title} body={q.body} />);
     return (
-        <div className="page pagePadded faq">
+        <div className="page pagePadded faq topSpacing">
+        <img src={logo} className="logo" alt="logo" />
           <h1 className="title pink right">FAQ</h1>
-          <p className="right">Frequently Asked Questions</p>
-          {questionList}
+          <p className="right"><span>Frequently Asked Questions</span></p>
+          <div className="topSpacing">{questionList}</div>
         </div>
     );
 };

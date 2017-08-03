@@ -32,7 +32,6 @@ class Nav extends Component {
             <NavLink exact to='/' className='pink logo'>BoilerMake</NavLink>
           </div>
           <nav className="navBar desktop">
-            <NavLink exact to='/faq' className='navLink hover'>FAQ</NavLink>
             <a href="mailto:team@boilermake.org" target="blank" className='navLink hover'>Contact</a>
             { isLoggedIn ?
               <NavLink exact to='/application' className='navLink hover' >application</NavLink>
@@ -58,7 +57,6 @@ class Nav extends Component {
           </nav>
           { menu ? (
             <div className="menu" onClick={this.handleClick}>
-              <NavLink exact to='/faq' className='navLink'><span className="hover">FAQ</span></NavLink>
               <a href="http://bit.ly/bm-sponsorship-2017" target="blank" className="navLink"><span className="hover">Sponsors</span></a>
               <a href="mailto:team@boilermake.org" target="blank" className="navLink"><span className="hover">Contact</span></a>
               { isLoggedIn ? (
