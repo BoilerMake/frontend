@@ -22,7 +22,7 @@ class Question extends Component {
       <div className="outline">
           <p className="faq-question left">{title}</p>
           {dropdown ? (
-            <img calssName="icon" onClick={this.toggleDropDown} alt="arrow-down" src={down}/>
+            <img className="icon" onClick={this.toggleDropDown} alt="arrow-down" src={down}/>
           ) : (
             <img className="icon" onClick={this.toggleDropDown} alt="arrow-up" src={up}/>
           )}

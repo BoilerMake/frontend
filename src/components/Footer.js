@@ -21,4 +21,5 @@ const Footer = () => (
     <p>Copyright © 2017 BoilerMake</p>
   </div>
 );
+
 export default Footer;
