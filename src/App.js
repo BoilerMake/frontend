@@ -7,8 +7,9 @@ import ReduxToastr from 'react-redux-toastr'
 import Footer from './components/Footer';
 
 const App = () => (
-    <BrowserRouter>
-        <div>
+    <BrowserRouter className="browser">
+        <div className="body">
+          <div className="content">
             <AnalyticsListener/>
             <Nav/>
             <Routes/>
@@ -20,7 +21,8 @@ const App = () => (
                 transitionIn="fadeIn"
                 transitionOut="fadeOut"
              />
-            <Footer />
+          </div>
+        <Footer />
         </div>
     </BrowserRouter>
 );

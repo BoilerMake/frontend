@@ -6,13 +6,24 @@
 
 @import 'mobile';
 
+html, body, #boilermake, .body {
+  height: 100%;
+  margin: 0;
+}
+.body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: $font-body;
   color: $darkBlue;
 }
-
+.content {
+  flex: 1 0 auto;
+}
 // FONT COLORS
 .white { color: $white; }
 .pink { color: $pink; }
@@ -50,14 +61,10 @@ p {
 // CONTAINERS
 .page {
   text-align: center;
-  padding: 100px 0;
   margin: 0px auto;
-  width: 100%;
 }
 .pageContainer {
-  margin-left: 75px;
-  margin-right: 75px;
-  margin-top: 50px;
+  margin: 50px 75px 0 75px;
 }
 .container {
   display: flex;

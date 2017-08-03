@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../assets/faq.scss';
 
 const FAQ = () => {
     const questions = [
@@ -63,9 +64,9 @@ const FAQ = () => {
             <p className="faq-answer" dangerouslySetInnerHTML={{__html: q.body}}/>
         </div>);
     return (
-        <div className="narrowWidthContainer faq">
+        <div className="page pagePadded faq">
           <h1 className="title pink right">FAQ</h1>
-          <p>Frequently Asked Questions</p>
+          <p className="right">Frequently Asked Questions</p>
           {questionList}
         </div>
     );
