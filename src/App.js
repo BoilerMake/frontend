@@ -2,11 +2,13 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import AnalyticsListener from './components/AnalyticsListener';
 import Routes from './Routes';
+import Footer from './components/Footer';
 import ReduxToastr from 'react-redux-toastr'
 
 const App = () => (
     <BrowserRouter>
-        <div>
+        <div className="body">
+          <div className="content">
             <AnalyticsListener/>
             <Routes/>
             <ReduxToastr
@@ -17,6 +19,8 @@ const App = () => (
                 transitionIn="fadeIn"
                 transitionOut="fadeOut"
              />
+          </div>
+        <Footer />
         </div>
     </BrowserRouter>
 );

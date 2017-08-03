@@ -1,14 +1,15 @@
 @import "vars";
 .footer {
   // border-top: 1px solid $darkBlue;
+  flex-shrink: 0;
   color: $pink;
   text-align: center;
-  background: #efefef;
+  background: $lightGray;
   box-shadow: 0px 500px 0px 500px #EFEFEF;
 
   p {
     font-size: 15px;
-    font-family: $font-title;
+    font-family: $font-body;
     font-weight: bold;
   }
 }

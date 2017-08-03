@@ -9,24 +9,32 @@ class Nav extends Component {
       menu: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   toggleMenu() {
     this.setState({ menu: !this.state.menu });
   }
+  handleClick(e) {
+    this.setState({ menu: false });
+  }
+  handleLogout(e) {
+    this.setState({ menu: false });
+    this.props.logout();
+  }
   render() {
     const { menu } = this.state;
-    const { isLoggedIn, logout, isExec } = this.props;
+    const { isLoggedIn, isExec } = this.props;
       return (
         <div className="bgwhite navContainer">
-          <NavLink exact to="/" className="navLogo">
+          <div className="navLogo">
             <img src={logo} alt='boilermake' className='hammers'/>
             <NavLink exact to='/' className='pink logo'>BoilerMake</NavLink>
-          </NavLink>
+          </div>
           <nav className="navBar desktop">
-            <NavLink exact to='/faq' className='navLink hover'>FAQ</NavLink>
             <a href="mailto:team@boilermake.org" target="blank" className='navLink hover'>Contact</a>
             { isLoggedIn ?
-              <NavLink exact to='/application' className='navLink hover'>application</NavLink>
+              <NavLink exact to='/application' className='navLink hover' >application</NavLink>
             :
               null
             }
@@ -36,11 +44,11 @@ class Nav extends Component {
                 : null
             }
             { isLoggedIn ? (
-              <NavLink export to="/" className="btn" onClick={logout}>
-              Log Out
+              <NavLink exact to="/" className="btn" onClick={this.handleLogout}>
+                Log Out
               </NavLink>
             ) : (
-              <NavLink export to="/login" className=" btn">
+              <NavLink exact to="/login" className="btn">
                 Login
               </NavLink>
             )}
@@ -53,14 +61,12 @@ class Nav extends Component {
             </button>
           </nav>
           { menu ? (
-            <div className="menu">
-              <NavLink exact to='/faq' className='navLink'><span className="hover">FAQ</span></NavLink>
-              <a href="http://bit.ly/bm-sponsorship-2017" target="blank" className="navLink"><span className="hover">Sponsors</span></a>
+            <div className="menu" onClick={this.handleClick}>
               <a href="mailto:team@boilermake.org" target="blank" className="navLink"><span className="hover">Contact</span></a>
               { isLoggedIn ? (
-                <NavLink exact to='/login' className='navLink'><span className="hover">Login</span></NavLink>
+                <NavLink exact to='/' onClick={this.handleLogout} className='navLink'><span className="hover">Log Out</span></NavLink>
               ) : (
-                <NavLink exact to='/' onClick={logout} className='navLink'><span className="hover">Log Out</span></NavLink>
+                <NavLink exact to='/login' className='navLink'><span className="hover">Login</span></NavLink>
               )}
             </div>
           ) : null

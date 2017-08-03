@@ -5,7 +5,6 @@ import {
 import { connect } from 'react-redux'
 
 import Nav from './components/Nav';
-import Footer from './components/Footer';
 
 //STATIC PAGES
 import Home from './pages/Landing';
@@ -49,7 +48,7 @@ const PrivateRoute = ({ component: Component, isAuthenticated, isAllowed, ...res
 const ContainerSwitcherRoute = ({ children, location, ...rest }) => {
     return location.pathname.includes("/exec")
         ? (<ExecContainer>{children}</ExecContainer>)
-        : (<div><Nav/>{children}<Footer/></div>);
+        : (<div><Nav/>{children}</div>);
 };
 
 class ExternalRedirect extends Component {

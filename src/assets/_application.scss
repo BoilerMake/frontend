@@ -11,7 +11,7 @@
     box-sizing: border-box;
     outline: none;
     border-radius: 8px;
-    border: 2px solid #DBE1E8;
+    border: 2px solid $lightGray;
     margin-top: 8px;
     font-size: 14px;
 
@@ -20,7 +20,7 @@
     }
 
     &:disabled {
-      color: #DBE1E8;
+      color: $lightGray;
     }
   }
 
@@ -28,7 +28,7 @@
     width: 100%;
     padding: 15px 20px;
     background: #FFFFFF;
-    border: 2px solid #DBE1E8;
+    border: 2px solid $lightGray;
     border-radius: 8px;
     font-family: $font-body;
     margin-top: 8px;
@@ -43,7 +43,7 @@
   .dropdown {
     /* styling */
     background-color: white;
-    border: 2px solid #DBE1E8;
+    border: 2px solid $lightGray;
     border-radius: 4px;
     display: inline-block;
     font: inherit;
@@ -121,7 +121,7 @@
   .opt-out-button {
     width: 100%;
     outline: none;
-    border: 2px solid #DBE1E8;
+    border: 2px solid $lightGray;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     padding: 8px;
@@ -129,7 +129,7 @@
     border-top: none;
     font-family: $font-body;
     cursor: pointer;
-    color: #DBE1E8;
+    color: $lightGray;
 
     &:hover {
       color: $darkBlue;
@@ -155,7 +155,7 @@
   box-sizing: border-box;
   outline: none;
   border-radius: 8px;
-  border: 2px solid #DBE1E8;
+  border: 2px solid $lightGray;
   margin-top: 8px;
 
   input:active {
@@ -183,7 +183,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #DBE1E8;
+  background-color: $lightGray;
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 34px;

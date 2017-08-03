@@ -6,13 +6,24 @@
 
 @import 'mobile';
 
+html, body, #boilermake, .body {
+  height: 100%;
+  margin: 0;
+}
+.body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: $font-body;
   color: $darkBlue;
 }
-
+.content {
+  flex: 1 0 auto;
+}
 // FONT COLORS
 .white { color: $white; }
 .pink { color: $pink; }
@@ -46,19 +57,14 @@ p {
 }
 .v-center { align-items: center; }
 .h-center { justify-content: center; }
-.text-center { text-align: center; }
 
 // CONTAINERS
 .page {
   text-align: center;
-  padding: 100px 0;
   margin: 0px auto;
-  width: 100%;
 }
 .pageContainer {
-  margin-left: 75px;
-  margin-right: 75px;
-  margin-top: 50px;
+  margin: 50px 75px 0 75px;
 }
 .container {
   display: flex;
@@ -66,11 +72,6 @@ p {
 }
 .fullWidthContainer {
   max-width: 1024px;
-  padding: 0 12px;
-  margin: auto;
-}
-.narrowWidthContainer {
-  max-width: 700px;
   padding: 0 12px;
   margin: auto;
 }
@@ -99,13 +100,6 @@ p {
 @media (max-width: 768px) {
   .col-6 {
     width: 100%;
-
-    &:first-child {
-      padding-right: 0px;
-    }
-    &:last-child {
-      padding-left: 0px;
-    }
   }
 }
 
@@ -114,7 +108,7 @@ p {
 .paddingt { padding-top: 16px; }
 .paddingb { padding-bottom: 16px }
 .paddingl { padding-left: 16px; }
-.paddingr {padding-right: 16px; }
+.paddingr { padding-right: 16px; }
 .paddingx { padding: 0 16px; }
 .paddingy { padding: 16px 0; }
 
@@ -122,7 +116,7 @@ p {
 .margint { margin-top: 16px; }
 .marginb { margin-bottom: 16px }
 .marginl { margin-left: 16px; }
-.marginr {margin-right: 16px; }
+.marginr { margin-right: 16px; }
 .marginx { margin: 0 16px; }
 .marginy { margin: 16px 0; }
 
@@ -138,6 +132,9 @@ p {
 }
 .center {
   text-align: center;
+}
+.right {
+  text-align: right;
 }
 .btn {
   font-size: 15px;
