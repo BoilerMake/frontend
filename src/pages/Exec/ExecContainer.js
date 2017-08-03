@@ -6,7 +6,6 @@ import {
     Menu,
 } from 'semantic-ui-react'
 import B from '../../assets/images/b.svg'
-import 'semantic-ui-css/semantic.min.css';
 
 
 const ExecContainer = ({children}) => (
@@ -26,6 +25,9 @@ const ExecContainer = ({children}) => (
             </Container>
         </Menu>
         <Container style={{ marginTop: '5em' }}>
+            {/*ok this is super hacky, but since we don't have CSS modules, loading the semantic UI stylesheet via webpack loads it globally...
+                so that cascades... but not in a good way, as it breaks our user-facing styles :) */}
+            <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css" />
             {children}
         </Container>
     </div>

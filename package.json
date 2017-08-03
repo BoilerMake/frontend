@@ -43,7 +43,6 @@
     "redux-mock-store": "^1.2.3",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.5",
-    "semantic-ui-css": "^2.2.11",
     "semantic-ui-react": "^0.71.2"
   },
   "devDependencies": {
