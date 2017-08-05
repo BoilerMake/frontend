@@ -22,7 +22,7 @@ const LoginForm = (props) => {
             <div className="marginb">
               <GithubLoginButton />
             </div>
-            <div className="white margint">Login with email</div>
+            <div className="white margint back-line"><span>Login with email</span></div>
             <Field name="email" type="email" component={renderField} label="Email" className="topSpacing" placeholder="Email"/>
             <Field name="password" type="password" component={renderField} label="Password" className="topSpacing" />
             {error && <div className="margint">{error}</div>}
