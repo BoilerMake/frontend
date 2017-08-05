@@ -7,11 +7,6 @@ import ResumeUploadProgressIndicator from './ResumeUploadProgressIndicator';
 import {raceOptions, genderOptions } from './ApplicationConsts';
 
 class ApplicationForm extends Component {
-
-    toggleItem(item) {
-        this.props.toggleApplicationFieldValue(item);
-    }
-
     render () {
         const applicationForm = this.props.application.applicationForm;
         const isLoading = this.props.application.loading;
@@ -56,13 +51,13 @@ class ApplicationForm extends Component {
                       <label>LinkedIn Username</label>
                       { applicationForm.has_no_linkedin ?
                           <div>
-                              <ApplicationTextField field="linkedin" styles={ { borderBottomLeftRadius: 0, borderBottomRightRadius: 0 } } disabled={ true }/>
-                              <button onClick={this.toggleItem.bind(this,'has_no_linkedin')} className="opt-out-button">I do actually</button>
+                              <ApplicationTextField field="linkedin" flattenBottomCorners  disabled/>
+                              <button onClick={this.props.toggleApplicationFieldValue.bind(this,'has_no_linkedin')} className="opt-out-button">I do actually</button>
                           </div>
                       :
                           <div>
-                              <ApplicationTextField field="linkedin" styles={ { borderBottomLeftRadius: 0, borderBottomRightRadius: 0 } }/>
-                              <button onClick={this.toggleItem.bind(this,'has_no_linkedin')} className="opt-out-button">No thanks</button>
+                              <ApplicationTextField field="linkedin" flattenBottomCorners/>
+                              <button onClick={this.props.toggleApplicationFieldValue.bind(this,'has_no_linkedin')} className="opt-out-button">No thanks</button>
                           </div>
                       }
                     </div>
@@ -71,15 +66,15 @@ class ApplicationForm extends Component {
                       {
                           applicationForm.has_no_github && !isGithubLinked
                           ? <div>
-                              <ApplicationTextField field="github" disabled={ true} styles={ { 'borderBottomLeftRadius': 0, 'borderBottomRightRadius': 0 } }/>
-                              <button onClick={this.toggleItem.bind(this,'has_no_github')} className="opt-out-button">I do actually</button>
+                              <ApplicationTextField field="github" flattenBottomCorners disabled/>
+                              <button onClick={this.props.toggleApplicationFieldValue.bind(this,'has_no_github')} className="opt-out-button">I do actually</button>
                             </div>
                           : <div>
-                              <ApplicationTextField field="github" disabled={isGithubLinked} styles={ { 'borderBottomLeftRadius': 0, 'borderBottomRightRadius': 0 } }/>
+                              <ApplicationTextField field="github" flattenBottomCorners disabled={isGithubLinked}/>
                               {
                                   isGithubLinked
                                   ? <button className="opt-out-button"><i>You signed up with github, so you can't change the username</i></button>
-                                  : <button onClick={this.toggleItem.bind(this,'has_no_github')} className="opt-out-button">No thanks</button>
+                                  : <button onClick={this.props.toggleApplicationFieldValue.bind(this,'has_no_github')} className="opt-out-button">No thanks</button>
                               }
                            </div>
                       }
@@ -97,7 +92,7 @@ class ApplicationForm extends Component {
                 </div>
                 <div className="row">
                     <div className="col-6 paddingr">
-                      <label>Upload Resume</label>
+                      <label>Upload Resume (PDF only)</label>
                       <button type="button" onClick={() => { dropzoneRef.open() }} className="application-button">Drop or click to upload</button>
                       <ResumeUploadProgressIndicator/>
                       { applicationForm.resume_uploaded ? <div>You've uploaded <a href={applicationForm.resume_get_url} target="_blank" rel="noopener noreferrer" >{applicationForm.resume_filename}</a></div> : null }
@@ -107,15 +102,30 @@ class ApplicationForm extends Component {
                 </div>
                 <div className="row">
                     <div className="col-6">
-                      <label>First Hackathon?</label>
+                      <label>Is this your First Hackathon?</label>
                       <ApplicationToggle field="isFirstHackathon"/>
                     </div>
                     <div className="col-6">
                     </div>
                 </div>
                 <div className="row">
+                    <label>I will be 18 or older by Sept 29, 2017.</label>
+                    <ApplicationToggle field="tandc_1"/>
+                </div>
+                <div className="row">
+                    <label>I agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a></label>
+                    <ApplicationToggle field="tandc_2"/>
+                </div>
+                <div className="row">
+                    <label>I agree to the terms of both the <a href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions" target="_blank" rel="noopener noreferrer">MLH Contest Terms and Conditions</a> and the <a href="https://mlh.io/privacy" target="_blank" rel="noopener noreferrer">MLH Privacy Policy</a>. Please note that you may receive pre and post-event informational e-mails and occasional messages about hackathons from MLH as per the MLH Privacy Policy.</label>
+                    <ApplicationToggle field="tandc_3"/>
+                </div>
+                <div className="row">
                     <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}} className="submit">Save</button>
                     {/* Does the server say your application is completed? {applicationForm.completed? ' yes! ': 'no...'} */}
+                </div>
+                <div className="row">
+                    <p>You can edit this later until we close applications.</p>
                 </div>
             </Dropzone>
         );
