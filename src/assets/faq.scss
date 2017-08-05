@@ -18,12 +18,11 @@
   p {
     font-size: 16px;
     color: $darkGray;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-right: 4px;
+    margin: 0;
+    line-height: 26px;
   }
   .darkBlue {
-    color: $gray;
+    color: $darkBlue;
   }
   .link {
     text-decoration: underline;
@@ -44,6 +43,7 @@
     font-weight: 400;
     color: $darkBlue;
     font-size: 20px;
+    margin-right: 20px;
   }
   .faq-answer {
     font-weight: 300;
