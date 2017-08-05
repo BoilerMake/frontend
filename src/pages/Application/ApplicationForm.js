@@ -4,7 +4,7 @@ import ApplicationTextField from './ApplicationTextField';
 import ApplicationToggle from './ApplicationToggle';
 import ApplicationSelectField from './ApplicationSelectField';
 import ResumeUploadProgressIndicator from './ResumeUploadProgressIndicator';
-import {raceOptions, genderOptions } from './ApplicationConsts';
+import {raceOptions, genderOptions, gradYearOptions } from './ApplicationConsts';
 
 class ApplicationForm extends Component {
     render () {
@@ -42,7 +42,7 @@ class ApplicationForm extends Component {
                     </div>
                     <div className="col-6">
                       <label>Expected Graduation Year</label>
-                      <ApplicationTextField field="grad_year"/>
+                        <ApplicationSelectField field="grad_year" searchable options={gradYearOptions}/>
                     </div>
                 </div>
 
