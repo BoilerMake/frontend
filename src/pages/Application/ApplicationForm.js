@@ -68,20 +68,20 @@ class ApplicationForm extends Component {
                     </div>
                     <div className="col-6">
                       <label>GitHub Username</label>
-                      { applicationForm.has_no_github && !isGithubLinked ?
-                        <div>
-                          <ApplicationTextField field="github" disabled={ true} styles={ { 'borderBottomLeftRadius': 0, 'borderBottomRightRadius': 0 } }/>
-                          <button onClick={this.toggleItem.bind(this,'has_no_github')} className="opt-out-button">I do actually</button>
-                        </div>
-                      :
-                          <div>
+                      {
+                          applicationForm.has_no_github && !isGithubLinked
+                          ? <div>
+                              <ApplicationTextField field="github" disabled={ true} styles={ { 'borderBottomLeftRadius': 0, 'borderBottomRightRadius': 0 } }/>
+                              <button onClick={this.toggleItem.bind(this,'has_no_github')} className="opt-out-button">I do actually</button>
+                            </div>
+                          : <div>
                               <ApplicationTextField field="github" disabled={isGithubLinked} styles={ { 'borderBottomLeftRadius': 0, 'borderBottomRightRadius': 0 } }/>
-                              { isGithubLinked ?
-                                  <i>You signed up with github, so you can't change the username</i>
-                              :
-                                  <button onClick={this.toggleItem.bind(this,'has_no_github')} className="opt-out-button">No thanks</button>
+                              {
+                                  isGithubLinked
+                                  ? <button className="opt-out-button"><i>You signed up with github, so you can't change the username</i></button>
+                                  : <button onClick={this.toggleItem.bind(this,'has_no_github')} className="opt-out-button">No thanks</button>
                               }
-                          </div>
+                           </div>
                       }
                     </div>
                 </div>
@@ -124,7 +124,6 @@ class ApplicationForm extends Component {
 
 //now the redux integration layer
 import {
-    fetchApplication,
     saveApplication,
     onResumeDrop,
     toggleApplicationFieldValue
@@ -141,7 +140,6 @@ function mapStateToProps (state) {
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
-        fetchApplication,
         saveApplication,
         onResumeDrop,
         toggleApplicationFieldValue
