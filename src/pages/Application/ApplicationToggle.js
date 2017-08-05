@@ -3,22 +3,19 @@ import { changeApplicationFieldValue } from '../../actions/application';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-const ApplicationToggle = ({changeApplicationFieldValue, field, applicationForm, disabled, isLoading, styles}) => (
+const ApplicationToggle = ({changeApplicationFieldValue, field, applicationForm, disabled, isLoading, styles}) =>
     <div>
         <label className="switch">
             <input
                 style={ styles }
                 disabled={(disabled || false) || isLoading} //disable the input if: disabled (default false) OR isLoading
-                value={applicationForm[field]}
-                onChange={
-                    (e) => changeApplicationFieldValue(field,!applicationForm[field])
-                }
+                checked={applicationForm[field]}
+                onChange={(e) => changeApplicationFieldValue(field,e.target.checked)}
                 type="checkbox"
             />
-            <span className="slider"></span>
+            <span className="slider"/>
         </label>
-    </div>
-);
+    </div>;
 
 function mapStateToProps (state) {
     return {
