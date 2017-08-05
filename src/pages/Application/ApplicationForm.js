@@ -101,24 +101,40 @@ class ApplicationForm extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-6">
-                      <label>Is this your First Hackathon?</label>
+                    <div className="flex v-center">
                       <ApplicationToggle field="isFirstHackathon"/>
+                      <label className="marginl">Is this your First Hackathon?</label>
                     </div>
-                    <div className="col-6">
+                </div>
+                <div className="row">
+                    <div className="flex v-center">
+                        <ApplicationToggle field="tandc_1"/>
+                        <label className="marginl">I will be 18 or older by Sept 29, 2017.</label>
                     </div>
                 </div>
                 <div className="row">
-                    <label>I will be 18 or older by Sept 29, 2017.</label>
-                    <ApplicationToggle field="tandc_1"/>
+                    <div className="flex v-center">
+                        <ApplicationToggle field="tandc_2"/>
+                        <label className="marginl">I agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a></label>
+                    </div>
                 </div>
                 <div className="row">
-                    <label>I agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a></label>
-                    <ApplicationToggle field="tandc_2"/>
-                </div>
-                <div className="row">
-                    <label>I agree to the terms of both the <a href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions" target="_blank" rel="noopener noreferrer">MLH Contest Terms and Conditions</a> and the <a href="https://mlh.io/privacy" target="_blank" rel="noopener noreferrer">MLH Privacy Policy</a>. Please note that you may receive pre and post-event informational e-mails and occasional messages about hackathons from MLH as per the MLH Privacy Policy.</label>
-                    <ApplicationToggle field="tandc_3"/>
+                    <div className="flex v-center">
+                        <ApplicationToggle field="tandc_3"/>
+                        <div className="marginl" style={ { maxWidth: '700px' } }>
+                            I agree to the terms of both the&nbsp;
+                            <a href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions" target="_blank" rel="noopener noreferrer">
+                                MLH Contest Terms and Conditions
+                            </a>
+                            &nbsp;and the&nbsp;
+                            <a href="https://mlh.io/privacy" target="_blank" rel="noopener noreferrer">
+                                MLH Privacy Policy.&nbsp;
+                            </a>
+                            Please note that you may receive pre and post-event informational
+                            e-mails and occasional messages about hackathons from MLH as per
+                            the MLH Privacy Policy.
+                        </div>
+                    </div>
                 </div>
                 <div className="row">
                     <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}} className="submit">Save</button>
