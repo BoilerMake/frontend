@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import ApplicationTextField from './ApplicationTextField';
 import ApplicationToggle from './ApplicationToggle';
-import ApplicationDropdown from './ApplicationDropdown';
-import SchoolInputField from './SchoolInputField';
+import ApplicationSelectField from './ApplicationSelectField';
 import ResumeUploadProgressIndicator from './ResumeUploadProgressIndicator';
-// import Select from 'react-select';
+import {raceOptions, genderOptions } from './ApplicationConsts';
 
 class ApplicationForm extends Component {
-
-    // componentDidMount() {
-    //      this.props.fetchApplication();
-    // }
 
     toggleItem(item) {
         this.props.toggleApplicationFieldValue(item);
@@ -43,7 +38,7 @@ class ApplicationForm extends Component {
                 </div>
                 <div className="row">
                     <label>School</label>
-                    <SchoolInputField/>
+                    <ApplicationSelectField field="school_id" searchable options={this.props.schools}/>
                 </div>
                 <div className="row">
                     <div className="col-6 paddingr">
@@ -93,11 +88,11 @@ class ApplicationForm extends Component {
                 <div className="row">
                     <div className="col-6">
                         <label>Gender</label>
-                        <ApplicationDropdown field="gender" options={ { Male: 0, Female: 1, Other: 2, 'I\'d Rather Not Say': 3 } }/>
+                        <ApplicationSelectField field="gender" options={genderOptions}/>
                     </div>
                     <div className="col-6">
                         <label>Race</label>
-                        <ApplicationDropdown field="race" options={ {  'Asian': 1, 'White': 5, 'Black or African American': 2, 'American Indian or Alaska Native': 0, 'Native Hawaiian or Other Pacific Islander': 4, 'Other': 6, 'I\'d Rather Not Say': 3 } }/>
+                        <ApplicationSelectField field="race" options={raceOptions}/>
                     </div>
                 </div>
                 <div className="row">
@@ -139,7 +134,8 @@ import { connect } from 'react-redux'
 function mapStateToProps (state) {
     return {
         user: state.user,
-        application: state.application
+        application: state.application,
+        schools: state.application.schools.map((school)=>({value: school.id, label: school.name})),
     };
 }
 
