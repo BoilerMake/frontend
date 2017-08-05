@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 const ApplicationToggle = ({changeApplicationFieldValue, field, applicationForm, disabled, isLoading, styles}) =>
-    <div>
+    <span>
         <label className="switch">
             <input
                 style={ styles }
@@ -15,7 +15,7 @@ const ApplicationToggle = ({changeApplicationFieldValue, field, applicationForm,
             />
             <span className="slider"/>
         </label>
-    </div>;
+    </span>;
 
 function mapStateToProps (state) {
     return {
