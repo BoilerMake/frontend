@@ -24,9 +24,9 @@ class Question extends Component {
       <div className="outline" onClick={this.toggleDropDown}>
           <p className="faq-question left">{title}</p>
           {dropdown ? (
-            <img className="icon" onClick={this.toggleDropDown} alt="arrow-down" src={down}/>
-          ) : (
             <img className="icon" onClick={this.toggleDropDown} alt="arrow-up" src={up}/>
+          ) : (
+            <img className="icon" onClick={this.toggleDropDown} alt="arrow-down" src={down}/>
           )}
           {/*One of the FAQ items has HTML in it to easily make an offsite link, so we need to 'dangerously' set it*/}
           { dropdown ? <p className="faq-answer left topSpacing" dangerouslySetInnerHTML={{__html: body}}/> : null }
