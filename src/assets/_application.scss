@@ -98,6 +98,7 @@
 }
 
 .Select-control {
+  height: 50px;
   width: 100%;
   box-sizing: border-box;
   outline: none;
@@ -107,6 +108,22 @@
 
   input:active {
     border: none;
+  }
+  /* Make select elements 50px tall: https://github.com/JedWatson/react-select/issues/1322#issuecomment-259399147 */
+  .Select-placeholder {
+    line-height: 46px;
+  }
+
+  .Select-value {
+    line-height: 46px !important;
+
+    .Select-value-label {
+      line-height: 46px;
+    }
+  }
+
+  .Select-input {
+    height: 46px;
   }
 }
 
