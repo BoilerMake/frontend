@@ -94,3 +94,26 @@
     }
   }
 }
+
+.animation {
+
+  background: rgba(25,42,80,1);
+  background: -moz-linear-gradient(top, rgba(25,42,80,1) 0%, rgba(173,32,119,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(25,42,80,1)), color-stop(100%, rgba(173,32,119,1)));
+  background: -webkit-linear-gradient(top, rgba(25,42,80,1) 0%, rgba(173,32,119,1) 100%);
+  background: -o-linear-gradient(top, rgba(25,42,80,1) 0%, rgba(173,32,119,1) 100%);
+  background: -ms-linear-gradient(top, rgba(25,42,80,1) 0%, rgba(173,32,119,1) 100%);
+  background: linear-gradient(to bottom, rgba(25,42,80,1) 0%, rgba(173,32,119,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#192a50', endColorstr='#ad2077', GradientType=0 );
+  height: 90vh;
+  width: 100%;
+  .sign {
+    position: absolute;
+    z-index: 0;
+  }
+  .pillars {
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+  }
+}
