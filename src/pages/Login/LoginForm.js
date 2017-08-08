@@ -19,9 +19,9 @@ const LoginForm = (props) => {
     return (
         <form onSubmit={handleSubmit} className="form">
             <div className="marginb">
-              <GithubLoginButton />
+              <GithubLoginButton actionText="Login"/>
             </div>
-            <div className="white margint back-line"><span>Login with email</span></div>
+            <div className="back-line"><span>Or with email</span></div>
             <Field name="email" type="email" component={renderField} label="Email" className="topSpacing" placeholder="Email"/>
             <Field name="password" type="password" component={renderField} label="Password" className="topSpacing" />
             {error && <div className="margint">{error}</div>}
