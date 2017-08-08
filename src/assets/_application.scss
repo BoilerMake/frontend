@@ -40,59 +40,6 @@
     }
   }
 
-  .dropdown {
-    /* styling */
-    background-color: white;
-    border: 2px solid $lightGray;
-    border-radius: 4px;
-    display: inline-block;
-    font: inherit;
-    line-height: 1.5em;
-    padding: 12px 9px;
-    width: 100%;
-    margin-top: 8px;
-
-    /* reset */
-
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    background-image:
-    linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%),
-    linear-gradient(to right, #ccc, #ccc);
-    background-position:
-    calc(100% - 20px) calc(1em + 2px),
-    calc(100% - 15px) calc(1em + 2px),
-    calc(100% - 2.5em) 0.5em;
-    background-size:
-    5px 5px,
-    5px 5px,
-    1px 1.5em;
-    background-repeat: no-repeat;
-
-    &:focus {
-      background-image:
-      linear-gradient(45deg, $darkBlue 50%, transparent 50%),
-      linear-gradient(135deg, transparent 50%, $darkBlue 50%),
-      linear-gradient(to right, #ccc, #ccc);
-      background-position:
-      calc(100% - 15px) 1em,
-      calc(100% - 20px) 1em,
-      calc(100% - 2.5em) 0.5em;
-      background-size:
-      5px 5px,
-      5px 5px,
-      1px 1.5em;
-      background-repeat: no-repeat;
-      border-color: $darkBlue;
-      outline: 0;
-    }
-  }
-
   .submit {
       outline: none;
       border: 2px solid $pink;
@@ -151,6 +98,7 @@
 }
 
 .Select-control {
+  height: 50px;
   width: 100%;
   box-sizing: border-box;
   outline: none;
@@ -160,6 +108,22 @@
 
   input:active {
     border: none;
+  }
+  /* Make select elements 50px tall: https://github.com/JedWatson/react-select/issues/1322#issuecomment-259399147 */
+  .Select-placeholder {
+    line-height: 46px;
+  }
+
+  .Select-value {
+    line-height: 46px !important;
+
+    .Select-value-label {
+      line-height: 46px;
+    }
+  }
+
+  .Select-input {
+    height: 46px;
   }
 }
 
@@ -233,6 +197,122 @@ input:checked + .slider:before {
     }
     &:last-child {
       padding-left: 0px;
+    }
+  }
+}
+
+.checkbox {
+  label {
+      display: inline-block; // to make it easier to click
+      color: $darkBlue;
+      cursor: pointer;
+      position: relative; // important
+
+      // Now we'll create the checkbox object
+
+      span {
+        display: inline-block;
+        position: relative;
+        background-color: transparent;
+        width: 25px;
+        height: 25px;
+        transform-origin: center;
+        border: 2px solid $darkBlue;
+        border-radius: 50%;
+        vertical-align: -6px;
+        margin-right: 10px;
+        transition: background-color 150ms 200ms, transform 350ms cubic-bezier(.78,-1.22,.17,1.89); // custom ease effect for bouncy animation
+
+    // Now we'll create the "tick" using pseudo elements - those will be basically two lines that will be rotated to form the "tick"
+
+      &:before {
+        content: "";
+        width: 0px;
+        height: 2px;
+        border-radius: 2px; // so that the tick has nice rounded look
+        background: $darkBlue;
+        position: absolute;
+        transform: rotate(45deg);
+        top: 13px; // you'll need to experiment with placement depending on the dimensions you've chosen
+        left: 9px; // you'll need to experiment with placement depending on the dimensions you've chosen
+        transition: width 50ms ease 50ms;
+        transform-origin: 0% 0%;
+      }
+
+      &:after {
+        content: "";
+        width: 0;
+        height: 2px;
+        border-radius: 2px; // so that the tick has nice rounded look
+        background: $darkBlue;
+        position: absolute;
+        transform: rotate(305deg);
+        top: 16px; // you'll need to experiment with placement depending on the dimensions you've chosen
+        left: 10px; // you'll need to experiment with placement depending on the dimensions you've chosen
+        transition: width 50ms ease;
+        transform-origin: 0% 0%;
+      }
+    }
+    // Time to add some life to it
+
+    &:hover {
+      span {
+        &:before {
+          width: 5px;
+          transition: width 100ms ease;
+        }
+
+        &:after {
+          width: 10px;
+          transition: width 150ms ease 100ms;
+        }
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+      display: none; // hide the system checkbox
+
+    // Let's add some effects after the checkbox is checked
+
+    &:checked {
+      + label {
+        span {
+          background-color: $pink;
+          transform: scale(1.25); // enlarge the box
+
+          &:after {
+            width: 10px;
+            background: #fff;
+            transition: width 150ms ease 100ms; // enlarge the tick
+          }
+
+          &:before {
+            width: 5px;
+            background: #fff;
+            transition: width 150ms ease 100ms; // enlarge the tick
+          }
+        }
+
+        &:hover { // copy the states for onMouseOver to avoid flickering
+          span {
+            background-color: $pink;
+            transform: scale(1.25); // enlarge the box
+
+            &:after {
+              width: 10px;
+              background: $white;
+              transition: width 150ms ease 100ms; // enlarge the tick
+            }
+
+            &:before {
+              width: 5px;
+              background: $white;
+              transition: width 150ms ease 100ms; // enlarge the tick
+            }
+          }
+        }
+      }
     }
   }
 }

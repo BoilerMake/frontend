@@ -24,7 +24,7 @@
     margin-right: 4px;
   }
   .darkBlue {
-    color: $gray;
+    color: $darkBlue;
   }
   .link {
     text-decoration: underline;
@@ -45,9 +45,10 @@
     font-weight: 400;
     color: $darkBlue;
     font-size: 20px;
+    margin-right: 20px;
   }
   .faq-answer {
-    font-weight: 300;
+    font-weight: 400;
     margin-top: 15px;
   }
   .icon {

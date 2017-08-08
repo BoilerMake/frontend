@@ -12,7 +12,6 @@ import ExecAuditLogView from './ExecAuditLogView';
 class ExecUserDetail extends Component {
     componentDidMount() {
         this.fetchData();
-
     }
 
     fetchData() {
@@ -48,7 +47,8 @@ class ExecUserDetail extends Component {
                                 <List.Item><List.Header>Last Name</List.Header>{userDetail.last_name || 'n/a'}</List.Item>
                                 <List.Item><List.Header >email</List.Header>{userDetail.email || 'n/a'}</List.Item>
                                 <List.Item><List.Header>phone</List.Header>{userDetail.phone || 'n/a'}</List.Item>
-                                <List.Item><List.Header>created_at</List.Header>{userDetail.created_at}</List.Item>
+                                <List.Item><List.Header>created at</List.Header>{userDetail.created_at}</List.Item>
+                                <List.Item><List.Header>linked to github?</List.Header>{userDetail.github_user_id ? 'yes' : 'no'}</List.Item>
                                 <List.Item><List.Header>roles</List.Header>
                                     <List.Item as='ul'>
                                         {userDetail.roles.map(r=><List.Item key={r} as='li' value='-'>{r}</List.Item>)}
