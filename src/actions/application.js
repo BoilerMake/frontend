@@ -43,7 +43,7 @@ export function saveApplication(suppressToast = false) {
             .then((json) => {
                 if(json.success) {
                     if(!suppressToast) {
-                        toastr.success('Success!', 'Your application has been saved');
+                        toastr.success('Success!', json.data.message);
                     }
                     //this api endpoint returns the updated application
                     dispatch(receiveApplication(json,true));

@@ -2,21 +2,11 @@ import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import ApplicationTextField from './ApplicationTextField';
 import ApplicationToggle from './ApplicationToggle';
-import ApplicationDropdown from './ApplicationDropdown';
-import SchoolInputField from './SchoolInputField';
+import ApplicationSelectField from './ApplicationSelectField';
 import ResumeUploadProgressIndicator from './ResumeUploadProgressIndicator';
-// import Select from 'react-select';
+import {raceOptions, genderOptions, gradYearOptions } from './ApplicationConsts';
 
 class ApplicationForm extends Component {
-
-    // componentDidMount() {
-    //      this.props.fetchApplication();
-    // }
-
-    toggleItem(item) {
-        this.props.toggleApplicationFieldValue(item);
-    }
-
     render () {
         const applicationForm = this.props.application.applicationForm;
         const isLoading = this.props.application.loading;
@@ -43,7 +33,7 @@ class ApplicationForm extends Component {
                 </div>
                 <div className="row">
                     <label>School</label>
-                    <SchoolInputField/>
+                    <ApplicationSelectField field="school_id" searchable options={this.props.schools}/>
                 </div>
                 <div className="row">
                     <div className="col-6 paddingr">
@@ -52,7 +42,7 @@ class ApplicationForm extends Component {
                     </div>
                     <div className="col-6">
                       <label>Expected Graduation Year</label>
-                      <ApplicationTextField field="grad_year"/>
+                        <ApplicationSelectField field="grad_year" searchable options={gradYearOptions}/>
                     </div>
                 </div>
 
@@ -61,48 +51,48 @@ class ApplicationForm extends Component {
                       <label>LinkedIn Username</label>
                       { applicationForm.has_no_linkedin ?
                           <div>
-                              <ApplicationTextField field="linkedin" styles={ { borderBottomLeftRadius: 0, borderBottomRightRadius: 0 } } disabled={ true }/>
-                              <button onClick={this.toggleItem.bind(this,'has_no_linkedin')} className="opt-out-button">I do actually</button>
+                              <ApplicationTextField field="linkedin" flattenBottomCorners  disabled/>
+                              <button onClick={this.props.toggleApplicationFieldValue.bind(this,'has_no_linkedin')} className="opt-out-button">I do actually</button>
                           </div>
                       :
                           <div>
-                              <ApplicationTextField field="linkedin" styles={ { borderBottomLeftRadius: 0, borderBottomRightRadius: 0 } }/>
-                              <button onClick={this.toggleItem.bind(this,'has_no_linkedin')} className="opt-out-button">No thanks</button>
+                              <ApplicationTextField field="linkedin" flattenBottomCorners/>
+                              <button onClick={this.props.toggleApplicationFieldValue.bind(this,'has_no_linkedin')} className="opt-out-button">No thanks</button>
                           </div>
                       }
                     </div>
                     <div className="col-6">
                       <label>GitHub Username</label>
-                      { applicationForm.has_no_github && !isGithubLinked ?
-                        <div>
-                          <ApplicationTextField field="github" disabled={ true} styles={ { 'borderBottomLeftRadius': 0, 'borderBottomRightRadius': 0 } }/>
-                          <button onClick={this.toggleItem.bind(this,'has_no_github')} className="opt-out-button">I do actually</button>
-                        </div>
-                      :
-                          <div>
-                              <ApplicationTextField field="github" disabled={isGithubLinked} styles={ { 'borderBottomLeftRadius': 0, 'borderBottomRightRadius': 0 } }/>
-                              { isGithubLinked ?
-                                  <i>You signed up with github, so you can't change the username</i>
-                              :
-                                  <button onClick={this.toggleItem.bind(this,'has_no_github')} className="opt-out-button">No thanks</button>
+                      {
+                          applicationForm.has_no_github && !isGithubLinked
+                          ? <div>
+                              <ApplicationTextField field="github" flattenBottomCorners disabled/>
+                              <button onClick={this.props.toggleApplicationFieldValue.bind(this,'has_no_github')} className="opt-out-button">I do actually</button>
+                            </div>
+                          : <div>
+                              <ApplicationTextField field="github" flattenBottomCorners disabled={isGithubLinked}/>
+                              {
+                                  isGithubLinked
+                                  ? <button className="opt-out-button"><i>You signed up with github, so you can't change the username</i></button>
+                                  : <button onClick={this.props.toggleApplicationFieldValue.bind(this,'has_no_github')} className="opt-out-button">No thanks</button>
                               }
-                          </div>
+                           </div>
                       }
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-6">
                         <label>Gender</label>
-                        <ApplicationDropdown field="gender" options={ { Male: 0, Female: 1, Other: 2, 'I\'d Rather Not Say': 3 } }/>
+                        <ApplicationSelectField field="gender" options={genderOptions}/>
                     </div>
                     <div className="col-6">
                         <label>Race</label>
-                        <ApplicationDropdown field="race" options={ {  'Asian': 1, 'White': 5, 'Black or African American': 2, 'American Indian or Alaska Native': 0, 'Native Hawaiian or Other Pacific Islander': 4, 'Other': 6, 'I\'d Rather Not Say': 3 } }/>
+                        <ApplicationSelectField field="race" options={raceOptions}/>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-6 paddingr">
-                      <label>Upload Resume</label>
+                      <label>Upload Resume (PDF only)</label>
                       <button type="button" onClick={() => { dropzoneRef.open() }} className="application-button">Drop or click to upload</button>
                       <ResumeUploadProgressIndicator/>
                       { applicationForm.resume_uploaded ? <div>You've uploaded <a href={applicationForm.resume_get_url} target="_blank" rel="noopener noreferrer" >{applicationForm.resume_filename}</a></div> : null }
@@ -111,16 +101,47 @@ class ApplicationForm extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-6">
-                      <label>First Hackathon?</label>
+                    <div className="flex v-center">
                       <ApplicationToggle field="isFirstHackathon"/>
+                      <label className="marginl">Is this your First Hackathon?</label>
                     </div>
-                    <div className="col-6">
+                </div>
+                <div className="row">
+                    <div className="flex v-center">
+                        <ApplicationToggle field="tandc_1"/>
+                        <label className="marginl">I will be 18 or older by Sept 29, 2017.</label>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="flex v-center">
+                        <ApplicationToggle field="tandc_2"/>
+                        <label className="marginl">I agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a></label>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="flex v-center">
+                        <ApplicationToggle field="tandc_3"/>
+                        <div className="marginl" style={ { maxWidth: '700px' } }>
+                            I agree to the terms of both the&nbsp;
+                            <a href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions" target="_blank" rel="noopener noreferrer">
+                                MLH Contest Terms and Conditions
+                            </a>
+                            &nbsp;and the&nbsp;
+                            <a href="https://mlh.io/privacy" target="_blank" rel="noopener noreferrer">
+                                MLH Privacy Policy.&nbsp;
+                            </a>
+                            Please note that you may receive pre and post-event informational
+                            e-mails and occasional messages about hackathons from MLH as per
+                            the MLH Privacy Policy.
+                        </div>
                     </div>
                 </div>
                 <div className="row">
                     <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}} className="submit">Save</button>
                     {/* Does the server say your application is completed? {applicationForm.completed? ' yes! ': 'no...'} */}
+                </div>
+                <div className="row">
+                    <p>You can edit this later until we close applications.</p>
                 </div>
             </Dropzone>
         );
@@ -129,7 +150,6 @@ class ApplicationForm extends Component {
 
 //now the redux integration layer
 import {
-    fetchApplication,
     saveApplication,
     onResumeDrop,
     toggleApplicationFieldValue
@@ -139,13 +159,13 @@ import { connect } from 'react-redux'
 function mapStateToProps (state) {
     return {
         user: state.user,
-        application: state.application
+        application: state.application,
+        schools: state.application.schools.map((school)=>({value: school.id, label: school.name})),
     };
 }
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
-        fetchApplication,
         saveApplication,
         onResumeDrop,
         toggleApplicationFieldValue

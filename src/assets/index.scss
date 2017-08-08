@@ -3,6 +3,7 @@
 
 @import 'landing';
 @import 'application';
+@import 'about';
 
 @import 'mobile';
 
@@ -74,8 +75,8 @@ p {
   width: 100%;
 }
 .fullWidthContainer {
-  max-width: 1024px;
-  padding: 0 12px;
+  max-width: 700px;
+  padding: 0 15px;
   margin: auto;
 }
 
@@ -103,6 +104,9 @@ p {
 @media (max-width: 768px) {
   .col-6 {
     width: 100%;
+    &:last-child {
+      padding-left: 0;
+    }
   }
 }
 
