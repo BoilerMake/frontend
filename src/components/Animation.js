@@ -9,13 +9,14 @@ import apiFetch from '../actions';
 import '../assets/_form.scss';
 import '../assets/pillars.scss';
 
-let images = 0;
 class Animation extends Component {
   constructor(props) {
     super(props);
     this.state = {
       register: false,
       imageLoaded: false,
+      imageLoaded2: false,
+      loadAnimation: false,
       redirectToApplication: false
     };
   }
@@ -23,11 +24,21 @@ class Animation extends Component {
     this.setState({ register: !this.state.register });
   }
   handleImageLoad = () => {
-    if (images === 1) {
-      this.setState({ imageLoaded: true });
+    this.setState({ imageLoaded: true });
+    if (this.state.imageLoaded2) {
+      console.log('handleImageLoad is true');
+      this.setState({ loadAnimation: true });
     }
-    images++;
   }
+  handleImageLoad2 = () => {
+    this.setState({ imageLoaded2: true });
+    if (this.state.imageLoaded) {
+      console.log('handleImageLoad2 is true');
+
+      this.setState({ loadAnimation: true });
+    }
+  }
+
     handleSubmit = (values) => {
       let d = new FormData();
       d.append('email', values.email);
@@ -48,13 +59,13 @@ class Animation extends Component {
           });
     };
     render() {
-    const { register, imageLoaded, redirectToApplication } = this.state;
-    console.log('imageLoaded', imageLoaded);
+    const { register, loadAnimation, redirectToApplication } = this.state;
+    console.log('loadAnimation', loadAnimation);
     //redirect to application if they just succesfully registered.
     if (redirectToApplication) return (<Redirect to="/application"/>);
     return (
       <div className='animation'>
-        <img className={`sign ${imageLoaded ? 'fadein' : 'none'}`} onLoad={this.handleImageLoad} src={sign} alt="logo-sign" />
+        <img className={`sign ${loadAnimation ? 'fadein' : 'none'}`} onLoad={this.handleImageLoad} src={sign} alt="logo-sign" />
         <div className="register">
           <h3>Purdue University • September 29 - October 1, 2017</h3>
             {/*Only show Register button if unauth'd user, and register form is not displayed*/}
@@ -68,7 +79,7 @@ class Animation extends Component {
           <div className="login-form authFormNoBackground">
             <Register onSubmit={this.handleSubmit}/>
           </div>
-        ) : <img className={`pillars ${imageLoaded ? 'fadein' : 'none'}`} onLoad={this.handleImageLoad} src={pillars} alt="pillars" /> }
+        ) : <img className={`pillars ${loadAnimation ? 'fadein' : 'none'}`} onLoad={this.handleImageLoad2} src={pillars} alt="pillars" /> }
       </div>
     );
   }
