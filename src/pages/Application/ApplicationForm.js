@@ -109,19 +109,19 @@ class ApplicationForm extends Component {
                 <div className="row">
                     <div className="flex v-center">
                         <ApplicationToggle field="tandc_1"/>
-                        <label className="marginl">I will be 18 or older by Sept 29, 2017.</label>
+                        <label className="marginl last-check-s">I will be 18 or older by Sept 29, 2017.</label>
                     </div>
                 </div>
                 <div className="row">
                     <div className="flex v-center">
                         <ApplicationToggle field="tandc_2"/>
-                        <label className="marginl">I agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a></label>
+                        <label className="marginl last-check-s">I agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a></label>
                     </div>
                 </div>
                 <div className="row">
                     <div className="flex v-center">
                         <ApplicationToggle field="tandc_3"/>
-                        <div className="marginl" style={ { maxWidth: '700px' } }>
+                        <div className="marginl last-check" style={ { maxWidth: '700px' } }>
                             I agree to the terms of both the&nbsp;
                             <a href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions" target="_blank" rel="noopener noreferrer">
                                 MLH Contest Terms and Conditions
