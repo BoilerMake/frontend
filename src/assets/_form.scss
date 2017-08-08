@@ -1,10 +1,9 @@
 @import "vars";
 
-.login {
+.authFormNoBackground {
   color: $white;
   padding: 20px 0 50px 0;
   text-align: center;
-  background-color: $darkBlue;
   a {
     color: $white;
     text-decoration: none;
@@ -14,29 +13,41 @@
     color: $lightBlue;
   }
   .back-line {
+    line-height: 0.5;
     font-family: $font-title;
     position: relative;
-    z-index: 1;
     margin-top: 30px;
     text-align: center;
     text-transform: uppercase;
-    &:before {
-      border-top: 2px solid #dfdfdf;
-      content:"";
-      margin: 0 auto; /* this centers the line to the full width specified */
-      position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
-      top: 50%; left: 0; right: 0; bottom: 0;
-      width: 95%;
-      z-index: -1;
-    }
 
-    span {
-      /* to hide the lines from behind the text, you have to set the background color the same as the container */
-      background: $darkBlue;
-      padding: 0 15px;
-    }
+  }
+  .back-line span {
+    display: inline-block;
+    position: relative;
+  }
+  .back-line span:before,
+  .back-line span:after {
+    content: "";
+    position: absolute;
+    border-top: 2px solid #dfdfdf;
+    top: 50%;
+    width: 65px;
+  }
+  .back-line span:before {
+    right: 100%;
+    margin-right: 15px;
+  }
+  .back-line span:after {
+    left: 100%;
+    margin-left: 15px;
   }
 }
+
+.authForm {
+  @extend .authFormNoBackground;
+  background-color: $darkBlue;
+}
+
 .form {
   text-align: left;
   padding: 20px;
