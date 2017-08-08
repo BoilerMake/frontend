@@ -26,7 +26,7 @@ const questions = [
   },
   {
     "title": "How do I get there?",
-    "body": "If your college has a large group of people and is within a reasonable distance of Purdue University, we may be able to provide a bus to transport you to Purdue. If transportation is going to be an issue, please contact us at team@boilermake.org and we'll try to figure something out.  We're crossing our fingers Elon comes up with the hyperloop, so we can get a lot more of you here."
+    "body": "If your college has a large group of people and is within a reasonable distance of Purdue University, we may be able to provide a bus to transport you to Purdue. If transportation is going to be an issue, please contact us at <a href='mailto:team@boilermake.org'>team@boilermake.org</a> and we'll try to figure something out.  We're crossing our fingers Elon comes up with the hyperloop, so we can get a lot more of you here."
   },
   {
     "title": "What do I bring?",
