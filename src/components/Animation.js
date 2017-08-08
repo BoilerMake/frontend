@@ -44,7 +44,7 @@ class Animation extends Component {
           {!this.state.register ? <button className="btn" onClick={this.expandLogin}>register</button> : null}
         </div>
         {this.state.register ? (
-          <div className="login-form">
+          <div className="login-form authFormNoBackground">
             <Register onSubmit={this.handleSubmit}/>
           </div>
         ) : <img className="pillars" src={pillars} alt="pillars" /> }
