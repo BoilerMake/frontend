@@ -18,7 +18,6 @@ const LoginForm = (props) => {
     const { error, handleSubmit, submitting } = props;
     return (
         <form onSubmit={handleSubmit} className="form">
-            <h1 className="title text-center">Login</h1>
             <div className="marginb">
               <GithubLoginButton />
             </div>

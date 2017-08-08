@@ -122,11 +122,13 @@
     }
   }
   .sign {
+    -webkit-animation: fadein 2s 1;
     position: absolute;
     width: 600px;
     margin-left: -300px;
   }
   .pillars {
+    -webkit-animation: fadein 2s 1;
     position: absolute;
     z-index: 1;
     width: 600px;
@@ -134,5 +136,19 @@
     z-index: 1;
     top: 150px;
     margin-left: -300px;
+  }
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .login-form {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 200px;
   }
 }

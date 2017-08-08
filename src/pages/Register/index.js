@@ -43,7 +43,8 @@ export class Register extends Component {
 
         return (
             <div className="login">
-                <RegisterForm onSubmit={this.handleSubmit}/>
+              <h1 className="title">Register</h1>
+              <RegisterForm onSubmit={this.handleSubmit}/>
             </div>
         );
     }
