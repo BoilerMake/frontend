@@ -3,6 +3,8 @@ import sign from '../assets/images/animation/logo-sign.svg';
 import pillars from '../assets/images/animation/pillars.svg';
 import Register from '../pages/Register/RegisterForm';
 import { SubmissionError } from 'redux-form';
+import { Link } from 'react-router-dom'
+
 import apiFetch from '../actions';
 import '../assets/_form.scss';
 import '../assets/pillars.scss';
@@ -25,11 +27,11 @@ class Animation extends Component {
     }
     images++;
   }
-  handleSubmit = (values) => {
+    handleSubmit = (values) => {
       let d = new FormData();
       d.append('email', values.email);
       d.append('password', values.password);
-      return apiFetch('users/login',{
+      return apiFetch('users/register',{
           method: 'POST',
           body: d
       }).then((response) => response.json())
@@ -42,8 +44,8 @@ class Animation extends Component {
                   this.props.loginFromJWT(json.data.token);
               }
           });
-  };
-  render() {
+    };
+    render() {
     const { register, imageLoaded } = this.state;
     console.log('imageLoaded', imageLoaded);
     return (
@@ -51,7 +53,12 @@ class Animation extends Component {
         <img className={`sign ${imageLoaded ? 'fadein' : 'none'}`} onLoad={this.handleImageLoad} src={sign} alt="logo-sign" />
         <div className="register">
           <h3>Purdue University • September 29 - October 1, 2017</h3>
-          {!register ? <button className="btn" onClick={this.expandLogin}>register</button> : null}
+            {/*Only show Register button if unauth'd user, and register form is not displayed*/}
+            {
+              this.props.user.me
+                ? <Link to="/application" className="btn">Go to my Application</Link>
+                : (!register ? <button className="btn" onClick={this.expandLogin}>register</button> : null)
+            }
         </div>
         {this.state.register ? (
           <div className="login-form authFormNoBackground">
