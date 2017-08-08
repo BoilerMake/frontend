@@ -121,21 +121,18 @@
       color: $white;
     }
   }
-  .sign {
-    -webkit-animation: fadein 2s 1;
+  .fadein {
+    -webkit-animation: fadein 3.5s 1;
+  }
+  .sign, .pillars {
     position: absolute;
     width: 600px;
     margin-left: -300px;
   }
   .pillars {
-    -webkit-animation: fadein 2s 1;
-    position: absolute;
     z-index: 1;
-    width: 600px;
-    position: absolute;
     z-index: 1;
     top: 150px;
-    margin-left: -300px;
   }
   @keyframes fadein {
     0% {
@@ -150,5 +147,48 @@
     right: 0;
     left: 0;
     top: 200px;
+  }
+  @media (min-width: 1024px) {
+    .register {
+      top: 188px;
+      h3 {
+        font-size: 21px;
+      }
+    }
+    .sign {
+      width: 900px;
+      margin-left: -450px;
+    }
+    .pillars {
+      top: 198px;
+    }
+    .login-form {
+      top: 245px;
+    }
+  }
+  @media (max-width: 800px) {
+    height: 658px;
+  }
+  @media (max-width: 500px) {
+    height: 600px;
+    .register {
+      padding: 25px 30px;
+      top: 60px;
+      button {
+        font-size: 25px;
+      }
+    }
+    .sign {
+      width: 400px;
+      margin-left: -200px;
+    }
+    .pillars {
+      width: 500px;
+      margin-left: -250px;
+      top: 190px;
+    }
+    .login-form {
+      top: 150px;
+    }
   }
 }

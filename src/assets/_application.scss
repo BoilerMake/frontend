@@ -23,7 +23,18 @@
       color: $lightGray;
     }
   }
-
+  .last-check {
+    display: inline;
+    margin-top: -30px;
+    margin-left: 55px;
+  }
+  .last-check-s {
+    @media screen and (max-width:375px) {
+      display: inline;
+      margin-top: -30px;
+      margin-left: 55px;
+    }
+  }
   .application-button {
     width: 100%;
     padding: 15px 20px;
