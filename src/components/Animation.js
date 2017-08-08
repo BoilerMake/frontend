@@ -45,7 +45,6 @@ class Animation extends Component {
   };
   render() {
     const { register, imageLoaded } = this.state;
-    console.log('imageLoaded', imageLoaded);
     return (
       <div className='animation'>
         <img className={`sign ${imageLoaded ? 'fadein' : 'none'}`} onLoad={this.handleImageLoad} src={sign} alt="logo-sign" />
