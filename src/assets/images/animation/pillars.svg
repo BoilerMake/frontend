@@ -2,13 +2,13 @@
   <defs>
     <style type="text/css">
     .pillar-a {
-      -webkit-animation: float-a 12s infinite;
+      -webkit-animation: float-a 11s infinite;
     }
     .pillar-b {
-      -webkit-animation: float-b 17s infinite;
+      -webkit-animation: float-b 15s infinite;
     }
     .pillar-c {
-      -webkit-animation: float-c 22s infinite;
+      -webkit-animation: float-c 20s infinite;
     }
 
     @keyframes float-a {
@@ -18,7 +18,7 @@
       }
       50% {
         box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-        transform: translatey(-3px);
+        transform: translatey(-15px);
       }
       100% {
         box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
@@ -33,7 +33,7 @@
       }
       50% {
         box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-        transform: translatey(3px);
+        transform: translatey(15px);
       }
       100% {
         box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
@@ -48,7 +48,7 @@
       }
       50% {
         box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-        transform: translatey(-7px);
+        transform: translatey(-40px);
       }
       100% {
         box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);

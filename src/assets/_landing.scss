@@ -96,7 +96,6 @@
 }
 
 .animation {
-
   background: rgba(25,42,80,1);
   background: -moz-linear-gradient(top, rgba(25,42,80,1) 0%, rgba(173,32,119,1) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(25,42,80,1)), color-stop(100%, rgba(173,32,119,1)));
@@ -105,15 +104,35 @@
   background: -ms-linear-gradient(top, rgba(25,42,80,1) 0%, rgba(173,32,119,1) 100%);
   background: linear-gradient(to bottom, rgba(25,42,80,1) 0%, rgba(173,32,119,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#192a50', endColorstr='#ad2077', GradientType=0 );
-  height: 90vh;
   width: 100%;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  height: calc(100vh - 58px);
+  .register {
+    right: 0;
+    left: 0;
+    position: absolute;
+    top: 125px;
+    z-index: 2;
+    h3 {
+      font-size: 14px;
+      font-family: $font-title;
+      color: $white;
+    }
+  }
   .sign {
     position: absolute;
-    z-index: 0;
+    width: 600px;
+    margin-left: -300px;
   }
   .pillars {
     position: absolute;
     z-index: 1;
+    width: 600px;
+    position: absolute;
+    z-index: 1;
     top: 150px;
+    margin-left: -300px;
   }
 }
