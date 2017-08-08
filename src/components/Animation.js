@@ -3,7 +3,7 @@ import sign from '../assets/images/animation/logo-sign.svg';
 import pillars from '../assets/images/animation/pillars.svg';
 import Register from '../pages/Register/RegisterForm';
 import { SubmissionError } from 'redux-form';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 import apiFetch from '../actions';
 import '../assets/_form.scss';
@@ -16,6 +16,7 @@ class Animation extends Component {
     this.state = {
       register: false,
       imageLoaded: false,
+      redirectToApplication: false
     };
   }
   expandLogin = () => {
@@ -42,12 +43,15 @@ class Animation extends Component {
               else {
                   console.log(json.data.token);
                   this.props.loginFromJWT(json.data.token);
+                  this.setState({redirectToApplication: true});
               }
           });
     };
     render() {
-    const { register, imageLoaded } = this.state;
+    const { register, imageLoaded, redirectToApplication } = this.state;
     console.log('imageLoaded', imageLoaded);
+    //redirect to application if they just succesfully registered.
+    if (redirectToApplication) return (<Redirect to="/application"/>);
     return (
       <div className='animation'>
         <img className={`sign ${imageLoaded ? 'fadein' : 'none'}`} onLoad={this.handleImageLoad} src={sign} alt="logo-sign" />
