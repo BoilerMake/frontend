@@ -53,8 +53,8 @@ class Animation extends Component {
           <h3>Purdue University • September 29 - October 1, 2017</h3>
           {!register ? <button className="btn" onClick={this.expandLogin}>register</button> : null}
         </div>
-        {register ? (
-          <div className="login-form">
+        {this.state.register ? (
+          <div className="login-form authFormNoBackground">
             <Register onSubmit={this.handleSubmit}/>
           </div>
         ) : <img className={`pillars ${imageLoaded ? 'fadein' : 'none'}`} onLoad={this.handleImageLoad} src={pillars} alt="pillars" /> }
