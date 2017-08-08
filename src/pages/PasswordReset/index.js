@@ -63,7 +63,7 @@ class PasswordReset extends Component {
         </div>);
         return (
             <div className="login">
-                <h1 className="center">Password Reset</h1>
+                <h1 className="title center">Reset Your Password</h1>
                 {isTokenShowing ? performReset : requestReset}
                 <p>{this.state.message}</p>
             </div>);

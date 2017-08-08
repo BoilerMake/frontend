@@ -78,7 +78,7 @@ class FAQ extends Component {
           <img src={logo} className="logo" alt="logo" />
             <h1 className="title pink right">FAQ</h1>
             <p className="right"><span>Frequently Asked Questions</span></p>
-            { expandAll ? <p className="right darkBlue link" onClick={this.expandAll}>Collapse All</p> : <p className="right darkBlue link" onClick={this.expandAll}>Expand All</p> }
+            { expandAll ? <p className="right link" onClick={this.expandAll}>Collapse All</p> : <p className="right link" onClick={this.expandAll}>Expand All</p> }
             <div className="topSpacing">{questionList}</div>
           </div>
       );

@@ -17,7 +17,6 @@ export const RegisterForm = (props) => {
     const { error, handleSubmit, submitting } = props;
     return (
         <form onSubmit={handleSubmit} className="form">
-          <h1 className="title text-center">Register</h1>
           <GithubLoginButton className="topSpacing" />
           <div className="white">Register with Email</div>
           <Field name="email" type="email" component={renderField} label="Email"/>
