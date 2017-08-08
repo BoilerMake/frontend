@@ -18,9 +18,9 @@ export const RegisterForm = (props) => {
     return (
         <form onSubmit={handleSubmit} className="form">
           <GithubLoginButton className="topSpacing" />
-          <div className="white">Register with Email</div>
-          <Field name="email" type="email" component={renderField} label="Email"/>
-          <Field name="password" type="password" component={renderField} label="Password"/>
+            <div className="back-line"><span>Register with email</span></div>
+          <Field name="email" type="email" className="topSpacing" component={renderField} label="Email"/>
+          <Field name="password" type="password" className="topSpacing" component={renderField} label="Password"/>
           {error && <div className="margint">{error}</div>}
           <button className="btn topSpacing" type="submit" disabled={submitting}>Register</button>
           <div className="flex margint h-center">
