@@ -21,6 +21,9 @@ body {
   font-family: $font-body;
   color: $darkBlue;
 }
+.none {
+  display: none;
+}
 .content {
   flex: 1 0 auto;
 }

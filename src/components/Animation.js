@@ -7,15 +7,23 @@ import apiFetch from '../actions';
 import '../assets/_form.scss';
 import '../assets/pillars.scss';
 
+let images = 0;
 class Animation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      register: false
+      register: false,
+      imageLoaded: false,
     };
   }
   expandLogin = () => {
     this.setState({ register: !this.state.register });
+  }
+  handleImageLoad = () => {
+    if (images === 1) {
+      this.setState({ imageLoaded: true });
+    }
+    images++;
   }
   handleSubmit = (values) => {
       let d = new FormData();
@@ -36,18 +44,20 @@ class Animation extends Component {
           });
   };
   render() {
+    const { register, imageLoaded } = this.state;
+    console.log('imageLoaded', imageLoaded);
     return (
       <div className='animation'>
-        <img className="sign" src={sign} alt="logo-sign" />
+        <img className={`sign ${imageLoaded ? 'fadein' : 'none'}`} onLoad={this.handleImageLoad} src={sign} alt="logo-sign" />
         <div className="register">
           <h3>Purdue University • September 29 - October 1, 2017</h3>
-          {!this.state.register ? <button className="btn" onClick={this.expandLogin}>register</button> : null}
+          {!register ? <button className="btn" onClick={this.expandLogin}>register</button> : null}
         </div>
-        {this.state.register ? (
+        {register ? (
           <div className="login-form">
             <Register onSubmit={this.handleSubmit}/>
           </div>
-        ) : <img className="pillars" src={pillars} alt="pillars" /> }
+        ) : <img className={`pillars ${imageLoaded ? 'fadein' : 'none'}`} onLoad={this.handleImageLoad} src={pillars} alt="pillars" /> }
       </div>
     );
   }
