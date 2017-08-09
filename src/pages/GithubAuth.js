@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { githubLogin } from '../actions';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { parse } from 'qs'
 import { ALLOW_SIGNUPS } from '../config';
 
@@ -22,6 +22,16 @@ class GitHubAuth extends Component {
             this.props.authUserWithGithub(code);
         } else if(!code) {
             githubLogin();
+        }
+        if(this.props.user.showGithubEmailErrorMessage) {
+            return (<div className="page pagePadded faq topSpacing">
+                <h1>Oops!</h1>
+                <p>
+                    Your GitHub account doesn't have a public email associated, so we can't automagically make you an account.
+                    <br/>Please go to <a href="https://github.com/settings/profile" target="_blank" rel="noopener noreferrer">github.com/settings/profile</a> and pick an email to use, then click <Link to="/auth/github">here</Link>.
+                    <br/><br/>Alternatively, create account with a password <Link to="/register">here</Link>
+                </p>
+            </div>);
         }
         return(<div><h1>loading...</h1></div>);
     }

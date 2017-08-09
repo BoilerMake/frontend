@@ -81,7 +81,12 @@ export function recordEvent(event, subtitle, context) {
         return recordStatEvent(event, subtitle, context)
     };
 }
-
+export const SHOW_GITHUB_EMAIL_ERROR_MESSAGE = 'SHOW_GITHUB_EMAIL_ERROR_MESSAGE';
+function showGitHubEmailErrorMessage() {
+    return {
+        type: SHOW_GITHUB_EMAIL_ERROR_MESSAGE
+    }
+}
 
 export function authUserWithGithub(code) {
     return (dispatch) => {
@@ -110,6 +115,7 @@ export function authUserWithGithub(code) {
                 } else {
                   console.log('authUserWithGithub error:',json.message);
                   toastr.error('Error',json.message);
+                  dispatch(showGitHubEmailErrorMessage());
                 }
             });
     };
