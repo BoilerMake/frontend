@@ -20,7 +20,6 @@ import ConfirmEmail from './pages/ConfirmEmail';
 import GithubAuth from './pages/GithubAuth';
 import Dashboard from './pages/Dashboard';
 import Application from './pages/Application';
-import Animation from './components/Animation';
 
 import ExecContainer from "./pages/Exec/ExecContainer";
 import ExecUsers from "./pages/Exec/ExecUsers";
@@ -81,7 +80,6 @@ const Routes = () => (
       <Route path="/confirm/:code" component={ConfirmEmail}/>
       <Route path="/auth/github" component={GithubAuth}/>
 
-      <Route path='/animation' component={Animation} />
       {/*User Routes*/}
       <UserRoute path="/dashboard" component={Dashboard}/>
       <UserRoute path="/application" component={Application}/>

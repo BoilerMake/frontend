@@ -17,14 +17,14 @@ export const RegisterForm = (props) => {
     const { error, handleSubmit, submitting } = props;
     return (
         <form onSubmit={handleSubmit} className="form">
-          <GithubLoginButton className="topSpacing" />
-            <div className="back-line"><span>Register with email</span></div>
+          <GithubLoginButton className="topSpacing" actionText="Register"/>
+          <div className="back-line"><span>Or with email</span></div>
           <Field name="email" type="email" className="topSpacing" component={renderField} label="Email"/>
           <Field name="password" type="password" className="topSpacing" component={renderField} label="Password"/>
           {error && <div className="margint">{error}</div>}
           <button className="btn topSpacing" type="submit" disabled={submitting}>Register</button>
           <div className="flex margint h-center">
-            <Link to="/login">Back to Login</Link>
+              <div>Already Have an account? <Link to="/login">Login here</Link></div>
           </div>
         </form>
     )
