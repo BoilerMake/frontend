@@ -22,6 +22,7 @@ const ExecContainer = ({children}) => (
                 </Menu.Item>
                 <Menu.Item as={NavLink} to='/exec/users'>Users</Menu.Item>
                 <Menu.Item as={NavLink} to='/exec/applications'>Applications</Menu.Item>
+                <Menu.Item as={NavLink} to='/' exact>Back to Main site</Menu.Item>
             </Container>
         </Menu>
         <Container style={{ marginTop: '5em' }}>
