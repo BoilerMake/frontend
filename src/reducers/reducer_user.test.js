@@ -9,7 +9,8 @@ const initialState = {
     me: null,
     error: null,
     loading: false,
-    token: null
+    token: null,
+    showGithubEmailErrorMessage: false
 };
 
 deepFreeze(initialState);
