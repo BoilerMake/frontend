@@ -14,15 +14,15 @@ const questions = [
   },
   {
     "title": "Should I go?",
-    "body": "We have <a href='https://medium.com/@BoilerMake/why-you-should-go-to-a-hackathon-2d4ede475c9' target='_blank'> this great article on Medium</a> to help with this question!"
+    "body": "We have <a href='https://medium.com/@BoilerMake/why-you-should-go-to-a-hackathon-2d4ede475c9' target='_blank'> this great article on Medium</a> to help with this question."
   },
   {
     "title": "How do I apply?",
-    "body": "You can start by filling out an application on this page. (Opening soon!) Don't worry you don't have to fill out an essay or interview to be accepted, you just have to fill out a couple details about yourself on application page."
+    "body": "You can start by filling out an application on this page. Don't worry, you don't have to fill out an essay or interview to be accepted, you just have to fill out a couple details about yourself on application page."
   },
   {
     "title": "Do I have to pay?",
-    "body": "No! BoilerMake is an all-expense paid experience.  You do not have to pay for anything once you are here at BoilerMake, which includes free food and swag!!! "
+    "body": "No! BoilerMake is an all-expense paid experience.  You do not have to pay for anything once you are here at BoilerMake, which includes free food and swag! "
   },
   {
     "title": "How do I get there?",
@@ -50,7 +50,7 @@ const questions = [
   },
   {
     "title": "Will there be any hardware?",
-    "body": "We will have a bunch hardware available for hackers to borrow at the event with some help from our friends at MLH.  We'll be sure to let you guys know once we have the list of hardware finalized."
+    "body": "We will have a bunch hardware available for hackers to borrow at the event with some help from our friends at Major League Hacking.  We'll be sure to let you guys know once we have the list of hardware finalized."
 
   },
   {
