@@ -103,7 +103,7 @@ class ApplicationForm extends Component {
                 <div className="row">
                     <div className="flex v-center">
                       <ApplicationToggle field="isFirstHackathon"/>
-                      <label className="marginl">Is this your First Hackathon?</label>
+                      <label className="marginl">This is my first Hackathon</label>
                     </div>
                 </div>
                 <div className="row">
@@ -141,7 +141,7 @@ class ApplicationForm extends Component {
                     {/* Does the server say your application is completed? {applicationForm.completed? ' yes! ': 'no...'} */}
                 </div>
                 <div className="row">
-                    <p>You can edit this later until we close applications.</p>
+                    <p>You can edit this until applications are closed.</p>
                 </div>
             </Dropzone>
         );
