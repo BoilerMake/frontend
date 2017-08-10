@@ -14,7 +14,7 @@ const questions = [
   },
   {
     "title": "Should I go?",
-    "body": "We have <a href='https://medium.com/@BoilerMake/why-you-should-go-to-a-hackathon-2d4ede475c9' target='_blank'> this great article on Medium</a> to help with this question:"
+    "body": "We have <a href='https://medium.com/@BoilerMake/why-you-should-go-to-a-hackathon-2d4ede475c9' target='_blank'> this great article on Medium</a> to help with this question!"
   },
   {
     "title": "How do I apply?",
