@@ -147,7 +147,8 @@
     left: 0;
     top: 200px;
   }
-  @media (min-width: 1024px) {
+
+  @media (min-width: 801px) {
     .register {
       top: 188px;
       h3 {
@@ -160,6 +161,9 @@
     }
     .pillars {
       top: 198px;
+      height: 110vh;
+      width: 110vh;
+      margin-left: calc(-110vh / 2);
     }
     .login-form {
       top: 245px;
