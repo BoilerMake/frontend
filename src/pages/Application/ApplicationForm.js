@@ -4,7 +4,7 @@ import ApplicationTextField from './ApplicationTextField';
 import ApplicationToggle from './ApplicationToggle';
 import ApplicationSelectField from './ApplicationSelectField';
 import ResumeUploadProgressIndicator from './ResumeUploadProgressIndicator';
-import {raceOptions, genderOptions, gradYearOptions } from './ApplicationConsts';
+import {raceOptions, genderOptions, gradYearOptions, isFirstHackathonOptions } from './ApplicationConsts';
 
 class ApplicationForm extends Component {
     render () {
@@ -98,12 +98,8 @@ class ApplicationForm extends Component {
                       { applicationForm.resume_uploaded ? <div>You've uploaded <a href={applicationForm.resume_get_url} target="_blank" rel="noopener noreferrer" >{applicationForm.resume_filename}</a></div> : null }
                     </div>
                     <div className="col-6">
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="flex v-center">
-                      <ApplicationToggle field="isFirstHackathon"/>
-                      <label className="marginl">Is this your First Hackathon?</label>
+                        <label>Is this your first hackathon?</label>
+                        <ApplicationSelectField field="isFirstHackathon" options={isFirstHackathonOptions}/>
                     </div>
                 </div>
                 <div className="row">

@@ -25,7 +25,7 @@ class ApplicationSelectField extends React.Component {
             <Select
                 simpleValue
                 options={transFormedData}
-                clearable={true}
+                clearable={false}
                 name={"selected-"+this.props.field}
                 value={this.state.selectValue}
                 onChange={this.updateValue.bind(this)}

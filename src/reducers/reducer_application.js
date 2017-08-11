@@ -56,7 +56,11 @@ export default function (state = INITIAL_STATE, action) {
             } else {
                 return { ...state,
                     loading: false,
-                    applicationForm
+                    applicationForm: {
+                        ...applicationForm,
+                        //coalesce 1/0 to true/false
+                        isFirstHackathon: !!applicationForm.isFirstHackathon,
+                    }
                 };
             }
         case RECEIVE_SCHOOL_LIST:

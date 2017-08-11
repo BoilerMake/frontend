@@ -34,6 +34,7 @@ export const genderOptions = [{
     label: 'I\'d Rather Not Say',
     value: 'rather_not_say'
 }];
+
 export const gradYearOptions = [{
     label: 'Fall 2017',
     value: 'F2017'
@@ -61,4 +62,11 @@ export const gradYearOptions = [{
 },{
     label: 'Other',
     value: 'other'
+}];
+export const isFirstHackathonOptions = [{
+    label: 'Yes',
+    value: true
+}, {
+    label: 'No',
+    value: false
 }];
