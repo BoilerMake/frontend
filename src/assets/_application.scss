@@ -200,11 +200,8 @@ input:checked + .slider:before {
     width: 100%;
 
     &:first-child {
-      padding-right: 0px;
-
-      input {
-        margin-bottom: 16px;
-      }
+      padding-right: 0px !important;
+      margin-bottom: 16px;
     }
     &:last-child {
       padding-left: 0px;
