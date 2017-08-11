@@ -24,12 +24,12 @@ it('handles RECEIVE_APPLICATION', ()=>{
         type: 'RECEIVE_APPLICATION',
         json: {
             data: {
-                applicationForm: "aah"
+                applicationForm: {a: 'b', isFirstHackathon: 0}
             }
         }
     });
     assert.equal(newState.loading,false);
-    assert.equal(newState.applicationForm,"aah");
+    assert.deepEqual(newState.applicationForm,{ a: 'b', isFirstHackathon: false });
 });
 
 
