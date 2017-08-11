@@ -58,6 +58,7 @@ class ExecApplicationDetail extends Component {
 
                                 <List.Item><List.Header>is first hackathon?</List.Header>{applicationDetail.isFirstHackathon ? 'yes' : 'no'}</List.Item>
                                 <List.Item><List.Header>school</List.Header>{applicationDetail.school ? `${applicationDetail.school.name} (#${applicationDetail.school.id})` : 'n/a' }</List.Item>
+                                <List.Item><List.Header>resume</List.Header>{applicationDetail.resume_uploaded ? <a href={applicationDetail.resumeURL} target="_blank" rel="noopener noreferrer">view</a> : 'n/a' }</List.Item>
 
                                 <List.Item><List.Header>Valid aka. completed?</List.Header>
                                     { applicationDetail.validationDetails.valid ? 'yes' : 'no'}
