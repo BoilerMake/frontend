@@ -66,7 +66,7 @@ export function onResumeDrop(accepted, rejected) {
             recordStatEvent("resumeUploadError",null,{rejected});
             return;
         } else if(accepted.length !== 1) {
-            toastr.error("Upload error","please try again");
+            toastr.error("Upload error","Please try again");
             recordStatEvent("resumeUploadError",null,{accepted});
             console.log("err");
             return;
@@ -112,7 +112,7 @@ export const RESUME_UPLOAD_PROGRESS = 'RESUME_UPLOAD_PROGRESS';
 
 function startResumeUpload(fileName) {
     return (dispatch) => {
-        toastr.info("hang tight!",`uploading ${fileName}`);
+        toastr.info("Hang tight!",`Uploading ${fileName}`);
         dispatch({
             type: START_RESUME_UPLOAD,
             fileName
@@ -131,10 +131,10 @@ function finishResumeUpload(fileName,status) {
 
         if(success) {
             dispatch(saveApplication(true));
-            toastr.success('Resume Upload Success', `uploaded ${fileName}`);
+            toastr.success('Resume Upload Success', `Uploaded ${fileName}`);
         } else {
             //todo: ??
-            toastr.error('Oops!','something went wrong... try again');
+            toastr.error('Oops!','Something went wrong... try again');
         }
         recordStatEvent("resumeUploadFinished",null,{success, fileName, status});
     };
