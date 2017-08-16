@@ -107,6 +107,7 @@
   text-align: center;
   overflow: hidden;
   position: relative;
+  min-height: 660px;
   height: calc(100vh - 58px);
   .register {
     right: 0;
