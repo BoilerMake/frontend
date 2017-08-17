@@ -3,15 +3,14 @@
 [![codecov](https://codecov.io/gh/BoilerMake/frontend/branch/master/graph/badge.svg)](https://codecov.io/gh/BoilerMake/frontend)
 
 ## About
-This was day-of site for BoilerMake IV, and will be the site for BoilerMake V
+This repository contains the day-of website for BM IV, and the main website for BM V.
 
 # Dev setup
 
 ## Environment setup
 
-* install yarn (NOT npm)
-* `yarn` to get packages
-* `cp src/config.example.js src/config.js` to give yourself a config file (see below for how to populate it)
+* Install yarn `npm install --global yarn`
+* Run `yarn` to install packages
 * `yarn run start` to start the webpack dev server
 * `yarn run test` to start the test suite watcher
 
