@@ -9,8 +9,8 @@ const questions = [
     "body": "A hackathon is not somewhere that you come to hack the NSA, but rather a great place for people to come together and work on incredible projects. You'll be surrounded by a group of incredibly intelligent and creative people, as well as brilliant mentors from some of the largest tech companies across the country. Hackathons can serve as a great place to learn, and you may end up surprising yourself on what you can accomplish by the end of the weekend."
   },
   {
-    "title": "Can I go?",
-    "body": "You are good to go as long as you are over 18 years of age!"
+    "title": "I'm under 18 years of age, can I come?",
+    "body": "Due to Purdue University policy, we cannot allow students under the age of 18 to attend BoilerMake."
   },
   {
     "title": "Should I go?",
@@ -27,6 +27,10 @@ const questions = [
   {
     "title": "How do I get there?",
     "body": "If your college has a large group of people and is within a reasonable distance of Purdue University, we may be able to provide a bus to transport you to Purdue. If transportation is going to be an issue, please contact us at <a href='mailto:team@boilermake.org'>team@boilermake.org</a> and we'll try to figure something out.  We're crossing our fingers Elon comes up with the hyperloop, so we can get a lot more of you here."
+  },
+  {
+    "title": "Are there travel reimbursements?",
+    "body": "Unfortunately, we are not offering any travel reimbursements at this time. If your college has large amount of applicants and is within a reasonable distance of Purdue University, we may be able to provide a bus to transport you to Purdue."
   },
   {
     "title": "What do I bring?",
