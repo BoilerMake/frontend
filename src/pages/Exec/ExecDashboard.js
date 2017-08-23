@@ -14,7 +14,8 @@ class ExecDashboard extends Component {
         super(props);
         this.state = {
             data: {
-                'interest_count': 0,
+                interest_count: 0,
+                reasons_map: {}
             }
         };
     }
@@ -45,6 +46,7 @@ class ExecDashboard extends Component {
                             <Segment inverted>
                             <Statistic.Group horizontal size="large">
                                 <Statistic inverted label='Interest Signups' value={this.state.data.interest_count} color="grey" />
+                                <Statistic inverted label='% of Interest Signups Who Applied' value={this.state.data.percent_interest_applied} color="grey" />
                                 <Statistic inverted label='Total Applications' value={this.props.exec.application_list.length} color="orange" />
                                 <Statistic inverted label='Completed Applications' value={this.props.exec.application_list.filter(app=>app.completed).length} color="green"/>
                             </Statistic.Group>
@@ -55,18 +57,21 @@ class ExecDashboard extends Component {
                             <ApplicationTimeSeries data={this.props.exec.application_list} />
                         </Grid.Column>
                     </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>
+                            <Header as='h3' dividing>Invalidation Reason Counts</Header>
+                            <Segment inverted>
+                                <Statistic.Group horizontal size="large">
+                                    {Object.keys(this.state.data.reasons_map).map(x => <Statistic inverted label={x} value={this.state.data.reasons_map[x]} color="red" />)}
+                                </Statistic.Group>
+                            </Segment>
+                        </Grid.Column>
+                        <Grid.Column>
+                            {/*<Header as='h3' dividing># Of Applications Created Per Day</Header>*/}
+                            {/*<ApplicationTimeSeries data={this.props.exec.application_list} />*/}
+                        </Grid.Column>
+                    </Grid.Row>
 
-                    {/*<Grid.Row>*/}
-                    {/*<Grid.Column>*/}
-                    {/*<Image src='/assets/images/wireframe/paragraph.png' />*/}
-                    {/*</Grid.Column>*/}
-                    {/*<Grid.Column>*/}
-                    {/*<Image src='/assets/images/wireframe/paragraph.png' />*/}
-                    {/*</Grid.Column>*/}
-                    {/*<Grid.Column>*/}
-                    {/*<Image src='/assets/images/wireframe/paragraph.png' />*/}
-                    {/*</Grid.Column>*/}
-                    {/*</Grid.Row>*/}
                 </Grid>
             </div>
 
