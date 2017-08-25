@@ -12,7 +12,7 @@ import {
 
 export const INITIAL_STATE = {
     applicationForm: {},
-    // validation: {}, TODO? remove?
+    validation: {reasons: []},
     error: null,
     loading: false,
     uploadProgress: 0,
@@ -29,7 +29,7 @@ export default function (state = INITIAL_STATE, action) {
             return { ...state, loading: true };
         case RECEIVE_APPLICATION:
             //todo: error checking
-            let { applicationForm } = action.json.data;
+            let { applicationForm, validation } = action.json.data;
             if(action.onlyUpdateNonFormFields) {
                 let {
                     completed,
@@ -43,6 +43,7 @@ export default function (state = INITIAL_STATE, action) {
                 return {
                     ...state,
                     loading: false,
+                    validation,
                     applicationForm:
                         {
                             ...state.applicationForm,
@@ -56,6 +57,7 @@ export default function (state = INITIAL_STATE, action) {
             } else {
                 return { ...state,
                     loading: false,
+                    validation,
                     applicationForm: {
                         ...applicationForm,
                         //coalesce 1/0 to true/false

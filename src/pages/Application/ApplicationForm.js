@@ -8,7 +8,7 @@ import {raceOptions, genderOptions, gradYearOptions, isFirstHackathonOptions } f
 
 class ApplicationForm extends Component {
     render () {
-        const applicationForm = this.props.application.applicationForm;
+        const { applicationForm, validation}  = this.props.application;
         const isLoading = this.props.application.loading;
         const isGithubLinked = this.props.user.me && (this.props.user.me.github_user_id !== null);
         let dropzoneRef;
@@ -134,9 +134,16 @@ class ApplicationForm extends Component {
                 </div>
                 <div className="row">
                     <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}} className="submit">Save</button>
-                    {/* Does the server say your application is completed? {applicationForm.completed? ' yes! ': 'no...'} */}
                 </div>
                 <div className="row">
+                    {!applicationForm.completed
+                        ? <div>
+                            <p>Your application is not complete:</p>
+                            <ul>
+                                {validation.reasons.map(x=><li>{x}</li>)}
+                            </ul>
+                        </div>
+                        : null}
                     <p>You can edit this until applications are closed.</p>
                 </div>
             </Dropzone>
