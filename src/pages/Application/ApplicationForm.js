@@ -140,7 +140,7 @@ class ApplicationForm extends Component {
                         ? <div>
                             <p>Your application is not complete:</p>
                             <ul>
-                                {validation.reasons.map(x=><li>{x}</li>)}
+                                {validation.reason_label.map(x=><li>{x}</li>)}
                             </ul>
                         </div>
                         : null}

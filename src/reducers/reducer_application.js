@@ -12,7 +12,7 @@ import {
 
 export const INITIAL_STATE = {
     applicationForm: {},
-    validation: {reasons: []},
+    validation: {reason_label: [], reason_field: []},
     error: null,
     loading: false,
     uploadProgress: 0,

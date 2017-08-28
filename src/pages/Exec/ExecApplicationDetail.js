@@ -63,7 +63,7 @@ class ExecApplicationDetail extends Component {
                                 <List.Item><List.Header>Valid aka. completed?</List.Header>
                                     { applicationDetail.validationDetails.valid ? 'yes' : 'no'}
                                     <List.Item as='ul'>
-                                        {applicationDetail.validationDetails.reasons.map(r=><List.Item key={r} as='li' value='-'>{r}</List.Item>)}
+                                        {applicationDetail.validationDetails.reason_label.map(r=><List.Item key={r} as='li' value='-'>{r}</List.Item>)}
                                     </List.Item>
                                 </List.Item>
                             </List>
