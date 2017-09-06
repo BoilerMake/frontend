@@ -133,9 +133,7 @@ class ApplicationForm extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}} className="submit">Save</button>
-                </div>
-                <div className="row">
+                    <p>You can edit your application until September 22.</p>
                     {!applicationForm.completed
                         ? <div>
                             <p>Your application is not complete:</p>
@@ -143,8 +141,10 @@ class ApplicationForm extends Component {
                                 {validation.reason_label.map(x=><li>{x}</li>)}
                             </ul>
                         </div>
-                        : null}
-                    <p>You can edit this until applications are closed.</p>
+                        : <p><b>Your application is complete! stay tuned.</b></p>}
+                </div>
+                <div className="row">
+                    <button disabled={isLoading} onClick={()=>{this.props.saveApplication()}} className="submit">Save</button>
                 </div>
             </Dropzone>
         );
