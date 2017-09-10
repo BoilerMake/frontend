@@ -2,24 +2,14 @@ import React, { Component } from 'react';
 import ApplicationRSVPToggle from "./ApplicationRSVPToggle";
 
 class ApplicationForm extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {
-            rsvp: null
-        };
-        this.changeRSVP = this.changeRSVP.bind(this);
-    }
-    changeRSVP(rsvp) {
-        this.setState({rsvp});
-    }
     render () {
-        let decisionMap = {
-            4: 'EXPIRED',
-            3: 'ACCEPT',
-            2: 'WAITLIST',
-            1: 'REJECT',
-            0: 'UNDECIDED'
-        };
+        // let decisionMap = {
+        //     4: 'EXPIRED',
+        //     3: 'ACCEPT',
+        //     2: 'WAITLIST',
+        //     1: 'REJECT',
+        //     0: 'UNDECIDED'
+        // };
         const { applicationForm }  = this.props.application;
         const isLoading = this.props.application.loading;
 
@@ -43,6 +33,38 @@ class ApplicationForm extends Component {
                 break;
         }
 
+        let rsvpYes =
+            <div>
+                <h2>neat! a few last things.</h2>
+                <p>Providing us with a phone number (optional) will allow us to send you important event updates!
+                    We will be providing everyone with lanyard nametags, you can pick up to 3 skills to be displayed on them.
+                    Lastly, if you have any special dietary requests, please <a href="mailto:team@boilermake.org">email us!</a></p>
+                <div className="row">
+                    <div className="col-6">
+                        <label>Phone #</label>
+                        <ApplicationTextField field="phone"/>
+                    </div>
+                    <div className="col-6">
+                        <label>Pick up to 3 Skills</label>
+                        <ApplicationSelectField field="skills" multi searchable options={skillOptions}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-6">
+                        <label>idk what to put here</label>
+                        <ApplicationTextField field="phone"/>
+                    </div>
+                    <div className="col-6">
+                        <label>Dietary Restrictions</label>
+                        <ApplicationSelectField field="diet" multi searchable options={dietOptions}/>
+                    </div>
+                </div>
+                <br/>
+                <button disabled={isLoading} onClick={()=>{this.props.saveApplication(false, true)}} className="submit">Save RSVP</button>
+            </div>;
+
+        let rsvpNo = <div>aw sad :( please come back and apply next year though! </div>;
+
         let decisionForm;
         switch(applicationForm.decision) {
             case 3://ACCEPT
@@ -55,36 +77,9 @@ class ApplicationForm extends Component {
                     <ApplicationRSVPToggle/>
                     {
                         applicationForm.rsvp !== null
-                        ? (
-                            applicationForm.rsvp === 1
-                            ? <div>
-                                <h2>neat! we just need a few more things from you.</h2>
-                                <div className="row">
-                                    <div className="col-6">
-                                        <label>Phone #</label>
-                                        <ApplicationTextField field="phone"/>
-                                    </div>
-                                    <div className="col-6">
-                                        <label>Pick up to 3 Skills</label>
-                                        <ApplicationSelectField field="skills" multi searchable options={skillOptions}/>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-6">
-                                        <label>idk what to put here</label>
-                                        <ApplicationTextField field="phone"/>
-                                    </div>
-                                    <div className="col-6">
-                                        <label>Dietary Restrictions</label>
-                                        <ApplicationSelectField field="diet" multi searchable options={dietOptions}/>
-                                    </div>
-                                </div>
-                                <br/>
-                                <button disabled={isLoading} onClick={()=>{this.props.saveApplication(false, true)}} className="submit">Save RSVP</button>
-
-                            </div>
-                            : <div>aw sad :( please come back and apply next year though! </div>
-                        )
+                        ? applicationForm.rsvp === 1
+                            ? rsvpYes
+                            : rsvpNo
                         : null//don't show rest of form if they haven't clicked yes or no yet
                     }
                 </div>);
