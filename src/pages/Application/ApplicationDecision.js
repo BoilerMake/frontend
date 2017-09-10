@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import ApplicationTextField from "./ApplicationTextField";
+import ApplicationSelectField from "./ApplicationSelectField";
 import ApplicationRSVPToggle from "./ApplicationRSVPToggle";
+import {dietOptions, skillOptions} from "./ApplicationConsts";
 
 class ApplicationForm extends Component {
     render () {
@@ -28,6 +31,7 @@ class ApplicationForm extends Component {
                     <p><i>Note that we will not be providing any form of travel reimbursements.</i></p>
                 </div>;
                 break;
+            default:
             case "walk":
                 transitMessage = <div>Well, you have it easy! BoilerMake will be happening in the Black & Gold Gyms of the CoRec on campus.</div>;
                 break;
@@ -96,6 +100,8 @@ class ApplicationForm extends Component {
                     <p>[message]</p>
                 </div>);
                 break;
+            default:
+                decisionForm = <h1>error</h1>
         }
         return (<div>
                 {decisionForm}
@@ -111,9 +117,6 @@ import {
 } from '../../actions/application';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-import ApplicationTextField from "./ApplicationTextField";
-import {dietOptions, skillOptions} from "./ApplicationConsts";
-import ApplicationSelectField from "./ApplicationSelectField";
 function mapStateToProps (state) {
     return {
         user: state.user,
