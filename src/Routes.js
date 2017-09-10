@@ -10,6 +10,7 @@ import Nav from './components/Nav';
 import Home from './pages/Landing';
 import About from './pages/Info/About';
 import Code from './pages/Info/Code';
+import Contact from './pages/Info/Contact';
 import FAQ from './pages/Info/FAQ';
 
 //
@@ -73,6 +74,7 @@ const Routes = () => (
       <Route exact path="/" component={Home}/>
       <Route path="/about" component={About}/>
       <Route path="/code" component={Code}/>
+      <Route path="/contact" component={Contact}/>
       <Route path="/faq" component={FAQ}/>
       <Route path="/register" component={Register}/>
       <Route path="/login" component={Login}/>
