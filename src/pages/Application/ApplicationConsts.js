@@ -139,3 +139,17 @@ export const dietOptions = [
     label: 'Gluten Free',
     value: 'glutenfree'
 }];
+export const shirtOptions = [
+{
+    label: 'Extra Large',
+    value: 'xl'
+}, {
+    label: 'Large',
+    value: 'l'
+}, {
+    label: 'Medium',
+    value: 'm'
+}, {
+    label: 'Small',
+    value: 's'
+}];

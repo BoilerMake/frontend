@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ApplicationTextField from "./ApplicationTextField";
 import ApplicationSelectField from "./ApplicationSelectField";
 import ApplicationRSVPToggle from "./ApplicationRSVPToggle";
-import {dietOptions, skillOptions} from "./ApplicationConsts";
+import {dietOptions, shirtOptions, skillOptions} from "./ApplicationConsts";
 
 class ApplicationForm extends Component {
     render () {
@@ -55,8 +55,8 @@ class ApplicationForm extends Component {
                 </div>
                 <div className="row">
                     <div className="col-6">
-                        <label>idk what to put here</label>
-                        <ApplicationTextField field="phone"/>
+                        <label>Tshirt size</label>
+                        <ApplicationSelectField field="tshirt" options={shirtOptions}/>
                     </div>
                     <div className="col-6">
                         <label>Dietary Restrictions</label>
