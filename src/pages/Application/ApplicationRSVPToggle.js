@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 const ApplicationRSVPToggle = ({changeApplicationFieldValue, saveApplication, field, applicationForm, disabled, isLoading, styles}) =>
-        <div>
+        <div className="section">
             <button
                 disabled={applicationForm.rsvp === 1 || isLoading}
                 className={applicationForm.rsvp !== null && applicationForm.rsvp === 1 ? 'rsvp-button-selected' : 'rsvp-button'}
@@ -17,6 +17,7 @@ const ApplicationRSVPToggle = ({changeApplicationFieldValue, saveApplication, fi
                 onClick={()=>{changeApplicationFieldValue('rsvp', 0); saveApplication(true)}}>
                 I can't make it
             </button>
+            <br />
         </div>;
 
 function mapStateToProps (state) {

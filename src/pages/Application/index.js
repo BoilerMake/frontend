@@ -16,15 +16,16 @@ class Application extends Component {
         if(!me || !applicationForm)
             return null;
         return (
+          <div className="fancy">
             <div className="fullWidthContainer application">
-                <h1 className="title app-heading left">Application</h1>
                 { doesUserHaveDecision
                     ? <ApplicationDecision/>
                     : ( isUserConfirmed
-                        ? <ApplicationForm />
+                        ? <div><h1 className="title app-heading left">Application</h1><ApplicationForm /></div>
                         : <NeedToConfirmEmailDialog />)
                 }
             </div>
+          </div>
         );
     }
 }

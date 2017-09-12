@@ -19,13 +19,13 @@ class ApplicationForm extends Component {
         let transitMessage;
         switch(applicationForm.school.transit_method) {
             case "bus":
-                transitMessage = <div>
+                transitMessage = <div className="section">
                     <p>We'll be sending a bus to {applicationForm.school.name}!</p>
                     <p>Join the Facebook event <a href={`https://www.facebook.com/events/${applicationForm.school.facebook_event_id}`}>here</a> to stay up to date!</p>
                 </div>;
                 break;
             case "car":
-                transitMessage = <div>
+                transitMessage = <div className="section">
                     <p>Sadly we won't be able to send a bus to <b>{applicationForm.school.name}.</b></p>
                     <p>However, if you're willing to get here by your own means, we'd love to have you!.</p>
                     <p><i>Note that we will not be providing any form of travel reimbursements.</i></p>
@@ -33,13 +33,13 @@ class ApplicationForm extends Component {
                 break;
             default:
             case "walk":
-                transitMessage = <div>Well, you have it easy! BoilerMake will be happening in the Black & Gold Gyms of the CoRec on campus.</div>;
+                transitMessage = <p>Well, you have it easy! BoilerMake will be happening in the Black & Gold Gyms of the CoRec on campus.</p>;
                 break;
         }
 
         let rsvpYes =
-            <div>
-                <h2>neat! a few last things.</h2>
+            <div className="section">
+                <h2>Neat! Just a few more steps.</h2>
                 <p>Providing us with a phone number (optional) will allow us to send you important event updates!
                     We will be providing everyone with lanyard nametags, you can pick up to 3 skills to be displayed on them.
                     Lastly, if you have any special dietary requests, please <a href="mailto:team@boilermake.org">email us!</a></p>
@@ -55,7 +55,7 @@ class ApplicationForm extends Component {
                 </div>
                 <div className="row">
                     <div className="col-6">
-                        <label>Tshirt size</label>
+                        <label>T-shirt size</label>
                         <ApplicationSelectField field="tshirt" options={shirtOptions}/>
                     </div>
                     <div className="col-6">
@@ -67,17 +67,17 @@ class ApplicationForm extends Component {
                 <button disabled={isLoading} onClick={()=>{this.props.saveApplication(false, true)}} className="submit">Save RSVP</button>
             </div>;
 
-        let rsvpNo = <div>aw sad :( please come back and apply next year though! </div>;
+        let rsvpNo = <p className="section">Aw sad :( Please come back and apply next year though! </p>;
 
         let decisionForm;
         switch(applicationForm.decision) {
             case 3://ACCEPT
-                decisionForm = (<div>
-                    <h1>You're in! yay.</h1>
-                    <p>We'd love to have you come to BoilerMake V this fall.</p>
+                decisionForm = (<div className="section">
+                    <h1>Yay, You're in!</h1>
+                    <p>We'd love to see you at BoilerMake V this fall 💜</p>
                     <h2>Getting to BoilerMake</h2>
                     {transitMessage}
-                    Can you come? you must RSVP by {applicationForm.rsvp_deadline} or else we will offer your spot to someone else.
+                    <p>Can you make it? You must RSVP {applicationForm.rsvp_deadline ? <span>by {applicationForm.rsvp_deadline}</span> : <span>soon</span>} or else we will offer your spot to someone else.</p>
                     <ApplicationRSVPToggle/>
                     {
                         applicationForm.rsvp !== null
@@ -89,19 +89,19 @@ class ApplicationForm extends Component {
                 </div>);
                 break;
             case 2://WAITLIST
-                decisionForm = (<div>
+                decisionForm = (<div className="section">
                     <h1>You're waitlisted :(</h1>
                     <p>[message]</p>
                 </div>);
                 break;
             case 4://EXPIRED
-                decisionForm = (<div>
+                decisionForm = (<div className="section">
                     <h1>Your offer has expired expired :(</h1>
                     <p>[message]</p>
                 </div>);
                 break;
             default:
-                decisionForm = <h1>error</h1>
+                decisionForm = <div className="section"><h1>There was an error!</h1><p>Sorry for the inconvenience. Please email us at <a href="mailto:team@boilermake.org">team@boilermake.org</a></p></div>
         }
         return (<div>
                 {decisionForm}
