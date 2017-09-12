@@ -74,7 +74,7 @@ class ApplicationForm extends Component {
             case 3://ACCEPT
                 decisionForm = (<div className="section">
                     <h1>Yay, You're in!</h1>
-                    <p>We'd love to see you at BoilerMake V this fall 💜</p>
+                    <p>We'd love to see you at BoilerMake V this fall <span role="img" aria-label="Heart">💜</span></p>
                     <h2>Getting to BoilerMake</h2>
                     {transitMessage}
                     <p>Can you make it? You must RSVP {applicationForm.rsvp_deadline ? <span>by {applicationForm.rsvp_deadline}</span> : <span>soon</span>} or else we will offer your spot to someone else.</p>
