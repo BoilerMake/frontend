@@ -28,7 +28,7 @@ class ApplicationForm extends Component {
                 transitMessage = <div className="section">
                     <p>Sadly we won't be able to send a bus to <b>{applicationForm.school.name}.</b></p>
                     <p>However, if you're willing to get here by your own means, we'd love to have you!.</p>
-                    <p><i>Note that we will not be providing any form of travel reimbursements.</i></p>
+                    <p><i>Please note that we will not be providing any form of travel reimbursements.</i></p>
                 </div>;
                 break;
             default:
@@ -67,17 +67,19 @@ class ApplicationForm extends Component {
                 <button disabled={isLoading} onClick={()=>{this.props.saveApplication(false, true)}} className="submit">Save RSVP</button>
             </div>;
 
-        let rsvpNo = <p className="section">Aw sad :( Please come back and apply next year though! </p>;
+        let rsvpNo = <p className="section">Aw <span role="img" aria-label="Sad">😢</span> Please come back and apply next year though! </p>;
 
         let decisionForm;
         switch(applicationForm.decision) {
             case 3://ACCEPT
                 decisionForm = (<div className="section">
-                    <h1>Yay, You're in!</h1>
-                    <p>We'd love to see you at BoilerMake V this fall <span role="img" aria-label="Heart">💜</span></p>
+                    <h1>You're in!</h1>
+                    <p>Congratulations, we’re excited to invite you to this year’s retro twist on BoilerMake. <span role="img" aria-label="Heart">💜</span>
+                        <br/>
+                        All we need from you now is to RSVP so we know whether to expect you there or not!</p>
                     <h2>Getting to BoilerMake</h2>
                     {transitMessage}
-                    <p>Can you make it? You must RSVP {applicationForm.rsvp_deadline ? <span>by {applicationForm.rsvp_deadline}</span> : <span>soon</span>} or else we will offer your spot to someone else.</p>
+                    <p>Can you come? You must RSVP {applicationForm.rsvp_deadline ? <span>by {applicationForm.rsvp_deadline}</span> : <span>soon</span>} or else we will offer your spot to someone else.</p>
                     <ApplicationRSVPToggle/>
                     {
                         applicationForm.rsvp !== null
@@ -90,14 +92,14 @@ class ApplicationForm extends Component {
                 break;
             case 2://WAITLIST
                 decisionForm = (<div className="section">
-                    <h1>You're waitlisted :(</h1>
-                    <p>[message]</p>
+                    <h1>Thanks for applying.</h1>
+                    <p>Unfortunately, we cannot accept you just yet. But don’t fret! We’ll let you know if space opens up so that you can hopefully attend BoilerMake this year.</p>
                 </div>);
                 break;
             case 4://EXPIRED
                 decisionForm = (<div className="section">
-                    <h1>Your offer has expired expired :(</h1>
-                    <p>[message]</p>
+                    <h1>Sorry about that.</h1>
+                    <p>Unfortunately, your acceptance offer has expired. We hope to see you at next year’s BoilerMake!</p>
                 </div>);
                 break;
             default:

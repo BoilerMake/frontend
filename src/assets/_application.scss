@@ -331,3 +331,10 @@ input:checked + .slider:before {
     }
   }
 }
+.appInfoBanner {
+  background: $darkBlue-o;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+}

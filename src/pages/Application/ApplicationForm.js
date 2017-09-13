@@ -21,6 +21,9 @@ class ApplicationForm extends Component {
                 onDrop={this.props.onResumeDrop.bind(this)}
                 style={{border: 'none', height: '100%'}}
             >
+                {applicationForm.completed ? <div className="appInfoBanner">
+                    Hey there - just a heads up: Your application is complete and is under review. Expect to hear back by Sept 22 at the latest.
+                </div> : null}
                 <div className="row">
                     <div className="col-6">
                       <label>First Name</label>

@@ -10,11 +10,15 @@ class Application extends Component {
     }
     render () {
         let { me } = this.props.user;
-        let { applicationForm } = this.props.application;
+        let { applicationForm, loading } = this.props.application;
         let isUserConfirmed = me && me.confirmed;
         let doesUserHaveDecision = (applicationForm.decision !== null) && (applicationForm.decision !== undefined) && (applicationForm.decision !== 0);
-        if(!me || !applicationForm)
-            return null;
+        if(!me || !applicationForm || loading)
+            return (<div className="fancy">
+                <div className="fullWidthContainer application" style={{height: '1000px'}}>
+                    <h1 className="title app-heading left">Application Loading...</h1>
+                </div>
+            </div>)
         return (
           <div className="fancy">
             <div className="fullWidthContainer application">
