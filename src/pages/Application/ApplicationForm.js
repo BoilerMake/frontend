@@ -21,6 +21,9 @@ class ApplicationForm extends Component {
                 onDrop={this.props.onResumeDrop.bind(this)}
                 style={{border: 'none', height: '100%'}}
             >
+                {applicationForm.completed ? <div className="appInfoBanner">
+                    Hey there - just a heads up: Your application is complete and is under review. Expect to hear back by Sept 22 at the latest.
+                </div> : null}
                 <div className="row">
                     <div className="col-6">
                       <label>First Name</label>
@@ -95,7 +98,7 @@ class ApplicationForm extends Component {
                       <label>Upload Resume (PDF only)</label>
                       <button type="button" onClick={() => { dropzoneRef.open() }} className="application-button">Drop or click to upload</button>
                       <ResumeUploadProgressIndicator/>
-                      { applicationForm.resume_uploaded ? <div>You've uploaded <a href={applicationForm.resume_get_url} target="_blank" rel="noopener noreferrer" >{applicationForm.resume_filename}</a></div> : null }
+                      { applicationForm.resume_uploaded ? <p>You've uploaded <a href={applicationForm.resume_get_url} target="_blank" rel="noopener noreferrer" >{applicationForm.resume_filename}</a></p> : null }
                     </div>
                     <div className="col-6">
                         <label>Is this your first hackathon?</label>

@@ -14,7 +14,7 @@ export const INITIAL_STATE = {
     applicationForm: {},
     validation: {reason_label: [], reason_field: []},
     error: null,
-    loading: false,
+    loading: true,
     uploadProgress: 0,
     isResumeUploading: false,
     uploadingFileName: null,

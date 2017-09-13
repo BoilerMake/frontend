@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ApplicationForm from './ApplicationForm'
+import ApplicationDecision from './ApplicationDecision'
 import NeedToConfirmEmailDialog from './NeedToConfirmEmailDialog'
 class Application extends Component {
     componentDidMount() {
@@ -8,18 +9,27 @@ class Application extends Component {
         this.props.fetchSchoolList();
     }
     render () {
-        let me = this.props.user.me;
+        let { me } = this.props.user;
+        let { applicationForm, loading } = this.props.application;
         let isUserConfirmed = me && me.confirmed;
-        if(!me || !this.props.application.applicationForm)
-            return null;
+        let doesUserHaveDecision = (applicationForm.decision !== null) && (applicationForm.decision !== undefined) && (applicationForm.decision !== 0);
+        if(!me || !applicationForm || loading)
+            return (<div className="fancy">
+                <div className="fullWidthContainer application" style={{height: '1000px'}}>
+                    <h1 className="title app-heading left">Application Loading...</h1>
+                </div>
+            </div>)
         return (
+          <div className="fancy">
             <div className="fullWidthContainer application">
-                <h1 className="title app-heading left">Application</h1>
-                { isUserConfirmed
-                    ? <ApplicationForm />
-                    : <NeedToConfirmEmailDialog />
+                { doesUserHaveDecision
+                    ? <ApplicationDecision/>
+                    : ( isUserConfirmed
+                        ? <div><h1 className="title app-heading left">Application</h1><ApplicationForm /></div>
+                        : <NeedToConfirmEmailDialog />)
                 }
             </div>
+          </div>
         );
     }
 }

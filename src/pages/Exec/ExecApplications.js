@@ -10,6 +10,14 @@ class ExecApplications extends Component {
         this.props.fetchApplications();
     }
     render () {
+        let decisionMap = {
+            4: 'EXPIRED',
+            3: 'ACCEPT',
+            2: 'WAITLIST',
+            1: 'REJECT',
+            0: 'UNDECIDED',
+            null: 'UNDECIDED'
+        };
         const columns = [{
             Header: 'id',
             accessor: 'id',
@@ -29,6 +37,14 @@ class ExecApplications extends Component {
             Header: 'Completed?',
             id: 'completed',
             accessor: d => d.completed ? 'yes' : 'no'
+        }, {
+            Header: 'Decision',
+            id: 'decision',
+            accessor: d => `${decisionMap[d.decision]} (${d.decision})`
+        }, {
+            Header: 'RSVP?',
+            id: 'rsvp',
+            accessor: d => d.rsvp=== null ? 'n/a' : (d.rsvp ? 'yes' : 'no')
         }
         ];
 
@@ -37,7 +53,7 @@ class ExecApplications extends Component {
                 <Header as='h3' dividing>All Applications</Header>
                 <ReactTable
                     filterable
-                    defaultFilterMethod={ (filter, row) => row[filter.id].includes(filter.value)}//fuzzy
+                    defaultFilterMethod={ (filter, row) => row[filter.id].toLowerCase().includes(filter.value.toLowerCase())}//fuzzy
                     data={this.props.exec.application_list}
                     columns={columns}
                 />
