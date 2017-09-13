@@ -36,7 +36,7 @@ class ExecUsers extends Component {
                 <Header as='h3' dividing>All Users</Header>
                 <ReactTable
                     filterable
-                    defaultFilterMethod={ (filter, row) => row[filter.id].includes(filter.value)}//fuzzy
+                    defaultFilterMethod={ (filter, row) => row[filter.id].toLowerCase().includes(filter.value.toLowerCase())}//fuzzy
                     data={this.props.exec.user_list}
                     columns={columns}
                 />
