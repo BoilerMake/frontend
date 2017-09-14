@@ -138,6 +138,9 @@ export const dietOptions = [
 }, {
     label: 'Gluten Free',
     value: 'glutenfree'
+}, {
+    label: 'Nut Allergy',
+    value: 'nut'
 }];
 export const shirtOptions = [
 {
