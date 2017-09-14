@@ -7,7 +7,7 @@ const Sponsors = () => (
     <div className="info">
       <h1>Sponsors</h1>
     </div>
-    <a target="_blank" href="https://www.capitalone.com" alt="capital one" className="logo" />
+    <a target="_blank" href="https://campus.capitalone.com/" alt="capital one" className="logo" />
     <a target="_blank" href="https://www.ge.com/" alt="general electric" className="logo" />
     <a target="_blank" href="https://www.libertymutual.com" alt="liberty mutual" className="logo" />
     <a target="_blank" href="https://mixmax.com/" alt="mixmax" className="logo" />
