@@ -76,6 +76,8 @@ class ApplicationForm extends Component {
                     <h1>You're in!</h1>
                     <p>Congratulations, we’re excited to invite you to this year’s retro twist on BoilerMake. <span role="img" aria-label="Heart">💜</span>
                         <br/>
+                        BoilerMake will last from around 6PM on Sept 29 until approximately 2PM on October 1, and it will be held on Purdue's campus in West Lafayette.
+                        <br/>
                         All we need from you now is to RSVP so we know whether to expect you there or not!</p>
                     <h2>Getting to BoilerMake</h2>
                     {transitMessage}
