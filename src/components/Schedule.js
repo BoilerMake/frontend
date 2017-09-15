@@ -111,7 +111,7 @@ const Schedule = () => (
         </div>
         <div className="schedule-item">
           <div className="time">1:00 PM</div>
-          <div className="event">Closing Cermonies</div>
+          <div className="event">Closing Ceremonies</div>
         </div>
         <div className="schedule-item">
           <div className="time">2:30 PM</div>
