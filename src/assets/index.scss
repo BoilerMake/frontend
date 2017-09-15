@@ -4,6 +4,7 @@
 @import 'landing';
 @import 'application';
 @import 'about';
+@import 'schedule';
 
 @import 'mobile';
 
@@ -125,12 +126,21 @@ p {
     padding-left: 8px;
   }
 }
+.col-4 {
+  width: 33%;
+  float: left;
+  margin: 0;
+  box-sizing: border-box;
+}
 @media (max-width: 768px) {
   .col-6 {
     width: 100%;
     &:last-child {
       padding-left: 0;
     }
+  }
+  .col-4 {
+    width: 100%;
   }
 }
 
