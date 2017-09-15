@@ -1,0 +1,16 @@
+.schedule {
+  max-width: 960px;
+  margin: auto;
+}
+.schedule-item {
+  border-bottom: 1px solid #efefef;
+  padding: 8px;
+
+  .time {
+    display: inline-block;
+  }
+
+  .event {
+    float: right;
+  }
+}
