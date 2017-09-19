@@ -64,7 +64,7 @@ class ApplicationForm extends Component {
                     </div>
                 </div>
                 <br/>
-                <button disabled={isLoading} onClick={()=>{this.props.saveApplication(false, true)}} className="submit">Save RSVP</button>
+                <button disabled={isLoading} onClick={()=>{this.props.saveApplication(false, true)}} className="submit">Submit RSVP</button>
             </div>;
 
         let rsvpNo = <p className="section">Aw <span role="img" aria-label="Sad">😢</span> Please come back and apply next year though! </p>;
