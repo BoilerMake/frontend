@@ -113,9 +113,6 @@ export const skillOptions = [{
     label: 'php',
     value: 'php'
 },{
-    label: 'puzzle',
-    value: 'puzzle'
-},{
     label: 'python',
     value: 'python'
 },{
