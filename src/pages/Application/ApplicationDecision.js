@@ -81,7 +81,10 @@ class ApplicationForm extends Component {
                         All we need from you now is to RSVP so we know whether to expect you there or not!</p>
                     <h2>Getting to BoilerMake</h2>
                     {transitMessage}
-                    <p>Can you come? You must RSVP {applicationForm.rsvp_deadline ? <span>by {applicationForm.rsvp_deadline}</span> : <span>soon</span>} or else we will offer your spot to someone else.</p>
+                    { applicationForm.is_rsvp_confirmed === 1
+                        ? <div className="appInfoBanner">Your RSVP has been recorded - we will see you at BoilerMake! Stay tuned for an email with more info.</div>
+                        : <p>Can you come? You must RSVP {applicationForm.rsvp_deadline ? <span>by {applicationForm.rsvp_deadline}</span> : <span>soon</span>} or else we will offer your spot to someone else.</p>
+                    }
                     <ApplicationRSVPToggle/>
                     {
                         applicationForm.rsvp !== null

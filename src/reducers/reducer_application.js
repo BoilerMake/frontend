@@ -36,7 +36,8 @@ export default function (state = INITIAL_STATE, action) {
                     resume_filename,
                     resume_get_url,
                     resume_put_url,
-                    resume_uploaded
+                    resume_uploaded,
+                    is_rsvp_confirmed
                 } = applicationForm;
                 //we only want to update these applicationForm state keys, so we don't disrupt  user currently typing by
                 // giving the UI stale data (i think this make sense?)
@@ -51,7 +52,8 @@ export default function (state = INITIAL_STATE, action) {
                             resume_filename,
                             resume_get_url,
                             resume_put_url,
-                            resume_uploaded
+                            resume_uploaded,
+                            is_rsvp_confirmed
                         }
                 };
             } else {
