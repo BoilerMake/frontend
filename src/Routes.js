@@ -28,6 +28,7 @@ import ExecUserDetail from "./pages/Exec/ExecUserDetail";
 import ExecApplications from "./pages/Exec/ExecApplications";
 import ExecApplicationDetail from "./pages/Exec/ExecApplicationDetail";
 import ExecDashboard from "./pages/Exec/ExecDashboard";
+import ExecCheckin from "./pages/Exec/ExecCheckin";
 
 
 const PrivateRoute = ({ component: Component, isAuthenticated, isAllowed, ...rest }) => (
@@ -88,6 +89,7 @@ const Routes = () => (
 
       {/*Exec Routes. Everything under /exec gets rendered inside <ExecContainer/>*/}
       <ExecRoute path="/exec" exact component={ExecDashboard} />
+      <ExecRoute exact path="/exec/checkin" component={ExecCheckin} />
       <ExecRoute exact path="/exec/users" component={ExecUsers} />
       <ExecRoute path="/exec/users/:userId" component={ExecUserDetail} />
       <ExecRoute exact path="/exec/applications" component={ExecApplications} />

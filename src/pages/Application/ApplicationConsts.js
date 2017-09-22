@@ -153,3 +153,16 @@ export const shirtOptions = [
     label: 'Small',
     value: 's'
 }];
+export const decisionMap = {
+    4: 'EXPIRED',
+    3: 'ACCEPT',
+    2: 'WAITLIST',
+    1: 'REJECT',
+    0: 'UNDECIDED',
+    null: 'UNDECIDED'
+};
+export const rsvpMap = {
+    1: 'SAID YES',
+    0: 'SAID NO',
+    null: 'NO RSVP!'
+};

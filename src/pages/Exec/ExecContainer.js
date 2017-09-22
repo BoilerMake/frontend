@@ -20,6 +20,7 @@ const ExecContainer = ({children}) => (
                     />
                     Dashboard
                 </Menu.Item>
+                <Menu.Item as={NavLink} to='/exec/checkin'>Checkin</Menu.Item>
                 <Menu.Item as={NavLink} to='/exec/users'>Users</Menu.Item>
                 <Menu.Item as={NavLink} to='/exec/applications'>Applications</Menu.Item>
                 <Menu.Item as={NavLink} to='/' exact>Back to Main site</Menu.Item>
