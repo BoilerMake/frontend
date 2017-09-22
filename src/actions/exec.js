@@ -1,4 +1,5 @@
 import apiFetch  from './index';
+import {toastr} from 'react-redux-toastr'
 
 export const REQUEST_USERS = 'REQUEST_USERS';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
@@ -23,6 +24,26 @@ function receiveUsers (json) {
         type: RECEIVE_USERS,
         json,
         receivedAt: Date.now()
+    };
+}
+
+export function searchUsers (data) {
+    return (dispatch) => {
+        dispatch(requestUsers());
+        return apiFetch('exec/users/search',
+            {
+                method: 'POST',
+                body: JSON.stringify(data)
+            })
+            .then((response) => response.json())
+            .then((json) => {
+                if(json.success) {
+                    toastr.success('Success!', `query of ${JSON.stringify(data,null,2)} yielded ${json.data.length} results`);
+                    dispatch(receiveUsers(json));
+                } else {
+                    toastr.error('ugh','something broke');
+                }
+        });
     };
 }
 
@@ -105,5 +126,21 @@ function receiveApplicationDetail (json, applicationId) {
         applicationId,
         json,
         receivedAt: Date.now()
+    };
+}
+
+
+export function checkInUser(user_id) {
+    return (dispatch) => {
+        return apiFetch(`exec/users/${user_id}/checkin`,
+            {method: 'POST'})
+            .then((response) => response.json())
+            .then((json) => {
+                if(json.success) {
+                    toastr.success('Success!', json.data);
+                } else {
+                    toastr.error('eek!', json.message);
+                }
+            });
     };
 }

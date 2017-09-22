@@ -1,0 +1,48 @@
+import React from 'react';
+import moment from 'moment';
+import { decisionMap, rsvpMap } from '../Application/ApplicationConsts';
+import { Card, Button, Icon } from 'semantic-ui-react'
+
+const CheckinCard = ({user, checkInClicked}) => {
+    let goodIcon = <Icon name='check' color='green' size='large'/>;
+    let badIcon = <Icon name='minus circle' color='red' size='large'/>;
+
+    let isCompleted = user.application && user.application.completed === true;
+    let isAccepted = user.application && user.application.decision === 3;
+    let isRSVPd = user.application && user.application.rsvp === 1;
+    let checkInTime = user.application && user.application.checked_in_at;
+    let isNotCheckedIn = checkInTime === null;
+
+    let isGoodToCheckin = isCompleted && isAccepted && isRSVPd && isNotCheckedIn;
+    return(<Card fluid={true}>
+            <Card.Content>
+                <Card.Header>
+                    {user.name} | {user.id}
+                </Card.Header>
+                <Card.Meta>
+        <span className='date'>
+          {user.application && user.application.school ? user.application.school.name : 'no school!'}
+        </span>
+                </Card.Meta>
+                <Card.Description>
+                    {/*<pre>{JSON.stringify(user,null,2)}</pre>*/}
+
+                    {isCompleted ? goodIcon : badIcon} <b>Completed:</b> {user.application && user.application.completed ? 'yes' : 'NO'}<br/>
+                    {isAccepted ? goodIcon : badIcon} <b>Decision:</b> {user.application && decisionMap[user.application.decision]}<br/>
+                    {isRSVPd ? goodIcon : badIcon} <b>RSVP:</b> {user.application && rsvpMap[user.application.rsvp]}<br/>
+                    {isNotCheckedIn ? goodIcon : badIcon} <b>checked in yet:</b> {isNotCheckedIn ? 'not yet!' : checkInTime}<br/>
+
+                    TODO: alert if user does not have access card printed.<br/>
+
+                    <Button basic color={isGoodToCheckin ? 'green' : 'red'} onClick={()=>{checkInClicked(user.id)}}>Check In</Button>
+                </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+                <a>
+                    <Icon name='user' />
+                    {user.hashid}
+                </a>
+            </Card.Content>
+        </Card>);
+};
+export default CheckinCard;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Header} from 'semantic-ui-react'
+import { decisionMap } from '../Application/ApplicationConsts';
 import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 
@@ -10,14 +11,6 @@ class ExecApplications extends Component {
         this.props.fetchApplications();
     }
     render () {
-        let decisionMap = {
-            4: 'EXPIRED',
-            3: 'ACCEPT',
-            2: 'WAITLIST',
-            1: 'REJECT',
-            0: 'UNDECIDED',
-            null: 'UNDECIDED'
-        };
         const columns = [{
             Header: 'id',
             accessor: 'id',
