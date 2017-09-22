@@ -13,7 +13,8 @@ class ExecCheckin extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount() {
-        this.props.fetchUsers();
+        // don't prefetch this because it's slooow for 1500+ users
+        // this.props.fetchUsers();
     }
     checkInClicked(userId) {
         console.log('clicked for',userId);
