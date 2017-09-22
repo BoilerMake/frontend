@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Header} from 'semantic-ui-react'
 import CheckinCard from './CheckinCard'
 import { Card, Grid, Form, Icon } from 'semantic-ui-react'

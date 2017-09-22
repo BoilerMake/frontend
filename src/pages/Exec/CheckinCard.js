@@ -1,10 +1,10 @@
 import React from 'react';
-import moment from 'moment';
 import { decisionMap, rsvpMap } from '../Application/ApplicationConsts';
 import { Card, Button, Icon } from 'semantic-ui-react'
 
 const CheckinCard = ({user, checkInClicked}) => {
     let goodIcon = <Icon name='check' color='green' size='large'/>;
+    let warningIcon = <Icon name='warning circle' color='orange' size='large'/>;
     let badIcon = <Icon name='minus circle' color='red' size='large'/>;
 
     let isCompleted = user.application && user.application.completed === true;
@@ -26,13 +26,12 @@ const CheckinCard = ({user, checkInClicked}) => {
                 </Card.Meta>
                 <Card.Description>
                     {/*<pre>{JSON.stringify(user,null,2)}</pre>*/}
-
+                    <b>email:</b> {user.email}<br/>
                     {isCompleted ? goodIcon : badIcon} <b>Completed:</b> {user.application && user.application.completed ? 'yes' : 'NO'}<br/>
                     {isAccepted ? goodIcon : badIcon} <b>Decision:</b> {user.application && decisionMap[user.application.decision]}<br/>
                     {isRSVPd ? goodIcon : badIcon} <b>RSVP:</b> {user.application && rsvpMap[user.application.rsvp]}<br/>
                     {isNotCheckedIn ? goodIcon : badIcon} <b>checked in yet:</b> {isNotCheckedIn ? 'not yet!' : checkInTime}<br/>
-
-                    TODO: alert if user does not have access card printed.<br/>
+                    {warningIcon} TODO: alert if user does not have access card printed.<br/>
 
                     <Button basic color={isGoodToCheckin ? 'green' : 'red'} onClick={()=>{checkInClicked(user.id)}}>Check In</Button>
                 </Card.Description>
