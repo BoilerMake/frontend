@@ -24,9 +24,7 @@ class Application extends Component {
             <div className="fullWidthContainer application">
                 { doesUserHaveDecision
                     ? <ApplicationDecision/>
-                    : ( isUserConfirmed
-                        ? <div><h1 className="title app-heading left">Application</h1><ApplicationForm /></div>
-                        : <NeedToConfirmEmailDialog />)
+                    : <h1 className="title app-heading left">Applications Closed.</h1>
                 }
             </div>
           </div>
