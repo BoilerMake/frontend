@@ -21,6 +21,7 @@ import ConfirmEmail from './pages/ConfirmEmail';
 import GithubAuth from './pages/GithubAuth';
 import Dashboard from './pages/Dashboard';
 import Application from './pages/Application';
+import DayOf from './pages/DayOf';
 
 import ExecContainer from "./pages/Exec/ExecContainer";
 import ExecUsers from "./pages/Exec/ExecUsers";
@@ -52,6 +53,8 @@ const ContainerSwitcherRoute = ({ children, location, ...rest }) => {
         : (<div><Nav/>{children}</div>);
 };
 
+const RedirectToLive = () => <Redirect to="/live"/>
+
 class ExternalRedirect extends Component {
     constructor( props ){
         super();
@@ -73,6 +76,8 @@ const Routes = () => (
     <ContainerSwitcher>
       {/*Public Routes*/}
       <Route exact path="/" component={Home}/>
+      <Route path="/dayof" component={RedirectToLive}/>
+      <Route path="/live" component={DayOf}/>
       <Route path="/about" component={About}/>
       <Route path="/code" component={Code}/>
       <Route path="/contact" component={Contact}/>
