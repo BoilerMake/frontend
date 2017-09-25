@@ -11,9 +11,9 @@ const Landing = () => (
       <MLHBadge className="mlh" />
       <Animation />
     </div>
-    <FAQ />
+      <Schedule />
+      <FAQ />
     <Sponsors />
-    <Schedule />
   </div>
 );
 
