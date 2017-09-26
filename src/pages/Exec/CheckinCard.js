@@ -17,7 +17,7 @@ const CheckinCard = ({user, checkInClicked}) => {
     return(<Card fluid={true}>
             <Card.Content>
                 <Card.Header>
-                    {user.name} | {user.id}
+                    {user.name} | user:{user.id} | app:{user.application && user.application.id}
                 </Card.Header>
                 <Card.Meta>
         <span className='date'>
