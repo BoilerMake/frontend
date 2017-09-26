@@ -12,8 +12,8 @@ const Landing = () => (
       <Animation />
     </div>
       <Schedule />
+      <Sponsors />
       <FAQ />
-    <Sponsors />
   </div>
 );
 
