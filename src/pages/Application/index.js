@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import ApplicationForm from './ApplicationForm'
 import ApplicationDecision from './ApplicationDecision'
-import NeedToConfirmEmailDialog from './NeedToConfirmEmailDialog'
 class Application extends Component {
     componentDidMount() {
         this.props.fetchMe();
@@ -11,7 +9,6 @@ class Application extends Component {
     render () {
         let { me } = this.props.user;
         let { applicationForm, loading } = this.props.application;
-        let isUserConfirmed = me && me.confirmed;
         let doesUserHaveDecision = (applicationForm.decision !== null) && (applicationForm.decision !== undefined) && (applicationForm.decision !== 0);
         if(!me || !applicationForm || loading)
             return (<div className="fancy">
