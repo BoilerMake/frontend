@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import apiFetch from '../../actions';
 import ApplicationTimeSeries from './ApplicationTimeSeries';
+import ExecCreateAnnouncement from './ExecCreateAnnouncement';
+import moment from 'moment';
+
 import {
     Grid,
     Header,
@@ -23,6 +26,7 @@ class ExecDashboard extends Component {
     componentDidMount() {
          this.fetchData();
          this.props.fetchApplications();
+         this.props.fetchAnnouncements();
     }
     fetchData() {
         return apiFetch('exec/dashboard')
@@ -46,9 +50,10 @@ class ExecDashboard extends Component {
                             <Segment inverted>
                             <Statistic.Group horizontal size="large">
                                 <Statistic inverted label='Interest Signups' value={this.state.data.interest_count} color="grey" />
-                                <Statistic inverted label='% of Interest Signups Who Applied' value={this.state.data.percent_interest_applied} color="grey" />
                                 <Statistic inverted label='Total Applications' value={this.props.exec.application_list.length} color="orange" />
                                 <Statistic inverted label='Completed Applications' value={this.props.exec.application_list.filter(app=>app.completed).length} color="green"/>
+                                <Statistic inverted label='RSVP Applications' value={this.props.exec.application_list.filter(app=>app.rsvp).length} color="green"/>
+                                <Statistic inverted label='Checked IN' value={this.props.exec.application_list.filter(app=>app.checked_in_at!==null).length} color="green"/>
                             </Statistic.Group>
                             </Segment>
                         </Grid.Column>
@@ -67,8 +72,18 @@ class ExecDashboard extends Component {
                             </Segment>
                         </Grid.Column>
                         <Grid.Column>
-                            {/*<Header as='h3' dividing># Of Applications Created Per Day</Header>*/}
-                            {/*<ApplicationTimeSeries data={this.props.exec.application_list} />*/}
+                            <Header as='h3' dividing>Create an Announcement</Header>
+                            <ExecCreateAnnouncement createAnnouncement={this.props.createAnnouncement}/>
+                            <Header as='h3' dividing>Announcements</Header>
+                            {this.props.dayof.announcements.map(a=> {
+                                let when = moment.utc(a.created_at);
+                                return(<div key={a.id}>
+                                    {when.fromNow()} <i>({when.format()})</i>
+                                    <br/>
+                                    <b>{a.body}</b>
+                                    <hr/>
+                                </div>)
+                            })}
                         </Grid.Column>
                     </Grid.Row>
 
@@ -83,17 +98,21 @@ class ExecDashboard extends Component {
 import {
     fetchApplications
 } from '../../actions/exec';
+import { createAnnouncement, fetchAnnouncements } from '../../actions/dayof';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 function mapStateToProps (state) {
     return {
         exec: state.exec,
+        dayof: state.dayof
     };
 }
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
-        fetchApplications
+        fetchApplications,
+        createAnnouncement,
+        fetchAnnouncements
     }, dispatch)
 };
 
