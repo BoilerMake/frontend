@@ -11,6 +11,7 @@ const CheckinCard = ({user, checkInClicked}) => {
     let isAccepted = user.application && user.application.decision === 3;
     let isRSVPd = user.application && user.application.rsvp === 1;
     let checkInTime = user.application && user.application.checked_in_at;
+    let isAccessCardPrinted = user.application && user.application.is_card_printed;
     let isNotCheckedIn = checkInTime === null;
 
     let isGoodToCheckin = isCompleted && isAccepted && isRSVPd && isNotCheckedIn;
@@ -30,8 +31,8 @@ const CheckinCard = ({user, checkInClicked}) => {
                     {isCompleted ? goodIcon : badIcon} <b>Completed:</b> {user.application && user.application.completed ? 'yes' : 'NO'}<br/>
                     {isAccepted ? goodIcon : badIcon} <b>Decision:</b> {user.application && decisionMap[user.application.decision]}<br/>
                     {isRSVPd ? goodIcon : badIcon} <b>RSVP:</b> {user.application && rsvpMap[user.application.rsvp]}<br/>
-                    {isNotCheckedIn ? goodIcon : badIcon} <b>checked in yet:</b> {isNotCheckedIn ? 'not yet!' : checkInTime}<br/>
-                    {warningIcon} TODO: alert if user does not have access card printed.<br/>
+                    {isNotCheckedIn ? goodIcon : badIcon} <b>Checked in yet:</b> {isNotCheckedIn ? 'not yet!' : checkInTime}<br/>
+                    {isAccessCardPrinted ? goodIcon : warningIcon} <b>Card printed:</b> { isAccessCardPrinted? 'yes' : 'NO!'}<br/>
 
                     <Button basic color={isGoodToCheckin ? 'green' : 'red'} onClick={()=>{checkInClicked(user.id)}}>Check In</Button>
                 </Card.Description>
