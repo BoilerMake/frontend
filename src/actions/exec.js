@@ -132,10 +132,15 @@ function receiveApplicationDetail (json, applicationId) {
 
 export function checkInUser(user_id) {
     return (dispatch) => {
+        let timeout = setTimeout(() => {
+            alert('it has been 1000ms and no server response!');
+            toastr.error('shit!', 'it has been 1000ms and no server response!')
+        }, 1000);
         return apiFetch(`exec/users/${user_id}/checkin`,
             {method: 'POST'})
             .then((response) => response.json())
             .then((json) => {
+                clearTimeout(timeout);
                 if(json.success) {
                     toastr.success('Success!', json.data);
                 } else {
