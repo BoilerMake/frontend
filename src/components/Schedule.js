@@ -14,7 +14,7 @@ const friday = [{
     info: 'CoRec Black & Gold Gyms'
 },{
     start: '9:30 PM',
-    name: 'Dinner from Moe\'s',
+    name: 'Dinner from Moe\'s 🌮',
     info: 'taco bar (yes there\'s  queso)'
 },{
     start: '10:00 PM',
@@ -24,7 +24,7 @@ const friday = [{
     name: 'Workshop/talk 1'
 },{
     start: '11:59 PM',
-    name: 'Showers close'
+    name: 'Showers close 🚿'
 }];
 
 let saturday = [{
@@ -32,11 +32,11 @@ let saturday = [{
     name: 'Late Night Snack'
 },{
     start: '8:00 AM',
-    name: 'Breakfast',
+    name: 'Breakfast 🥓',
     info: 'eggs, potatoes, bacon, fruit, bagels'
 },{
     start: '8:00 AM',
-    name: 'Showers reopen'
+    name: 'Showers reopen 🚿'
 },{
     start: '9:00 AM',
     name: 'Workshop/talk 2'
@@ -48,7 +48,7 @@ let saturday = [{
     name: 'Yoga'
 },{
     start: '12:30 PM',
-    name: 'Lunch - Pasta Bar',
+    name: 'Lunch - Pasta Bar 🍝',
     info: 'chicken, marinara, alfredo, veggies, salad, rolls'
 },{
     start: '1:00 PM',
@@ -67,13 +67,17 @@ let saturday = [{
     name: 'MLH Cup Stacking'
 },{
     start: '6:00 PM',
-    name: 'Dinner from Hotbox - pizza, breadsticks, salad'
+    name: 'Dinner from Hotbox 🍕',
+    info: 'pizza, breadsticks, salad'
 },{
     start: '6:00 PM',
     name: 'Workshop/talk 6'
 },{
+    start: '10:00 PM',
+    name: 'Donuts! 🍩 '
+},{
     start: '11:59 PM',
-    name: 'Showers close'
+    name: 'Showers close🚿'
 }];
 
 let sunday = [{
@@ -81,7 +85,7 @@ let sunday = [{
     name: 'Late Night Snack'
 },{
     start: '8:00 AM',
-    name: 'Breakfast',
+    name: 'Breakfast 🍳',
     info: 'egg casseroles, potatoes, fruit, yogurt, bagels, pastries'
 },{
     start: '9:30 AM',
@@ -91,10 +95,10 @@ let sunday = [{
     name: 'Expo Begins'
 },{
     start: '10:00 AM',
-    name: 'Showers reopen'
+    name: 'Showers reopen '
 },{
     start: '11:30 AM',
-    name: 'Lunch from Potbelly',
+    name: 'Lunch from Potbelly 🍞',
     info: 'sandwiches'
 },{
     start: '1:00 PM',
@@ -102,7 +106,7 @@ let sunday = [{
     info: 'Loeb Playhouse'
 },{
     start: '2:30 PM',
-    name: 'Busses Depart',
+    name: 'Buses Depart 🚌',
     info: 'Loeb Playhouse'
 }];
 
