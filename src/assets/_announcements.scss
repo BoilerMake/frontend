@@ -1,0 +1,12 @@
+.announcements {
+  max-width: 600px;
+  margin: auto;
+}
+.announcements-container {
+  height: 400px;
+  overflow-y:scroll;
+  border: 2px solid $pink;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}

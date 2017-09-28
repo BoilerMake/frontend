@@ -1,16 +1,19 @@
 .schedule {
-  max-width: 960px;
+  max-width: 1024px;
   margin: auto;
 }
 .schedule-item {
   border-bottom: 1px solid #efefef;
   padding: 8px;
+  display: flex;
+  justify-content: space-between;
 
   .time {
     display: inline-block;
+    min-width: 70px;
   }
 
   .event {
-    float: right;
+    text-align: right;
   }
 }
