@@ -1,123 +1,107 @@
-/* eslint-disable */
 import React from 'react';
+
+const friday = [{
+    start: '6:00 PM',
+    name: 'Checkin begins'
+},{
+    start: '8:00 PM',
+    name: 'Opening Ceremonies'
+},{
+    start: '9:00 PM',
+    name: 'Team assembly'
+},{
+    start: '9:30 PM',
+    name: 'Dinner Served'
+},{
+    start: '10:00 PM',
+    name: 'Hacking Begins'
+},{
+    start: '10:00 PM',
+    name: 'Workshop/talk 1'
+}];
+
+let saturday = [{
+    start: '3:00 AM',
+    name: 'Late Night Snack'
+},{
+    start: '8:00 AM',
+    name: 'Breakfast'
+},{
+    start: '9:00 AM',
+    name: 'Workshop/talk 2'
+},{
+    start: '10:00 AM',
+    name: 'Workshop/talk 3'
+},{
+    start: '11:30 AM',
+    name: 'Yoga'
+},{
+    start: '12:30 PM',
+    name: 'Lunch Served'
+},{
+    start: '1:00 PM',
+    name: 'Workshop/talk 4'
+},{
+    start: '1:00 PM',
+    name: 'Snack'
+},{
+    start: '1:30 PM',
+    name: 'Yoga'
+},{
+    start: '3:00 PM',
+    name: 'Workshop/talk 5'
+},{
+    start: '4:30 PM',
+    name: 'MLH Cup Stacking'
+},{
+    start: '6:00 PM',
+    name: 'Dinner Served'
+},{
+    start: '6:00 PM',
+    name: 'Workshop/talk 6'
+}];
+
+let sunday = [{
+    start: '1:00 AM',
+    name: 'Late Night Snack'
+},{
+    start: '8:00 AM',
+    name: 'Breakfast'
+},{
+    start: '9:30 AM',
+    name: 'Hacking Ends'
+},{
+    start: '10:00 AM',
+    name: 'Expo Begins'
+},{
+    start: '11:30 AM',
+    name: 'Lunch Served'
+},{
+    start: '1:00 PM',
+    name: 'Closing Ceremonies'
+},{
+    start: '2:30 PM',
+    name: 'Busses Depart'
+}];
+
+const ScheduleDay =  ({dayData, title}) =>
+    <div className="col-4 paddingx">
+      <h3 className="center">{title}</h3>
+        { dayData.map(item =>
+          <div className="schedule-item">
+            <div className="time">{item.start}</div>
+            <div className="event">{item.name}</div>
+          </div>
+        )}
+    </div>;
 
 const Schedule = () => (
   <div className="schedule">
     <h1 className="center title">Schedule</h1>
     <div className="row">
-      <div className="col-4 paddingx">
-        <h3 className="center">Friday (9/29)</h3>
-        <div className="schedule-item">
-          <div className="time">6:00 PM</div>
-          <div className="event">Checkin begins</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">8:00 PM</div>
-          <div className="event">Opening Ceremonies</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">9:00 PM</div>
-          <div className="event">Team assembly</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">9:30 PM</div>
-          <div className="event">Dinner Served</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">10:00 PM</div>
-          <div className="event">Hacking Begins</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">10:00 PM</div>
-          <div className="event">Workshop/talk 1</div>
-        </div>
-      </div>
-      <div className="col-4 paddingx">
-        <h3 className="center">Saturday (9/30)</h3>
-        <div className="schedule-item">
-          <div className="time">3:00 AM</div>
-          <div className="event">Late Night Snack</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">8:00 AM</div>
-          <div className="event">Breakfast</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">9:00 AM</div>
-          <div className="event">Workshop/talk 2</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">10:00 AM</div>
-          <div className="event">Workshop/talk 3</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">11:30 AM</div>
-          <div className="event">Yoga</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">12:30 PM</div>
-          <div className="event">Lunch Served</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">1:00 PM</div>
-          <div className="event">Workshop/talk 4</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">1:00 PM</div>
-          <div className="event">Snack</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">1:30 PM</div>
-          <div className="event">Yoga</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">3:00 PM</div>
-          <div className="event">Workshop/talk 5</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">4:30 PM</div>
-          <div className="event">MLH Cup Stacking</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">6:00 PM</div>
-          <div className="event">Dinner Served</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">6:00 PM</div>
-          <div className="event">Workshop/talk 6</div>
-        </div>
-      </div>
-      <div className="col-4 paddingx">
-        <h3 className="center">Sunday (10/1)</h3>
-        <div className="schedule-item">
-          <div className="time">1:00 AM</div>
-          <div className="event">Late Night Snack</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">8:00 AM</div>
-          <div className="event">Breakfast</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">9:30 AM</div>
-          <div className="event">Hacking Ends</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">10:00 AM</div>
-          <div className="event">Expo Begins</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">11:30 AM</div>
-          <div className="event">Lunch Served</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">1:00 PM</div>
-          <div className="event">Closing Ceremonies</div>
-        </div>
-        <div className="schedule-item">
-          <div className="time">2:30 PM</div>
-          <div className="event">Busses Depart</div>
-        </div>
-      </div>
+      <ScheduleDay dayData={friday} title="Friday (9/29)"/>
+      <ScheduleDay dayData={saturday} title="Saturday (9/30)"/>
+      <ScheduleDay dayData={sunday} title="Sunday (10/1)"/>
     </div>
   </div>
 );
