@@ -73,6 +73,15 @@ class ApplicationForm extends Component {
         switch(applicationForm.decision) {
             case 3://ACCEPT
                 decisionForm = (<div className="section">
+                    { applicationForm.is_rsvp_confirmed === 1
+                        ? <div>
+                            <div className="appInfoBanner">Your RSVP has been recorded - we will see you at BoilerMake!
+                                <h2>Your check in code is: <b><code>{applicationForm.user.hashid}</code></b>
+                                    <br/> Please have this + your photo ID ready to expedite check in.</h2>
+                            </div>
+                        </div>
+                        : <p>Can you come? You must RSVP {applicationForm.rsvp_deadline ? <span>by {applicationForm.rsvp_deadline}</span> : <span>soon</span>} or else we will offer your spot to someone else.</p>
+                    }
                     <h1>You're in!</h1>
                     <p>Congratulations, we’re excited to invite you to this year’s retro twist on BoilerMake. <span role="img" aria-label="Heart">💜</span>
                         <br/>
@@ -81,10 +90,6 @@ class ApplicationForm extends Component {
                         All we need from you now is to RSVP so we know whether to expect you there or not!</p>
                     <h2>Getting to BoilerMake</h2>
                     {transitMessage}
-                    { applicationForm.is_rsvp_confirmed === 1
-                        ? <div className="appInfoBanner">Your RSVP has been recorded - we will see you at BoilerMake! Stay tuned for an email with more info.</div>
-                        : <p>Can you come? You must RSVP {applicationForm.rsvp_deadline ? <span>by {applicationForm.rsvp_deadline}</span> : <span>soon</span>} or else we will offer your spot to someone else.</p>
-                    }
                     <ApplicationRSVPToggle/>
                     {
                         applicationForm.rsvp !== null
