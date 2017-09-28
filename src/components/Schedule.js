@@ -2,15 +2,15 @@ import React from 'react';
 
 const friday = [{
     start: '6:00 PM',
-    name: 'Check in begins',
+    name: 'Check in begins 📋',
     info: 'Loeb Playhouse'
 },{
     start: '8:00 PM',
-    name: 'Opening Ceremonies',
+    name: 'Opening Ceremonies 🎤',
     info: 'Loeb Playhouse'
 },{
     start: '9:00 PM',
-    name: 'Team assembly',
+    name: 'Team assembly 🤝',
     info: 'CoRec Black & Gold Gyms'
 },{
     start: '9:30 PM',
@@ -18,10 +18,11 @@ const friday = [{
     info: 'taco bar (yes there\'s  queso)'
 },{
     start: '10:00 PM',
-    name: 'Hacking Begins'
+    name: 'Hacking Begins 💻'
 },{
     start: '10:00 PM',
-    name: 'Workshop/talk 1'
+    name: 'Workshop/talk 1',
+    info: 'CoRec 2265'
 },{
     start: '11:59 PM',
     name: 'Showers close 🚿'
@@ -39,10 +40,12 @@ let saturday = [{
     name: 'Showers reopen 🚿'
 },{
     start: '9:00 AM',
-    name: 'Workshop/talk 2'
+    name: 'Workshop/talk 2: TBD',
+    info: 'CoRec 2265'
 },{
     start: '10:00 AM',
-    name: 'Workshop/talk 3'
+    name: 'A Peek into the Decentralized Future with Blockchains',
+    info: 'CoRec 2265'
 },{
     start: '11:30 AM',
     name: 'Yoga'
@@ -52,7 +55,8 @@ let saturday = [{
     info: 'chicken, marinara, alfredo, veggies, salad, rolls'
 },{
     start: '1:00 PM',
-    name: 'Workshop/talk 4'
+    name: 'Workshop/talk 4',
+    info: 'CoRec 2265'
 },{
     start: '1:00 PM',
     name: 'Snack'
@@ -61,7 +65,8 @@ let saturday = [{
     name: 'Yoga'
 },{
     start: '3:00 PM',
-    name: 'Workshop/talk 5'
+    name: 'The New Frontiers in Systems Level Data Sciences and Human Space Exploration',
+    info: 'CoRec 2265'
 },{
     start: '4:30 PM',
     name: 'MLH Cup Stacking'
@@ -71,7 +76,8 @@ let saturday = [{
     info: 'pizza, breadsticks, salad'
 },{
     start: '6:00 PM',
-    name: 'Workshop/talk 6'
+    name: 'Workshop/talk 6',
+    info: 'CoRec 2265'
 },{
     start: '10:00 PM',
     name: 'Donuts! 🍩 '
@@ -89,13 +95,13 @@ let sunday = [{
     info: 'egg casseroles, potatoes, fruit, yogurt, bagels, pastries'
 },{
     start: '9:30 AM',
-    name: 'Hacking Ends'
+    name: 'Hacking Ends 🛑'
 },{
     start: '10:00 AM',
     name: 'Expo Begins'
 },{
     start: '10:00 AM',
-    name: 'Showers reopen '
+    name: 'Showers reopen 🚿'
 },{
     start: '11:30 AM',
     name: 'Lunch from Potbelly 🍞',
