@@ -36,28 +36,28 @@ let saturday = [{
     name: 'Showers reopen 🚿'
 },{
     start: '10:00 AM',
-    name: 'A Peek into the Decentralized Future with Blockchains',
+    name: 'A Peek into the Decentralized Future with Blockchains ⛓️',
     info: 'CoRec 2265'
 },{
     start: '11:30 AM',
-    name: 'Yoga'
+    name: 'Yoga 🤸'
 },{
     start: '12:30 PM',
     name: 'Lunch - Pasta Bar 🍝',
     info: 'chicken, marinara, alfredo, veggies, salad, rolls'
 },{
     start: '1:00 PM',
-    name: 'Snack'
+    name: 'Snack 🍿'
 },{
     start: '1:30 PM',
-    name: 'Yoga'
+    name: 'Yoga 🤸'
 },{
     start: '3:00 PM',
-    name: 'The New Frontiers in Systems Level Data Sciences and Human Space Exploration',
+    name: 'The New Frontiers in Systems Level Data Sciences and Human Space Exploration 🚀',
     info: 'CoRec 2265'
 },{
     start: '4:30 PM',
-    name: 'MLH Cup Stacking'
+    name: 'MLH Cup Stacking 🎲'
 },{
     start: '6:00 PM',
     name: 'Dinner from Hotbox 🍕',
@@ -72,7 +72,7 @@ let saturday = [{
 
 let sunday = [{
     start: '1:00 AM',
-    name: 'Late Night Snack'
+    name: 'Late Night Snack 🍿'
 },{
     start: '8:00 AM',
     name: 'Breakfast 🍳',
@@ -82,7 +82,7 @@ let sunday = [{
     name: 'Hacking Ends 🛑'
 },{
     start: '10:00 AM',
-    name: 'Expo Begins'
+    name: 'Expo Begins 📔'
 },{
     start: '10:00 AM',
     name: 'Showers reopen 🚿'
@@ -92,7 +92,7 @@ let sunday = [{
     info: 'sandwiches'
 },{
     start: '1:00 PM',
-    name: 'Closing Ceremonies',
+    name: 'Closing Ceremonies 🎭',
     info: 'Loeb Playhouse'
 },{
     start: '2:30 PM',
