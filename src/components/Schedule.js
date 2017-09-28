@@ -20,10 +20,6 @@ const friday = [{
     start: '10:00 PM',
     name: 'Hacking Begins 💻'
 },{
-    start: '10:00 PM',
-    name: 'Workshop/talk 1',
-    info: 'CoRec 2265'
-},{
     start: '11:59 PM',
     name: 'Showers close 🚿'
 }];
@@ -39,10 +35,6 @@ let saturday = [{
     start: '8:00 AM',
     name: 'Showers reopen 🚿'
 },{
-    start: '9:00 AM',
-    name: 'Workshop/talk 2: TBD',
-    info: 'CoRec 2265'
-},{
     start: '10:00 AM',
     name: 'A Peek into the Decentralized Future with Blockchains',
     info: 'CoRec 2265'
@@ -53,10 +45,6 @@ let saturday = [{
     start: '12:30 PM',
     name: 'Lunch - Pasta Bar 🍝',
     info: 'chicken, marinara, alfredo, veggies, salad, rolls'
-},{
-    start: '1:00 PM',
-    name: 'Workshop/talk 4',
-    info: 'CoRec 2265'
 },{
     start: '1:00 PM',
     name: 'Snack'
@@ -74,10 +62,6 @@ let saturday = [{
     start: '6:00 PM',
     name: 'Dinner from Hotbox 🍕',
     info: 'pizza, breadsticks, salad'
-},{
-    start: '6:00 PM',
-    name: 'Workshop/talk 6',
-    info: 'CoRec 2265'
 },{
     start: '10:00 PM',
     name: 'Donuts! 🍩 '
