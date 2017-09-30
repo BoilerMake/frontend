@@ -2,10 +2,10 @@ import React from 'react';
 import moment from 'moment';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 
-const ApplicationTimeSeries = ({data}) => {
+const ApplicationTimeSeries = ({data, timekey}) => {
     let byDay = {};
     data.forEach(application=>{
-        let day = moment(application.created_at).format("DD-MM-YYYY");
+        let day = moment(application[timekey]).format("DD-MM-YYYY");
         byDay[day] = (byDay[day] || 0) + 1;
     });
     let chartData = Object.keys(byDay).map(key=>({name: key, count: byDay[key]}));

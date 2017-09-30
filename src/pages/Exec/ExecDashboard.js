@@ -59,7 +59,9 @@ class ExecDashboard extends Component {
                         </Grid.Column>
                         <Grid.Column>
                             <Header as='h3' dividing># Of Applications Created Per Day</Header>
-                            <ApplicationTimeSeries data={this.props.exec.application_list} />
+                            <ApplicationTimeSeries data={this.props.exec.application_list} timekey="created_at" />
+                            <Header as='h3' dividing>Check In rate</Header>
+                            <ApplicationTimeSeries data={this.props.exec.application_list} timekey="checked_in_at" />
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
