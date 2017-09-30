@@ -11,6 +11,7 @@ const DayOf = () =>
                 <ul>
                     <li>Need technical help with your project? <a href="https://help.boilermake.org/">help.boilermake.org</a></li>
                     <li>Want to socialize or ask questions, etc?<a href="http://invite.boilermake.org">hop on slack!</a></li>
+                    <li>Want to see prizes?<a href="https://boilermake-v.devpost.com/">hop on slack!</a></li>
                 </ul>
             </div>
         </div>
