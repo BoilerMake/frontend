@@ -35,6 +35,9 @@ let saturday = [{
     start: '8:00 AM',
     name: 'Showers reopen 🚿'
 },{
+    start: '8:00 AM',
+    name: 'Coffee Bar Opens ☕'
+},{
     start: '10:00 AM',
     name: 'A Peek into the Decentralized Future with Blockchains ⛓️',
     info: 'CoRec 2265'
@@ -57,7 +60,7 @@ let saturday = [{
     info: 'CoRec 2265'
 },{
     start: '4:30 PM',
-    name: 'MLH Cup Stacking 🎲'
+    name: 'MLH Cup Stacking 🎲2'
 },{
     start: '6:00 PM',
     name: 'Dinner from Hotbox 🍕',
@@ -68,6 +71,9 @@ let saturday = [{
 },{
     start: '11:59 PM',
     name: 'Showers close🚿'
+},{
+    start: '11:59 PM',
+    name: 'Coffee Bar Closes ☕'
 }];
 
 let sunday = [{
