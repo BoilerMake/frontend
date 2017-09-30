@@ -8,12 +8,12 @@ class Announcements extends Component {
     render () {
         return (
         <div className="announcements">
-            <h1 className="center title">Announcements</h1>
+            <div className="header">Announcements</div>
             <div className="row announcements-container">
                 {this.props.dayof.announcements.map(a=> {
                     let when = moment.utc(a.created_at);
-                    return(<div key={a.id}>
-                        <b>{when.fromNow()} <i>({when.format('ddd, h:mm a')})</i></b>
+                    return(<div key={a.id} className="announcement">
+                        <b className="capitalize">{when.fromNow()} <i>({when.format('ddd, h:mm a')})</i></b>
                         <br/>
                         <p>{a.body}</p>
                     </div>)
