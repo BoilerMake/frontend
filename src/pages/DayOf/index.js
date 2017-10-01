@@ -59,6 +59,7 @@ class DayOf extends Component {
             <a href="https://help.boilermake.org/"><div className="link">Need <b>Technical Help?</b></div></a>
             <a href="http://invite.boilermake.org"><div className="link">Want to <b>socialize?</b></div></a>
             <a href="https://boilermake-v.devpost.com/"><div className="link">Interested in <b>prizes?</b></div></a>
+            <a href="https://www.facebook.com/media/set/?set=a.938985576240526.1073741836.235489296590161&type=1&l=e709772f8e"><div className="link">Want to see <b>photos?</b></div></a>
               <h3 className="center title">{this.state.timerText}</h3>
               <h5 className="center title" style={ { marginTop: '-20px' } }>Left to hack</h5>
           </div>
