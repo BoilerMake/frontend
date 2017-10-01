@@ -67,13 +67,13 @@ let saturday = [{
     info: 'pizza, breadsticks, salad'
 },{
     start: '10:00 PM',
+    name: 'Coffee Bar Closes ☕'
+},{
+    start: '10:00 PM',
     name: 'Donuts! 🍩 '
 },{
     start: '11:59 PM',
     name: 'Showers close🚿'
-},{
-    start: '11:59 PM',
-    name: 'Coffee Bar Closes ☕'
 }];
 
 let sunday = [{
