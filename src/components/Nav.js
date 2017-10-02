@@ -29,7 +29,7 @@ class Nav extends Component {
         <div className="bgwhite navContainer">
           <div className="navLogo">
             <img src={logo} alt='boilermake' className='hammers'/>
-            <NavLink exact to='/home' className='pink logo'>BoilerMake</NavLink>
+            <NavLink exact to='/' className='pink logo'>BoilerMake</NavLink>
           </div>
           <nav className="navBar desktop">
             <NavLink exact to='/about' className='navLink hover'>About</NavLink>

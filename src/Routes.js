@@ -75,8 +75,7 @@ const ContainerSwitcher = withRouter(ContainerSwitcherRoute);
 const Routes = () => (
     <ContainerSwitcher>
       {/*Public Routes*/}
-      <Route exact path="/" component={RedirectToLive}/>
-      <Route path="/home" component={Home}/>
+      <Route exact path="/" component={Home}/>
       <Route path="/dayof" component={RedirectToLive}/>
       <Route path="/live" component={DayOf}/>
       <Route path="/about" component={About}/>
