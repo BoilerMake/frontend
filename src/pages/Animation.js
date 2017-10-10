@@ -70,9 +70,10 @@ class Animation extends Component {
           <h3>Purdue University • September 29 - October 1, 2017</h3>
             {/*Only show Register button if unauth'd user, and register form is not displayed*/}
             {
-              this.props.user.me
-                ? <Link to="/application" className="btn">Go to my Application</Link>
-                : (!register ? <button className="btn" onClick={this.expandLogin}>register</button> : null)
+              // this.props.user.me
+              //   ? <Link to="/application" className="btn">Go to my Application</Link>
+              //   : (!register ? <button className="btn" onClick={this.expandLogin}>register</button> : null)
+                <button className="btn" disabled>Thanks for Coming to BoilerMake V!</button>
             }
         </div>
         {this.state.register ? (
