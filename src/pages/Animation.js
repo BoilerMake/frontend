@@ -3,7 +3,7 @@ import sign from '../assets/images/animation/logo-sign.svg';
 import pillars from '../assets/images/animation/pillars.svg';
 import Register from '../pages/Register/RegisterForm';
 import { SubmissionError } from 'redux-form';
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import apiFetch from '../actions';
 import '../assets/_form.scss';
@@ -59,7 +59,8 @@ class Animation extends Component {
           });
     };
     render() {
-    const { register, loadAnimation, redirectToApplication } = this.state;
+    const { loadAnimation, redirectToApplication } = this.state;
+    // const { register, loadAnimation, redirectToApplication } = this.state;
     console.log('loadAnimation', loadAnimation);
     //redirect to application if they just succesfully registered.
     if (redirectToApplication) return (<Redirect to="/application"/>);
