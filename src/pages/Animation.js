@@ -3,7 +3,7 @@ import sign from '../assets/images/animation/logo-sign.svg';
 import pillars from '../assets/images/animation/pillars.svg';
 import Register from '../pages/Register/RegisterForm';
 import { SubmissionError } from 'redux-form';
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import apiFetch from '../actions';
 import '../assets/_form.scss';
@@ -59,7 +59,8 @@ class Animation extends Component {
           });
     };
     render() {
-    const { register, loadAnimation, redirectToApplication } = this.state;
+    const { loadAnimation, redirectToApplication } = this.state;
+    // const { register, loadAnimation, redirectToApplication } = this.state;
     console.log('loadAnimation', loadAnimation);
     //redirect to application if they just succesfully registered.
     if (redirectToApplication) return (<Redirect to="/application"/>);
@@ -70,9 +71,10 @@ class Animation extends Component {
           <h3>Purdue University • September 29 - October 1, 2017</h3>
             {/*Only show Register button if unauth'd user, and register form is not displayed*/}
             {
-              this.props.user.me
-                ? <Link to="/application" className="btn">Go to my Application</Link>
-                : (!register ? <button className="btn" onClick={this.expandLogin}>register</button> : null)
+              // this.props.user.me
+              //   ? <Link to="/application" className="btn">Go to my Application</Link>
+              //   : (!register ? <button className="btn" onClick={this.expandLogin}>register</button> : null)
+                <button className="btn" disabled>Thanks for Coming to BoilerMake V!</button>
             }
         </div>
         {this.state.register ? (
