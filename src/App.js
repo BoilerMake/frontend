@@ -20,7 +20,7 @@ const App = () => (
                 transitionOut="fadeOut"
              />
           </div>
-        <Footer />
+        {/* <Footer /> */}
         </div>
     </BrowserRouter>
 );

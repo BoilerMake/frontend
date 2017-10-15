@@ -1,0 +1,54 @@
+.offseason {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+	justify-content: center;
+  background: linear-gradient(30deg,#192a50 0,#ad2077);
+
+  .lead {
+    padding: 20px;
+    text-align: center;
+
+    .neonlogo {
+      background: url('images/boilermake-logo-neon.png');
+      width: 150px;
+      height: 150px;
+      background-size: contain;
+      margin: auto;
+    }
+    h1 {
+      margin: 10px 0;
+    }
+    p {
+      width: 400px;
+      color: $white;
+      line-height: 2em;
+    }
+    button {
+      white-space: nowrap;
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 14px;
+      box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+      background: #fff;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .025em;
+      color: #6772e5;
+      text-decoration: none;
+      transition: all .15s ease;
+      border: none;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+    button:hover {
+      color: #7795f8;
+      box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    }
+  }
+
+}
