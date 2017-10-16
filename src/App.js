@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import AnalyticsListener from './components/AnalyticsListener';
 import Routes from './Routes';
-import Footer from './components/Footer';
 import ReduxToastr from 'react-redux-toastr'
 
 const App = () => (
@@ -20,7 +19,7 @@ const App = () => (
                 transitionOut="fadeOut"
              />
           </div>
-        <Footer />
+        {/* <Footer /> */}
         </div>
     </BrowserRouter>
 );

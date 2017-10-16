@@ -5,8 +5,10 @@ import {
 import { connect } from 'react-redux'
 
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 //STATIC PAGES
+import Offseason from './pages/Offseason';
 import Home from './pages/Landing';
 import About from './pages/Info/About';
 import Code from './pages/Info/Code';
@@ -48,9 +50,13 @@ const PrivateRoute = ({ component: Component, isAuthenticated, isAllowed, ...res
 );
 
 const ContainerSwitcherRoute = ({ children, location, ...rest }) => {
-    return location.pathname.includes("/exec")
-        ? (<ExecContainer>{children}</ExecContainer>)
-        : (<div><Nav/>{children}</div>);
+    if(location.pathname.includes('/exec')) {
+      return (<ExecContainer>{children}</ExecContainer>);
+    } else if (location.pathname === '/') {
+      return (<div>{children}</div>);
+    } else {
+      return (<div><Nav/>{children}<Footer/></div>);
+    }
 };
 
 const RedirectToLive = () => <Redirect to="/live"/>
@@ -75,7 +81,8 @@ const ContainerSwitcher = withRouter(ContainerSwitcherRoute);
 const Routes = () => (
     <ContainerSwitcher>
       {/*Public Routes*/}
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/" component={Offseason}/>
+      <Route exact path="/2017" component={Home}/>
       <Route path="/dayof" component={RedirectToLive}/>
       <Route path="/live" component={DayOf}/>
       <Route path="/about" component={About}/>
