@@ -9,6 +9,7 @@
   .lead {
     padding: 20px;
     text-align: center;
+    box-sizing: border-box;
 
     .neonlogo {
       background: url('images/boilermake-logo-neon.png');
@@ -21,7 +22,7 @@
       margin: 10px 0;
     }
     p {
-      width: 400px;
+      max-width: 400px;
       color: $white;
       line-height: 2em;
     }

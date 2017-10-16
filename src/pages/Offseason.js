@@ -10,7 +10,7 @@ const Offseason = () => (
       </p>
       <button className="application-link">Applications Opening soon!</button>
       <p>
-        Questions? team@boilermake.org
+        Questions? team@boilermake.org 
       </p>
     </div>
   </div>
