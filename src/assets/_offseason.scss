@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
 	justify-content: center;
-  background: linear-gradient(30deg,#192a50 0,#ad2077);
+  background: #000;
 
   .lead {
     padding: 20px;
@@ -12,14 +12,23 @@
     box-sizing: border-box;
 
     .neonlogo {
-      background: url('images/boilermake-logo-neon.png');
+      background: url('images/white-hammers.svg');
       width: 150px;
       height: 150px;
       background-size: contain;
       margin: auto;
+      background-repeat: no-repeat;
+      border-radius: 150px;
+      border: 5px solid #fff;
+      background-position: center;
+      background-size: 70%;
     }
     h1 {
       margin: 10px 0;
+      font-size: 20px;
+      color: #fff;
+      font-family: monospace;
+      margin-top: 36px;
     }
     p {
       max-width: 400px;
