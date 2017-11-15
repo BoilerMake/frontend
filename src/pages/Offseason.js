@@ -8,9 +8,7 @@ const Offseason = () => (
       <p>
         As the sun sets on BoilerMake V, we're looking for passionate students to join the BoilerMake VI (Fall 2018) Exec Board.
       </p>
-      <a href="http://interview.boilermake.org/">
-        <button className="application-link">Apply Now!</button>
-      </a>
+      <button className="application-link">Applications are closed</button>
       <p>
         Questions? team@boilermake.org
       </p>
