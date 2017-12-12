@@ -54,7 +54,7 @@
 
     h1 {
       font-size: 100px;
-      font-family: 'Moon';
+      font-family: 'Futura';
       text-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
   }
@@ -65,6 +65,11 @@
     box-sizing: border-box;
     margin: 0 auto;
     float: none;
+    font-family: 'Futura';
+
+    h2 {
+      text-align: center;
+    }
 
     p {
       color: #000000;
