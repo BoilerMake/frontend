@@ -12,7 +12,7 @@ const Offseason = () => (
       </div>
     </div>
     <div className="main-content">
-      <h2>History of Boilermake</h2>
+      <h2>History of BoilerMake</h2>
       <p>
         BoilerMake I: February 8-10th,  2014
       </p>
