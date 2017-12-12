@@ -1,64 +1,84 @@
 .offseason {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-	justify-content: center;
-  background: #000;
-
-  .lead {
-    padding: 20px;
-    text-align: center;
+  nav {
+    width: 100%;
+    height: 80px;
+    background: #000000;
+    padding-top: 12px;
     box-sizing: border-box;
 
-    .neonlogo {
+    .nav-hammers {
       background: url('images/white-hammers.svg');
-      width: 150px;
-      height: 150px;
-      background-size: contain;
-      margin: auto;
+      width: 50px;
+      height: 50px;
+      border: 3px solid #fff;
+      border-radius: 100%;
       background-repeat: no-repeat;
-      border-radius: 150px;
-      border: 5px solid #fff;
       background-position: center;
-      background-size: 70%;
-    }
-    h1 {
-      margin: 10px 0;
-      font-size: 20px;
-      color: #fff;
-      font-family: monospace;
-      margin-top: 36px;
-    }
-    p {
-      max-width: 400px;
-      color: $white;
-      line-height: 2em;
-    }
-    button {
-      white-space: nowrap;
-      display: inline-block;
-      height: 40px;
-      line-height: 40px;
-      padding: 0 14px;
-      box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-      background: #fff;
-      border-radius: 4px;
-      font-size: 15px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .025em;
-      color: #6772e5;
-      text-decoration: none;
-      transition: all .15s ease;
-      border: none;
-      cursor: pointer;
-      margin: 0 10px;
-    }
-    button:hover {
-      color: #7795f8;
-      box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+      margin: auto;
+      background-size: 60%;
     }
   }
 
+  .lead {
+    background: url('images/cover.jpg');
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 0;
+    text-align: center;
+    color: #ffffff;
+    line-height: 0px;
+    display: flex;
+    position: relative;
+
+    .gradient-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(135deg,#192a50,#372869 34%,#ee2a7c 69%,#f69581);
+      opacity: .5;
+      z-index: 0;
+    }
+
+    .lead-content {
+      justify-content: center;
+      align-items: center;
+      display: inherit;
+      width: 100%;
+      text-align: center;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 100px;
+      font-family: 'Moon';
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+  }
+
+  .main-content {
+    max-width: 960px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    float: none;
+
+    p {
+      color: #000000;
+      line-height: 1.6em;
+    }
+
+    p:nth-child(even) {
+      font-weight: bold;
+    }
+  }
+
+  footer {
+    background: #000000;
+    width: 100%;
+    height: 200px;
+  }
 }
