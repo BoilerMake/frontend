@@ -8,7 +8,7 @@ const Offseason = () => (
     <div className="lead">
       <div className="gradient-overlay" />
       <div className="lead-content">
-        <h1>Boilermake</h1>
+        <h1>BoilerMake</h1>
       </div>
     </div>
     <div className="main-content">
