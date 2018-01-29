@@ -98,3 +98,15 @@
     height: 200px;
   }
 }
+@media (max-width: 960px) {
+  .main-content {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 640px) {
+  .offseason .lead h1 {
+    font-size: 50px
+  }
+}

@@ -12,7 +12,7 @@ const Offseason = () => (
           <h1><span className="thin">Boiler</span><span className="thick">Make</span></h1>
         </div>
         <div>
-          <h2>36 Hours of Hacking @ Purdue Univeristy</h2>          
+          <h2>36 Hours of Hacking @ Purdue Univeristy</h2>
         </div>
       </div>
     </div>
