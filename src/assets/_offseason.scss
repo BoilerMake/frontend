@@ -50,12 +50,22 @@
       width: 100%;
       text-align: center;
       z-index: 1;
+      flex-direction: column;
     }
 
     h1 {
       font-size: 100px;
-      font-family: 'Futura';
-      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+      // text-shadow: 0 0 10px rgba(0,0,0,0.5);
+      text-transform: uppercase;
+
+      .thin {
+        font-family: 'Futura';
+        font-weight: lighter;
+      }
+      .thick {
+        font-family: 'Futura';
+        font-weight: bold;
+      }
     }
   }
 
@@ -74,6 +84,7 @@
     p {
       color: #000000;
       line-height: 1.6em;
+      font-weight: 'Futura' !important;
     }
 
     p:nth-child(even) {
