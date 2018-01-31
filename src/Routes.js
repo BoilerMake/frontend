@@ -9,7 +9,9 @@ import Footer from './components/Footer';
 
 //STATIC PAGES
 import Offseason from './pages/Offseason';
-import Home from './pages/Landing';
+import Home from './pages/Home';
+import Hackers from './pages/Hackers';
+import Sponsors from './pages/Sponsors';
 import About from './pages/Info/About';
 import Code from './pages/Info/Code';
 import Contact from './pages/Info/Contact';
@@ -52,7 +54,7 @@ const PrivateRoute = ({ component: Component, isAuthenticated, isAllowed, ...res
 const ContainerSwitcherRoute = ({ children, location, ...rest }) => {
     if(location.pathname.includes('/exec')) {
       return (<ExecContainer>{children}</ExecContainer>);
-    } else if (location.pathname === '/') {
+    } else if (location.pathname === '/404') {
       return (<div>{children}</div>);
     } else {
       return (<div><Nav/>{children}<Footer/></div>);
@@ -81,11 +83,14 @@ const ContainerSwitcher = withRouter(ContainerSwitcherRoute);
 const Routes = () => (
     <ContainerSwitcher>
       {/*Public Routes*/}
-      <Route exact path="/" component={Offseason}/>
-      <Route exact path="/2017" component={Home}/>
+      <Route exact path="/" component={Home}/>
+      <Route exact path="/hackers" component={Hackers}/>
+      <Route exact path="/sponsors" component={Sponsors}/>
+      <Route path="/about" component={About}/>
+
+      {/* <Route exact path="/2017" component={Home}/> */}
       <Route path="/dayof" component={RedirectToLive}/>
       <Route path="/live" component={DayOf}/>
-      <Route path="/about" component={About}/>
       <Route path="/code" component={Code}/>
       <Route path="/contact" component={Contact}/>
       <Route path="/faq" component={FAQ}/>
