@@ -24,9 +24,51 @@ class Nav extends Component {
   }
   render() {
     const { menu } = this.state;
-    const { isLoggedIn, isExec } = this.props;
-      return (
-        <div className="bgwhite navContainer">
+
+    return (
+      <div className="navContainer">
+        <div className="navLogo">
+          <a href='/'>
+            <img src={logo} alt="BoilerMake logo" className="hammers"/>
+          </a>
+        </div>
+        <nav className="navLinks desktop">
+          <NavLink exact to='/hackers' className='navLink'>Hackers</NavLink>
+          <NavLink exact to='/sponsors' className='navLink'>Sponsors</NavLink>
+          <NavLink exact to='/about' className='navLink'>About</NavLink>
+          <NavLink exact to='/faq' className='navLink'>FAQ</NavLink>
+        </nav>
+        {/* Not exactly navLinks, but it holds the same place on the page */}
+        <nav className="navLinks mobile">
+          <button onClick={this.toggleMenu}>
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
+        </nav>
+        { menu ? (
+          <div className="hamburgerMenu mobile" onClick={this.handleClick}>
+            <ul>
+              <li>
+                <NavLink exact to='/hackers' className='navLink'>Hackers</NavLink>
+              </li>
+              <li>
+                <NavLink exact to='/sponsors' className='navLink'>Sponsors</NavLink>
+              </li>
+              <li>
+                <NavLink exact to='/about' className='navLink'>About</NavLink>
+              </li>
+              <li>
+                <NavLink exact to='/faq' className='navLink'>FAQ</NavLink>
+              </li>
+            </ul>
+          </div>
+          ) : null
+        }
+      </div>
+    );
+      /*return (
+        <div className="navContainer">
           <div className="navLogo">
             <img src={logo} alt='boilermake' className='hammers'/>
             <NavLink exact to='/' className='pink logo'>BoilerMake</NavLink>
@@ -74,7 +116,7 @@ class Nav extends Component {
           ) : null
           }
         </div>
-      );
+      );*/
     }
 }
 

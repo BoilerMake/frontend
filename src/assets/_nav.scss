@@ -2,6 +2,104 @@
 
 .navContainer {
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 140px;
+  padding-right: 140px;
+  box-sizing: border-box;
+}
+
+.navLogo {
+  display: inline-block;
+}
+
+.hammers {
+  width: 40px;
+  height: auto;
+}
+
+.navLinks {
+  float: right;
+  position: relative;
+  transform: translateY(50%);
+
+  // Button and bars for hamburgerMenu
+  button {
+    background: none;
+    border: none;
+
+    .bar {
+      display: block;
+      height: 2px;
+      width: 22px;
+      border-radius: 1px;
+      background-color: #000; // TODO: set this to #fff when body is no longer white
+    }
+
+    .bar:not(:first-child) {
+      margin-top: 5px;
+    }
+  }
+}
+
+.navLink {
+  width: 72px;
+	height: 25px;
+  margin: 0 10px;
+	font-family: Futura;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 0.4px;
+  text-decoration: none;
+	color: #000; // TODO: set this to #fff when body is no longer white
+}
+
+.hamburgerMenu {
+  .navLink {
+    margin: 0;
+  }
+
+  ul {
+    line-height: 200%;
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 820px) {
+  .navContainer {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media screen and (max-width: 691px) {
+  .navContainer {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+// Mobile media query (show hamburger menu)
+@media screen and (max-width: 600px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}
+
+/*
+@import "vars";
+
+.navContainer {
+  width: 100%;
   padding: 20px;
   // border-bottom: 1px solid #DBE1E8;
   font-family: $font-title;
@@ -164,3 +262,4 @@
     display: block;
   }
 }
+*/
