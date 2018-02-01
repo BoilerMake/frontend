@@ -1,5 +1,31 @@
 @import "vars";
+// Home
+.colorBlock {
+  width: 100%;
+  padding: 40px 0;
+  color: #fff;
+  display: block;
 
+  &.pink {
+    background: #f25f89;
+  }
+  &.orange {
+    background: #f49762;
+  }
+}
+.home {
+  h2 {
+    font-weight: 800;
+    font-size: 30px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 1.6em;
+    font-weight: bold;
+  }
+}
+
+// Faq
 .faq {
   max-width: 320px;
   .logo {
@@ -74,4 +100,13 @@
     }
   }
 
+}
+// About
+.paragraph {
+  font-size: 16px;
+  line-height: 1.6em;
+  color: $darkBlue;
+  max-width: 700px;
+  margin: 0px auto;
+  margin-bottom: 35px;
 }

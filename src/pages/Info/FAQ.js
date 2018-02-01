@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Question from '../../components/Question';
 import logo from '../../assets/images/faq.svg';
-import '../../assets/faq.scss';
 
 const questions = [
   {
