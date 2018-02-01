@@ -1,16 +1,13 @@
 @import "vars";
 
 .navContainer {
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
   padding-left: 140px;
   padding-right: 140px;
-  box-sizing: border-box;
-}
-
-.navLogo {
-  display: inline-block;
 }
 
 .hammers {
@@ -19,16 +16,13 @@
 }
 
 .navLinks {
-  float: right;
-  position: relative;
-  transform: translateY(50%);
-
+  margin-left: auto;
   // Button and bars for hamburgerMenu
   button {
     background: none;
     border: none;
 
-    .bar {
+    .hamburgerMenuBar {
       display: block;
       height: 2px;
       width: 22px;
@@ -36,15 +30,13 @@
       background-color: #000; // TODO: set this to #fff when body is no longer white
     }
 
-    .bar:not(:first-child) {
+    .hamburgerMenuBar:not(:first-child) {
       margin-top: 5px;
     }
   }
 }
 
 .navLink {
-  width: 72px;
-	height: 25px;
   margin: 0 10px;
 	font-family: Futura;
 	font-size: 16px;
@@ -55,6 +47,8 @@
 }
 
 .hamburgerMenu {
+  flex-basis: calc(100%);
+
   .navLink {
     margin: 0;
   }
@@ -79,8 +73,8 @@
 
 @media screen and (max-width: 691px) {
   .navContainer {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
@@ -91,6 +85,11 @@
   }
 
   .mobile {
-    display: block;
+    display: flex;
+  }
+
+  .navContainer {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

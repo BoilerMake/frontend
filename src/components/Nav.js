@@ -36,9 +36,9 @@ class Nav extends Component {
         {/* Not exactly navLinks, but it holds the same place on the page */}
         <nav className="navLinks mobile">
           <button onClick={this.toggleMenu}>
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
+            <span className="hamburgerMenuBar"></span>
+            <span className="hamburgerMenuBar"></span>
+            <span className="hamburgerMenuBar"></span>
           </button>
         </nav>
         { menu ? (
