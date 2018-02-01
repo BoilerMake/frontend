@@ -1,13 +1,6 @@
 @import 'nav';
 @import 'footer';
-
-@import 'landing';
-@import 'application';
-@import 'about';
-@import 'schedule';
-@import 'announcements';
-@import 'live';
-@import 'offseason';
+@import 'pages';
 @import 'columns';
 @import 'uicomponents';
 
@@ -57,7 +50,6 @@ body {
 }
 // FONT COLORS
 .white { color: $white; }
-.pink { color: $pink; }
 .lightBlue { color: $lightBlue; }
 .darkBlue { color: $darkBlue; }
 
@@ -123,36 +115,6 @@ p {
   display: block;
   height: 0;
   clear: both;
-}
-.col-6 {
-  width: 50%;
-  float: left;
-  margin: 0;
-  box-sizing: border-box;
-
-  &:first-child {
-    padding-right: 8px;
-  }
-  &:last-child {
-    padding-left: 8px;
-  }
-}
-.col-4 {
-  width: 33%;
-  float: left;
-  margin: 0;
-  box-sizing: border-box;
-}
-@media (max-width: 768px) {
-  .col-6 {
-    width: 100%;
-    &:last-child {
-      padding-left: 0;
-    }
-  }
-  .col-4 {
-    width: 100%;
-  }
 }
 
 // PADDING & MARGIN STANDARDS
