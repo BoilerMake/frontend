@@ -1,13 +1,15 @@
 @import "vars";
 
 .navContainer {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding-left: 140px;
-  padding-right: 140px;
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: 100;
 }
 
 .hammers {
@@ -66,15 +68,11 @@
 
 @media screen and (max-width: 820px) {
   .navContainer {
-    padding-left: 80px;
-    padding-right: 80px;
   }
 }
 
 @media screen and (max-width: 691px) {
   .navContainer {
-    padding-left: 40px;
-    padding-right: 40px;
   }
 }
 
@@ -89,7 +87,5 @@
   }
 
   .navContainer {
-    padding-left: 20px;
-    padding-right: 20px;
   }
 }

@@ -1,3 +1,38 @@
 .header {
-  background: red;
+  position: relative;
+  margin-top: -125px;
+  top: 0;
+  background-repeat: no-repeat;
+  clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
+  margin-bottom: 20px;
+
+  .gradient {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.7;
+    z-index: 0;
+  }
+
+  .headerContent {
+    padding: 150px 0;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #ffffff;
+
+    h1 {
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin: 10px 0;
+      text-shadow: 0 0 10px rgba(0,0,0,0.2);
+      font-size: 60px;
+    }
+
+    h2 {
+      margin: 10px 0;
+      text-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+  }
 }
