@@ -9,6 +9,7 @@
 @import 'live';
 @import 'offseason';
 @import 'columns';
+@import 'uicomponents';
 
 @import 'mobile';
 
@@ -25,7 +26,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: $font-body;
-  color: $darkBlue;
+  color: $black;
 }
 .section {
   padding-bottom: 20px;
@@ -90,6 +91,12 @@ p {
 }
 .v-center { align-items: center; }
 .h-center { justify-content: center; }
+.max-width {
+  max-width: 1180px;
+  padding: 20px 0;
+  margin: auto;
+  box-sizing: border-box;
+}
 
 // CONTAINERS
 .page {

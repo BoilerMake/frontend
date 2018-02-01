@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import logo from '../assets/images/hammers.svg';
 
 class Nav extends Component {
@@ -21,45 +21,45 @@ class Nav extends Component {
     const { menu } = this.state;
 
     return (
-      <div className="navContainer">
-        <div className="navLogo">
-          <a href='/'>
-            <img src={logo} alt="BoilerMake logo" className="hammers"/>
-          </a>
-        </div>
-        <nav className="navLinks desktop">
-          <NavLink exact to='/hackers' className='navLink'>Hackers</NavLink>
-          <NavLink exact to='/sponsors' className='navLink'>Sponsors</NavLink>
-          <NavLink exact to='/about' className='navLink'>About</NavLink>
-          <NavLink exact to='/faq' className='navLink'>FAQ</NavLink>
-        </nav>
-        {/* Not exactly navLinks, but it holds the same place on the page */}
-        <nav className="navLinks mobile">
-          <button onClick={this.toggleMenu}>
-            <span className="hamburgerMenuBar"></span>
-            <span className="hamburgerMenuBar"></span>
-            <span className="hamburgerMenuBar"></span>
-          </button>
-        </nav>
-        { menu ? (
-          <div className="hamburgerMenu mobile" onClick={this.handleClick}>
-            <ul>
-              <li>
-                <NavLink exact to='/hackers' className='navLink'>Hackers</NavLink>
-              </li>
-              <li>
-                <NavLink exact to='/sponsors' className='navLink'>Sponsors</NavLink>
-              </li>
-              <li>
-                <NavLink exact to='/about' className='navLink'>About</NavLink>
-              </li>
-              <li>
-                <NavLink exact to='/faq' className='navLink'>FAQ</NavLink>
-              </li>
-            </ul>
+      <div className="max-width">
+        <div className="navContainer">
+          <div className="navLogo">
+            <Link to="/"><img src={logo} alt="BoilerMake logo" className="hammers"/></Link>
           </div>
-          ) : null
-        }
+          <nav className="navLinks desktop">
+            <NavLink exact to='/hackers' className='navLink'>Hackers</NavLink>
+            <NavLink exact to='/sponsors' className='navLink'>Sponsors</NavLink>
+            <NavLink exact to='/about' className='navLink'>About</NavLink>
+            <NavLink exact to='/faq' className='navLink'>FAQ</NavLink>
+          </nav>
+          {/* Not exactly navLinks, but it holds the same place on the page */}
+          <nav className="navLinks mobile">
+            <button onClick={this.toggleMenu}>
+              <span className="hamburgerMenuBar"></span>
+              <span className="hamburgerMenuBar"></span>
+              <span className="hamburgerMenuBar"></span>
+            </button>
+          </nav>
+          { menu ? (
+            <div className="hamburgerMenu mobile" onClick={this.handleClick}>
+              <ul>
+                <li>
+                  <NavLink exact to='/hackers' className='navLink'>Hackers</NavLink>
+                </li>
+                <li>
+                  <NavLink exact to='/sponsors' className='navLink'>Sponsors</NavLink>
+                </li>
+                <li>
+                  <NavLink exact to='/about' className='navLink'>About</NavLink>
+                </li>
+                <li>
+                  <NavLink exact to='/faq' className='navLink'>FAQ</NavLink>
+                </li>
+              </ul>
+            </div>
+            ) : null
+          }
+        </div>
       </div>
     );
   }
