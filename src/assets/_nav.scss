@@ -29,7 +29,7 @@
       height: 2px;
       width: 22px;
       border-radius: 1px;
-      background-color: #000; // TODO: set this to #fff when body is no longer white
+      background-color: #fff;
     }
 
     .hamburgerMenuBar:not(:first-child) {
@@ -45,7 +45,7 @@
 	font-weight: bold;
 	letter-spacing: 0.4px;
   text-decoration: none;
-	color: #000; // TODO: set this to #fff when body is no longer white
+	color: #fff;
 }
 
 .hamburgerMenu {
