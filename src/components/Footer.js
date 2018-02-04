@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 const Footer = () => (
   <div className="footer-wrapper">
-    <div className="footer">
+    <div className="footer max-width">
       <div className="col-3">
         <h4>Social</h4>
         <ul>
