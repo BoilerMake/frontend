@@ -45,11 +45,6 @@
   transition: .1s;
   background: #ffffff;
   line-height: 1.6em;
-
-  &.hover:hover {
-    transform: scale(1.01);
-    transition: .1s;
-  }
 }
 a button {text-decoration: none;}
 button {
@@ -67,7 +62,7 @@ button {
   text-decoration: none;
 
   &:hover {
-    transform: scale(1.01);
+    transform: translateY(-1px);
     transition: .1s;
     cursor: pointer;
   }
