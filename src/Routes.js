@@ -8,7 +8,6 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 
 //STATIC PAGES
-import Offseason from './pages/Offseason';
 import Home from './pages/Home';
 import Hackers from './pages/Hackers';
 import Sponsors from './pages/Sponsors';

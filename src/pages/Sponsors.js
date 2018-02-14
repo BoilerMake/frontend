@@ -8,7 +8,6 @@ import C1 from '../assets/images/sponsors/capital_one.svg';
 import MDB from '../assets/images/sponsors/MongoDB.png';
 import QC from '../assets/images/sponsors/Qualcomm.svg';
 import MM from '../assets/images/sponsors/mixmax.svg';
-import A from '../assets/images/sponsors/apple.png';
 import G from '../assets/images/sponsors/google.png';
 import MS from '../assets/images/sponsors/microsoft.png';
 import SG from '../assets/images/sponsors/sendgrid.png';

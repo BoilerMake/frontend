@@ -1,8 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
 import HeaderImg from '../assets/images/cover.jpg';
-import Img1 from '../assets/images/boilermake-logo-neon.png';
-import { Link } from 'react-router-dom';
 import Stories from '../components/Home_Stories';
 import PreFooter from '../components/Home_PreFooter';
 import BigB from '../assets/images/b.svg';
