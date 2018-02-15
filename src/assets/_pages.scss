@@ -21,18 +21,30 @@
     font-size: 30px;
   }
   p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6em;
     font-weight: bold;
   }
 }
 .middleBreak {
-  // background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-  background: #F0F7FD;
   padding: 100px 0;
   margin: 50px auto;
-  // color: #fff;
   clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+  &.dark {
+    background-image: linear-gradient(to top, #181743 0%, #3C3A6C 100%);
+  }
+  &.light {
+    background: #F0F7FD;
+  }
+  &.home {
+    margin-top: -70px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  }
+}
+@media (max-width: 780px) {
+  .middleBreak {
+    clip-path: none;
+  }
 }
 .stories {
   position: relative;

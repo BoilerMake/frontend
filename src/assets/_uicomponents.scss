@@ -44,6 +44,12 @@
   transition: .1s;
   background: #ffffff;
   line-height: 1.6em;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  &.orange-shadow {
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
 }
 a button {text-decoration: none;}
 button {

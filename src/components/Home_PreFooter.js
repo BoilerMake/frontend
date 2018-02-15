@@ -9,9 +9,8 @@ const PreFooter = () => (
         <div className="col-8 home">
           <h2>Make Something Awesome</h2>
           <p>
-            Lorem ipsum solor sit amit. Lorem ipsum solor sit amit. Lorem ipsum
-            solor sit amit. Lorem ipsum solor sit amit. Lorem ipsum solor sit
-            amit. Lorem ipsum solor sit amit.
+            BoilerMake provides the opportunity for 500 hackers, every year, to
+            explore and create new ideas. 
           </p>
           <Link to="/hackers"><button>Read More</button></Link>
         </div>

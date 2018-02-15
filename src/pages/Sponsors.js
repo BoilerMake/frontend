@@ -35,7 +35,7 @@ const Sponsors = () => (
         </p>
       </div>
     </div>
-    <div className="middleBreak">
+    <div className="middleBreak light">
       <div className="max-width home">
         <h2 style={{ textAlign: 'center' }}>Put your name on the BoilerMake Legacy</h2>
         <div className="flex v-center h-center">
@@ -75,7 +75,7 @@ const Sponsors = () => (
         </div>
       </div>
     </div>
-    <div className="max-width home flex">
+    <div className="max-width home flex" style={{marginBottom: '50px'}}>
       <div className="col-8 paddingr">
         <h2>Additional Benefits</h2>
         <p>
@@ -88,7 +88,7 @@ const Sponsors = () => (
         <button>sponsorship@boilermake.org</button>
       </div>
     </div>
-    <Stories />
+    {/* <Stories /> */}
   </div>
 );
 

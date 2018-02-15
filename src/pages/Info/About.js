@@ -16,7 +16,7 @@ const About = () => (
     <a href="http://www.nicky.photos/Events/BoilerMake-4/i-dGvGsSB/A">
       <img width="100%" src={Organizers} alt="Boilermake 4 Team"/>
     </a>
-    <p className="paragraph">
+    <p className="paragraph" style={{marginTop: '20px'}}>
         This year, 24 students from Purdue University
         have come together to host an unforgettable hackathon. All the work
         that has gone into planning this event—everything from setting up the
