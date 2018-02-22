@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import HeaderImg from '../assets/images/cover.jpg';
-import Stories from '../components/Home_Stories';
+// import Stories from '../components/Home_Stories';
 import PreFooter from '../components/Home_PreFooter';
 import BigB from '../assets/images/b.svg';
 import one from '../assets/images/gallery/1.jpg';
@@ -19,7 +19,7 @@ const Home = () => (
       <h2>36 Hours of Hacking at Purdue University</h2>
     </Header>
     <div className="max-width home flex">
-      <div className="col-8 paddingr" style={{margin: '30px auto'}}>
+      <div className="col-8 paddingr" style={{margin: '30px'}}>
         <h2>Create, Meet, Learn, & Build</h2>
         <p>
           For the past five years, we've brought in 500 students from across the
@@ -45,20 +45,19 @@ const Home = () => (
     </div>
     <div className="middleBreak light home">
       <div className="max-width home">
-        <h2 style={{textAlign: 'center'}}>Here's a heading to make us seem profound</h2>
-        <div className="flex padding" style={{maxWidth: '600px', margin: '0 auto'}}>
+        <h2 style={{textAlign: 'center'}}>BoilerMake is here to help you grow</h2>
+        <div className="flex padding" style={{maxWidth: '650px', margin: '0 auto'}}>
           <div className="col-8" style={{textAlign: 'right'}}>
             <h3>Create awesome projects</h3>
             <p>
-              Lorem ipsum solor sit amit. Lorem ipsum solor sit amit. Lorem ipsum
-              solor sit amit. Lorem ipsum solor sit amit. Lorem ipsum solor sit
-              amit. Lorem ipsum solor sit amit.
+              Be surrounded with hundreds of students and sponsors who are all
+              incredibly passionate about building fun, new, or innovative projects.
             </p>
-            <h3>Grow as a person</h3>
+            <h3>Learn new things</h3>
             <p>
-              Lorem ipsum solor sit amit. Lorem ipsum solor sit amit. Lorem ipsum
-              solor sit amit. Lorem ipsum solor sit amit. Lorem ipsum solor sit
-              amit. Lorem ipsum solor sit amit.
+              Not only does BoilerMake encourage building awesome projects, we
+              love being able to provide an atmosphere where you can learn new
+              things.
             </p>
           </div>
           <div className="col-4" style={{textAlign: 'center', justifyContent: 'center', display: 'flex'}}>
@@ -83,22 +82,29 @@ const Home = () => (
     </div>
     <div className="max-width home" style={{margin: '150px auto'}}>
       <div className="col-8">
-        <h2>Who knows, maybe something else down here</h2>
+        <h2>So what else?</h2>
         <p>
-          Lorem ipsum dolor amet cred schlitz street art meditation kombucha
-          readymade, plaid 3 wolf moon skateboard taiyaki keytar. Pabst fam
-          farm-to-table hell of live-edge letterpress. Pinterest scenester
-          cornhole, DIY microdosing fashion axe prism green juice lumbersexual.
-          Letterpress organic master cleanse helvetica, polaroid gastropub yr
-          thundercats XOXO hexagon schlitz jean shorts bicycle rights shoreditch.
+          BoilerMake offers a number of perks to make an amazing weekend. To get
+          the weekend started, we provide busses to a number of schools to make
+          travelling a no-brainer. In the past, we’ve sent busses to UIUC, UMich,
+          and others.
         </p>
         <p>
-          La croix man braid enamel pin, seitan messenger bag hoodie church-key
-          vaporware live-edge. Normcore franzen tofu cornhole. Vape literally
-          swag drinking vinegar messenger bag godard. Butcher bitters before
-          they sold out, plaid keytar letterpress narwhal. Chillwave craft beer
-          subway tile, mixtape squid next level activated charcoal keytar
-          thundercats farm-to-table cred hammock franzen.
+          When you arrive, you will be given a swag bag that usually includes a
+          t-shirt, a watter bottle, and stickers. Each year we have some special
+          swag. BoilerMake 5 saw a fidget spinner. BoilerMake 2 saw a custom
+          designed dev board.
+        </p>
+        <p>
+          Throughout the weekend, we provide amazing catered meals for breakfast,
+          lunch, and dinner. We also have an all you can drink coffee, latte, etc.
+          bar and snacks passed out during the event.
+        </p>
+        <p>
+          At the end we have an awards ceremony where over $10,000 in prizes are
+          given out. Last year winning teams received DJI Phantoms or Nintendo
+          Switches. In addition to BoilerMake prizes, sponsors also usually have
+          prizes for their categories.
         </p>
       </div>
     </div>

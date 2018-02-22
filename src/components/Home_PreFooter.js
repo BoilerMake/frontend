@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import HeaderImg from '../assets/images/hacker.jpg';
+// import HeaderImg from '../assets/images/hacker.jpg';
 
 const PreFooter = () => (
   <div className="flex">
@@ -10,7 +10,7 @@ const PreFooter = () => (
           <h2>Make Something Awesome</h2>
           <p>
             BoilerMake provides the opportunity for 500 hackers, every year, to
-            explore and create new ideas. 
+            explore and create new ideas.
           </p>
           <Link to="/hackers"><button>Read More</button></Link>
         </div>

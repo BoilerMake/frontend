@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import Stories from '../components/Home_Stories';
+// import Stories from '../components/Home_Stories';
 import HeaderImg from '../assets/images/sponsor.jpg';
 
 import BB from '../assets/images/sponsors/bloomberg.svg';

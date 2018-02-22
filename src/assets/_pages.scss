@@ -25,10 +25,15 @@
     line-height: 2em;
   }
 }
+.images {
+  .col-3:nth-child(odd) {
+    padding-top: 30px;
+  }
+}
 .middleBreak {
-  padding: 150px 0;
+  padding: 100px 0;
   margin: 50px auto;
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  // clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
   &.dark {
     background-image: linear-gradient(to top, #181743 0%, #3C3A6C 100%);
   }
@@ -37,7 +42,7 @@
   }
   &.home {
     margin-top: -70px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    // box-shadow: 0 0 20px rgba(0,0,0,0.4);
   }
 }
 @media (max-width: 780px) {
