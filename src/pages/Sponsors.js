@@ -39,37 +39,37 @@ const Sponsors = () => (
       <div className="max-width home">
         <h2 style={{ textAlign: 'center' }}>Put your name on the BoilerMake Legacy</h2>
         <div className="flex v-center h-center">
-          <div className="col-3 padding">
+          <div className="col-3-no-break padding">
             <img src={BB} width="100%" alt="Bloomberg"/>
           </div>
-          <div className="col-3 padding">
+          <div className="col-3-no-break padding">
             <img src={G} width="100%" alt="Google"/>
           </div>
-          <div className="col-3 padding">
+          <div className="col-3-no-break padding">
             <img src={C1} width="100%" alt="Capital One"/>
           </div>
-          <div className="col-3 padding">
+          <div className="col-3-no-break padding">
             <img src={MDB} width="100%" alt="MongoDB"/>
           </div>
-          <div className="col-1 padding">
+          <div className="col-1-no-break padding">
             <img src={MM} width="100%" alt="Mixmax"/>
           </div>
-          <div className="col-3 padding">
+          <div className="col-3-no-break padding">
             <img src={MS} width="100%" alt="Microsoft"/>
           </div>
-          <div className="col-3 padding">
+          <div className="col-3-no-break padding">
             <img src={SG} width="100%" alt="sendgrid"/>
           </div>
-          <div className="col-3 padding">
+          <div className="col-3-no-break padding">
             <img src={QC} width="100%" alt="Qualcomm"/>
           </div>
-          <div className="col-1 padding">
+          <div className="col-1-no-break padding">
             <img src={GE} width="100%" alt="GE"/>
           </div>
-          <div className="col-3 padding">
+          <div className="col-3-no-break padding">
             <img src={TO} width="100%" alt="Twilio"/>
           </div>
-          <div className="col-3 padding">
+          <div className="col-3-no-break padding">
             <img src={WM} width="100%" alt="Walmart"/>
           </div>
         </div>

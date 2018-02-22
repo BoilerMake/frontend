@@ -43,6 +43,54 @@
   box-sizing: border-box;
 }
 .col-12 {
+  width: calc(100% / 12);
+  box-sizing: border-box;
+}
+.col-1-no-break{
+  width: calc(100% / 12);
+  box-sizing: border-box;
+}
+.col-2-no-break{
+  width: calc(100% / 6);
+  box-sizing: border-box;
+}
+.col-3-no-break{
+  width: calc(100% / 4);
+  box-sizing: border-box;
+}
+.col-4-no-break{
+  width: calc(100% / 3);
+  box-sizing: border-box;
+}
+.col-5-no-break{
+  width: calc(100% / (12/5));
+  box-sizing: border-box;
+}
+.col-6-no-break{
+  width: calc(100% / (12/6));
+  box-sizing: border-box;
+}
+.col-7-no-break{
+  width: calc(100% / (12/7));
+  box-sizing: border-box;
+}
+.col-8-no-break{
+  width: calc(100% / (12/8));
+  box-sizing: border-box;
+}
+.col-9-no-break{
+  width: calc(100% / (12/9));
+  box-sizing: border-box;
+}
+.col-10-no-break {
+  width: calc(100% / (12/10));
+  box-sizing: border-box;
+}
+.col-11-no-break {
+  width: calc(100% / (12/11));
+  box-sizing: border-box;
+}
+.col-12-no-break {
   width: calc(100% / 12;
   box-sizing: border-box;
 }

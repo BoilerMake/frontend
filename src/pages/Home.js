@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import ImageDivider from '../components/ImageDivider';
 import HeaderImg from '../assets/images/cover.jpg';
 // import Stories from '../components/Home_Stories';
 import PreFooter from '../components/Home_PreFooter';
@@ -12,6 +13,7 @@ import five from '../assets/images/gallery/5.jpg';
 import six from '../assets/images/gallery/6.jpg';
 import seven from '../assets/images/gallery/7.jpg';
 import eight from '../assets/images/gallery/8.jpg';
+
 const Home = () => (
   <div>
     <Header img={HeaderImg} startColor="#667EEA" endColor="#764BA2">
@@ -29,20 +31,7 @@ const Home = () => (
         </p>
       </div>
     </div>
-    <div className="flex images" style={{marginTop: '20px'}}>
-      <div className="col-3">
-        <img src={one} width="100%" alt="gallery"/>
-      </div>
-      <div className="col-3">
-        <img src={two} width="100%" alt="gallery"/>
-      </div>
-      <div className="col-3">
-        <img src={three} width="100%" alt="gallery"/>
-      </div>
-      <div className="col-3">
-        <img src={four} width="100%" alt="gallery"/>
-      </div>
-    </div>
+    <ImageDivider images={[one, two, three, four]} />
     <div className="middleBreak light home">
       <div className="max-width home">
         <h2 style={{textAlign: 'center'}}>BoilerMake is here to help you grow</h2>
@@ -60,26 +49,13 @@ const Home = () => (
               things.
             </p>
           </div>
-          <div className="col-4" style={{textAlign: 'center', justifyContent: 'center', display: 'flex'}}>
+          <div className="col-4 mobile-hide" style={{textAlign: 'center', justifyContent: 'center', display: 'flex'}}>
             <img src={BigB} width="90%" alt="Illustration"/>
           </div>
         </div>
       </div>
     </div>
-    <div className="flex images" style={{marginTop: '-120px'}}>
-      <div className="col-3">
-        <img src={five} width="100%" alt="gallery"/>
-      </div>
-      <div className="col-3">
-        <img src={six} width="100%" alt="gallery"/>
-      </div>
-      <div className="col-3">
-        <img src={seven} width="100%" alt="gallery"/>
-      </div>
-      <div className="col-3">
-        <img src={eight} width="100%" alt="gallery"/>
-      </div>
-    </div>
+    <ImageDivider images={[five, six, seven, eight]} style={{marginTop: '-120px'}}/>
     <div className="max-width home" style={{margin: '150px auto'}}>
       <div className="col-8">
         <h2>So what else?</h2>
