@@ -8,7 +8,7 @@ const Hackers = () => (
   <div>
     <Header img={HeaderImg} startColor="#f25f89" endColor="#9a96f2">
       <h1>A Weekend Full of Hacking</h1>
-      <h2>36 Hours of Hacking at Purdue University</h2>
+      <h2>Come and make cool stuff</h2>
     </Header>
     <div className="max-width home flex text-center">
       <div className="col-3" />
@@ -48,7 +48,7 @@ const Hackers = () => (
       <div className="col-4">
         <img src={Friends} width="100%" alt="friends" style={{borderRadius: '4px', boxShadow: '0 0 20px rgba(0,0,0,0.2)', transform: 'rotate(-5deg)'}}/>
       </div>
-      <div className="col-8 paddingr text-right">
+      <div className="col-8 padding" style={{paddingLeft: '20px'}}>
         <h2>Meet new friends.</h2>
         <p>
           BoilerMake is a great place to meet a group of people with a diverse
@@ -78,7 +78,7 @@ const Hackers = () => (
     </div>
     <div className="max-width home flex" style={{margin: '50px auto'}}>
       <div className="col-4"/>
-      <div className="col-8 paddingr text-right">
+      <div className="col-8 paddingr">
         <h2>Participate in activities.</h2>
         <p>
           Need a break from hacking? We’ve got that covered. At several points

@@ -21,7 +21,7 @@ const Home = () => (
       <h2>36 Hours of Hacking at Purdue University</h2>
     </Header>
     <div className="max-width home flex">
-      <div className="col-8 paddingr" style={{margin: '30px'}}>
+      <div className="col-8 paddingr" style={{margin: '30px auto'}}>
         <h2>Create, Meet, Learn, & Build</h2>
         <p>
           For the past five years, we've brought in 500 students from across the
@@ -35,8 +35,12 @@ const Home = () => (
     <div className="middleBreak light home">
       <div className="max-width home">
         <h2 style={{textAlign: 'center'}}>BoilerMake is here to help you grow</h2>
-        <div className="flex padding" style={{maxWidth: '650px', margin: '0 auto'}}>
-          <div className="col-8" style={{textAlign: 'right'}}>
+        <div className="flex padding" style={{maxWidth: '700px', margin: '0 auto'}}>
+          {/* <div className="col-4 mobile-hide" style={{textAlign: 'center', justifyContent: 'center', display: 'flex'}}>
+            <img src={BigB} width="90%" alt="Illustration"/>
+          </div>
+          <div className="col-8"> */}
+          <div>
             <h3>Create awesome projects</h3>
             <p>
               Be surrounded with hundreds of students and sponsors who are all
@@ -49,15 +53,12 @@ const Home = () => (
               things.
             </p>
           </div>
-          <div className="col-4 mobile-hide" style={{textAlign: 'center', justifyContent: 'center', display: 'flex'}}>
-            <img src={BigB} width="90%" alt="Illustration"/>
-          </div>
         </div>
       </div>
     </div>
     <ImageDivider images={[five, six, seven, eight]} style={{marginTop: '-120px'}}/>
     <div className="max-width home" style={{margin: '150px auto'}}>
-      <div className="col-8">
+      <div className="col-8" style={{margin: '0 auto'}}>
         <h2>So what else?</h2>
         <p>
           BoilerMake offers a number of perks to make an amazing weekend. To get

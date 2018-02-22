@@ -22,7 +22,7 @@ const Sponsors = () => (
       <h2>sponsorship@boilermake.org</h2>
     </Header>
     <div className="max-width home flex">
-      <div className="col-8 paddingr">
+      <div className="col-8 paddingr" style={{margin: '0 auto'}}>
         <h2>Foster a community of ideas</h2>
         <p>
           We would like to extend the opportunity for your company to be an essential part of
@@ -76,7 +76,7 @@ const Sponsors = () => (
       </div>
     </div>
     <div className="max-width home flex" style={{marginBottom: '50px'}}>
-      <div className="col-8 paddingr">
+      <div className="col-8 paddingr" style={{margin: '0 auto'}}>
         <h2>Additional Benefits</h2>
         <p>
           Gaining access to hackers’ resumes, emails, GitHubs, and LinkedIn profiles
