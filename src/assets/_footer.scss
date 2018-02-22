@@ -1,37 +1,36 @@
 @import "vars";
-.footer {
-  // border-top: 1px solid $darkBlue;
-  flex-shrink: 0;
-  color: $pink;
-  text-align: center;
-  background: $white;
-  box-shadow: 0px 500px 0px 500px #EFEFEF;
+.footer-wrapper {
+  background: #2D2D2D;
+  color: #ffffff;
+  padding: 20px 0px;
+  font-size: 14px;
+  box-shadow: 0px 500px 0px 500px #2D2D2D;
 
-  p {
-    font-size: 15px;
-    // font-family: $font-body;
-    font-weight: bold;
+  .footer {
+    display: flex;
+    margin: auto;
   }
-}
-.flex-con {
-  padding-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  svg {
-    height: 26px;
-    margin: 10px;
-    fill: $pink;
-  }
-  svg:hover {
-    fill: $darkBlue;
-    cursor: pointer;
-  }
-}
-.footer {
-  padding: 0 20px 50px 20px;
-}
 
-.icon {
-  fill: green;
+  h4 {
+    font-size: 16px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }

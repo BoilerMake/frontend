@@ -4,7 +4,11 @@ import ImageDivider from '../components/ImageDivider';
 import HeaderImg from '../assets/images/cover.jpg';
 // import Stories from '../components/Home_Stories';
 import PreFooter from '../components/Home_PreFooter';
+<<<<<<< HEAD
 // import BigB from '../assets/images/b.svg';
+=======
+import BigB from '../assets/images/b.svg';
+>>>>>>> 34f68679d334c7a7b307331a111e6e1bd5d95f80
 import one from '../assets/images/gallery/1.jpg';
 import two from '../assets/images/gallery/2.jpg';
 import three from '../assets/images/gallery/3.jpg';

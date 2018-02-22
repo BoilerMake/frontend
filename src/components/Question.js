@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import up from '../assets/images/icons/arrow-up.svg';
 import down from '../assets/images/icons/arrow-down.svg';
-import '../assets/faq.scss';
 
 class Question extends Component {
   constructor(props) {

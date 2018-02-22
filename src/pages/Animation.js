@@ -6,7 +6,6 @@ import { SubmissionError } from 'redux-form';
 import { Redirect } from 'react-router-dom'
 
 import apiFetch from '../actions';
-import '../assets/_form.scss';
 import '../assets/pillars.scss';
 
 class Animation extends Component {
