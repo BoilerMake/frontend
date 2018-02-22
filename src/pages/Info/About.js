@@ -3,7 +3,7 @@ import Organizers from '../../assets/images/organizers.jpg';
 
 const About = () => (
   <div className="pageContainer about">
-    <h1 className="title center">About BoilerMake</h1>
+    <h1 className="text-center">About BoilerMake</h1>
     <p className="paragraph">
         BoilerMake is a hackathon that brings over 500 hackers from across the
         country under one roof for one incredible weekend.  As a team, our
@@ -29,7 +29,7 @@ const About = () => (
         successful hackathon in 2018! As always - if you have any questions,
         feel free to hit us up at team@boilermake.org!
     </p>
-    <h1 className="title center">History</h1>
+    <h1 className="text-center">History</h1>
 
     <div className="flex v-center">
       <div className="col-6">

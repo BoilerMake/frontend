@@ -46,7 +46,7 @@ const Home = () => (
     <div className="middleBreak light home">
       <div className="max-width home">
         <h2 style={{textAlign: 'center'}}>Here's a heading to make us seem profound</h2>
-        <div className="flex card padding" style={{maxWidth: '600px', margin: '0 auto'}}>
+        <div className="flex padding" style={{maxWidth: '600px', margin: '0 auto'}}>
           <div className="col-8" style={{textAlign: 'right'}}>
             <h3>Create awesome projects</h3>
             <p>
