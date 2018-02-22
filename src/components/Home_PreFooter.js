@@ -24,7 +24,9 @@ const PreFooter = () => (
         <div className="col-8 home">
           <h2>Sponsor an Awesome Weekend</h2>
           <p>
-            Lorem ipsum solor sit amit. Lorem ipsum solor sit amit. Lorem ipsum solor sit amit. Lorem ipsum solor sit amit. Lorem ipsum solor sit amit. Lorem ipsum solor sit amit.
+            Sponsor BoilerMake to meet some of the brightest students from
+            across the nation, and you will be able to create opportunities for
+            students to work on incredible projects.
           </p>
           <Link to="/sponsors"><button>Read More</button></Link>
         </div>
