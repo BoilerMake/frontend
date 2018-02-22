@@ -41,7 +41,7 @@ class Nav extends Component {
             </button>
           </nav>
           { menu ? (
-            <div className="hamburgerMenu mobile" onClick={this.handleClick}>
+            <div className="hamburgerMenu mobile padding" onClick={this.handleClick}>
               <ul>
                 <li>
                   <NavLink exact to='/hackers' className='navLink'>Hackers</NavLink>
