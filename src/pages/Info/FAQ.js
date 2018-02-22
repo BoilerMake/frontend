@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Question from '../../components/Question';
-import logo from '../../assets/images/faq.svg';
-import '../../assets/faq.scss';
+// import logo from '../../assets/images/faq.svg';
 
 const questions = [
   {
@@ -78,8 +77,8 @@ class FAQ extends Component {
       const { expandAll } = this.state;
       const questionList = questions.map((q,id) => <Question key={id} title={q.title} body={q.body} expandAll={this.state.expandAll}/>);
       return (
-          <div className="page pagePadded faq topSpacing">
-          <img src={logo} className="logo" alt="logo" />
+          <div className="max-width page pagePadded faq topSpacing" style={{margin: '20px auto'}}>
+            {/* <img src={logo} className="logo" alt="logo" /> */}
             <h1 className="title pink right">FAQ</h1>
             <p className="right"><span>Frequently Asked Questions</span></p>
             { expandAll ? <p className="right link" onClick={this.expandAll}>Collapse All</p> : <p className="right link" onClick={this.expandAll}>Expand All</p> }
