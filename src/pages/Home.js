@@ -63,7 +63,7 @@ const Home = () => (
         <p>
           BoilerMake offers a number of perks to make an amazing weekend. To get
           the weekend started, we provide busses to a number of schools to make
-          travelling a no-brainer. In the past, we’ve sent busses to UIUC, UMich,
+          travelling a no-brainer. In the past, we’ve sent buses to UIUC, UMich,
           and others.
         </p>
         <p>
