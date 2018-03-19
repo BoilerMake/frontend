@@ -94,16 +94,15 @@ const About = () => (
     </div>
     <div className="flex v-center marginb">
       <div className="col-6">
-        <img src="https://photos.smugmug.com/Events/BoilerMake-V/i-Pfm53kP/0/564c10aa/XL/_NDS0611-XL.jpg" width="100%" alt="dab"></img>
+        <img src="https://photos.smugmug.com/Events/BoilerMake-V/i-ndtJJJ7/0/0bbcc13a/XL/_NDS0554-XL.jpg" width="100%" alt="dab"></img>
       </div>
       <div className="col-6 padding">
         <p className="paragraph">
           <h2 style={{fontWeight: 'bold'}}>BoilerMake V: September 20-22nd, 2017</h2>
-          BM IV followed a space adventure theme as hackers became astronauts
-          traveling through the stars. This event was once again held in the Cordova
-          Recreational Sports Center among the basketball courts. 500 students came
-          together once again to create under space themed decorations, arcade
-          games, interactive lego boards.
+          BM V came back to the Cordova Recreational Sports Center for another 36
+          hours of unadulterated hacking.  With more yoga, coffee, and neon light
+          than ever before, students put together projects with the help of mentors
+          and friends alike to exhibit to everyone at BoilerMake.
         </p>
       </div>
     </div>
