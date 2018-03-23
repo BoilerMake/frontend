@@ -57,7 +57,7 @@ const Home = () => (
       </div>
     </div>
     <ImageDivider images={[five, six, seven, eight]} style={{marginTop: '-120px'}}/>
-    <div className="max-width home" style={{margin: '120px auto'}}>
+    <div className="max-width home" style={{margin: '80px auto'}}>
       <div className="col-8" style={{margin: '0 auto'}}>
         <h2>So what else?</h2>
         <p>
