@@ -46,8 +46,8 @@ const Hackers = () => (
       </div>
     </div>
     <div className="max-width home flex" style={{margin: '50px auto'}}>
-      <div className="col-4">
-        <img src={Friends} width="100%" alt="friends" style={{borderRadius: '4px', boxShadow: '0 0 20px rgba(0,0,0,0.2)', transform: 'rotate(-5deg)'}}/>
+      <div className="col-4" >
+        <img className="hacker-image" src={Friends} width="100%" alt="friends" />
       </div>
       <div className="col-8 padding" style={{paddingLeft: '20px'}}>
         <h2>Meet new friends.</h2>
@@ -74,7 +74,7 @@ const Hackers = () => (
         <button>View Past Sponsors</button>
       </div>
       <div className="col-4">
-        <img src={Connecting} width="100%" alt="connecting" style={{borderRadius: '4px', boxShadow: '0 0 20px rgba(0,0,0,0.2)', transform: 'rotate(5deg)'}}/>
+        <img src={Connecting} className="hacker-image" width="100%" alt="connecting"/>
       </div>
     </div>
     <div className="max-width home flex" style={{margin: '50px auto'}}>

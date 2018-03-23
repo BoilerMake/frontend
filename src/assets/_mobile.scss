@@ -4,6 +4,13 @@
   }
 }
 @media (max-width: 750px) {
+  .hacker-image {
+    transform: rotate(0);
+
+    &:nth-child(odd) {
+      margin-top: 20px;
+    }
+  }
   .mobile-hide {
     visibility: hidden;
     height: 0;
