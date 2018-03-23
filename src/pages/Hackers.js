@@ -39,7 +39,8 @@ const Hackers = () => (
           your work with hundreds of other hackers and corporate sponsors,
           while potentially getting a share of our $10,000 prize pool at the
           end of a wild 36 hours.  Give yourself a chance to add to the legacy
-          of great projects made at BoilerMake, including VR DDR, [insert].
+          of great projects made at BoilerMake, including VR DDR, Skittles Launcher,
+          and more.
         </p>
         <a href="https://boilermake-v.devpost.com/"><button>Past Hacks</button></a>
       </div>
