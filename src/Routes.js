@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-    Route, withRouter, Redirect
+    Route, withRouter, Redirect, Switch
 } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Hackers from './pages/Hackers';
 import Sponsors from './pages/Sponsors';
+import FourOhFour from './pages/404';
 import About from './pages/Info/About';
 import Code from './pages/Info/Code';
 import Contact from './pages/Info/Contact';
@@ -81,38 +82,41 @@ const ContainerSwitcher = withRouter(ContainerSwitcherRoute);
 
 const Routes = () => (
     <ContainerSwitcher>
-      {/*Public Routes*/}
-      <Route exact path="/" component={Home}/>
-      <Route exact path="/hackers" component={Hackers}/>
-      <Route exact path="/sponsors" component={Sponsors}/>
-      <Route path="/about" component={About}/>
+      <Switch>
+        {/*Public Routes*/}
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/hackers" component={Hackers}/>
+        <Route exact path="/sponsors" component={Sponsors}/>
+        <Route path="/about" component={About}/>
 
-      {/* <Route exact path="/2017" component={Home}/> */}
-      <Route path="/dayof" component={RedirectToLive}/>
-      <Route path="/live" component={DayOf}/>
-      <Route path="/code" component={Code}/>
-      <Route path="/contact" component={Contact}/>
-      <Route path="/faq" component={FAQ}/>
-      <Route path="/register" component={Register}/>
-      <Route path="/login" component={Login}/>
-      <Route path="/reset/:reset_token?" component={PasswordReset}/>
-      <Route path="/confirm/:code" component={ConfirmEmail}/>
-      <Route path="/auth/github" component={GithubAuth}/>
+        {/* <Route exact path="/2017" component={Home}/> */}
+        <Route path="/dayof" component={RedirectToLive}/>
+        <Route path="/live" component={DayOf}/>
+        <Route path="/code" component={Code}/>
+        <Route path="/contact" component={Contact}/>
+        <Route path="/faq" component={FAQ}/>
+        <Route path="/register" component={Register}/>
+        <Route path="/login" component={Login}/>
+        <Route path="/reset/:reset_token?" component={PasswordReset}/>
+        <Route path="/confirm/:code" component={ConfirmEmail}/>
+        <Route path="/auth/github" component={GithubAuth}/>
 
-      {/*User Routes*/}
-      <UserRoute path="/dashboard" component={Dashboard}/>
-      <UserRoute path="/application" component={Application}/>
+        {/*User Routes*/}
+        <UserRoute path="/dashboard" component={Dashboard}/>
+        <UserRoute path="/application" component={Application}/>
 
-      {/*Exec Routes. Everything under /exec gets rendered inside <ExecContainer/>*/}
-      <ExecRoute path="/exec" exact component={ExecDashboard} />
-      <ExecRoute exact path="/exec/checkin" component={ExecCheckin} />
-      <ExecRoute exact path="/exec/users" component={ExecUsers} />
-      <ExecRoute path="/exec/users/:userId" component={ExecUserDetail} />
-      <ExecRoute exact path="/exec/applications" component={ExecApplications} />
-      <ExecRoute path="/exec/applications/:applicationId" component={ExecApplicationDetail} />
+        {/*Exec Routes. Everything under /exec gets rendered inside <ExecContainer/>*/}
+        <ExecRoute path="/exec" exact component={ExecDashboard} />
+        <ExecRoute exact path="/exec/checkin" component={ExecCheckin} />
+        <ExecRoute exact path="/exec/users" component={ExecUsers} />
+        <ExecRoute path="/exec/users/:userId" component={ExecUserDetail} />
+        <ExecRoute exact path="/exec/applications" component={ExecApplications} />
+        <ExecRoute path="/exec/applications/:applicationId" component={ExecApplicationDetail} />
 
-      {/*Offsite Redirects*/}
-      <Route path="/why-go-to-a-hackathon"  render={() => <ExternalRedirect to="https://medium.com/@BoilerMake/why-you-should-go-to-a-hackathon-2d4ede475c9"/>}/>
+        {/*Offsite Redirects*/}
+        <Route path="/why-go-to-a-hackathon"  render={() => <ExternalRedirect to="https://medium.com/@BoilerMake/why-you-should-go-to-a-hackathon-2d4ede475c9"/>}/>
+        <Route component={FourOhFour}/>
+      </Switch>
   </ContainerSwitcher>
 );
 

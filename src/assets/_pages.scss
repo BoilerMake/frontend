@@ -30,6 +30,15 @@
     padding-top: 30px;
   }
 }
+.hacker-image {
+  border-radius: '4px';
+  box-shadow: '0 0 20px rgba(0,0,0,0.2)';
+  transform: rotate(-5deg);
+
+  &:nth-child(odd) {
+    transform: rotate(5deg);
+  }
+}
 .middleBreak {
   padding: 100px 0;
   margin: 50px auto;
@@ -151,6 +160,7 @@
 }
 // About
 .about {
+  padding: 0 20px;
   &:after {
     content: "";
     position: absolute;
@@ -170,4 +180,12 @@
   max-width: 700px;
   margin: 0px auto;
   margin-bottom: 35px;
+}
+.fourohfour {
+  width: 100%;
+  background: linear-gradient(135deg, #1E2B50 0%, #AD2677 100%);
+  text-align: center;
+  margin-top: -90px;
+  padding-top: 140px;
+  padding-bottom: 110px;
 }
