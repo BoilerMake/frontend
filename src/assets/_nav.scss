@@ -30,7 +30,7 @@
 	color: #fff;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 360px) {
   .navContainer {
     white-space: nowrap;
     overflow: hidden;
@@ -38,5 +38,10 @@
 
   .navLinks {
     overflow-scrolling: touch;
+  }
+
+  .navLink {
+    margin: 0 6px;
+    font-size: 14px;
   }
 }
