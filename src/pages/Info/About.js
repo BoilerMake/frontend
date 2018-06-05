@@ -53,7 +53,8 @@ const About = () => (
       <div className="col-6 padding">
         <p className="paragraph">
           <h2 style={{fontWeight: 'bold'}}>BoilerMake II: Oct 17-19th, 2014</h2>
-          BM II was the year of the badges, (description). Our venue changed to the
+          BM II was the year of the BoilerMake Badges - custom Arduino
+          boards for hackers to have fun with. Our venue changed to the
           Lambert Fieldhouse to accommodate the 500 hackers. We kept this number as
           the maximum to ensure that all the hackers and sponsors could fit into the
           same large room to interact and develop in.
