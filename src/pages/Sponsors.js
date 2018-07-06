@@ -78,13 +78,14 @@ const Sponsors = () => (
     <div className="max-width home flex" style={{marginBottom: '50px'}}>
       <div className="col-8 paddingr" style={{margin: '0 auto'}}>
         <h2>Additional Benefits</h2>
-        <p>
-          Gaining access to hackers’ resumes, emails, GitHubs, and LinkedIn profiles
-          Awarding custom prizes based your criteria
-          Promotion through giveaways and advertising
-          Demonstrating your APIs and new technologies
-          Reserving space for private events with hackers (tech talks, mentorship sessions, etc.)
-        </p>
+        <ul>
+          <li>Gaining access to hackers’ resumes, emails, GitHubs, and LinkedIn profiles</li>
+          <li>Awarding custom prizes based your criteria</li>
+          <li>Promotion through giveaways and advertising</li>
+          <li>Demonstrating your APIs and new technologies</li>
+          <li>Reserving space for private events with hackers (tech talks, mentorship sessions, etc.)</li>
+        </ul>
+        <br></br>
         <button>sponsorship@boilermake.org</button>
       </div>
     </div>
