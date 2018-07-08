@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Contact from './Contact';
+import Contact from './index';
 import { MemoryRouter } from 'react-router-dom';
 
 it('renders without crashing', () => {

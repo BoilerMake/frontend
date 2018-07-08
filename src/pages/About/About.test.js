@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import About from './About';
+import About from './index';
 import { MemoryRouter } from 'react-router-dom';
 
 it('renders without crashing', () => {
@@ -10,4 +10,3 @@ it('renders without crashing', () => {
         </MemoryRouter>
         , div);
 });
-
