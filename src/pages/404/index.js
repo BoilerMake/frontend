@@ -1,5 +1,5 @@
 import React from 'react';
-import FourOhFour from '../assets/images/404.svg';
+import FourOhFour from '../../assets/images/404.svg';
 
 const Landing = () => (
   <div className="fourohfour">

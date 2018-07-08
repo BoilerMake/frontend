@@ -1,12 +1,10 @@
 import React from 'react';
-import Header from '../components/Header';
-import HeaderImg from '../assets/images/hacker.jpg';
-import Connecting from '../assets/images/connecting.jpg';
-import Friends from '../assets/images/friends.jpg';
-
+import Header from '../../components/Header';
+import Images from './images';
+ 
 const Hackers = () => (
   <div>
-    <Header img={HeaderImg} startColor="#f25f89" endColor="#9a96f2">
+    <Header img={Images.HeaderImg} startColor="#f25f89" endColor="#9a96f2">
       <h1>A Weekend Full of Hacking</h1>
       <h2>Come and make cool stuff</h2>
     </Header>
@@ -47,7 +45,7 @@ const Hackers = () => (
     </div>
     <div className="max-width home flex" style={{margin: '50px auto'}}>
       <div className="col-4" >
-        <img className="hacker-image" src={Friends} width="100%" alt="friends" />
+        <img className="hacker-image" src={Images.Friends} width="100%" alt="friends" />
       </div>
       <div className="col-8 padding" style={{paddingLeft: '20px'}}>
         <h2>Meet new friends.</h2>
@@ -74,7 +72,7 @@ const Hackers = () => (
         <button>View Past Sponsors</button>
       </div>
       <div className="col-4">
-        <img src={Connecting} className="hacker-image" width="100%" alt="connecting"/>
+        <img src={Images.Connecting} className="hacker-image" width="100%" alt="connecting"/>
       </div>
     </div>
     <div className="max-width home flex" style={{margin: '50px auto'}}>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { confirmEmail } from '../../actions/users';
 
 class ConfirmEmail extends Component {
     render () {
@@ -12,9 +14,6 @@ class ConfirmEmail extends Component {
 }
 
 //now the redux integration layer
-import { connect } from 'react-redux'
-import { confirmEmail } from '../actions/users';
-
 function mapStateToProps (state) {
     return {
         user: state.user

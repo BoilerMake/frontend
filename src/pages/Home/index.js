@@ -1,22 +1,12 @@
 import React from 'react';
-import Header from '../components/Header';
-import ImageDivider from '../components/ImageDivider';
-import HeaderImg from '../assets/images/cover.jpg';
-// import Stories from '../components/Home_Stories';
-import PreFooter from '../components/Home_PreFooter';
-// import BigB from '../assets/images/b.svg';
-import one from '../assets/images/gallery/1.jpg';
-import two from '../assets/images/gallery/2.jpg';
-import three from '../assets/images/gallery/3.jpg';
-import four from '../assets/images/gallery/4.jpg';
-import five from '../assets/images/gallery/5.jpg';
-import six from '../assets/images/gallery/6.jpg';
-import seven from '../assets/images/gallery/7.jpg';
-import eight from '../assets/images/gallery/8.jpg';
+import Header from '../../components/Header';
+import ImageDivider from './ImageDivider';
+import PreFooter from './Home_PreFooter';
+import Images from './images';
 
 const Home = () => (
   <div>
-    <Header img={HeaderImg} startColor="#667EEA" endColor="#764BA2">
+    <Header img={Images.header} startColor="#667EEA" endColor="#764BA2">
       <h1>Forge The Future</h1>
       <h2>36 Hours of Hacking at Purdue University</h2>
     </Header>
@@ -31,15 +21,11 @@ const Home = () => (
         </p>
       </div>
     </div>
-    <ImageDivider images={[one, two, three, four]} />
+    <ImageDivider images={[Images.one, Images.two, Images.three, Images.four]} />
     <div className="middleBreak light home">
       <div className="max-width home">
         <h2 style={{textAlign: 'center'}}>BoilerMake is here to help you grow</h2>
         <div className="flex padding" style={{maxWidth: '700px', margin: '0 auto'}}>
-          {/* <div className="col-4 mobile-hide" style={{textAlign: 'center', justifyContent: 'center', display: 'flex'}}>
-            <img src={BigB} width="90%" alt="Illustration"/>
-          </div>
-          <div className="col-8"> */}
           <div>
             <h3>Create awesome projects</h3>
             <p>
@@ -56,7 +42,7 @@ const Home = () => (
         </div>
       </div>
     </div>
-    <ImageDivider images={[five, six, seven, eight]} style={{marginTop: '-120px'}}/>
+    <ImageDivider images={[Images.five, Images.six, Images.seven, Images.eight]} style={{marginTop: '-120px'}}/>
     <div className="max-width home" style={{margin: '80px auto'}}>
       <div className="col-8" style={{margin: '0 auto'}}>
         <h2>So what else?</h2>
@@ -85,10 +71,7 @@ const Home = () => (
         </p>
       </div>
     </div>
-    {/* <Stories/> */}
     <PreFooter/>
-
-
   </div>
 );
 

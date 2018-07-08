@@ -1,23 +1,10 @@
 import React from 'react';
-import Header from '../components/Header';
-// import Stories from '../components/Home_Stories';
-import HeaderImg from '../assets/images/sponsor.jpg';
-
-import BB from '../assets/images/sponsors/bloomberg.svg';
-import C1 from '../assets/images/sponsors/capital_one.svg';
-import MDB from '../assets/images/sponsors/MongoDB.png';
-import QC from '../assets/images/sponsors/Qualcomm.svg';
-import MM from '../assets/images/sponsors/mixmax.svg';
-import G from '../assets/images/sponsors/google.png';
-import MS from '../assets/images/sponsors/microsoft.png';
-import SG from '../assets/images/sponsors/sendgrid.png';
-import GE from '../assets/images/sponsors/ge.png';
-import TO from '../assets/images/sponsors/twilio.png';
-import WM from '../assets/images/sponsors/walmart.png';
-
+import Header from '../../components/Header';
+import Images from './images';
+ 
 const Sponsors = () => (
   <div>
-    <Header img={HeaderImg} startColor="#F78CA0" endColor="#FE998B">
+    <Header img={Images.HeaderImg} startColor="#F78CA0" endColor="#FE998B">
       <h1>Sponsor a weekend of ideas</h1>
       <h2>sponsorship@boilermake.org</h2>
     </Header>
@@ -40,37 +27,37 @@ const Sponsors = () => (
         <h2 style={{ textAlign: 'center' }}>Put your name on the BoilerMake Legacy</h2>
         <div className="flex v-center h-center">
           <div className="col-3-no-break padding">
-            <img src={BB} width="100%" alt="Bloomberg"/>
+            <img src={Images.BB} width="100%" alt="Bloomberg"/>
           </div>
           <div className="col-3-no-break padding">
-            <img src={G} width="100%" alt="Google"/>
+            <img src={Images.G} width="100%" alt="Google"/>
           </div>
           <div className="col-3-no-break padding">
-            <img src={C1} width="100%" alt="Capital One"/>
+            <img src={Images.C1} width="100%" alt="Capital One"/>
           </div>
           <div className="col-3-no-break padding">
-            <img src={MDB} width="100%" alt="MongoDB"/>
+            <img src={Images.MDB} width="100%" alt="MongoDB"/>
           </div>
           <div className="col-1-no-break padding">
-            <img src={MM} width="100%" alt="Mixmax"/>
+            <img src={Images.MM} width="100%" alt="Mixmax"/>
           </div>
           <div className="col-3-no-break padding">
-            <img src={MS} width="100%" alt="Microsoft"/>
+            <img src={Images.MS} width="100%" alt="Microsoft"/>
           </div>
           <div className="col-3-no-break padding">
-            <img src={SG} width="100%" alt="sendgrid"/>
+            <img src={Images.SG} width="100%" alt="sendgrid"/>
           </div>
           <div className="col-3-no-break padding">
-            <img src={QC} width="100%" alt="Qualcomm"/>
+            <img src={Images.QC} width="100%" alt="Qualcomm"/>
           </div>
           <div className="col-1-no-break padding">
-            <img src={GE} width="100%" alt="GE"/>
+            <img src={Images.GE} width="100%" alt="GE"/>
           </div>
           <div className="col-3-no-break padding">
-            <img src={TO} width="100%" alt="Twilio"/>
+            <img src={Images.TO} width="100%" alt="Twilio"/>
           </div>
           <div className="col-3-no-break padding">
-            <img src={WM} width="100%" alt="Walmart"/>
+            <img src={Images.WM} width="100%" alt="Walmart"/>
           </div>
         </div>
       </div>
@@ -89,7 +76,6 @@ const Sponsors = () => (
         <button>sponsorship@boilermake.org</button>
       </div>
     </div>
-    {/* <Stories /> */}
   </div>
 );
 

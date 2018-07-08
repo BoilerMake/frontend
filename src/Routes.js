@@ -1,41 +1,37 @@
 import React, { Component } from "react";
-import {
-    Route, withRouter, Redirect, Switch
-} from 'react-router-dom'
+import { Route, withRouter, Redirect, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 
-//STATIC PAGES
-import Home from './pages/Home';
-import Hackers from './pages/Hackers';
-import Sponsors from './pages/Sponsors';
 import FourOhFour from './pages/404';
-import About from './pages/Info/About';
-import Code from './pages/Info/Code';
-import Contact from './pages/Info/Contact';
-import FAQ from './pages/Info/FAQ';
-
-//
-import Register from './pages/Register';
+import About from './pages/About';
+import Application from './pages/Application';
+import Code from './pages/Code';
+import ConfirmEmail from './pages/ConfirmEmail';
+import Contact from './pages/Contact';
+import Dashboard from './pages/Dashboard';
+import DayOf from './pages/DayOf';
+import ExecContainer from "./pages/Exec/ExecContainer";
+  import ExecUsers from "./pages/Exec/ExecUsers";
+  import ExecUserDetail from "./pages/Exec/ExecUserDetail";
+  import ExecApplications from "./pages/Exec/ExecApplications";
+  import ExecApplicationDetail from "./pages/Exec/ExecApplicationDetail";
+  import ExecDashboard from "./pages/Exec/ExecDashboard";
+  import ExecCheckin from "./pages/Exec/ExecCheckin";
+import FAQ from './pages/FAQ';
+import GithubAuth from './pages/GithubAuth';
+import Hackers from './pages/Hackers';
+import Home from './pages/Home';
 import Login from './pages/Login';
 import PasswordReset from './pages/PasswordReset';
-import ConfirmEmail from './pages/ConfirmEmail';
-import GithubAuth from './pages/GithubAuth';
-import Dashboard from './pages/Dashboard';
-import Application from './pages/Application';
-import DayOf from './pages/DayOf';
+import Register from './pages/Register';
+import Sponsors from './pages/Sponsors';
 
-import ExecContainer from "./pages/Exec/ExecContainer";
-import ExecUsers from "./pages/Exec/ExecUsers";
-import ExecUserDetail from "./pages/Exec/ExecUserDetail";
-import ExecApplications from "./pages/Exec/ExecApplications";
-import ExecApplicationDetail from "./pages/Exec/ExecApplicationDetail";
-import ExecDashboard from "./pages/Exec/ExecDashboard";
-import ExecCheckin from "./pages/Exec/ExecCheckin";
-
-
+/******************
+ * Render Methods *
+ ******************/
 const PrivateRoute = ({ component: Component, isAuthenticated, isAllowed, ...rest }) => (
     <Route {...rest} render={props => (
         isAuthenticated

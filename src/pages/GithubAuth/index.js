@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { githubLogin } from '../actions';
-import { Redirect, Link } from 'react-router-dom'
 import { parse } from 'qs'
-import { ALLOW_SIGNUPS } from '../config';
+import { connect } from 'react-redux'
+import { Redirect, Link } from 'react-router-dom'
+import { githubLogin } from '../../actions';
+import { ALLOW_SIGNUPS } from '../../config';
+import { authUserWithGithub } from '../../actions/users';
 
 class GitHubAuth extends Component {
     constructor (props) {
@@ -38,9 +40,6 @@ class GitHubAuth extends Component {
 }
 
 //now the redux integration layer
-import { connect } from 'react-redux'
-import { authUserWithGithub } from '../actions/users';
-
 function mapStateToProps (state) {
     return {
         user: state.user

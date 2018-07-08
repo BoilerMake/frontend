@@ -2,7 +2,7 @@ import React from 'react';
 import Organizers from '../../assets/images/organizers.jpg';
 
 const About = () => (
-  <div className="pageContainer about">
+  <div className="max-width about">
     <h1 className="text-center">About BoilerMake</h1>
     <p className="paragraph">
         BoilerMake is a hackathon that brings over 500 hackers from across the
@@ -33,7 +33,7 @@ const About = () => (
 
     <div className="flex v-center">
       <div className="col-6">
-        <img src="https://photos.smugmug.com/Events/BoilerMake-4/i-NjCgM8d/0/f8c4cdcb/XL/NDS_2643-XL.jpg" width="100%" alt="dab"></img>
+        <img src="https://photos.smugmug.com/Events/BoilerMake-4/i-NjCgM8d/0/f8c4cdcb/XL/NDS_2643-XL.jpg" width="100%" alt="BoilerMake"></img>
       </div>
       <div className="col-6 padding">
         <p className="paragraph">
@@ -61,12 +61,12 @@ const About = () => (
         </p>
       </div>
       <div className="col-6">
-        <img src="https://photos.smugmug.com/Events/BoilerMake-3/i-6ksGHmK/0/ae391f27/XL/DSC_4496-XL.jpg" width="100%" alt="dab"></img>
+        <img src="https://photos.smugmug.com/Events/BoilerMake-3/i-6ksGHmK/0/ae391f27/XL/DSC_4496-XL.jpg" width="100%" alt="BoilerMake"></img>
       </div>
     </div>
     <div className="flex v-center">
       <div className="col-6">
-        <img src="https://photos.smugmug.com/Events/BoilerMake-3/i-H9wdx5v/0/b259e601/XL/DSC_4371-XL.jpg" width="100%" alt="dab"></img>
+        <img src="https://photos.smugmug.com/Events/BoilerMake-3/i-H9wdx5v/0/b259e601/XL/DSC_4371-XL.jpg" width="100%" alt="BoilerMake"></img>
       </div>
       <div className="col-6 padding">
         <p className="paragraph">
@@ -90,12 +90,12 @@ const About = () => (
         </p>
       </div>
       <div className="col-6">
-        <img src="https://photos.smugmug.com/Events/BoilerMake-4/i-gcjc9gt/0/51700a7f/XL/NDS_2288-XL.jpg" width="100%" alt="dab"></img>
+        <img src="https://photos.smugmug.com/Events/BoilerMake-4/i-gcjc9gt/0/51700a7f/XL/NDS_2288-XL.jpg" width="100%" alt="BoilerMake"></img>
       </div>
     </div>
     <div className="flex v-center marginb">
       <div className="col-6">
-        <img src="https://photos.smugmug.com/Events/BoilerMake-V/i-ndtJJJ7/0/0bbcc13a/XL/_NDS0554-XL.jpg" width="100%" alt="dab"></img>
+        <img src="https://photos.smugmug.com/Events/BoilerMake-V/i-ndtJJJ7/0/0bbcc13a/XL/_NDS0554-XL.jpg" width="100%" alt="BoilerMake"></img>
       </div>
       <div className="col-6 padding">
         <p className="paragraph">
