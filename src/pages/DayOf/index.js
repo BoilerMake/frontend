@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Schedule from '../../components/Schedule';
+import Schedule from './Schedule';
 import Announcements from './Announcements';
 
 class DayOf extends Component {
