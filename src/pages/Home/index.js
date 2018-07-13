@@ -8,7 +8,7 @@ const Home = () => (
   <div>
     <Header img={Images.header} startColor="#667EEA" endColor="#764BA2">
       <h1>Forge The Future</h1>
-      <h2>36 Hours of Hacking at Purdue University</h2>
+      <h2>BoilerMake VI | Fall 2018 | Applications Open Soon</h2>
     </Header>
     <div className="max-width home flex">
       <div className="col-8 paddingr" style={{margin: '30px auto'}}>
