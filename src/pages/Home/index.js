@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header';
+import MailChimpSignup from './MailChimpSignup';
 import ImageDivider from './ImageDivider';
 import PreFooter from './Home_PreFooter';
 import Images from './images';
@@ -10,6 +11,7 @@ const Home = () => (
       <h1>Forge The Future</h1>
       <h2>BoilerMake VI | Fall 2018 | Applications Open Soon</h2>
     </Header>
+    <MailChimpSignup />
     <div className="max-width home flex">
       <div className="col-8 paddingr" style={{margin: '30px auto'}}>
         <h2>Create, Meet, Learn, & Build</h2>

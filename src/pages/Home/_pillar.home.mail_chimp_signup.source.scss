@@ -1,0 +1,42 @@
+.p-mail_chimp_signup {
+  background: #F7F7FA;
+  padding: 12px 0;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+.p-mail_chimp_signup__group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-mail_chimp_signup__label {
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  margin: 0 4px;
+  font-weight: normal;
+}
+.p-mail_chimp_signup__input {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  margin: 0 4px;
+}
+.p-mail_chimp_signup__button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  margin: 0 4px;
+  background: #D42836;
+  color: #fff;
+  cursor: pointer;
+  transition: .2s ease;
+  background: linear-gradient(120deg, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+
+  &:hover {
+    transform: translateY(-2px);
+    transition: .2s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+}
