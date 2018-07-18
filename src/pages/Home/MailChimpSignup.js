@@ -11,8 +11,8 @@ const MailChimpSignup = () => (
       className="validate" target="_blank"
       noValidate
     >
+      <label htmlFor="mce-EMAIL" className="p-mail_chimp_signup__label">Interested in updates?</label>
       <div id="mc_embed_signup_scroll" className="p-mail_chimp_signup__group">
-        <label htmlFor="mce-EMAIL" className="p-mail_chimp_signup__label">Interested in updates?</label>
         <input type="email" placeholder="you@school.edu" name="EMAIL" className="required email p-mail_chimp_signup__input" id="mce-EMAIL" />
         <div id="mce-responses" className="clear">
           <div className="response" id="mce-error-response" style={{display: 'none'}}></div>
