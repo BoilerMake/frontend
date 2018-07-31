@@ -206,8 +206,3 @@ class DayOf extends PureComponent {
 }
 
 export default DayOf
-/*
-<div className="p-day_of">
-	<img src="https://files.slack.com/files-pri/T02DG97DX-FBWRYG19A/livesite-smallchange.png" alt="ph" width="100%"/>
-</div>
-*/
