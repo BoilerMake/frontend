@@ -192,3 +192,37 @@
   padding-top: 140px;
   padding-bottom: 110px;
 }
+
+// Day of
+.messages-inner .c_card:not(:first-child) {
+	margin: 12px 0;
+}
+
+.messages > .c_card {
+	margin: 12px 0;
+	overflow-y: auto;
+	max-height: 400px;
+}
+
+.countdown h1 {
+	margin-bottom: 0;
+}
+
+.countdown p {
+	margin-top: 0;
+}
+
+.schedule-item p {
+	line-height: 1em;
+	font-size: 20px;
+	margin-top: 0;
+}
+
+p.schedule-time {
+	font-size: 16px;
+	margin-bottom: 0;
+}
+
+.text-reset {
+	text-align: left;
+}
