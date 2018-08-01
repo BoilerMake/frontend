@@ -1,6 +1,11 @@
-@import "vars";
+@import '../../assets/tools.scss';
 
-.navContainer {
+.p-nav {
+  @include max-width;
+
+
+}
+.p-nav_content {
   display: inline-flex;
   align-items: center;
   margin-top: 20px;
@@ -11,16 +16,16 @@
   z-index: 100;
 }
 
-.hammers {
+.p-nav__logo--hammers {
   width: 40px;
   height: auto;
 }
 
-.navLinks {
+.p-nav__nav_links {
   margin-left: auto;
 }
 
-.navLink {
+.p-nav__nav_link {
   margin: 0 10px;
 	font-family: Futura;
 	font-size: 16px;
@@ -31,16 +36,16 @@
 }
 
 @media screen and (max-width: 360px) {
-  .navContainer {
+  .p-nav {
     white-space: nowrap;
     overflow: hidden;
   }
 
-  .navLinks {
+  .p-nav__nav_links {
     overflow-scrolling: touch;
   }
 
-  .navLink {
+  .p-nav__nav_link {
     margin: 0 6px;
     font-size: 14px;
   }
