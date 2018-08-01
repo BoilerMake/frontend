@@ -11,8 +11,8 @@ class DayOf extends PureComponent {
   constructor(props) {
     super(props);
 
-		var end = new Date().getTime() + 1000 * 60 * 60 * 24 * 2 - 2000; // TODO make this the actual end time
-		var distance = end - new Date().getTime();
+		const end = new Date().getTime() + 1000 * 60 * 60 * 24 * 2 - 2000;
+		const distance = end - new Date().getTime();
 
     this.state = {
 			end: end,
@@ -45,7 +45,7 @@ class DayOf extends PureComponent {
 					<div className="max-width flex text-center" >
 						<div className="col-2"/>
 						<div className="col-8">
-							<img src={title}/>
+							<img src={title} alt="logo"/>
 						</div>
 
 						<div className="col-6 countdown">
@@ -98,10 +98,10 @@ class DayOf extends PureComponent {
 					</div>
 				</div>
 				<div style={{backgroundColor: '#F8E001'}}>
-					<img src={squiggle1}/>
+					<img src={squiggle1} alt="squiggle1"/>
 					<div className="max-width flex text-center">
 						<div className="col-6">
-							<img src={schedule}/>
+							<img src={schedule} alt="squiggle1"/>
 						</div>
 					</div>
 					<div className="col-6"/>
@@ -190,10 +190,10 @@ class DayOf extends PureComponent {
 					</div>
 				</div>
 				<div style={{backgroundColor: '#26C99C'}}>
-					<img src={squiggle2}/>
+					<img src={squiggle2} alt="squiggle1"/>
 					<div className="max-width flex text-center">
 						<div className="col-6">
-							<img src={resources}/>
+							<img src={resources} alt="squiggle1"/>
 						</div>
 					</div>
 					<div className="max-width flex text-center">
