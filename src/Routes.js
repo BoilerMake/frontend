@@ -50,7 +50,7 @@ const PrivateRoute = ({ component: Component, isAuthenticated, isAllowed, ...res
 const ContainerSwitcherRoute = ({ children, location, ...rest }) => {
     if(location.pathname.includes('/exec')) {
       return (<ExecContainer>{children}</ExecContainer>);
-    } else if (location.pathname === '/404') {
+    } else if (location.pathname === '/404' || location.pathname === '/live') {
       return (<div>{children}</div>);
     } else {
       return (<div><Nav/>{children}<Footer/></div>);
