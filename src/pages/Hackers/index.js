@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Images from './images';
- 
+
 const Hackers = () => (
   <div>
     <Header img={Images.HeaderImg} startColor="#f25f89" endColor="#9a96f2">
@@ -18,36 +18,44 @@ const Hackers = () => (
       </div>
     </div>
     <div className="max-width home flex text-center">
-      <iframe style={{margin: '20px auto', border: 'none'}}
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/Wgs1nLJKqNY?rel=0&amp;controls=0&amp;showinfo=0"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              title="boilermake"
-              allowfullscreen>
-      </iframe>
+      <iframe
+        style={{ margin: '20px auto', border: 'none' }}
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/Wgs1nLJKqNY?rel=0&amp;controls=0&amp;showinfo=0"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        title="boilermake"
+        allowfullscreen
+      />
     </div>
-    <div className="max-width home flex" style={{margin: '50px auto'}}>
+    <div className="max-width home flex" style={{ margin: '50px auto' }}>
       <div className="col-8 paddingl">
         <h2>Create amazing things.</h2>
         <p>
           Here at BoilerMake, we provide you with the resources (and snacks) to
           build that dream project you’ve been dying to create. You can share
-          your work with hundreds of other hackers and corporate sponsors,
-          while potentially getting a share of our $10,000 prize pool at the
-          end of a wild 36 hours.  Give yourself a chance to add to the legacy
-          of great projects made at BoilerMake, including VR DDR, Skittles Launcher,
-          and more.
+          your work with hundreds of other hackers and corporate sponsors, while
+          potentially getting a share of our $10,000 prize pool at the end of a
+          wild 36 hours. Give yourself a chance to add to the legacy of great
+          projects made at BoilerMake, including VR DDR, Skittles Launcher, and
+          more.
         </p>
-        <a href="https://boilermake-v.devpost.com/"><button>Past Hacks</button></a>
+        <a href="https://boilermake-v.devpost.com/">
+          <button>Past Hacks</button>
+        </a>
       </div>
     </div>
-    <div className="max-width home flex" style={{margin: '50px auto'}}>
-      <div className="col-4" >
-        <img className="hacker-image" src={Images.Friends} width="100%" alt="friends" />
+    <div className="max-width home flex" style={{ margin: '50px auto' }}>
+      <div className="col-4">
+        <img
+          className="hacker-image"
+          src={Images.Friends}
+          width="100%"
+          alt="friends"
+        />
       </div>
-      <div className="col-8 padding" style={{paddingLeft: '20px'}}>
+      <div className="col-8 padding" style={{ paddingLeft: '20px' }}>
         <h2>Meet new friends.</h2>
         <p>
           BoilerMake is a great place to meet a group of people with a diverse
@@ -59,24 +67,32 @@ const Hackers = () => (
         </p>
       </div>
     </div>
-    <div className="max-width home flex v-center" style={{margin: '50px auto'}}>
+    <div
+      className="max-width home flex v-center"
+      style={{ margin: '50px auto' }}
+    >
       <div className="col-8 paddingr">
         <h2>Connect with sponsors.</h2>
         <p>
           Come talk to the people who inspire us to hack harder. Come talk to
-          the people who make it all possible. BoilerMake may be the place
-          where you find your dream company. Sponsor booths are a great place
-          to learn about new technologies and real-world applications of your
-          skills. Some sponsors may even provide fun activities or free swag!
+          the people who make it all possible. BoilerMake may be the place where
+          you find your dream company. Sponsor booths are a great place to learn
+          about new technologies and real-world applications of your skills.
+          Some sponsors may even provide fun activities or free swag!
         </p>
         <button>View Past Sponsors</button>
       </div>
       <div className="col-4">
-        <img src={Images.Connecting} className="hacker-image" width="100%" alt="connecting"/>
+        <img
+          src={Images.Connecting}
+          className="hacker-image"
+          width="100%"
+          alt="connecting"
+        />
       </div>
     </div>
-    <div className="max-width home flex" style={{margin: '50px auto'}}>
-      <div className="col-4"/>
+    <div className="max-width home flex" style={{ margin: '50px auto' }}>
+      <div className="col-4" />
       <div className="col-8 paddingr">
         <h2>Participate in activities.</h2>
         <p>
@@ -86,7 +102,7 @@ const Hackers = () => (
         </p>
       </div>
     </div>
-    <div style={{height: '50px'}} />
+    <div style={{ height: '50px' }} />
   </div>
 );
 

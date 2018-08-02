@@ -8,5 +8,4 @@ import seven from '../../assets/images/gallery/7.jpg';
 import eight from '../../assets/images/gallery/8.jpg';
 import header from '../../assets/images/cover.jpg';
 
-
-export default {one, two, three, four, five, six, seven, eight, header};
+export default { one, two, three, four, five, six, seven, eight, header };

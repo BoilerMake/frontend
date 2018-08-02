@@ -1,16 +1,16 @@
 const socialLinks = [
   {
     link: 'https://www.facebook.com/BoilerMake/',
-    label: 'Facebook',
+    label: 'Facebook'
   },
   {
     link: 'https://www.instagram.com/boilermake/',
-    label: 'Instagram',
+    label: 'Instagram'
   },
   {
     link: 'https://www.twitter.com/boilermake1/',
-    label: 'Twitter',
-  },
+    label: 'Twitter'
+  }
 ];
 
 const pageLinks = [
@@ -33,7 +33,7 @@ const pageLinks = [
   {
     link: '/faq',
     label: 'FAQ'
-  },
-]
+  }
+];
 
 export { socialLinks, pageLinks };

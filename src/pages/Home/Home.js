@@ -13,26 +13,34 @@ const Home = () => (
     </Header>
     <MailChimpSignup />
     <div className="max-width home flex">
-      <div className="col-8 paddingr" style={{margin: '30px auto'}}>
+      <div className="col-8 paddingr" style={{ margin: '30px auto' }}>
         <h2>Create, Meet, Learn, & Build</h2>
         <p>
           For the past five years, we've brought in 500 students from across the
-          the country to create and collaborate on amazing ideas. This is an event
-          for people who live and love hacking. Everything we do at BoilerMake
-          is for you.
+          the country to create and collaborate on amazing ideas. This is an
+          event for people who live and love hacking. Everything we do at
+          BoilerMake is for you.
         </p>
       </div>
     </div>
-    <ImageDivider images={[Images.one, Images.two, Images.three, Images.four]} />
+    <ImageDivider
+      images={[Images.one, Images.two, Images.three, Images.four]}
+    />
     <div className="middleBreak light home">
       <div className="max-width home">
-        <h2 style={{textAlign: 'center'}}>BoilerMake is here to help you grow</h2>
-        <div className="flex padding" style={{maxWidth: '700px', margin: '0 auto'}}>
+        <h2 style={{ textAlign: 'center' }}>
+          BoilerMake is here to help you grow
+        </h2>
+        <div
+          className="flex padding"
+          style={{ maxWidth: '700px', margin: '0 auto' }}
+        >
           <div>
             <h3>Create awesome projects</h3>
             <p>
               Be surrounded with hundreds of students and sponsors who are all
-              incredibly passionate about building fun, new, or innovative projects.
+              incredibly passionate about building fun, new, or innovative
+              projects.
             </p>
             <h3>Learn new things</h3>
             <p>
@@ -44,9 +52,12 @@ const Home = () => (
         </div>
       </div>
     </div>
-    <ImageDivider images={[Images.five, Images.six, Images.seven, Images.eight]} style={{marginTop: '-120px'}}/>
-    <div className="max-width home" style={{margin: '80px auto'}}>
-      <div className="col-8" style={{margin: '0 auto'}}>
+    <ImageDivider
+      images={[Images.five, Images.six, Images.seven, Images.eight]}
+      style={{ marginTop: '-120px' }}
+    />
+    <div className="max-width home" style={{ margin: '80px auto' }}>
+      <div className="col-8" style={{ margin: '0 auto' }}>
         <h2>So what else?</h2>
         <p>
           BoilerMake offers a number of perks to make an amazing weekend. To get
@@ -61,9 +72,9 @@ const Home = () => (
           designed dev board.
         </p>
         <p>
-          Throughout the weekend, we provide amazing catered meals for breakfast,
-          lunch, and dinner. We also have an all you can drink coffee, latte, etc.
-          bar and snacks passed out during the event.
+          Throughout the weekend, we provide amazing catered meals for
+          breakfast, lunch, and dinner. We also have an all you can drink
+          coffee, latte, etc. bar and snacks passed out during the event.
         </p>
         <p>
           At the end we have an awards ceremony where over $10,000 in prizes are
@@ -73,7 +84,7 @@ const Home = () => (
         </p>
       </div>
     </div>
-    <PreFooter/>
+    <PreFooter />
   </div>
 );
 

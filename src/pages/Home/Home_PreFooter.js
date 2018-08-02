@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import HeaderImg from '../assets/images/hacker.jpg';
 
 const PreFooter = () => (
@@ -12,11 +12,11 @@ const PreFooter = () => (
             BoilerMake provides the opportunity for 500 hackers, every year, to
             explore and create new ideas.
           </p>
-          <Link to="/hackers"><button>Read More</button></Link>
+          <Link to="/hackers">
+            <button>Read More</button>
+          </Link>
         </div>
-        <div className="col-4">
-
-        </div>
+        <div className="col-4" />
       </div>
     </div>
     <div className="colorBlock col-6 orange">
@@ -28,11 +28,11 @@ const PreFooter = () => (
             across the nation, and you will be able to create opportunities for
             students to work on incredible projects.
           </p>
-          <Link to="/sponsors"><button>Read More</button></Link>
+          <Link to="/sponsors">
+            <button>Read More</button>
+          </Link>
         </div>
-        <div className="col-4">
-
-        </div>
+        <div className="col-4" />
       </div>
     </div>
   </div>

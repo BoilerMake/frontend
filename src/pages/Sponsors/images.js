@@ -11,4 +11,4 @@ import TO from '../../assets/images/sponsors/twilio.png';
 import WM from '../../assets/images/sponsors/walmart.png';
 import HeaderImg from '../../assets/images/sponsor.jpg';
 
-export default {BB, C1, MDB, QC, MM, G, MS, SG, GE, TO, WM, HeaderImg};
+export default { BB, C1, MDB, QC, MM, G, MS, SG, GE, TO, WM, HeaderImg };
