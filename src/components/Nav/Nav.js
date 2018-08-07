@@ -33,9 +33,11 @@ class Nav extends Component {
             </NavLink>
           </nav>
         </div>
-        <div className="p-nav__mlh-badge">
-          <img src={mlh} width="100%" height="auto" alt="mlh badge"/>
-        </div>
+        <a href="https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2019-season&utm_content=white">
+          <div className="p-nav__mlh-badge">
+            <img src={mlh} width="100%" height="auto" alt="mlh badge" />
+          </div>
+        </a>
       </div>
     );
   }
