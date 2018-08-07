@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import logo from '../../assets/images/hammers.svg';
+import mlh from '../../assets/images/mlh-badge.svg';
 import './_pillar.nav.source.scss';
 
 class Nav extends Component {
@@ -31,6 +32,9 @@ class Nav extends Component {
               FAQ
             </NavLink>
           </nav>
+        </div>
+        <div className="p-nav__mlh-badge">
+          <img src={mlh} width="100%" height="auto" alt="mlh badge"/>
         </div>
       </div>
     );
