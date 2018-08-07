@@ -2,9 +2,8 @@
 
 .p-nav {
   @include max-width;
-
-
 }
+
 .p-nav_content {
   display: inline-flex;
   align-items: center;
@@ -22,7 +21,7 @@
 }
 
 .p-nav__nav_links {
-  margin-left: auto;
+  margin-left: 12px;
 }
 
 .p-nav__nav_link {
@@ -33,6 +32,14 @@
 	letter-spacing: 0.4px;
   text-decoration: none;
 	color: #fff;
+}
+
+.p-nav__mlh-badge {
+  width: 100px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 24px;
 }
 
 @media screen and (max-width: 360px) {
