@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { logoutUser } from '../../actions/users';
 import logo from '../../assets/images/hammers.svg';
 import mlh from '../../assets/images/mlh-badge.svg';
 import './_pillar.nav.source.scss';
-import { Button } from 'bm-kit';
 
 class Nav extends Component {
-  state = { showing: false };
+  constructor(props) {
+    super(props);
+    this.state = { redirectToReferrer: false };
+  }
 
   render() {
-    const { showing } = this.state;
-
     return (
       <div className="p-nav">
         <div className="p-nav_content">
@@ -23,51 +24,6 @@ class Nav extends Component {
               />
             </Link>
           </div>
-          <Button
-            className="c_button"
-            id="dropdown_button"
-            onClick={() => this.setState({ showing: !showing })}
-          >
-            Menu
-          </Button>
-          {showing ? (
-            <div className="dropdown">
-              <nav className="dropdown_list">
-                <NavLink
-                  onClick={() => this.setState({ showing: !showing })}
-                  exact
-                  to="/hackers"
-                  className="p-nav__nav_link"
-                >
-                  Hackers
-                </NavLink>
-                <NavLink
-                  onClick={() => this.setState({ showing: !showing })}
-                  exact
-                  to="/sponsors"
-                  className="p-nav__nav_link"
-                >
-                  Sponsors
-                </NavLink>
-                <NavLink
-                  onClick={() => this.setState({ showing: !showing })}
-                  exact
-                  to="/about"
-                  className="p-nav__nav_link"
-                >
-                  About
-                </NavLink>
-                <NavLink
-                  onClick={() => this.setState({ showing: !showing })}
-                  exact
-                  to="/faq"
-                  className="p-nav__nav_link"
-                >
-                  FAQ
-                </NavLink>
-              </nav>
-            </div>
-          ) : null}
           <nav className="p-nav__nav_links">
             <NavLink exact to="/hackers" className="p-nav__nav_link">
               Hackers
@@ -81,6 +37,10 @@ class Nav extends Component {
             <NavLink exact to="/faq" className="p-nav__nav_link">
               FAQ
             </NavLink>
+            {/* Had this in for testing */}
+            {/* <a className="p-nav__nav_link" onClick={this.props.logoutUser}>
+              Logout
+            </a> */}
           </nav>
         </div>
         <a href="https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2019-season&utm_content=white">
@@ -93,4 +53,19 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+//now the redux integration layer
+import { connect } from 'react-redux';
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  logoutUser: () => dispatch(logoutUser())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Nav);
