@@ -15,6 +15,27 @@ class Nav extends Component {
     };
   }
 
+  componentWillMount() {
+    document.addEventListener('touchmove', this.handleClick, false);
+    document.addEventListener('mousedown', this.handleClick, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('touchmove', this.handleClick, false);
+    document.removeEventListener('mousedown', this.handleClick, false);
+  }
+
+  handleClick = e => {
+    // Don't interfere with menu button's operation e.target.closest(".p-nav__dropdown_mobile")
+    if (
+      !document
+        .getElementsByClassName('p-nav__dropdown_mobile')[0]
+        .contains(e.target)
+    ) {
+      this.setState({ showing: false });
+    }
+  };
+
   render() {
     const { showing } = this.state;
     const { user } = this.props;
