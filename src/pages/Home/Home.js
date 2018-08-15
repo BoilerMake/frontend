@@ -14,7 +14,7 @@ const Home = () => (
     {bm6 ? (
       <BM6Grabber />
     ) : (
-      <Header img={Images.header} startColor="#667EEA" endColor="#764BA2">
+      <Header img={Images.header} startColor="#14CAFE" endColor="#764BA2">
         <h1>Forge The Future</h1>
         <h2>BoilerMake VI | Purdue University </h2>
         <h2>October 19 - 21, 2018</h2>
