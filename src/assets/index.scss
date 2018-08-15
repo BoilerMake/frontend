@@ -62,3 +62,12 @@ a { text-decoration: none; }
 .marginx { margin: 0 16px; }
 .marginy { margin: 16px 0; }
 textarea, select, input, button { outline: none; }
+
+// deprecated plz
+.max-width {
+  max-width: 1180px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
