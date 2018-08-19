@@ -36,12 +36,6 @@ export const genderOptions = [{
 }];
 
 export const gradYearOptions = [{
-    label: 'Fall 2017',
-    value: 'F2017'
-}, {
-    label: 'Spring 2018',
-    value: 'S2018'
-}, {
     label: 'Fall 2018',
     value: 'F2018'
 }, {
@@ -59,6 +53,12 @@ export const gradYearOptions = [{
 }, {
     label: 'Spring 2021',
     value: 'S2021'
+}, {
+    label: 'Fall 2021',
+    value: 'F2021'
+}, {
+    label: 'Spring 2022',
+    value: 'S2022'
 },{
     label: 'Other',
     value: 'other'
