@@ -67,6 +67,8 @@ class ApplicationForm extends Component {
         ) : null}
         <Card className="p-application__form">
           <h1>Application</h1>
+
+          <h2>Personal</h2>
           <ApplicationTextField
             field="first_name"
             label="First Name"
@@ -85,6 +87,15 @@ class ApplicationForm extends Component {
             hasError={this.fieldHasError('phone')}
             errorTest={this.fieldErrorText('phone')}
           />
+          <div className="p-application__form_label">
+            Is this your first hackathon?
+          </div>
+          <ApplicationSelectField
+            field="isFirstHackathon"
+            options={isFirstHackathonOptions}
+          />
+
+          <h2>School</h2>
           <div className="p-application__form_label">School</div>
           <ApplicationSelectField
             field="school_id"
@@ -105,6 +116,8 @@ class ApplicationForm extends Component {
             searchable
             options={gradYearOptions}
           />
+
+          <h2>Social</h2>
           <ApplicationTextField
             field="linkedin"
             label="LinkedIn"
@@ -115,21 +128,22 @@ class ApplicationForm extends Component {
           <ApplicationTextField
             field="github"
             label="GitHub"
-            disabled={!applicationForm.has_no_github}
+            disabled={!applicationForm.has_no_github || isGithubLinked}
             hasError={this.fieldHasError('github')}
             errorText={this.fieldErrorText('github')}
           />
           {isGithubLinked ? (
-            <div>
+            <div className="c-application__field_note">
               You signed up with github, so you can't change the username
             </div>
           ) : null}
+
+          <h2>Other Suff</h2>
           <div className="p-application__form_label">Gender</div>
           <ApplicationSelectField field="gender" options={genderOptions} />
           <div className="p-application__form_label">Race</div>
           <ApplicationSelectField field="race" options={raceOptions} />
           <div className="p-application_resume_upload">
-            <label>Upload Resume (PDF only)</label>
             <Button
               type="button"
               onClick={() => {
@@ -137,11 +151,11 @@ class ApplicationForm extends Component {
               }}
               full
             >
-              Drop or click to upload
+              Drop or click to upload Resume (PDF only)
             </Button>
             {/* <ResumeUploadProgressIndicator/> */}
             {applicationForm.resume_uploaded ? (
-              <p>
+              <p className="c-application__field_note">
                 You've uploaded{' '}
                 <a
                   href={applicationForm.resume_get_url}
@@ -153,13 +167,7 @@ class ApplicationForm extends Component {
               </p>
             ) : null}
           </div>
-          <div className="p-application__form_label">
-            Is this your first hackathon?
-          </div>
-          <ApplicationSelectField
-            field="isFirstHackathon"
-            options={isFirstHackathonOptions}
-          />
+
           <div className="p-application__form_tanc flex v-center">
             <ApplicationToggle field="tandc_1" />
             <label className="marginl last-check-s">
@@ -179,7 +187,10 @@ class ApplicationForm extends Component {
               </a>
             </label>
           </div>
-          <div className="p-application__form_tanc flex v-center">
+          <div
+            className="p-application__form_tanc flex v-center"
+            style={{ flexWrap: 'nowrap' }}
+          >
             <div>
               <ApplicationToggle field="tandc_3" />
             </div>
@@ -205,7 +216,7 @@ class ApplicationForm extends Component {
               the MLH Privacy Policy.
             </div>
           </div>
-          <div className="row">
+          <div className="c-text_center">
             <p>You can edit your application until October 10th.</p>
           </div>
           <div className="row">

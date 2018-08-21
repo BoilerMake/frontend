@@ -19,6 +19,9 @@
   margin-top: 0;
 }
 
+.p-application__form h2 {
+  margin-top: $spacing_150;
+}
 .p-application__form_label {
   margin-top: $spacing_100;
   margin-bottom: $spacing_50;
@@ -28,6 +31,11 @@
   margin-top: $spacing_100;
 }
 
+.c-application__field_note {
+  text-align: right;
+  margin-top: -$spacing_50;
+  font-size: 12px;
+}
 .p-application__form_tanc {
   margin-top: $spacing_100;
 }
