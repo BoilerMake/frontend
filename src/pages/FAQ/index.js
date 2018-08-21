@@ -9,6 +9,11 @@ const questions = [
       "A hackathon is not somewhere that you come to hack the NSA, but rather a great place for people to come together and work on incredible projects. You'll be surrounded by a group of incredibly intelligent and creative people, as well as brilliant mentors from some of the largest tech companies across the country. Hackathons can serve as a great place to learn, and you may end up surprising yourself on what you can accomplish by the end of the weekend."
   },
   {
+    title: 'Are you an MLH member event?',
+    body:
+      "Yes! We are an MLH member and all hackers are required to sign the MLH Code of Conduct when applying. You can look it over <a href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf' target='_blank'>here</a>."
+  },
+  {
     title: "I'm under 18 years of age, can I come?",
     body:
       'Due to Purdue University policy, we cannot allow students under the age of 18 to attend BoilerMake.'
