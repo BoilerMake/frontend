@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LoginForm from './LoginForm';
-import { SubmissionError } from 'redux-form';
 import { Redirect } from 'react-router-dom';
 import { Card } from 'bm-kit';
 import apiFetch from '../../actions';
