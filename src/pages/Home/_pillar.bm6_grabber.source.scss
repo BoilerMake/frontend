@@ -135,62 +135,51 @@
   .p-bm6_grabber__content_action .c_button {
     display: initial;
   }
+  .p-bm6_grabber__back_cloud {
+    width: 200%;
+  }
+  .p-bm6_grabber__middle_cloud {
+    width: 200%;
+  }
+  .p-bm6_grabber__front_cloud {
+    width: 200%;
+    left: -50%;
+  }
   .p-bm6_grabber__content {
-    // margin-top: 0;
+    margin-bottom: $spacing_200;
   }
   .p-bm6_grabber__background {
-    width: 300px;
     display: none;
   }
   .p-bm6_grabber__right_tower {
-    width: 75px;
     display: none;
-
   }
   .p-bm6_grabber__left_tower {
-    width: 75px;
-    position: absolute;
-    bottom: 0;
-    right: 250px;
-    z-index: 3;
     display: none;
-
   }
   .p-bm6_grabber__back_car {
-    width: 200px;
-    position: absolute;
-    bottom: 350px;
-    right: 250px;
-    z-index: 4;
     display: none;
-
   }
   .p-bm6_grabber__back_car {
-    width: 200px;
-    position: absolute;
-    bottom: 25%;
-    z-index: 7;
-    right: 150px;
     display: none;
-
   }
   .p-bm6_grabber__middle_tower {
-    width: 100px;
-    position: absolute;
-    bottom: 0;
-    z-index: 5;
-    right: 130px;
     display: none;
-
   }
   .p-bm6_grabber__front_car {
-    width: 200px;
-    position: absolute;
-    bottom: 25%;
-    z-index: 7;
-    right: 150px;
     display: none;
-
+  }
+}
+@media (max-width: 640px) {
+  .p-bm6_grabber__back_cloud {
+    width: 300%;
+  }
+  .p-bm6_grabber__middle_cloud {
+    width: 300%;
+  }
+  .p-bm6_grabber__front_cloud {
+    width: 300%;
+    left: -50%;
   }
 }
 @media (max-width: 450px) {
