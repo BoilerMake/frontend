@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 800px;
+  min-height: 600px;
 }
 .p-bm6_grabber__content--flex_wrapper{
   width: 100%;
@@ -18,7 +18,7 @@
   @include max-width;
   flex: 0 0 auto;
   object-fit: scale-down;
-  margin-top: -50px;
+  // margin-top: -50px;
 }
 .p-bm6_grabber__content_topic {
   font-size: 32px;
@@ -35,18 +35,18 @@
 }
 
 .p-bm6_grabber__background {
-  width: 600px;
+  width: 500px;
   position: absolute;
   bottom: 0;
   z-index: 0;
-  right: 50px;
+  right: 100px;
 }
 .p-bm6_grabber__right_tower {
-  width: 150px;
+  width: 130px;
   position: absolute;
   bottom: 0;
   z-index: 1;
-  right: 70px;
+  right: 130px;
 }
 .p-bm6_grabber__back_cloud {
   width: calc(100% + 80px);
@@ -58,10 +58,10 @@
   animation-iteration-count:infinite;
 }
 .p-bm6_grabber__left_tower {
-  width: 150px;
+  width: 120px;
   position: absolute;
   bottom: 0;
-  right: 400px;
+  right: 450px;
   z-index: 3;
 }
 .p-bm6_grabber__back_car {
@@ -74,9 +74,11 @@
 .p-bm6_grabber__back_car {
   width: 150px;
   position: absolute;
-  bottom: 0;
-  right: 400px;
+  bottom: 65%;
   z-index: 3;
+  animation-name: back_car;
+  animation-duration: 15s;
+  animation-iteration-count:infinite;
 }
 .p-bm6_grabber__middle_cloud {
   width: calc(100% + 80px);
@@ -88,11 +90,11 @@
   animation-iteration-count:infinite;
 }
 .p-bm6_grabber__middle_tower {
-  width: 180px;
+  width: 150px;
   position: absolute;
   bottom: 0;
   z-index: 5;
-  right: 200px;
+  right: 250px;
 }
 .p-bm6_grabber__front_cloud {
   width: 100%;
@@ -105,7 +107,9 @@
   position: absolute;
   bottom: 25%;
   z-index: 7;
-  right: 150px;
+  animation-name: front_car;
+  animation-duration: 15s;
+  animation-iteration-count:infinite;
 }
 
 @media (max-width: 1050px) {
@@ -113,6 +117,7 @@
     display: block;
     height: 700px;
     padding-top: $spacing_200;
+    // margin-top: 0px;
   }
 }
 
@@ -121,7 +126,7 @@
     height: 600px;
   }
   .p-bm6_grabber__content {
-    margin-top: 0;
+    // margin-top: 0;
   }
   .p-bm6_grabber__background {
     width: 300px;
@@ -144,11 +149,11 @@
     z-index: 4;
   }
   .p-bm6_grabber__back_car {
-    width: 150px;
+    width: 200px;
     position: absolute;
-    bottom: 0;
-    right: 400px;
-    z-index: 3;
+    bottom: 25%;
+    z-index: 7;
+    right: 150px;
   }
   .p-bm6_grabber__middle_tower {
     width: 100px;
@@ -186,4 +191,12 @@
     0% {left: -5px;}
     50% {left: -40px}
     100% {left: -5px;}
+}
+@keyframes front_car {
+    0% {left: -100px;}
+    100% {left: 150%;}
+}
+@keyframes back_car {
+    0% {right: -400px;}
+    100% {right: 150%;}
 }
