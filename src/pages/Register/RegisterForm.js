@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, TextInput } from 'bm-kit';
 
+import { hasError, errorText } from '../../util/errors';
 import GithubLoginButton from '../../components/GithubLoginButton';
 
 import '../../assets/_form.scss';
@@ -35,17 +36,18 @@ class RegisterForm extends PureComponent {
   }
 
   render() {
-    const { error, submitting } = this.props;
+    const { error, errors, submitting } = this.props;
     return (
       <div>
         <TextInput
           name="email"
-          type="email"
           className="topSpacing"
           component={renderField}
           label="Email"
           value={this.state.email}
           onChange={this.updateEmail}
+          hasError={hasError(errors, 'email')}
+          errorText={errorText(errors, 'email')}
         />
         <TextInput
           name="password"
@@ -55,6 +57,8 @@ class RegisterForm extends PureComponent {
           label="Password"
           value={this.state.password}
           onChange={this.updatePassword}
+          hasError={hasError(errors, 'password')}
+          errorText={errorText(errors, 'password')}
         />
         {error && <div className="margint">{error}</div>}
         <Button

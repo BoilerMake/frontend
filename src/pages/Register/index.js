@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import RegisterForm from './RegisterForm';
-import { SubmissionError } from 'redux-form';
+// import { SubmissionError } from 'redux-form';
 import { Redirect } from 'react-router-dom';
-import { toastr } from 'react-redux-toastr';
+// import { toastr } from 'react-redux-toastr';
 import { Card } from 'bm-kit';
 import apiFetch from '../../actions';
 export class Register extends Component {
   constructor(props) {
     super(props);
-    this.state = { redirectToReferrer: false };
+    this.state = {
+      redirectToReferrer: false,
+      errors: {},
+      error: ''
+    };
   }
 
   handleSubmit = (email, password) => {
@@ -22,10 +26,13 @@ export class Register extends Component {
       .then(response => response.json())
       .then(json => {
         if (json.success === false) {
-          toastr.error('Registration error', json.message[0]);
-          throw new SubmissionError({ _error: json.message });
+          // WTF is this janky code
+          typeof json.message === 'object'
+            ? this.setState({ errors: json.message, error: '' })
+            : this.setState({ error: json.message, errors: {} });
+          // toastr.error('Registration error:', json.message.email[0] || ' ', json.message.password && json.message.password[0]);
+          // throw new SubmissionError({ _error: json.message });
         } else {
-          console.log(json.data.token);
           this.props.loginFromJWT(json.data.token);
         }
       });
@@ -48,7 +55,11 @@ export class Register extends Component {
         <div className="p-login__content">
           <Card className="col-6">
             <h1>Register</h1>
-            <RegisterForm onSubmit={this.handleSubmit} />
+            <RegisterForm
+              onSubmit={this.handleSubmit}
+              errors={this.state.errors}
+              error={this.state.error}
+            />
           </Card>
         </div>
       </div>
