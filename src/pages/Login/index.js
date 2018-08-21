@@ -31,7 +31,6 @@ class Login extends Component {
             ? this.setState({ errors: json.message, error: '' })
             : this.setState({ error: json.message, errors: {} });
         } else {
-          console.log(json.data.token);
           this.props.loginFromJWT(json.data.token);
         }
       });

@@ -26,7 +26,6 @@ class PerformPasswordResetForm extends PureComponent {
 
   render(props) {
     const { error, onSubmit } = this.props;
-    console.log(error);
     const { password, password2 } = this.state;
     return (
       <div>

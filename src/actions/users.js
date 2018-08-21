@@ -11,6 +11,7 @@ export function loginFromJWT(token) {
     let userId = jwt_decode(token).user_id;
     //when we've authenticated, let's associate the user_id (which lives inside the jwt) with GA
     ReactGA.set({ userId });
+    window.FS.identify(userId);
     dispatch(saveToken(token));
     setTimeout(() => {
       dispatch(fetchMe());
@@ -41,7 +42,13 @@ export function fetchMe() {
 
     return apiFetch('users/me')
       .then(response => response.json())
-      .then(json => dispatch(receiveMe(json)));
+      .then(json => {
+        window.FS.setUserVars({
+          displayName: `${json.data.first_name} ${json.data.last_name}`,
+          email: json.data.email
+        });
+        dispatch(receiveMe(json));
+      });
   };
 }
 

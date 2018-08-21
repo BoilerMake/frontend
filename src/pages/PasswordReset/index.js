@@ -16,7 +16,6 @@ class PasswordReset extends Component {
   }
 
   handleRequestSubmit = email => {
-    console.log(email);
     let d = new FormData();
     d.append('email', email);
     return apiFetch('users/reset/send', {

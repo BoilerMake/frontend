@@ -39,7 +39,6 @@ class Nav extends Component {
   render() {
     const { showing } = this.state;
     const { user } = this.props;
-    console.log(user);
     return (
       <div className="p-nav">
         <div className="p-nav_content">
