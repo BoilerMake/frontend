@@ -42,7 +42,7 @@ a { text-decoration: none; }
 .icon { fill: red; }
 .align-end { align-items: flex-end; }
 .flex {
-  display: flex; 
+  display: flex;
   flex-wrap: wrap;
 }
 .v-center { align-items: center; }
@@ -73,4 +73,9 @@ textarea, select, input, button { outline: none; }
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
+}
+
+.c-error_text {
+  color: $dark_orange;
+  font-size: 12px;
 }

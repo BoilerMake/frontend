@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, TextInput } from 'bm-kit';
+
 import GithubLoginButton from '../../components/GithubLoginButton';
+import { hasError, errorText } from '../../util/errors';
 
 import './_pillar.login.source.scss';
 
@@ -26,7 +28,7 @@ class LoginForm extends PureComponent {
   }
 
   render() {
-    const { error, onSubmit, submitting } = this.props;
+    const { error, errors, onSubmit, submitting } = this.props;
 
     return (
       <div>
@@ -36,6 +38,8 @@ class LoginForm extends PureComponent {
           label="Email"
           onChange={this.updateEmail}
           value={this.state.email}
+          hasError={hasError(errors, 'email')}
+          errorText={errorText(errors, 'email')}
         />
         <TextInput
           name="password"
@@ -43,8 +47,10 @@ class LoginForm extends PureComponent {
           label="Password"
           onChange={this.updatePassword}
           value={this.state.password}
+          hasError={hasError(errors, 'password')}
+          errorText={errorText(errors, 'password')}
         />
-        {error && <div className="margint">{error}</div>}
+        {error && <div className="c-error_text margint">{error}</div>}
         <Button
           type="submit"
           disabled={submitting}

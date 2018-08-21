@@ -74,7 +74,7 @@
 .p-bm6_grabber__back_car {
   width: 150px;
   position: absolute;
-  bottom: 65%;
+  bottom: 75%;
   z-index: 3;
   animation-name: back_car;
   animation-duration: 15s;
@@ -122,6 +122,10 @@
   .p-bm6_grabber__content_action {
     margin-left: auto;
     margin-right: auto;
+  }
+  .p-bm6_grabber__back_car {
+    bottom: 30%;
+    width: 100px;
   }
 }
 

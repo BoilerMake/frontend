@@ -9,7 +9,11 @@ import './_pillar.login.source.scss';
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = { redirectToReferrer: false };
+    this.state = {
+      redirectToReferrer: false,
+      errors: {},
+      error: ''
+    };
   }
 
   handleSubmit = (email, password) => {
@@ -23,7 +27,10 @@ class Login extends Component {
       .then(response => response.json())
       .then(json => {
         if (json.success === false) {
-          throw new SubmissionError({ _error: json.message });
+          // WTF is this janky code
+          typeof json.message === 'object'
+            ? this.setState({ errors: json.message, error: '' })
+            : this.setState({ error: json.message, errors: {} });
         } else {
           console.log(json.data.token);
           this.props.loginFromJWT(json.data.token);
@@ -47,7 +54,11 @@ class Login extends Component {
         <div className="p-login__content">
           <Card className="col-6">
             <h1>Login</h1>
-            <LoginForm onSubmit={this.handleSubmit} />
+            <LoginForm
+              onSubmit={this.handleSubmit}
+              errors={this.state.errors}
+              error={this.state.error}
+            />
           </Card>
         </div>
       </div>
