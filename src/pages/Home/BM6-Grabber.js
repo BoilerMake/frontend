@@ -27,9 +27,11 @@ class BM6Grabber extends PureComponent {
             <div className="p-bm6_grabber__content_location">
               Purdue University • October 19-21, 2018
             </div>
-            <Link to="/register">
-              <Button>Apply</Button>
-            </Link>
+            <div className="p-bm6_grabber__content_action">
+              <Link to="/register">
+                <Button>Apply</Button>
+              </Link>
+            </div>
           </div>
         </div>
         <img src={Background} className="p-bm6_grabber__background" alt="bg" />
