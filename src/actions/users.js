@@ -44,7 +44,6 @@ export function fetchMe() {
       .then(response => response.json())
       .then(json => {
         window.FS.identify(json.data.id, {
-          displayName: `${json.data.first_name} ${json.data.last_name}`,
           email: json.data.email
         });
         dispatch(receiveMe(json));
