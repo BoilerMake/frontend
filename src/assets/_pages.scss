@@ -33,10 +33,10 @@
 .hacker-image {
   border-radius: '4px';
   box-shadow: '0 0 20px rgba(0,0,0,0.2)';
-  transform: rotate(-5deg);
+  // transform: rotate(-5deg);
 
   &:nth-child(odd) {
-    transform: rotate(5deg);
+    // transform: rotate(5deg);
   }
 }
 .middleBreak {
