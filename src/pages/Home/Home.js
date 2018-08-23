@@ -84,7 +84,7 @@ const Home = () => (
         </p>
         <p>
           When you arrive, you will be given a swag bag that usually includes a
-          t-shirt, a watter bottle, and stickers. Each year we have some special
+          t-shirt, a water bottle, and stickers. Each year we have some special
           swag. BoilerMake 5 saw a fidget spinner. BoilerMake 2 saw a custom
           designed dev board.
         </p>

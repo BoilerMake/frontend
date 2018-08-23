@@ -53,11 +53,11 @@ const questions = [
     body:
       "Of course - in fact we encourage it!  We will provide air mattresses and comforters for you to take a break from hacking. However, if you're too busy to partake in such activities, we'll make sure you have enough caffeine to keep going."
   },
-  {
-    title: 'What if I want to shower?',
-    body:
-      'For your sake and the people around you, please shower! We will provide you with a place to shower as well as towels that you can use.'
-  },
+  // {
+  //   title: 'What if I want to shower?',
+  //   body:
+  //     'For your sake and the people around you, please shower! We will provide you with a place to shower as well as towels that you can use.'
+  // },
   {
     title: 'Can I work with other people?',
     body:
