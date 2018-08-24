@@ -120,7 +120,7 @@ class ApplicationForm extends Component {
           <h2>Social</h2>
           <ApplicationTextField
             field="linkedin"
-            label="LinkedIn"
+            label="LinkedIn Username"
             disabled={!applicationForm.has_no_linkedin}
             hasError={this.fieldHasError('linkedin')}
             errorText={this.fieldErrorText('linkedin')}
