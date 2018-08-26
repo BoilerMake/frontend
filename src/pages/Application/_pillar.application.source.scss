@@ -2,6 +2,8 @@
 
 .p-application {
   @include max-width;
+  background: #FAFAFA;
+  padding: $spacing_200 0;
   &:after {
     @include dark-header;
   }
@@ -13,7 +15,7 @@
 
 .p-application__form {
   max-width: 425px;
-  margin: $spacing_200 auto;
+  margin: 0 auto;
   font-family: 'Lato';
   font-size: 15px;
   color: #5E5E5E;
