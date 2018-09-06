@@ -5,7 +5,7 @@
   text-align: center;
 }
 .p-landing_sponsors__sponsors {
-  padding: $spacing_200;
+  padding: $spacing_200 !important;
 }
 .p-landing_sponsors__top {
   text-align: center;
@@ -58,5 +58,8 @@
 @media (max-width: 770px) {
   .p-landing_sponsors__medium--mongo {
     margin-top: $spacing_200 !important;
+  }
+  .p-landing_sponsors__medium {
+    margin-top: 0;
   }
 }
