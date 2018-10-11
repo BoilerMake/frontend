@@ -133,10 +133,10 @@ class ApplicationDecision extends Component {
       <div className="section">
         <h2 style={{ marginTop: 0 }}>Thanks for applying.</h2>
         <p>
-          You're currently on our waitlist. But don’t fret! We’ll be looking at
-          apps over the next week and will let you know if space opens up. We
-          acknowledge how awesome you are and hope you can attend BoilerMake
-          this year!
+          Your application status is pending while we’re reviewing apps over the
+          next week. But don’t fret! We will let you know if your status
+          changes. We acknowledge how awesome you are and hope you can attend
+          BoilerMake this year!
         </p>
       </div>
     );
