@@ -2,23 +2,36 @@ import React, { PureComponent } from 'react';
 import Hr from '../../components/Hr';
 
 class DecisionTransitMethod extends PureComponent {
-  renderHasBus() {
-    return (
-      <div className="p-transit_method__description">
+  renderFBEvent() {
+    const school = this.props.applicationForm.school.name;
+
+    if (school === 'Illinois Institute of Technology') {
+      return (
         <p>
-          We'll be sending a bus to {this.props.applicationForm.school.name}!
-        </p>
-        <p>
-          Join the Facebook event{' '}
-          <a
-            href={`https://www.facebook.com/events/${
-              this.props.applicationForm.school.facebook_event_id
-            }`}
-          >
-            here
-          </a>{' '}
+          Join the Facebook event
+          <a href="https://www.facebook.com/events/239299703382184/">here</a>
           to stay up to date!
         </p>
+      );
+    } else if (school === 'University of Illinois-Urbana-Champaign') {
+      return (
+        <p>
+          Join the Facebook event
+          <a href="https://www.facebook.com/events/311715542939901/">here</a>
+          to stay up to date!
+        </p>
+      );
+    } else {
+      return null;
+    }
+  }
+
+  renderHasBus() {
+    const school = this.props.applicationForm.school.name;
+    return (
+      <div className="p-transit_method__description">
+        <p>We'll be sending a bus to {school}!</p>
+        {this.renderFBEvent()}
       </div>
     );
   }
