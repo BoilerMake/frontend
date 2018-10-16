@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from 'bm-kit';
+// import { Link } from 'react-router-dom';
+// import { Button } from 'bm-kit';
 
 import Background from '../../assets/images/hero/background.svg';
 import RightTower from '../../assets/images/hero/right_tower.svg';
@@ -28,9 +28,9 @@ class BM6Grabber extends PureComponent {
               Purdue University • October 19-21, 2018
             </div>
             <div className="p-bm6_grabber__content_action">
-              <Link to="/register">
+              {/* <Link to="/register">
                 <Button>Apply</Button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

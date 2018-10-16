@@ -60,25 +60,15 @@ class Nav extends Component {
               {showing ? (
                 <div className="p-nav__dropdown_mobile--content">
                   <div className="p-nav__dropdown--account">
-                    {user.authenticated ? (
+                    {user.isExec ? (
                       <NavLink
                         exact
-                        to="/application"
+                        to="/dashboard"
                         className="p-nav__dropdown_link--apply"
                       >
-                        <Button>
-                          {user.isExec ? 'Exec Dashboard' : 'Application'}
-                        </Button>
+                        <Button>Exec Dashboard</Button>
                       </NavLink>
-                    ) : (
-                      <NavLink
-                        exact
-                        to="/register"
-                        className="p-nav__dropdown_link--apply"
-                      >
-                        <Button>Apply</Button>
-                      </NavLink>
-                    )}
+                    ) : null}
                     {user.authenticated ? (
                       <a
                         className="p-nav__dropdown_link"
@@ -153,25 +143,15 @@ class Nav extends Component {
                 Login
               </NavLink>
             )}
-            {user.authenticated ? (
+            {user.isExec ? (
               <NavLink
                 exact
-                to="/application"
+                to="/exec"
                 className="p-nav__nav_link p-nav__nav_link--apply"
               >
-                <Button>
-                  {user.isExec ? 'Exec Dashboard' : 'Application'}
-                </Button>
+                <Button>Exec Dashboard</Button>
               </NavLink>
-            ) : (
-              <NavLink
-                exact
-                to="/register"
-                className="p-nav__nav_link p-nav__nav_link--apply"
-              >
-                <Button>Apply</Button>
-              </NavLink>
-            )}
+            ) : null}
           </nav>
         </div>
         <a href="https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2019-season&utm_content=white">
