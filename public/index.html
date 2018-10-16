@@ -34,7 +34,8 @@
 
     //rollbar
     var _rollbarConfig = {
-      enabled: ('%NODE_ENV%' === 'production'),
+      enabled: false,
+      // enabled: ('%NODE_ENV%' === 'production'),
       accessToken: "535d4f8476e54af3a4689d4c8cce0a0c",
       captureUncaught: true,
       captureUnhandledRejections: true,
