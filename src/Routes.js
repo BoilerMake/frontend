@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 
 import FourOhFour from './pages/404';
 import About from './pages/About';
-import Application from './pages/Application';
+// import Application from './pages/Application';
 import Code from './pages/Code';
 import ConfirmEmail from './pages/ConfirmEmail';
 import Contact from './pages/Contact';
@@ -130,7 +130,7 @@ const Routes = () => (
 
       {/*User Routes*/}
       <UserRoute path="/dashboard" component={Dashboard} />
-      <UserRoute path="/application" component={Application} />
+      {/* <UserRoute path="/application" component={Application} /> */}
 
       {/*Exec Routes. Everything under /exec gets rendered inside <ExecContainer/>*/}
       <ExecRoute path="/exec" exact component={ExecDashboard} />
