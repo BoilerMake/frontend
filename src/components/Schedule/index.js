@@ -80,7 +80,7 @@ let saturday = [
   },
   {
     start: '10:00 PM',
-    name: '🍩 Donuts!'
+    name: '🍩 Donuts and Kona Ice'
   }
 ];
 
