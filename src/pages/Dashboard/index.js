@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Card, Button, TextInput } from 'bm-kit';
 
 import ApplicationDecision from '../Application/ApplicationDecision';
@@ -78,7 +78,7 @@ class Application extends Component {
         {applicationForm.decision === 4 ||
         applicationForm.decision === 1 ? null : ( // if null or declined
           <div className="p-dashboard__content_wrapper">
-            {doesUserHaveDecision ? null : (
+            {/* {doesUserHaveDecision ? null : (
               <Card className="p-dashboard__application_link">
                 <h2>Application</h2>
                 {applicationForm.completed ? (
@@ -95,7 +95,7 @@ class Application extends Component {
                   <Button>View Application</Button>
                 </Link>
               </Card>
-            )}
+            )} */}
             <Card className="">
               <h2>Project Idea</h2>
               <p>Briefly let us know what you plan to make!</p>
