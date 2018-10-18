@@ -97,7 +97,7 @@
 }
 .p-day_of--schedule {
 	width: 100%;
-	background: #E7F5FB;
+	background: #F6F8FA;
 	padding: $spacing_100 0;
 	margin-top: $spacing_200;
 }
@@ -111,19 +111,34 @@
 		padding-top: 0;
 	}
 
-  .p-day_of--info {
-    display: initial;
-  }
+	.p-day_of--info {
+		display: block;
+	}
 
   .p-day_of--announcements {
       margin-bottom: $spacing_100;
 			margin-right: 0;
-			padding-left: $spacing_100;
-			padding-right: $spacing_100;
   }
 
 	.p-day_of--links {
-		padding-left: $spacing_100;
-		padding-right: $spacing_100;
+	}
+}
+
+@media (max-width: 490px) {
+	.p-day_of--hammers {
+		height: 50px;
+	}
+}
+@media (max-width: 425px) {
+	.p-day_of--header {
+		display: block;
+		padding-bottom: $spacing_100;
+	}
+	.p-day_of--countdown {
+		justify-content: center;
+		margin-bottom: $spacing_100;
+	}
+	.p-day_of--logo {
+		width: 100%
 	}
 }
