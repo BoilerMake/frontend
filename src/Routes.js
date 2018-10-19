@@ -23,7 +23,7 @@ import ExecCheckin from './pages/Exec/ExecCheckin';
 import FAQ from './pages/FAQ';
 import GithubAuth from './pages/GithubAuth';
 import Hackers from './pages/Hackers';
-import Home from './pages/Home';
+import HomeWrapper from './pages/Home';
 import Login from './pages/Login';
 import PasswordReset from './pages/PasswordReset';
 import Register from './pages/Register';
@@ -111,7 +111,7 @@ const Routes = () => (
   <ContainerSwitcher>
     <Switch>
       {/*Public Routes*/}
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={HomeWrapper} />
       <Route exact path="/hackers" component={Hackers} />
       <Route exact path="/sponsors" component={Sponsors} />
       <Route path="/about" component={About} />
