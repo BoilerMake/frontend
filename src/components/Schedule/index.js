@@ -59,6 +59,14 @@ let saturday = [
     name: '👪 Facebook Tech Talk'
   },
   {
+    start: '2:00 PM',
+    name: '🐶 Doggos/Woofers'
+  },
+  {
+    start: '2:30 PM',
+    name: '✈️ Rockwell Collins Talk'
+  },
+  {
     start: '3:00 PM',
     name: '🍿 Snack'
   },
@@ -81,6 +89,10 @@ let saturday = [
   {
     start: '10:00 PM',
     name: '🍩 Donuts and Kona Ice'
+  },
+  {
+    start: '10:00 PM',
+    name: '🏗️ Jenga'
   }
 ];
 
