@@ -28,10 +28,6 @@ const friday = [
     name: '🤖 Fundamentals of AI with Intel'
   },
   {
-    start: '11:00 PM',
-    name: '⛷ Activity'
-  },
-  {
     start: '12:00 AM',
     name: '🥋 Ninja'
   }
