@@ -19,7 +19,7 @@ class Announcements extends Component {
         <div className="c-day_of_card p-day_of--announcements">
           <div className="p-day_of--announcements_holder">
             {this.props.dayof.announcements.map(a => {
-              let when = moment.utc(a.created_at);
+              let when = moment.utc(a.created_at).add(4, 'hours');
               return (
                 <div
                   key={a.id}
