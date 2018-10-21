@@ -120,7 +120,7 @@ class DayOf extends PureComponent {
                   <Button full>Join Our Slack</Button>
                 </a>
                 <a href="https://boilermake-vi.devpost.com/">
-                  <Button full>Prize Info</Button>
+                  <Button full>Devpost</Button>
                 </a>
                 <a href="https://www.facebook.com/pg/BoilerMake/photos/?tab=album&album_id=1206123576193390">
                   <Button full>Photos</Button>
