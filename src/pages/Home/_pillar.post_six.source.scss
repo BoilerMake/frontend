@@ -1,0 +1,45 @@
+@import '../../assets/tools.scss';
+
+.p-post_six {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to top, #1D1B51 0%, #26255D 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-post_six__hammers {
+  width: 75px;
+}
+
+.p-post_six__note {
+  color: #FFFFFF;
+  line-height: 1.6em;
+  font-style: italic;
+  text-align: center;
+
+  p {
+    font-size: 18px;
+    color: #777cb7;
+  }
+
+  & .signature {
+    margin-top: $spacing_200;
+  }
+}
+
+.p-post_six__back_cloud {
+  position: absolute;
+  bottom: 0;
+}
+
+.p-post_six__middle_cloud {
+  position: absolute;
+  bottom: 0;
+}
+
+.p-post_six__front_cloud {
+  position: absolute;
+  bottom: 0;
+}
