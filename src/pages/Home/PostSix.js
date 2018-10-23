@@ -16,8 +16,7 @@ class PostSix extends PureComponent {
           <img src={Hammers} className="p-post_six__hammers" alt="" />
 
           <p>
-            Everything we do is for you,
-            <br />
+            Everything we do is for you -<br />
             the hackers, the designers,
             <br />
             the innovators, and the dreamers.
@@ -28,7 +27,7 @@ class PostSix extends PureComponent {
             You are the focus of our work.
             <br />
           </p>
-          <p>We owe this to you becasue you inspire us.</p>
+          <p>We owe this to you because you inspire us.</p>
           <p>Thank you for letting us inspire you.</p>
           <p className="signature">- The BoilerMake VI Team</p>
         </div>
