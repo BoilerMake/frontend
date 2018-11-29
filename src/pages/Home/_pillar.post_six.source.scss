@@ -6,40 +6,51 @@
   background: linear-gradient(to top, #1D1B51 0%, #26255D 0%);
   display: flex;
   align-items: center;
-  justify-content: center;
+	justify-content: center;
 }
 
 .p-post_six__hammers {
-  width: 75px;
+	width: 75px;
 }
 
 .p-post_six__note {
-  color: #FFFFFF;
-  line-height: 1.6em;
-  font-style: italic;
-  text-align: center;
+	color: #FFFFFF;
+	line-height: 1.6em;
+	font-style: italic;
+	text-align: center;
 
-  p {
-    font-size: 18px;
-    color: #777cb7;
-  }
+	p {
+		font-size: 18px;
+		color: #777cb7;
+	}
 
-  & .signature {
-    margin-top: $spacing_200;
-  }
+	& .signature {
+		margin-top: $spacing_200;
+	}
 }
 
-.p-post_six__back_cloud {
-  position: absolute;
-  bottom: 0;
+.p-post_six__clouds {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
 }
 
-.p-post_six__middle_cloud {
-  position: absolute;
-  bottom: 0;
+.p-post_six__cloud {
+	position: absolute;
+	bottom: 0;
 }
 
-.p-post_six__front_cloud {
-  position: absolute;
-  bottom: 0;
+.p-post_six__recruitment {
+	position: fixed;
+	display: flex;
+	width: calc(100% - 32px);
+	top: 0;
+	justify-content: center;
+	align-items: center;
+	background-color: #B54870;
+	color: white;
+}
+
+.p-post_six__recruitment p {
+	font-size: 18px;
 }
