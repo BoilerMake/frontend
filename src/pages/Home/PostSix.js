@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { Button } from 'bm-kit';
 
 import BackCloud from '../../assets/images/hero/back_cloud_dark.svg';
 import MiddleCloud from '../../assets/images/hero/middle_cloud_dark.svg';
@@ -10,18 +9,9 @@ import Hammers from '../../assets/images/dark_hammers.svg';
 import './_pillar.post_six.source.scss';
 
 class PostSix extends PureComponent {
-  redirectToApplication() {
-    window.location =
-      'https://docs.google.com/forms/d/e/1FAIpQLSd5hvEUwVlCa69NwRkkzXJalt4FiRzDBbDMo5gl41v4Z2vyOw/viewform';
-  }
-
   render() {
     return (
       <div className="p-post_six">
-        <div className="p-post_six__recruitment paddingx">
-          <p className="paddingr">BoilerMake is looking for new members!</p>
-          <Button onClick={this.redirectToApplication}>Apply</Button>
-        </div>
         <div className="p-post_six__note">
           <img src={Hammers} className="p-post_six__hammers" alt="" />
           <p>
