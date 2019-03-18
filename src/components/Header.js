@@ -13,7 +13,7 @@ const Header = ({ startColor, endColor, img, children }) => {
       <div
         className="gradient"
         style={{
-          background: startColor
+          background: `linear-gradient(170deg, ${startColor}, ${endColor})`
         }}
       />
       <div className="headerContent">{children}</div>

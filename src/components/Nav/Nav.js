@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Button } from 'bm-kit';
 import { logoutUser } from '../../actions/users';
 import logo from '../../assets/images/bm6_hammers.svg';
-import mlh from '../../assets/images/mlh-badge-shadow.png';
 import './_pillar.nav.source.scss';
 
 class Nav extends Component {
@@ -39,6 +37,7 @@ class Nav extends Component {
   render() {
     const { showing } = this.state;
     const { user } = this.props;
+    console.log(user);
     return (
       <div className="p-nav">
         <div className="p-nav_content">
@@ -59,16 +58,24 @@ class Nav extends Component {
               &#9776;
               {showing ? (
                 <div className="p-nav__dropdown_mobile--content">
-                  <div className="p-nav__dropdown--account">
-                    {user.isExec ? (
+                  {/* <div className="p-nav__dropdown--account">
+                    {user.authenticated ? (
                       <NavLink
                         exact
-                        to="/dashboard"
+                        to="/application"
                         className="p-nav__dropdown_link--apply"
                       >
-                        <Button>Exec Dashboard</Button>
+                        <Button>Application</Button>
                       </NavLink>
-                    ) : null}
+                    ) : (
+                      <NavLink
+                        exact
+                        to="/register"
+                        className="p-nav__dropdown_link--apply"
+                      >
+                        <Button>Apply</Button>
+                      </NavLink>
+                    )}
                     {user.authenticated ? (
                       <a
                         className="p-nav__dropdown_link"
@@ -86,19 +93,19 @@ class Nav extends Component {
                       </NavLink>
                     )}
                   </div>
-                  <hr />
+                  <hr /> */}
                   <NavLink exact to="/faq" className="p-nav__dropdown_link">
                     FAQ
                   </NavLink>
                   <NavLink exact to="/hackers" className="p-nav__dropdown_link">
-                    Why Hack?
+                    Hackers
                   </NavLink>
                   <NavLink
                     exact
                     to="/sponsors"
                     className="p-nav__dropdown_link"
                   >
-                    Why Sponsor?
+                    Sponsors
                   </NavLink>
                   <NavLink exact to="/about" className="p-nav__dropdown_link">
                     Team
@@ -115,10 +122,10 @@ class Nav extends Component {
               </NavLink>
               <div className="p-nav__dropdown_content">
                 <NavLink exact to="/hackers" className="p-nav__dropdown_link">
-                  Why Hack?
+                  Hackers
                 </NavLink>
                 <NavLink exact to="/sponsors" className="p-nav__dropdown_link">
-                  Why Sponsor?
+                  Sponsors
                 </NavLink>
                 <NavLink exact to="/about" className="p-nav__dropdown_link">
                   Team
@@ -128,37 +135,34 @@ class Nav extends Component {
             <NavLink exact to="/faq" className="p-nav__nav_link">
               FAQ
             </NavLink>
-            {user.authenticated ? (
-              <span>
-                <NavLink exact to="/dashboard" className="p-nav__nav_link">
-                  Dashboard
-                </NavLink>
-
-                <a className="p-nav__nav_link" onClick={this.props.logoutUser}>
-                  Logout
-                </a>
-              </span>
+            {/* {user.authenticated ? (
+              <a className="p-nav__nav_link" onClick={this.props.logoutUser}>
+                Logout
+              </a>
             ) : (
               <NavLink exact to="/login" className="p-nav__nav_link">
                 Login
               </NavLink>
             )}
-            {user.isExec ? (
+            {user.authenticated ? (
               <NavLink
                 exact
-                to="/exec"
+                to="/application"
                 className="p-nav__nav_link p-nav__nav_link--apply"
               >
-                <Button>Exec Dashboard</Button>
+                <Button>Application</Button>
               </NavLink>
-            ) : null}
+            ) : (
+              <NavLink
+                exact
+                to="/register"
+                className="p-nav__nav_link p-nav__nav_link--apply"
+              >
+                <Button>Apply</Button>
+              </NavLink>
+            )} */}
           </nav>
         </div>
-        <a href="https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2019-season&utm_content=white">
-          <div className="p-nav__mlh-badge">
-            <img src={mlh} width="100%" height="auto" alt="mlh badge" />
-          </div>
-        </a>
       </div>
     );
   }

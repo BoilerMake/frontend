@@ -84,7 +84,6 @@ const Hackers = () => (
             to learn about new technologies and real-world applications of your
             skills. Some sponsors may even provide fun activities or free swag!
           </p>
-          <Button>View Past Sponsors</Button>
         </div>
         <div className="col-4">
           <img
