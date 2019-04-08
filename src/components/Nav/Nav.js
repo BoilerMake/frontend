@@ -116,22 +116,15 @@ class Nav extends Component {
           </nav>
 
           <nav className="p-nav__nav_links">
-            <div className="p-nav__dropdown">
-              <NavLink exact to="/about" className="p-nav__nav_link">
-                About ▾
-              </NavLink>
-              <div className="p-nav__dropdown_content">
-                <NavLink exact to="/hackers" className="p-nav__dropdown_link">
-                  Hackers
-                </NavLink>
-                <NavLink exact to="/sponsors" className="p-nav__dropdown_link">
-                  Sponsors
-                </NavLink>
-                <NavLink exact to="/about" className="p-nav__dropdown_link">
-                  Team
-                </NavLink>
-              </div>
-            </div>
+            <NavLink exact to="/hackers" className="p-nav__nav_link">
+              Hackers
+            </NavLink>
+            <NavLink exact to="/sponsors" className="p-nav__nav_link">
+              Sponsors
+            </NavLink>
+            <NavLink exact to="/about" className="p-nav__nav_link">
+              Team
+            </NavLink>
             <NavLink exact to="/faq" className="p-nav__nav_link">
               FAQ
             </NavLink>
