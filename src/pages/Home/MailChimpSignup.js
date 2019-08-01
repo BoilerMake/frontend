@@ -7,7 +7,7 @@ export default class MailChimpSignup extends PureComponent {
     return (
       <div id="mc_embed_signup" className="p-mail_chimp_signup">
         <form
-          action="https://boilermake.us18.list-manage.com/subscribe/post?u=c90b22dd57d3dc992bd4731ec&amp;id=fb94bf1d8d"
+          action="https://boilermake.us4.list-manage.com/subscribe/post?u=87d19693a4d14d3d570745638&amp;id=f0683deb28"
           method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
