@@ -10,8 +10,8 @@ import './_pillar.home.source.scss';
 const Home = () => (
   <div>
     <Header img={Images.header} startColor="#667EEA" endColor="#764BA2">
-      <h1>Forge The Future</h1>
-      <h2>BoilerMake | Purdue University </h2>
+      <h1>Forge the Future</h1>
+      <h2>January 24-26, 2020</h2>
     </Header>
     <MailChimpSignup />
     <div className="max-width home flex">
